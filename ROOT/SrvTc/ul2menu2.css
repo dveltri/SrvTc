@@ -1,0 +1,155 @@
+body
+{
+margin:0px;
+}
+
+#DivMenu{
+visibility:'hidden';
+position:absolute;
+}
+
+#menu{
+filter: Alpha(opacity=85);
+background-color:#ffffff;
+color:#000000;
+border:1px solid #000000;
+list-style-type:none; 
+margin:0; 
+padding:0 0;
+FONT: 10pt 'Comic Sans MS';
+opacity: 0.85; 
+-moz-opacity: 0.85;
+position:relative;
+z-index:1000;
+}
+
+#menu li{ 
+padding:0 0;
+margin:2px;
+cursor:default;
+white-space:nowrap;
+list-style-type:none; 
+background-color:#ffffff;
+color:#000000;
+}
+
+#menu.horizontal li	{
+display:inline;
+}
+
+#menu.vertical	{ 
+width:150px;
+border:1px solid #000000;
+}
+
+#menu.vertical li	{
+list-style-type:none; 
+}
+
+#menu li.active	{
+color:#FFFFFF;
+background-color:#000000;
+}
+
+#menu li a	{
+text-decoration:none; 
+color:#000000;
+}
+
+#menu li a:hover	{ 
+background-color:#000000;
+color:#FFFFFF;
+}
+
+
+#menu ul{
+position:absolute;
+visibility:hidden;
+text-align:left;
+border:1px solid #000000;
+background-color:#FFFFFF;
+width:150px;
+margin-left: 1px;
+margin-top: 0px;
+padding:0px 0px;
+}
+
+#menu ul li,
+#menu.vertical ul li,
+#menu.horizontal ul li	
+{ 
+display:block;
+white-space:normal; 
+list-style-type:none;
+width:100%;
+margin:0px;
+padding:0 0;
+}
+
+#menu ul li a	{
+display:block;
+text-decoration:none;
+padding:0 0;
+margin:0;
+color:#000000;
+}
+
+#menu ul li a:hover	{ 
+width:100%;
+background-color:#000000;
+color:#FFFFFF;
+}
+
+#menu ul li.active	{
+background-color:#000000;
+color:#FFFFFF;
+}
+
+
+.INTEXTSEL{
+background-color: #FFFFFF;
+border: black 1px solid;
+color: black;
+font-family: arial;
+font-weight: normal;
+font-size: 7pt
+} 
+
+.INTEXT{
+background-color: #FFFFFF;
+border: black 1px solid;
+color: black;
+font-family: arial;
+font-weight: normal;
+font-size: 7pt
+} 
+
+.INTEXT2{
+background-color: #B0B0B0;
+BORDER-STYLE: solid;
+BORDER-TOP: black 1px solid;
+BORDER-LEFT: black 1px solid;
+BORDER-RIGHT: black 1px solid;
+BORDER-BOTTOM: black 1px solid;
+color: #000000;
+font-family: arial;
+font-weight: normal;
+font-size: 7pt
+} 
+
+.TEXTARE{
+background-color: #FFFFFF;
+border: black 1px solid;
+color: black;
+font-family: arial;
+font-weight: normal;
+font-size: 8pt
+} 
+
+.VERTTEXT{
+     -moz-transform: rotate(270deg);  /* FF3.5+ */
+       -o-transform: rotate(270deg);  /* Opera 10.5 */
+  -webkit-transform: rotate(270deg);  /* Saf3.1+, Chrome */
+             filter:  progid:DXImageTransform.Microsoft.BasicImage(rotation=0.083);  /* IE6,IE7 */
+         -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0.083)"; /* IE8 */
+}

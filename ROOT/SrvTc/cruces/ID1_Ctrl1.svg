@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="465" height="300" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+ <g>
+  <g stroke="#000" id="svg_25">
+   <rect transform="matrix(-0.462108, -0.259226, 0.462108, -0.259226, 345.207, 576.3)" fill="#7f7f7f" x="677.181828" y="433.133367" width="500" height="500" id="svg_24"/>
+   <rect transform="matrix(-0.462108, -0.259226, 0.462108, -0.259226, 345.207, 576.3)" fill="#007f00" stroke-width="4" x="997.181828" y="433.133442" width="180" height="180" ry="16" rx="16" id="svg_23"/>
+   <rect transform="matrix(-0.462108, -0.259226, 0.462108, -0.259226, 345.207, 576.3)" fill="#007f00" stroke-width="4" x="677.181828" y="433.133367" width="180" height="180" ry="16" rx="16" id="svg_22"/>
+   <rect transform="matrix(-0.462108, -0.259226, 0.462108, -0.259226, 345.207, 576.3)" fill="#007f00" stroke-width="4" x="997.181903" y="755.133442" width="180" height="180" ry="16" rx="16" id="svg_21"/>
+   <rect transform="matrix(-0.462108, -0.259226, 0.462108, -0.259226, 345.207, 576.3)" fill="#007f00" stroke-width="4" x="677.181903" y="755.133367" width="180" height="180" ry="16" rx="16" id="svg_20"/>
+  </g>
+  <path fill="#7f7f7f" stroke="#000" d="m340.849365,153.524918l0,-81.715485l-68.096222,-39.31604l0,13.619247l54.47699,31.452286l0,68.096222l13.619232,7.862946l0,0.000824l0,0z" id="svg_1"/>
+  <path fill="#7f7f7f" stroke="#000" d="m219.222961,97.027115l0,-85.23011l-71.025116,41.007057l0,14.205017l56.820068,-32.805069l0,71.025101l14.205048,-8.201111l0,-0.000885l0,0z" id="svg_2"/>
+  <rect transform="matrix(0, -0.732218, 0.732218, 0.422744, 379.383, 363.431)" fill="#3f3f3f" x="351.564765" y="-142.986589" width="14" height="35" id="svg_7" stroke="#000000"/>
+  <rect transform="matrix(0, -0.732218, 0.732218, -0.422744, 337.646, 354.896)" fill="#3f3f3f" x="545.185692" y="-256.184471" width="14" height="35" id="svg_11" stroke="#000000"/>
+  <rect stroke="#000000" transform="matrix(0.732218, -0.422744, 0, 0.732218, 60.9803, 367.01)" fill="#3f3f3f" x="199.138406" y="-321.27867" width="14" height="35" id="svg_15"/>
+  <title>Layer 1</title>
+  <g id="phase1R">
+   <ellipse transform="matrix(0, -0.732218, 0.732218, -0.422744, 337.646, 354.896)" fill="#7f7f7f" ry="3.5" cy="-247.434471" rx="3.5" cx="552.185691" id="svg_12" stroke="#000000"/>
+   <ellipse stroke="#000000" transform="matrix(0.732218, -0.422744, 0, 0.732218, 60.9803, 367.01)" fill="#7f7f7f" ry="3.5" cy="-312.64197" rx="3.5" cx="205.942187" id="svg_16"/>
+  </g>
+  <g id="phase1Y">
+   <ellipse transform="matrix(0, -0.732218, 0.732218, -0.422744, 337.646, 354.896)" fill="#7f7f7f" ry="3.5" cy="-238.684471" rx="3.5" cx="552.185691" id="svg_13" stroke="#000000"/>
+   <ellipse stroke="#000000" transform="matrix(0.732218, -0.422744, 0, 0.732218, 60.9803, 367.01)" fill="#7f7f7f" ry="3.5" cy="-303.77867" rx="3.5" cx="206.138406" id="svg_17"/>
+  </g>
+  <rect transform="matrix(0.732218, 0.422744, 0, 0.732218, 292.859, 146.311)" fill="#3f3f3f" x="48.874307" y="-105.794938" width="14" height="35" id="svg_3" stroke="#000000"/>
+  <g id="phase1G">
+   <ellipse transform="matrix(0, -0.732218, 0.732218, -0.422744, 337.646, 354.896)" fill="#7f7f7f" ry="3.5" cy="-229.934471" rx="3.5" cx="552.18569" id="svg_14" stroke="#000000"/>
+   <ellipse stroke="#000000" transform="matrix(0.732218, -0.422744, 0, 0.732218, 60.9803, 367.01)" fill="#7f7f7f" ry="3.5" cy="-295.02867" rx="3.5" cx="206.138406" id="svg_18"/>
+  </g>
+  <g id="phase0R">
+   <ellipse transform="matrix(0, -0.732218, 0.732218, 0.422744, 379.383, 363.431)" fill="#7f7f7f" ry="3.5" cy="-134.236589" rx="3.5" cx="358.564765" id="svg_8" stroke="#000000"/>
+   <ellipse transform="matrix(0.732218, 0.422744, 0, 0.732218, 292.859, 146.311)" fill="#7f7f7f" ry="3.5" cy="-97.044938" rx="3.5" cx="55.874307" id="svg_4" stroke="#000000"/>
+  </g>
+  <g id="phase0Y">
+   <ellipse transform="matrix(0, -0.732218, 0.732218, 0.422744, 379.383, 363.431)" fill="#7f7f7f" ry="3.5" cy="-125.486589" rx="3.5" cx="358.564766" id="svg_9" stroke="#000000"/>
+   <ellipse transform="matrix(0.732218, 0.422744, 0, 0.732218, 292.859, 146.311)" fill="#7f7f7f" ry="3.5" cy="-88.294938" rx="3.5" cx="55.874307" id="svg_5" stroke="#000000"/>
+  </g>
+  <g id="phase0G">
+   <ellipse transform="matrix(0, -0.732218, 0.732218, 0.422744, 379.383, 363.431)" fill="#7f7f7f" ry="3.5" cy="-116.736589" rx="3.5" cx="358.564767" id="svg_10" stroke="#000000"/>
+   <ellipse transform="matrix(0.732218, 0.422744, 0, 0.732218, 292.859, 146.311)" fill="#7f7f7f" ry="3.5" cy="-79.544938" rx="3.5" cx="55.874307" id="svg_6" stroke="#000000"/>
+  </g>
+ </g>
+</svg>

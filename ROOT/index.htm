@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title>Controlador de tráfego</title>
+			<script type="text/javascript">
+			function gotodest(dest)
+			{
+				if(dest==1)
+					window.location="./Lp3/web/index.xhtml";
+				if(dest==2)
+					window.location="./ConfAt/index.htm";
+				if(dest==3)
+					window.location="./SrvAt/index.htm";
+				if(dest==4)
+					window.location="./SrvTc/index.htm";
+				return true;
+			}
+			</script>
+	</head>
+ <body>
+  <center>
+	<table  border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" width=100%>
+    <tr> 
+	  <td>&nbsp;<input type="button" onclick="gotodest(1);return false;" value="Configuracion TC">&nbsp;</td>
+    </tr>
+    <tr> 
+	  <td>&nbsp;<input type="button" onclick="gotodest(2);return false;" value="Configuracion AT">&nbsp;</td>
+    </tr>
+    <tr> 
+	  <td>&nbsp;<input type="button" onclick="gotodest(3);return false;" value="Central AT">&nbsp;</td>
+    </tr>
+	<tr> 
+	  <td>&nbsp;<input type="button" onclick="gotodest(4);return false;" value="Central TC">&nbsp;</td>
+	</tr>
+	</table>
+	<a href="http://www.mozilla.org/"><img src="./img/ff.png"></a><br />
+	<a href="./servlets/srvcmd?drv=SrvFlow&flw=flw&cmd=Stop">[test]</a>
+  </center>
+ </body>
+</html>
