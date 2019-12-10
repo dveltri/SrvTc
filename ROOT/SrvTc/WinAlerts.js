@@ -240,10 +240,10 @@ function ShowAlerts()
 	out+="	</td>\n";
 	out+="</tr>\n";
 	//---------------------------------------------------------------------
-	if(!Alerts[a][0])
-		return "";
 	for(var a=0;a<Alerts.length;a++)
 	{
+		if(!Alerts[a][0])
+			return "";
 		rawcolor=Altrawcolor.slice();
 		if((a%2)==0)
 		{
