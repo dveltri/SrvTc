@@ -1,16 +1,16 @@
 
-var winactFrameBackgroundColor	 	= "rgba(100,100,180,0.5)";
-var winactFrameBorderColor		 	= "rgba(100,100,180,0.5)";
-var winactTitleBarColor			 	= "rgba(100,100,180,0.5)";
+var winactFrameBackgroundColor	 	= "rgba(100,180,100,0.5)";
+var winactFrameBorderColor		 	= "rgba(100,180,100,0.5)";
+var winactTitleBarColor			 	= "rgba(100,180,100,0.5)";
 var winactTitleTextColor			= "#202020";
-var winactClientAreaBorderColor	 	= "rgba(100,100,180,0.5)";
+var winactClientAreaBorderColor	 	= "rgba(100,180,100,0.5)";
 var winactClientAreaScrollbarColor	= "";
 var winactButtonsImage			 	= "../img/close_icon.png";
-var wactFrameBackgroundColor		= "rgba(100,100,215,0.7)";
-var wactFrameBorderColor			= "rgba(100,100,215,0.7)"; 
-var wactTitleBarColor				= "rgba(100,100,215,0.7)";
+var wactFrameBackgroundColor		= "rgba(100,215,100,0.7)";
+var wactFrameBorderColor			= "rgba(100,215,100,0.7)"; 
+var wactTitleBarColor				= "rgba(100,215,100,0.7)";
 var wactTitleTextColor			 	= "#202020";
-var wactClientAreaBorderColor		= "rgba(100,100,215,0.7)";
+var wactClientAreaBorderColor		= "rgba(100,215,100,0.7)";
 var wactClientAreaScrollbarColor	= "../img/close_icon.png";
 
 IOs=[{

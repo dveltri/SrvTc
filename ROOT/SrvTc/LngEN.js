@@ -1,5 +1,5 @@
-var GlobView="-34.6144,-58.4363,12";//"-23.55,-46.70,16";
-var Str_About_Msg="Central Neural de Trafico V0.170327";
+var GlobView="-34.499,-58.497,12";//coordenadas y zoom generales 
+var Str_About_Msg="Central de Trafico Cosmos V0.170327";
 var	Str_Function_Control="Function Control";
 var Str_Target="Target";
 var Str_Contend="contains";

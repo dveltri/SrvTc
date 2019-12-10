@@ -1,21 +1,11 @@
 var OptModels=[0,""
 ,1,"MSTC-V1M3"
-,2,"GW1M3"
-,3,"GW2M3"
-,4,"GW3M3"
-,5,"GW1M4"
-,6,"GW2M4"
-,7,"GW3M4"
-,8,"GW4M4"
-,9,"STC-S4-M3"
-,10,"MAC-TC1"
-,11,"SAD-V1M4"
-,12,"SAD-V2M4"
-,13,"SAD-V3M4"
-,14,"DGV-uTC1-M4"];
+,2,"SAD-V1M4"
+,3,"SAD-V2M4"
+,4,"SAD-V3M4"];
 
-var Models=		["","MSTC-V1M3","GW1M3","GW2M3","GW3M3","GW1M4","GW2M4","GW3M4","GW4M4","STC-S4-M3","MAC-TC1","SAD-V1M4","SAD-V2M4","SAD-V3M4","DGV-uTC1-M4"];
-var VecMod2Rsrc=[0,1,1,1,1,2,2,2,2,2,2,2,2,2,2];
+var Models=		["","MSTC-V1M3","SAD-V1M4","SAD-V2M4","SAD-V3M4"];
+var VecMod2Rsrc=[0,1,1,1,1,2,2,2,2,2,2,2,2,2];
 var RsrcGvM=	[""	,"GbVars.bin"				,"GbVars.bin"];
 var RsrcPlcsM=	[""	,"plcs.bin"					,"plcs.bin"];
 var RsrcIOsM=	[""	,"ios.bin"					,"ios.bin"];

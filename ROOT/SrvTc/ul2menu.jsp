@@ -45,22 +45,6 @@ function IniMenu(mnuElement)
 		out+="</ul></li>\n";
 		<%}%>
 		//-----------------------
-		<%if(permisos.indexOf("GreenWave")!=-1)	{ %>
-		out+="<li>";
-		out+="<img src=\"../img/flow2.png\" width=\"18\" height=\"18\" border=\"0\" />\n"+Str_GreenWave;
-		out+="<ul>";
-			//- - - - - - - - - - -
-			out+="<li><a href=\"\" onclick=\"ShowGWConf('');return false;\">";
-			out+="<img src=\"../img/flow2.png\" width=\"18\" height=\"18\" border=\"0\" />\n"+Str_NewGreenWave;
-			out+="</a></li>\n";
-			//- - - - - - - - - - -
-			out+="<li><a href=\"\" onclick=\"GetGreenWaveList();return false;\">";
-			out+="<img src=\"../img/flow2.png\" width=\"18\" height=\"18\" border=\"0\" />\n"+Str_GreenWaveList;
-			out+="</a></li>\n";
-			//- - - - - - - - - - - 
-		out+="</ul></li>\n";
-		<%}%>
-		//-----------------------
 		<%if(permisos.indexOf("StatisticConf")!=-1 || permisos.indexOf("StatisticList")!=-1)	{ %>
 		out+="<li>";
 		out+="<img src=\"../img/sts.jpg\" width=\"18\" height=\"18\" border=\"0\" />\n"+Str_Statistic;
