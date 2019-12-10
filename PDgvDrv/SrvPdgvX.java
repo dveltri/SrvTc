@@ -30,7 +30,8 @@ public class SrvPdgvX
 	private static final int CmpSkT		=5;
 	private static final int CmpLen		=6;
 	private static final int CmpDat		=7;
-	//---------------------------------------
+	//---------------------------------------*/
+	public static DatagramSocket SubserverSocket=null;
 	public static DatagramSocket serverSocket=null;
 	public static byte[] sendData = new byte[1024];
 	public static byte[] receiveData = new byte[1024];
@@ -120,7 +121,9 @@ public class SrvPdgvX
 		//-----------------------------------------------------
 		DatagramPacket receivePacketP=null;
 		InetAddress IPAddress=null;
+		InetAddress SubIPAddress=null;
 		serverSocket = new DatagramSocket(port);
+		SubserverSocket = new DatagramSocket(port);
 		//-----------------------------------------------------
 		Connection c 	=null;
 		Statement stmt	=null;
@@ -174,6 +177,19 @@ public class SrvPdgvX
 				try
 				{
 					queuePd.put(new dat2proc(receivePacketP.getData(),receivePacketP.getAddress(),receivePacketP.getPort()));
+					sendPacketP=null;
+					try
+					{
+						SubIPAddress = InetAddress.getByName("pdgvtc.ingavanzada.com.ar");
+						sendPacketP = new DatagramPacket(receivePacketP.getData(),receivePacketP.getLength(), SubIPAddress, port);
+						SubserverSocket.send(sendPacketP);
+					}
+					catch ( Exception e )
+					{
+						System.err.println("SubserverSocket["+e.getClass().getName()+":"+e.getMessage()+"]");
+						System.exit(0);
+					}
+
 				}
 				catch ( Exception e )
 				{
