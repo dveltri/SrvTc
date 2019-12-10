@@ -47,8 +47,8 @@ function WebStart()
 
 function fnc0()
 {
-	var d = new Date();
-	var ms = d.getTime();
+	var digital = new Date();
+	var ms = digital.getTime();
 	if(URLs.length && (enProceso+1000)<digital.getTime())
 	{
 		GetUrl(URLs[0],FNCs[0]);
@@ -89,32 +89,35 @@ function RcvMoni(Datos)
 {
 	var out="";
 	var hora = new Date();
-	if(Datos && Reqest[PoolData].Status==1)
+	if(Datos)
 	{
-		if(Datos.status==200)
+		if(Reqest[PoolData].Status==1)
 		{
-			if(Reqest[PoolData].WinName)
+			if(Datos.status==200)
 			{
-				document.getElementById(Reqest[PoolData].WinName+"Title").innerHTML="";
-				//document.getElementById(Reqest[PoolData].WinName+"Title").innerHTML+="<img src='./img/reload.png' onclick='chgsts("+PoolData+");' width='14' height='14' /> ";
-				document.getElementById(Reqest[PoolData].WinName+"Title").innerHTML+=Reqest[PoolData].Name;
-				document.getElementById(Reqest[PoolData].WinName+"Hora").innerHTML=hora.getHours()+":"+hora.getMinutes()+":"+hora.getSeconds()+" ";
-				document.getElementById(Reqest[PoolData].WinName+"Body").innerHTML=Reqest[PoolData].Fnc(Datos);
+				if(Reqest[PoolData].WinName)
+				{
+					document.getElementById(Reqest[PoolData].WinName+"Title").innerHTML="";
+					//document.getElementById(Reqest[PoolData].WinName+"Title").innerHTML+="<img src='./img/reload.png' onclick='chgsts("+PoolData+");' width='14' height='14' /> ";
+					document.getElementById(Reqest[PoolData].WinName+"Title").innerHTML+=Reqest[PoolData].Name;
+					document.getElementById(Reqest[PoolData].WinName+"Hora").innerHTML=hora.getHours()+":"+hora.getMinutes()+":"+hora.getSeconds()+" ";
+					document.getElementById(Reqest[PoolData].WinName+"Body").innerHTML=Reqest[PoolData].Fnc(Datos);
+				}
+				else
+				{
+					Reqest[PoolData].Fnc(Datos);
+				}
 			}
 			else
 			{
-				Reqest[PoolData].Fnc(Datos);
+				if(Reqest[PoolData].WinName)
+					document.getElementById(Reqest[PoolData].WinName+"Body").innerHTML=Datos.status+" "+Datos.statusText;
 			}
 		}
-		else
-		{
-			if(Reqest[PoolData].WinName)
-				document.getElementById(Reqest[PoolData].WinName+"Body").innerHTML=Datos.status+" "+Datos.statusText;
-		}
-		Reqest[PoolData].Status=0;
+		PoolData++;
+		PoolData%=Reqest.length;
 	}
-	PoolData++;
-	PoolData%=Reqest.length;
+	Reqest[PoolData].Status=0;
 }
 
 function CountItem(Aray,Item)
