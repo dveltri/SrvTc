@@ -49,7 +49,7 @@ function fnc0()
 {
 	var d = new Date();
 	var ms = d.getTime();
-	if(URLs.length && enProceso==false)
+	if(URLs.length && (enProceso+1000)<digital.getTime())
 	{
 		GetUrl(URLs[0],FNCs[0]);
 		FNCs.splice(0,1);
