@@ -240,6 +240,8 @@ function ShowAlerts()
 	out+="	</td>\n";
 	out+="</tr>\n";
 	//---------------------------------------------------------------------
+	if(!Alerts[a][0])
+		return "";
 	for(var a=0;a<Alerts.length;a++)
 	{
 		rawcolor=Altrawcolor.slice();
