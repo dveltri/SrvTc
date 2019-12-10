@@ -59,7 +59,7 @@ function fnc0()
 	else
 	{
 		if(Reqest[PoolData].Status!=0)
-			Reqest[PoolData].Status=1;
+			Reqest[PoolData].Status=0;
 	}
 	//else
 	{
