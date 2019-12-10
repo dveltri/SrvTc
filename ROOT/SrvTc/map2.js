@@ -1,1 +1,1055 @@
-var _0x261c=["","\x43\x69\x72\x63\x6C\x65\x20\x31\x30","\x43\x69\x72\x63\x6C\x65\x20\x31","\x43\x69\x72\x63\x6C\x65\x20\x32\x30","\x43\x69\x72\x63\x6C\x65\x20\x32","\x43\x69\x72\x63\x6C\x65\x20\x33\x30","\x43\x69\x72\x63\x6C\x65\x20\x33","\x43\x69\x72\x63\x6C\x65\x20\x34\x30","\x43\x69\x72\x63\x6C\x65\x20\x34","\x4C\x69\x6E\x65\x53\x74\x72\x69\x6E\x67\x20\x35","\x4C\x69\x6E\x65\x53\x74\x72\x69\x6E\x67\x20\x31","\x4C\x69\x6E\x65\x53\x74\x72\x69\x6E\x67\x20\x31\x30","\x4C\x69\x6E\x65\x53\x74\x72\x69\x6E\x67\x20\x32","\x4C\x69\x6E\x65\x53\x74\x72\x69\x6E\x67\x20\x31\x35","\x4C\x69\x6E\x65\x53\x74\x72\x69\x6E\x67\x20\x33","\x69\x6E\x66\x63\x6D\x70","\x6C\x65\x6E\x67\x74\x68","\x63\x6F\x6C\x6F\x72","\x2F","\x2E\x2F\x73\x65\x74\x69\x74\x65\x6D\x73\x2E\x6A\x73\x70\x3F\x73\x71\x6C\x3D\x49\x4E\x53\x45\x52\x54\x20\x49\x4E\x54\x4F\x20\x76\x61\x72\x69\x61\x62\x6C\x65\x73\x20\x28\x69\x64\x2C\x6C\x73\x74\x63\x68\x67\x2C\x76\x61\x6C\x75\x65\x29\x20\x56\x41\x4C\x55\x45\x53\x20\x28\x27","\x67\x70\x73","\x27\x2C\x4C\x4F\x43\x41\x4C\x54\x49\x4D\x45\x53\x54\x41\x4D\x50\x2C\x27","\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C","\x49\x74\x6D\x70\x6F\x73","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x27\x29","\x2E\x2F\x73\x65\x74\x69\x74\x65\x6D\x73\x2E\x6A\x73\x70\x3F\x73\x71\x6C\x3D\x55\x50\x44\x41\x54\x45\x20\x76\x61\x72\x69\x61\x62\x6C\x65\x73\x20\x53\x45\x54\x20\x28\x69\x64\x2C\x6C\x73\x74\x63\x68\x67\x2C\x76\x61\x6C\x75\x65\x29\x25\x33\x44\x28\x27","\x27\x29\x25\x32\x30\x57\x48\x45\x52\x45\x25\x32\x30\x69\x64\x25\x33\x44\x25\x32\x37","\x25\x32\x37","\x2E\x2F\x73\x65\x74\x69\x74\x65\x6D\x73\x2E\x6A\x73\x70\x3F\x73\x71\x6C\x3D\x49\x4E\x53\x45\x52\x54\x20\x49\x4E\x54\x4F\x20\x6D\x61\x70\x69\x74\x65\x6D\x73\x20\x28\x76\x61\x72\x69\x61\x62\x6C\x65\x2C\x67\x72\x61\x70\x68\x2C\x7A\x6F\x6F\x6D\x72\x61\x6E\x67\x65\x2C\x69\x6E\x66\x63\x6D\x70\x73\x2C\x63\x6F\x6C\x6F\x72\x2C\x70\x6F\x73\x29\x20\x56\x41\x4C\x55\x45\x53\x20\x28\x25\x32\x37","\x76\x61\x72\x69\x61\x62\x6C\x65","\x25\x32\x37\x2C\x25\x32\x37","\x67\x72\x61\x70\x68","\x7A\x6F\x6F\x6D","\x25\x32\x37\x29","\x2E\x2F\x67\x65\x74\x6C\x69\x73\x74\x2E\x6A\x73\x70\x3F\x63\x6D\x70\x73\x3D\x2A\x26\x74\x62\x6C\x3D\x6D\x61\x70\x69\x74\x65\x6D\x73\x26\x6F\x72\x64\x3D\x76\x61\x72\x69\x61\x62\x6C\x65","\x2E\x2F\x73\x65\x74\x69\x74\x65\x6D\x73\x2E\x6A\x73\x70\x3F\x73\x71\x6C\x3D\x55\x50\x44\x41\x54\x45\x20\x6D\x61\x70\x69\x74\x65\x6D\x73\x20\x53\x45\x54\x20\x28\x76\x61\x72\x69\x61\x62\x6C\x65\x2C\x67\x72\x61\x70\x68\x2C\x7A\x6F\x6F\x6D\x72\x61\x6E\x67\x65\x2C\x69\x6E\x66\x63\x6D\x70\x73\x2C\x63\x6F\x6C\x6F\x72\x2C\x70\x6F\x73\x29\x25\x33\x44\x28\x25\x32\x37","\x25\x32\x37\x29\x25\x32\x30\x57\x48\x45\x52\x45\x25\x32\x30\x6B\x65\x79\x25\x33\x44","\x6B\x65\x79","\x30\x2C\x32\x38","\x58","\x31\x35\x30\x2C\x32\x35\x35\x2C\x31\x35\x30","\x2C\x75\x6E\x64\x65\x66\x69\x6E\x65\x64","\x2C","\x73\x70\x6C\x69\x74","\x54\x63\x48\x74\x74\x70\x43\x6F\x6E\x66\x54\x69\x74\x6C\x65","\x54\x63\x48\x74\x74\x70\x43\x6F\x6E\x66\x42\x6F\x64\x79","\x54\x63\x48\x74\x74\x70\x43\x6F\x6E\x66","\x6F\x70\x65\x6E","\x34\x30\x30\x70\x78","\x3C\x74\x61\x62\x6C\x65\x20\x62\x6F\x72\x64\x65\x72\x3D\x22\x31\x22\x20\x63\x65\x6C\x6C\x70\x61\x64\x64\x69\x6E\x67\x3D\x22\x32\x22\x20\x63\x65\x6C\x6C\x73\x70\x61\x63\x69\x6E\x67\x3D\x22\x30\x22\x20\x61\x6C\x69\x67\x6E\x3D\x22\x63\x65\x6E\x74\x65\x72\x22\x20\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64\x3D\x22\x22\x20\x77\x69\x64\x74\x68\x3D\x22\x31\x30\x30\x25\x22\x20\x73\x74\x79\x6C\x65\x3D\x22\x62\x6F\x72\x64\x65\x72\x2D\x63\x6F\x6C\x6C\x61\x70\x73\x65\x3A\x63\x6F\x6C\x6C\x61\x70\x73\x65\x3B\x62\x6F\x72\x64\x65\x72\x3A\x32\x70\x78\x20\x73\x6F\x6C\x69\x64\x20\x23\x30\x30\x30\x30\x30\x30\x3B\x22\x3E\x0A","\x3C\x74\x72\x20\x61\x6C\x69\x67\x6E\x3D\x22\x63\x65\x6E\x74\x65\x72\x22\x20\x62\x67\x63\x6F\x6C\x6F\x72\x3D\x22\x23\x43\x30\x43\x30\x43\x30\x22\x3E\x0A","\x09\x3C\x74\x64\x20\x61\x6C\x69\x67\x6E\x3D\x22\x63\x65\x6E\x74\x65\x72\x22\x3E\x0A","\x09\x09\x3C\x66\x6F\x6E\x74\x20\x73\x69\x7A\x65\x3D\x22\x31\x22\x20\x66\x61\x63\x65\x3D\x22\x56\x65\x72\x64\x61\x6E\x61\x22\x3E","\x3C\x2F\x66\x6F\x6E\x74\x3E\x0A","\x09\x3C\x2F\x74\x64\x3E\x0A","\x09\x3C\x74\x64\x20\x61\x6C\x69\x67\x6E\x3D\x22\x63\x65\x6E\x74\x65\x72\x22\x20\x76\x61\x6C\x69\x67\x6E\x3D\x22\x6D\x69\x64\x64\x6C\x65\x22\x3E\x0A","\x3C\x2F\x74\x72\x3E\x0A","\x09\x09\x3C\x73\x65\x6C\x65\x63\x74\x20\x63\x6C\x61\x73\x73\x3D\x22\x49\x4E\x54\x45\x58\x54\x22\x20\x6F\x6E\x63\x68\x61\x6E\x67\x65\x3D\x22\x69\x66\x28\x74\x68\x69\x73\x2E\x76\x61\x6C\x75\x65\x21\x3D\x27\x27\x29\x7B\x4D\x61\x70\x49\x74\x65\x6D\x2E\x76\x61\x72\x69\x61\x62\x6C\x65\x3D\x74\x68\x69\x73\x2E\x76\x61\x6C\x75\x65\x3B\x7D\x72\x65\x74\x75\x72\x6E\x20\x66\x61\x6C\x73\x65\x3B\x22","\x20\x64\x69\x73\x61\x62\x6C\x65\x64","\x20\x3E\x0A","\x09\x09\x09\x3C\x6F\x70\x74\x69\x6F\x6E\x20\x76\x61\x6C\x75\x65\x3D\x22\x22\x20\x3E\x3C\x2F\x6F\x70\x74\x69\x6F\x6E\x3E\x0A","\x3C\x6F\x70\x74\x69\x6F\x6E\x20\x76\x61\x6C\x75\x65\x3D\x22","\x22","\x20\x73\x65\x6C\x65\x63\x74\x65\x64\x3D\x22\x73\x65\x6C\x65\x63\x74\x65\x64\x22","\x20\x3E","\x3C\x2F\x6F\x70\x74\x69\x6F\x6E\x3E\x0A","\x09\x09\x3C\x2F\x73\x65\x6C\x65\x63\x74\x3E\x3C\x62\x72\x2F\x3E\x0A","\x09\x09\x3C\x73\x65\x6C\x65\x63\x74\x20\x63\x6C\x61\x73\x73\x3D\x22\x49\x4E\x54\x45\x58\x54\x22\x20\x6F\x6E\x63\x68\x61\x6E\x67\x65\x3D\x22\x69\x66\x28\x74\x68\x69\x73\x2E\x76\x61\x6C\x75\x65\x21\x3D\x27\x27\x29\x7B\x4D\x61\x70\x49\x74\x65\x6D\x2E\x69\x6E\x66\x63\x6D\x70\x5B\x30\x5D\x3D\x74\x68\x69\x73\x2E\x76\x61\x6C\x75\x65\x3B\x7D\x72\x65\x74\x75\x72\x6E\x20\x66\x61\x6C\x73\x65\x3B\x22\x20\x3E\x0A","\x09\x09\x3C\x6F\x70\x74\x69\x6F\x6E\x20\x76\x61\x6C\x75\x65\x3D\x22","\x09\x09\x3C\x73\x65\x6C\x65\x63\x74\x20\x63\x6C\x61\x73\x73\x3D\x22\x49\x4E\x54\x45\x58\x54\x22\x20\x6F\x6E\x63\x68\x61\x6E\x67\x65\x3D\x22\x69\x66\x28\x74\x68\x69\x73\x2E\x76\x61\x6C\x75\x65\x21\x3D\x27\x27\x29\x7B\x4D\x61\x70\x49\x74\x65\x6D\x2E\x69\x6E\x66\x63\x6D\x70\x5B\x31\x5D\x3D\x74\x68\x69\x73\x2E\x76\x61\x6C\x75\x65\x3B\x7D\x72\x65\x74\x75\x72\x6E\x20\x66\x61\x6C\x73\x65\x3B\x22\x20\x3E\x0A","\x09\x09\x3C\x73\x65\x6C\x65\x63\x74\x20\x63\x6C\x61\x73\x73\x3D\x22\x49\x4E\x54\x45\x58\x54\x22\x20\x6F\x6E\x63\x68\x61\x6E\x67\x65\x3D\x22\x69\x66\x28\x74\x68\x69\x73\x2E\x76\x61\x6C\x75\x65\x21\x3D\x27\x27\x29\x7B\x4D\x61\x70\x49\x74\x65\x6D\x2E\x69\x6E\x66\x63\x6D\x70\x5B\x32\x5D\x3D\x74\x68\x69\x73\x2E\x76\x61\x6C\x75\x65\x3B\x7D\x72\x65\x74\x75\x72\x6E\x20\x66\x61\x6C\x73\x65\x3B\x22\x20\x3E\x0A","\x09\x09\x3C\x73\x65\x6C\x65\x63\x74\x20\x63\x6C\x61\x73\x73\x3D\x22\x49\x4E\x54\x45\x58\x54\x22\x20\x6F\x6E\x63\x68\x61\x6E\x67\x65\x3D\x22\x69\x66\x28\x74\x68\x69\x73\x2E\x76\x61\x6C\x75\x65\x21\x3D\x27\x27\x29\x7B\x4D\x61\x70\x49\x74\x65\x6D\x2E\x69\x6E\x66\x63\x6D\x70\x5B\x33\x5D\x3D\x74\x68\x69\x73\x2E\x76\x61\x6C\x75\x65\x3B\x7D\x72\x65\x74\x75\x72\x6E\x20\x66\x61\x6C\x73\x65\x3B\x22\x20\x3E\x0A","\x09\x09\x3C\x66\x6F\x6E\x74\x20\x69\x64\x3D\x22\x53\x68\x77\x43\x6F\x6C\x6F\x72\x22\x20\x20\x73\x74\x79\x6C\x65\x3D\x22\x63\x6F\x6C\x6F\x72\x3A\x20\x23\x30\x30\x30\x30\x30\x30\x3B\x20\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64\x2D\x63\x6F\x6C\x6F\x72\x3A\x20\x23\x66\x66\x66\x66\x66\x66\x22\x20\x73\x69\x7A\x65\x3D\x22\x32\x22\x20\x66\x61\x63\x65\x3D\x22\x56\x65\x72\x64\x61\x6E\x61\x22\x3E\x5B\x20","\x20\x5D\x3C\x2F\x66\x6F\x6E\x74\x3E\x0A","\x09\x3C\x69\x6E\x70\x75\x74\x20\x63\x6C\x61\x73\x73\x3D\x22\x49\x4E\x54\x45\x58\x54\x22\x20\x73\x69\x7A\x65\x3D\x22\x35\x22\x20\x6D\x61\x78\x6C\x65\x6E\x67\x74\x68\x3D\x22\x32\x35\x22\x20\x76\x61\x6C\x75\x65\x3D\x22","\x22\x20\x6F\x6E\x6B\x65\x79\x75\x70\x3D\x22\x4D\x61\x70\x49\x74\x65\x6D\x2E\x63\x6F\x6C\x6F\x72\x5B\x49\x64\x78\x43\x6F\x6C\x5D\x3D\x74\x68\x69\x73\x2E\x76\x61\x6C\x75\x65\x3B\x55\x70\x44\x74\x43\x6C\x28\x29\x3B\x22\x20\x2F\x3E\x3C\x62\x72\x2F\x3E\x0A","\x09\x52\x3C\x69\x6E\x70\x75\x74\x20\x6F\x6E\x63\x68\x61\x6E\x67\x65\x3D\x22\x63\x68\x61\x6E\x67\x65\x41\x6C\x6C\x28\x29\x3B\x22\x20\x69\x64\x3D\x22\x73\x6C\x69\x64\x65\x52\x65\x64\x22\x20\x20\x6D\x69\x6E\x3D\x22\x30\x22\x20\x6D\x61\x78\x3D\x22\x32\x35\x35\x22\x20\x74\x79\x70\x65\x3D\x22\x72\x61\x6E\x67\x65\x22\x20\x76\x61\x6C\x75\x65\x20\x3D\x22","\x22\x20\x2F\x3E\x3C\x62\x72\x2F\x3E","\x09\x47\x3C\x69\x6E\x70\x75\x74\x20\x6F\x6E\x63\x68\x61\x6E\x67\x65\x3D\x22\x63\x68\x61\x6E\x67\x65\x41\x6C\x6C\x28\x29\x3B\x22\x20\x69\x64\x3D\x22\x73\x6C\x69\x64\x65\x47\x72\x65\x65\x6E\x22\x20\x6D\x69\x6E\x3D\x22\x30\x22\x20\x6D\x61\x78\x3D\x22\x32\x35\x35\x22\x20\x74\x79\x70\x65\x3D\x22\x72\x61\x6E\x67\x65\x22\x20\x76\x61\x6C\x75\x65\x20\x3D\x22","\x09\x42\x3C\x69\x6E\x70\x75\x74\x20\x6F\x6E\x63\x68\x61\x6E\x67\x65\x3D\x22\x63\x68\x61\x6E\x67\x65\x41\x6C\x6C\x28\x29\x3B\x22\x20\x69\x64\x3D\x22\x73\x6C\x69\x64\x65\x42\x6C\x75\x65\x22\x20\x6D\x69\x6E\x3D\x22\x30\x22\x20\x6D\x61\x78\x3D\x22\x32\x35\x35\x22\x20\x74\x79\x70\x65\x3D\x22\x72\x61\x6E\x67\x65\x22\x20\x76\x61\x6C\x75\x65\x20\x3D\x22","\x09\x09\x3C\x69\x6D\x67\x20\x73\x72\x63\x3D\x22\x2E\x2E\x2F\x69\x6D\x67\x2F\x61\x64\x64\x2E\x70\x6E\x67\x22\x20\x77\x69\x64\x74\x68\x3D\x22\x31\x38\x22\x20\x68\x65\x69\x67\x68\x74\x3D\x22\x31\x38\x22\x20\x62\x6F\x72\x64\x65\x72\x3D\x22\x30\x22\x20\x6F\x6E\x63\x6C\x69\x63\x6B\x3D\x22\x41\x64\x64\x53\x74\x73\x56\x61\x72\x43\x6F\x6C\x28\x29\x3B\x55\x70\x44\x74\x43\x6C\x28\x29\x3B\x22\x20\x2F\x3E\x3C\x62\x72\x20\x2F\x3E\x0A","\x09\x3C\x74\x64\x20\x61\x6C\x69\x67\x6E\x3D\x22\x63\x65\x6E\x74\x65\x72\x22\x20\x76\x61\x6C\x69\x67\x6E\x3D\x22\x6D\x69\x64\x64\x6C\x65\x22\x20\x69\x64\x3D\x22\x53\x74\x73\x43\x6F\x6C\x22\x3E\x0A","\x09\x09\x3C\x73\x65\x6C\x65\x63\x74\x20\x63\x6C\x61\x73\x73\x3D\x22\x49\x4E\x54\x45\x58\x54\x22\x20\x6F\x6E\x63\x68\x61\x6E\x67\x65\x3D\x22\x63\x68\x67\x70\x73\x28\x74\x68\x69\x73\x2E\x76\x61\x6C\x75\x65\x29\x3B\x72\x65\x74\x75\x72\x6E\x20\x66\x61\x6C\x73\x65\x3B\x22\x20\x3E\x0A","\x09\x09\x09\x3C\x6F\x70\x74\x69\x6F\x6E\x20\x76\x61\x6C\x75\x65\x3D\x22\x4E\x65\x77\x22\x20\x3E\x4E\x65\x77\x3C\x2F\x6F\x70\x74\x69\x6F\x6E\x3E\x0A","\x4C\x6F\x63\x61\x74\x69\x6F\x6E","\x69\x6E\x64\x65\x78\x4F\x66","\x09\x09\x3C\x66\x6F\x6E\x74\x20\x73\x69\x7A\x65\x3D\x22\x31\x22\x20\x69\x64\x3D\x22\x49\x74\x6D\x70\x6F\x73\x22\x20\x66\x61\x63\x65\x3D\x22\x56\x65\x72\x64\x61\x6E\x61\x22\x20\x6F\x6E\x63\x6C\x69\x63\x6B\x3D\x22\x4D\x61\x70\x53\x74\x72\x50\x6F\x73\x28\x74\x68\x69\x73\x2E\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C\x29\x3B\x22\x20\x3E","\x09\x09\x3C\x2F\x66\x6F\x6E\x74\x3E\x0A","\x09\x09\x3C\x66\x6F\x6E\x74\x20\x73\x69\x7A\x65\x3D\x22\x31\x22\x20\x69\x64\x3D\x22\x49\x74\x6D\x7A\x6F\x6F\x6D\x22\x20\x66\x61\x63\x65\x3D\x22\x56\x65\x72\x64\x61\x6E\x61\x22\x3E","\x5B","\x5D\x3C\x2F\x66\x6F\x6E\x74\x3E\x0A","\x09\x3C\x69\x6E\x70\x75\x74\x20\x6F\x6E\x63\x68\x61\x6E\x67\x65\x3D\x22\x63\x68\x61\x6E\x67\x65\x5A\x6F\x6F\x6D\x28\x30\x29\x3B\x22\x20\x69\x64\x3D\x22\x53\x74\x61\x72\x74\x5A\x6F\x6F\x6D\x22\x20\x20\x6D\x69\x6E\x3D\x22\x30\x22\x20\x6D\x61\x78\x3D\x22\x32\x38\x22\x20\x74\x79\x70\x65\x3D\x22\x72\x61\x6E\x67\x65\x22\x20\x76\x61\x6C\x75\x65\x20\x3D\x22","\x09\x3C\x69\x6E\x70\x75\x74\x20\x6F\x6E\x63\x68\x61\x6E\x67\x65\x3D\x22\x63\x68\x61\x6E\x67\x65\x5A\x6F\x6F\x6D\x28\x31\x29\x3B\x22\x20\x69\x64\x3D\x22\x45\x6E\x64\x5A\x6F\x6F\x6D\x22\x20\x6D\x69\x6E\x3D\x22\x30\x22\x20\x6D\x61\x78\x3D\x22\x32\x38\x22\x20\x74\x79\x70\x65\x3D\x22\x72\x61\x6E\x67\x65\x22\x20\x76\x61\x6C\x75\x65\x20\x3D\x22","\x09\x09\x3C\x73\x65\x6C\x65\x63\x74\x20\x63\x6C\x61\x73\x73\x3D\x22\x49\x4E\x54\x45\x58\x54\x22\x20\x6F\x6E\x63\x68\x61\x6E\x67\x65\x3D\x22\x69\x66\x28\x74\x68\x69\x73\x2E\x76\x61\x6C\x75\x65\x21\x3D\x27\x27\x29\x7B\x4D\x61\x70\x49\x74\x65\x6D\x2E\x67\x72\x61\x70\x68\x3D\x74\x68\x69\x73\x2E\x76\x61\x6C\x75\x65\x3B\x7D\x72\x65\x74\x75\x72\x6E\x20\x66\x61\x6C\x73\x65\x3B\x22\x20\x3E\x0A","\x3C\x2F\x74\x61\x62\x6C\x65\x3E\x0A","\x3C\x69\x6E\x70\x75\x74\x20\x74\x79\x70\x65\x3D\x22\x62\x75\x74\x74\x6F\x6E\x22\x20\x63\x6C\x61\x73\x73\x3D\x22\x49\x4E\x54\x45\x58\x54\x32\x22\x20\x76\x61\x6C\x75\x65\x3D\x22","\x22\x20\x6F\x6E\x63\x6C\x69\x63\x6B\x3D\x22\x41\x64\x64\x4D\x61\x70\x49\x74\x6D\x28\x29\x3B\x77\x69\x6E\x4C\x69\x73\x74\x5B\x27\x54\x63\x48\x74\x74\x70\x43\x6F\x6E\x66\x27\x5D\x2E\x63\x6C\x6F\x73\x65\x28\x29\x3B\x72\x65\x74\x75\x72\x6E\x20\x66\x61\x6C\x73\x65\x3B\x22\x20\x2F\x3E\x0A","\x22\x20\x6F\x6E\x63\x6C\x69\x63\x6B\x3D\x22\x4D\x6F\x64\x4D\x61\x70\x49\x74\x6D\x28","\x29\x3B\x77\x69\x6E\x4C\x69\x73\x74\x5B\x27\x54\x63\x48\x74\x74\x70\x43\x6F\x6E\x66\x27\x5D\x2E\x63\x6C\x6F\x73\x65\x28\x29\x3B\x72\x65\x74\x75\x72\x6E\x20\x66\x61\x6C\x73\x65\x3B\x22\x20\x2F\x3E\x0A","\x22\x20\x6F\x6E\x63\x6C\x69\x63\x6B\x3D\x22\x46\x6E\x63\x4D\x61\x70\x43\x6C\x6B\x3D\x66\x6E\x63\x6E\x6F\x6E\x65\x3B\x77\x69\x6E\x4C\x69\x73\x74\x5B\x27\x54\x63\x48\x74\x74\x70\x43\x6F\x6E\x66\x27\x5D\x2E\x63\x6C\x6F\x73\x65\x28\x29\x3B\x72\x65\x74\x75\x72\x6E\x20\x66\x61\x6C\x73\x65\x3B\x22\x20\x2F\x3E\x0A","\x4E\x65\x77","\x6C\x61\x73\x74\x49\x6E\x64\x65\x78\x4F\x66","\x73\x75\x62\x73\x74\x72\x69\x6E\x67","\x2F\x4C\x6F\x63\x61\x74\x69\x6F\x6E","\x43\x69\x72\x63\x6C\x65","\x63\x6F\x72\x64","\x72\x6F\x75\x6E\x64","\x4C\x69\x6E\x65\x53\x74\x72\x69\x6E\x67","\x53\x74\x61\x72\x74\x5A\x6F\x6F\x6D","\x45\x6E\x64\x5A\x6F\x6F\x6D","\x76\x61\x6C\x75\x65","\x49\x74\x6D\x7A\x6F\x6F\x6D","\x5D","\x73\x6C\x69\x64\x65\x52\x65\x64","\x73\x6C\x69\x64\x65\x47\x72\x65\x65\x6E","\x73\x6C\x69\x64\x65\x42\x6C\x75\x65","\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64\x43\x6F\x6C\x6F\x72","\x73\x74\x79\x6C\x65","\x53\x68\x77\x43\x6F\x6C\x6F\x72","\x72\x67\x62\x28","\x29","\x32\x35\x35\x2C\x32\x35\x35\x2C\x32\x35\x35","\x3C\x66\x6F\x6E\x74\x20\x73\x74\x79\x6C\x65\x3D\x22\x63\x6F\x6C\x6F\x72\x3A\x72\x67\x62\x61\x28","\x2C\x31\x29\x3B\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64\x2D\x63\x6F\x6C\x6F\x72\x3A\x72\x67\x62\x61\x28","\x2C\x31\x29\x3B\x22\x20\x73\x69\x7A\x65\x3D\x22\x32\x22\x20\x66\x61\x63\x65\x3D\x22\x56\x65\x72\x64\x61\x6E\x61\x22\x20\x6F\x6E\x63\x6C\x69\x63\x6B\x3D\x22\x49\x64\x78\x43\x6F\x6C\x3D","\x3B\x53\x68\x6F\x77\x4D\x61\x70\x49\x74\x65\x6D\x28\x29\x3B\x22\x3E\x5B\x20","\x3C\x69\x6D\x67\x20\x73\x72\x63\x3D\x22\x2E\x2E\x2F\x69\x6D\x67\x2F\x65\x72\x72\x6F\x72\x31\x2E\x6A\x70\x67\x22\x20\x77\x69\x64\x74\x68\x3D\x22\x31\x38\x22\x20\x68\x65\x69\x67\x68\x74\x3D\x22\x31\x38\x22\x20\x62\x6F\x72\x64\x65\x72\x3D\x22\x30\x22\x20\x6F\x6E\x63\x6C\x69\x63\x6B\x3D\x22\x4D\x61\x70\x49\x74\x65\x6D\x2E\x63\x6F\x6C\x6F\x72\x2E\x73\x70\x6C\x69\x63\x65\x28","\x2C\x32\x29\x3B\x49\x64\x78\x43\x6F\x6C\x3D\x30\x3B\x55\x70\x44\x74\x43\x6C\x28\x29\x3B\x22\x20\x2F\x3E\x3C\x62\x72\x20\x2F\x3E\x0A","\x53\x74\x73\x43\x6F\x6C","\x75\x70\x64\x61\x74\x65\x53\x69\x7A\x65","\x72\x67\x62\x61\x28\x31\x35\x30\x2C\x31\x35\x30\x2C\x31\x35\x30\x2C\x31\x29\x20\x72\x67\x62\x61\x28\x31\x30\x30\x2C\x31\x30\x30\x2C\x31\x30\x30\x2C\x30\x2E\x38\x29","\x57\x69\x6E\x41\x6C\x6C\x4D\x61\x70","\x52\x65\x73\x69\x7A\x65\x46\x6E\x63","\x67\x65\x74\x5A\x6F\x6F\x6D","\x67\x65\x74\x56\x69\x65\x77","\x72\x67\x62\x61\x28","\x2C\x31\x29\x20\x72\x67\x62\x61\x28","\x2C\x30\x2E\x38\x29","\x4C\x6E\x6B","\x54\x69\x6D\x65\x6F\x75\x74","\x72\x67\x62\x61\x28\x31\x35\x30\x2C\x31\x35\x30\x2C\x32\x35\x35\x2C\x31\x29\x20\x72\x67\x62\x61\x28\x31\x30\x30\x2C\x31\x30\x30\x2C\x31\x35\x30\x2C\x30\x2E\x38\x29","\x6F\x6B","\x72\x67\x62\x61\x28\x31\x35\x30\x2C\x32\x35\x35\x2C\x31\x35\x30\x2C\x31\x29\x20\x72\x67\x62\x61\x28\x31\x30\x30\x2C\x31\x35\x30\x2C\x31\x30\x30\x2C\x30\x2E\x38\x29","\x50\x6C\x63\x73","\x53\x74\x61\x74\x75\x73","\x45\x72\x72\x6F\x72","\x72\x67\x62\x61\x28\x32\x35\x35\x2C\x31\x35\x30\x2C\x31\x35\x30\x2C\x31\x29\x20\x72\x67\x62\x61\x28\x31\x35\x30\x2C\x31\x30\x30\x2C\x31\x30\x30\x2C\x30\x2E\x38\x29","\x46\x6C\x61\x73\x68\x69\x6E\x67","\x72\x67\x62\x61\x28\x31\x35\x30\x2C\x31\x35\x30\x2C\x31\x30\x30\x2C\x31\x29\x20\x72\x67\x62\x61\x28\x32\x35\x35\x2C\x32\x35\x35\x2C\x31\x35\x30\x2C\x30\x2E\x38\x29","\x49\x64","\x4E\x6F\x6D\x62\x72\x65","\x49\x4F\x73","\x70\x72\x65\x63\x65\x6E\x74","\x2F\x49\x4F\x73\x5B","\x43\x69\x72\x63\x6C\x65\x20\x31\x35","\x3C\x70\x3E","\x3C\x69\x6D\x67\x20\x73\x72\x63\x3D\x22\x2E\x2E\x2F\x69\x6D\x67\x2F\x65\x66\x69\x6C\x65\x2E\x70\x6E\x67\x22\x20\x77\x69\x64\x74\x68\x3D\x22\x31\x38\x22\x20\x68\x65\x69\x67\x68\x74\x3D\x22\x31\x38\x22\x20\x62\x6F\x72\x64\x65\x72\x3D\x22\x30\x22\x20\x6F\x6E\x63\x6C\x69\x63\x6B\x3D\x22\x72\x63\x76\x4D\x61\x70\x46\x6E\x63\x4C\x69\x73\x74\x28","\x29\x3B\x22\x20\x2F\x3E","\x3C\x62\x72\x20\x2F\x3E\x0A","\x75\x6E\x64\x65\x66\x69\x6E\x65\x64","\x3A","\x3C\x62\x72\x20\x2F\x3E","\x3C\x2F\x70\x3E\x0A","\x4E\x61\x6D\x65","\x72\x65\x6D\x6F\x76\x65\x46\x65\x61\x74\x75\x72\x65","\x67\x65\x74\x53\x6F\x75\x72\x63\x65","\x73\x70\x6C\x69\x63\x65","\x20","\x70\x6F\x73","\x66\x72\x6F\x6D\x4C\x6F\x6E\x4C\x61\x74","\x70\x72\x6F\x6A","\x46\x65\x61\x74\x75\x72\x65","\x67\x65\x6F\x6D","\x53\x74\x79\x6C\x65","\x73\x65\x74\x53\x74\x79\x6C\x65","\x69\x64\x78","\x61\x64\x64\x46\x65\x61\x74\x75\x72\x65","\x4C\x69\x6E\x65","\x57\x69\x6E\x41\x6C\x6C\x4D\x61\x70\x54\x69\x74\x6C\x65","\x57\x69\x6E\x41\x6C\x6C\x4D\x61\x70\x42\x6F\x64\x79","\x3C\x64\x69\x76\x20\x69\x64\x3D\x22\x41\x6C\x6C\x4D\x61\x70\x22\x20\x63\x6C\x61\x73\x73\x3D\x22\x6D\x61\x70\x22\x3E\x3C\x64\x69\x76\x20\x69\x64\x3D\x22\x69\x6E\x66\x6F\x22\x3E\x3C\x2F\x64\x69\x76\x3E\x3C\x2F\x64\x69\x76\x3E","\x77\x69\x64\x74\x68","\x66\x72\x61\x6D\x65","\x55\x72\x6C","\x46\x6E\x63","\x52\x65\x66\x72\x65\x73\x68","\x4C\x73\x74\x52\x71\x73\x74","\x70\x6F\x70\x75\x70","\x70\x6F\x70\x75\x70\x2D\x63\x6F\x6E\x74\x65\x6E\x74","\x70\x6F\x70\x75\x70\x2D\x63\x6C\x6F\x73\x65\x72","\x64\x69\x73\x70\x6C\x61\x79","\x6E\x6F\x6E\x65","\x73\x6F\x75\x72\x63\x65","\x6C\x61\x79\x65\x72","\x72\x67\x62\x61\x28\x32\x35\x35\x2C\x20\x31\x30\x30\x2C\x20\x31\x30\x30\x2C\x20\x30\x2E\x38\x29","\x23\x66\x66\x33\x33\x33\x33","\x45\x50\x53\x47\x3A\x34\x33\x32\x36","\x45\x50\x53\x47\x3A\x33\x38\x35\x37","\x74\x72\x61\x6E\x73\x66\x6F\x72\x6D","\x41\x6C\x6C\x4D\x61\x70","\x61\x64\x64\x4C\x61\x79\x65\x72","\x61\x64\x64\x4F\x76\x65\x72\x6C\x61\x79","\x63\x6C\x69\x63\x6B","\x6F\x6E","\x64\x72\x61\x67\x67\x69\x6E\x67","\x6F\x72\x69\x67\x69\x6E\x61\x6C\x45\x76\x65\x6E\x74","\x67\x65\x74\x45\x76\x65\x6E\x74\x50\x69\x78\x65\x6C","\x63\x6F\x6F\x72\x64\x69\x6E\x61\x74\x65","\x74\x6F\x53\x74\x72\x69\x6E\x67\x48\x44\x4D\x53","\x4D\x61\x70\x3A","\x20\x5A\x6F\x6F\x6D\x3A","\x0A","\x73\x65\x74\x50\x6F\x73\x69\x74\x69\x6F\x6E","\x70\x69\x78\x65\x6C","\x66\x6F\x72\x45\x61\x63\x68\x46\x65\x61\x74\x75\x72\x65\x41\x74\x50\x69\x78\x65\x6C","\x3C\x63\x6F\x64\x65\x3E","\x3C\x2F\x63\x6F\x64\x65\x3E","\x67\x65\x74\x46\x65\x61\x74\x75\x72\x65\x73","\x73\x65\x74\x43\x65\x6E\x74\x65\x72","\x73\x65\x74\x5A\x6F\x6F\x6D","\x64\x65\x65\x70\x43\x6F\x70\x79","\x4C\x69\x73\x74","\x70\x78","\x4C\x69\x73\x74\x54\x69\x74\x6C\x65","\x4C\x69\x73\x74\x42\x6F\x64\x79","\x22\x20\x6F\x6E\x63\x6C\x69\x63\x6B\x3D\x22\x77\x69\x6E\x4C\x69\x73\x74\x5B\x27\x4C\x69\x73\x74\x27\x5D\x2E\x63\x6C\x6F\x73\x65\x28\x29\x3B\x72\x65\x74\x75\x72\x6E\x20\x66\x61\x6C\x73\x65\x3B\x22\x20\x2F\x3E\x0A","\x3C\x74\x72\x20\x61\x6C\x69\x67\x6E\x3D\x22\x63\x65\x6E\x74\x65\x72\x22\x20\x62\x67\x63\x6F\x6C\x6F\x72\x3D\x22\x23\x43\x30\x43\x30\x43\x30\x22\x20\x3E\x0A","\x09\x3C\x74\x64\x20\x61\x6C\x69\x67\x6E\x3D\x22\x63\x65\x6E\x74\x65\x72\x22\x20\x3E\x0A","\x23\x38\x30\x38\x30\x38\x30","\x23\x41\x30\x41\x30\x41\x30","\x3C\x74\x72\x20\x61\x6C\x69\x67\x6E\x3D\x22\x63\x65\x6E\x74\x65\x72\x22\x20\x62\x67\x63\x6F\x6C\x6F\x72\x3D\x22","\x22\x20\x3E\x0A","\x09\x3C\x74\x64\x20\x61\x6C\x69\x67\x6E\x3D\x22\x63\x65\x6E\x74\x65\x72\x22\x20\x76\x61\x6C\x69\x67\x6E\x3D\x22\x6D\x69\x64\x64\x6C\x65\x22\x20\x6F\x6E\x63\x6C\x69\x63\x6B\x3D\x22\x72\x63\x76\x4D\x61\x70\x46\x6E\x63\x4C\x69\x73\x74\x28","\x29\x3B\x22\x3E\x0A","\x09\x09\x3C\x69\x6D\x67\x20\x73\x72\x63\x3D\x22\x2E\x2E\x2F\x69\x6D\x67\x2F\x65\x66\x69\x6C\x65\x2E\x70\x6E\x67\x22\x20\x77\x69\x64\x74\x68\x3D\x22\x31\x38\x22\x20\x68\x65\x69\x67\x68\x74\x3D\x22\x31\x38\x22\x20\x62\x6F\x72\x64\x65\x72\x3D\x22\x30\x22\x20\x2F\x3E","\x09\x3C\x74\x64\x20\x61\x6C\x69\x67\x6E\x3D\x22\x63\x65\x6E\x74\x65\x72\x22\x20\x76\x61\x6C\x69\x67\x6E\x3D\x22\x6D\x69\x64\x64\x6C\x65\x22\x20\x6F\x6E\x63\x6C\x69\x63\x6B\x3D\x22\x4D\x61\x70\x53\x74\x72\x50\x6F\x73\x28\x27","\x27\x29\x3B\x22\x20\x3E\x0A","\x09\x09\x3C\x66\x6F\x6E\x74\x20\x73\x69\x7A\x65\x3D\x22\x31\x22\x20\x66\x61\x63\x65\x3D\x22\x56\x65\x72\x64\x61\x6E\x61\x22\x20\x3E","\x09\x3C\x74\x64\x20\x61\x6C\x69\x67\x6E\x3D\x22\x63\x65\x6E\x74\x65\x72\x22\x20\x76\x61\x6C\x69\x67\x6E\x3D\x22\x6D\x69\x64\x64\x6C\x65\x22\x20\x6F\x6E\x63\x6C\x69\x63\x6B\x3D\x22\x44\x65\x6C\x4D\x61\x70\x49\x74\x6D\x28\x27","\x27\x29\x3B\x47\x65\x74\x55\x72\x6C\x42\x28\x27\x2E\x2F\x73\x65\x74\x69\x74\x65\x6D\x73\x2E\x6A\x73\x70\x3F\x73\x71\x6C\x3D\x44\x45\x4C\x45\x54\x45\x20\x46\x52\x4F\x4D\x20\x6D\x61\x70\x69\x74\x65\x6D\x73\x20\x57\x48\x45\x52\x45\x20\x6B\x65\x79\x3D","\x27\x2C\x66\x6E\x63\x6E\x6F\x6E\x65\x29\x3B\x47\x65\x74\x55\x72\x6C\x42\x28\x27\x2E\x2F\x67\x65\x74\x6C\x69\x73\x74\x2E\x6A\x73\x70\x3F\x63\x6D\x70\x73\x3D\x2A\x26\x74\x62\x6C\x3D\x6D\x61\x70\x69\x74\x65\x6D\x73\x26\x6F\x72\x64\x3D\x76\x61\x72\x69\x61\x62\x6C\x65\x27\x2C\x72\x63\x76\x4D\x61\x70\x4C\x69\x73\x74\x29\x3B\x22\x3E\x0A","\x09\x09\x3C\x69\x6D\x67\x20\x73\x72\x63\x3D\x22\x2E\x2E\x2F\x69\x6D\x67\x2F\x64\x65\x66\x69\x6C\x65\x2E\x70\x6E\x67\x22\x20\x77\x69\x64\x74\x68\x3D\x22\x31\x38\x22\x20\x68\x65\x69\x67\x68\x74\x3D\x22\x31\x38\x22\x20\x62\x6F\x72\x64\x65\x72\x3D\x22\x30\x22\x20\x2F\x3E"];var zoom=12;var FncMapClk=fncnone;var IdxCol=0;var layer;var source;var View;var map;var MapItems= new Array();var popup;var container;var content;var closer;var mapFixedSize=4;var ItemText;var MapItem= new Object();var MapItemList;var MapItemListBk;OptGraphC= [_0x261c[0],_0x261c[0],_0x261c[1],_0x261c[2],_0x261c[3],_0x261c[4],_0x261c[5],_0x261c[6],_0x261c[7],_0x261c[8],_0x261c[9],_0x261c[10],_0x261c[11],_0x261c[12],_0x261c[13],_0x261c[14]];function AddMapItm(){RemoveUnusedItem(MapItem[_0x261c[15]]);var _0x943cx13=_0x261c[0];for(var _0x943cx14=0;_0x943cx14< MapItem[_0x261c[17]][_0x261c[16]];_0x943cx14++){_0x943cx13+= _0x261c[18]+ MapItem[_0x261c[17]][_0x943cx14]};{GetUrlB(_0x261c[19]+ MapItem[_0x261c[20]]+ _0x261c[21]+ document[_0x261c[24]](_0x261c[23])[_0x261c[22]]+ _0x261c[25],fncnone);GetUrlB(_0x261c[26]+ MapItem[_0x261c[20]]+ _0x261c[21]+ document[_0x261c[24]](_0x261c[23])[_0x261c[22]]+ _0x261c[27]+ MapItem[_0x261c[20]]+ _0x261c[28],fncnone)}GetUrlB(_0x261c[29]+ MapItem[_0x261c[30]]+ _0x261c[31]+ MapItem[_0x261c[32]]+ _0x261c[31]+ MapItem[_0x261c[33]]+ _0x261c[31]+ MapItem[_0x261c[15]]+ _0x261c[31]+ _0x943cx13+ _0x261c[31]+ MapItem[_0x261c[20]]+ _0x261c[34],fncnone);GetUrlB(_0x261c[35],rcvMapList)}function ModMapItm(_0x943cx16){RemoveUnusedItem(MapItem[_0x261c[15]]);var _0x943cx13=_0x261c[0];for(var _0x943cx14=0;_0x943cx14< MapItem[_0x261c[17]][_0x261c[16]];_0x943cx14++){_0x943cx13+= _0x261c[18]+ MapItem[_0x261c[17]][_0x943cx14]};{GetUrlB(_0x261c[19]+ MapItem[_0x261c[20]]+ _0x261c[21]+ document[_0x261c[24]](_0x261c[23])[_0x261c[22]]+ _0x261c[25],fncnone);GetUrlB(_0x261c[26]+ MapItem[_0x261c[20]]+ _0x261c[21]+ document[_0x261c[24]](_0x261c[23])[_0x261c[22]]+ _0x261c[27]+ MapItem[_0x261c[20]]+ _0x261c[28],fncnone)}GetUrlB(_0x261c[36]+ MapItem[_0x261c[30]]+ _0x261c[31]+ MapItem[_0x261c[32]]+ _0x261c[31]+ MapItem[_0x261c[33]]+ _0x261c[31]+ MapItem[_0x261c[15]]+ _0x261c[31]+ _0x943cx13+ _0x261c[31]+ MapItem[_0x261c[20]]+ _0x261c[37]+ _0x943cx16,fncnone);GetUrlB(_0x261c[35],rcvMapList)}function NewMapItm(){IdxCol= 0;MapItem[_0x261c[38]]= 0;MapItem[_0x261c[30]]= _0x261c[0];MapItem[_0x261c[32]]= _0x261c[3];MapItem[_0x261c[33]]= _0x261c[39];MapItem[_0x261c[15]]= [_0x261c[0],_0x261c[0],_0x261c[0],_0x261c[0]];MapItem[_0x261c[17]]= [_0x261c[40],_0x261c[41]];MapItem[_0x261c[20]]= _0x261c[0]}function rcvMapFncList(_0x943cx14){IdxCol= 0;MapItem[_0x261c[38]]= MapItemList[_0x943cx14][0];MapItem[_0x261c[30]]= MapItemList[_0x943cx14][1];MapItem[_0x261c[32]]= MapItemList[_0x943cx14][2];MapItem[_0x261c[33]]= MapItemList[_0x943cx14][3];MapItem[_0x261c[15]]= MapItemList[_0x943cx14][4];MapItem[_0x261c[15]]= replaceAll(MapItem[_0x261c[15]],_0x261c[42],_0x261c[0]);MapItem[_0x261c[15]]= MapItem[_0x261c[15]][_0x261c[44]](_0x261c[43]);RemoveUnusedItem(MapItem[_0x261c[15]]);MapItem[_0x261c[17]]= MapItemList[_0x943cx14][5][_0x261c[44]](_0x261c[18]);RemoveUnusedItem(MapItem[_0x261c[17]]);MapItem[_0x261c[20]]= MapItemList[_0x943cx14][6];RefreshMapItem()}function RefreshMapItem(){document[_0x261c[24]](_0x261c[45])[_0x261c[22]]= Str_MapList;document[_0x261c[24]](_0x261c[46])[_0x261c[22]]= ShowMapItem();if(winList[_0x261c[47]]){winList[_0x261c[47]][_0x261c[48]]();winList[_0x261c[47]].SetH(_0x261c[49])}}function ShowMapItem(){var _0x943cx1b=_0x261c[0];var _0x943cx1c=[0,28];_0x943cx1c= MapItem[_0x261c[33]][_0x261c[44]](_0x261c[43]);var _0x943cx1d=[128,128,128];if((MapItem[_0x261c[17]][_0x261c[16]]% 2)== 0){_0x943cx1d= MapItem[_0x261c[17]][IdxCol+ 1][_0x261c[44]](_0x261c[43])};_0x943cx1b+= _0x261c[50];{_0x943cx1b+= _0x261c[51];_0x943cx1b+= _0x261c[52];_0x943cx1b+= _0x261c[53]+ Str_Parameter+ _0x261c[54];_0x943cx1b+= _0x261c[55];_0x943cx1b+= _0x261c[56];_0x943cx1b+= _0x261c[53]+ Str_Config+ _0x261c[54];_0x943cx1b+= _0x261c[55];_0x943cx1b+= _0x261c[57]}{_0x943cx1b+= _0x261c[51];_0x943cx1b+= _0x261c[52];_0x943cx1b+= _0x261c[53]+ Str_Variable+ _0x261c[54];_0x943cx1b+= _0x261c[55];_0x943cx1b+= _0x261c[56];_0x943cx1b+= _0x261c[58];if(MapItem[_0x261c[38]]!= 0){_0x943cx1b+= _0x261c[59]};_0x943cx1b+= _0x261c[60];_0x943cx1b+= _0x261c[61];for(var _0x943cx14=0;_0x943cx14< VarTree[_0x261c[16]];_0x943cx14++){{_0x943cx1b+= _0x261c[62]+ VarTree[_0x943cx14][0]+ _0x261c[63];if(VarTree[_0x943cx14][0]== MapItem[_0x261c[30]]){_0x943cx1b+= _0x261c[64]};_0x943cx1b+= _0x261c[65]+ VarTree[_0x943cx14][0]+ _0x261c[66]}};_0x943cx1b+= _0x261c[67];_0x943cx1b+= _0x261c[55];_0x943cx1b+= _0x261c[57]}{_0x943cx1b+= _0x261c[51];_0x943cx1b+= _0x261c[52];_0x943cx1b+= _0x261c[53]+ Str_BubleInfos+ _0x261c[54];_0x943cx1b+= _0x261c[55];_0x943cx1b+= _0x261c[56];_0x943cx1b+= _0x261c[68];_0x943cx1b+= _0x261c[61];for(var _0x943cx14=0;_0x943cx14< VarTree[_0x261c[16]];_0x943cx14++){_0x943cx1b+= _0x261c[69]+ VarTree[_0x943cx14][0]+ _0x261c[63];if(VarTree[_0x943cx14][0]== MapItem[_0x261c[15]][0]){_0x943cx1b+= _0x261c[64]};_0x943cx1b+= _0x261c[65]+ VarTree[_0x943cx14][0]+ _0x261c[66]};_0x943cx1b+= _0x261c[67];_0x943cx1b+= _0x261c[70];_0x943cx1b+= _0x261c[61];for(var _0x943cx14=0;_0x943cx14< VarTree[_0x261c[16]];_0x943cx14++){_0x943cx1b+= _0x261c[69]+ VarTree[_0x943cx14][0]+ _0x261c[63];if(VarTree[_0x943cx14][0]== MapItem[_0x261c[15]][1]){_0x943cx1b+= _0x261c[64]};_0x943cx1b+= _0x261c[65]+ VarTree[_0x943cx14][0]+ _0x261c[66]};_0x943cx1b+= _0x261c[67];_0x943cx1b+= _0x261c[71];_0x943cx1b+= _0x261c[61];for(var _0x943cx14=0;_0x943cx14< VarTree[_0x261c[16]];_0x943cx14++){_0x943cx1b+= _0x261c[69]+ VarTree[_0x943cx14][0]+ _0x261c[63];if(VarTree[_0x943cx14][0]== MapItem[_0x261c[15]][2]){_0x943cx1b+= _0x261c[64]};_0x943cx1b+= _0x261c[65]+ VarTree[_0x943cx14][0]+ _0x261c[66]};_0x943cx1b+= _0x261c[67];_0x943cx1b+= _0x261c[72];_0x943cx1b+= _0x261c[61];for(var _0x943cx14=0;_0x943cx14< VarTree[_0x261c[16]];_0x943cx14++){_0x943cx1b+= _0x261c[69]+ VarTree[_0x943cx14][0]+ _0x261c[63];if(VarTree[_0x943cx14][0]== MapItem[_0x261c[15]][3]){_0x943cx1b+= _0x261c[64]};_0x943cx1b+= _0x261c[65]+ VarTree[_0x943cx14][0]+ _0x261c[66]};_0x943cx1b+= _0x261c[67];_0x943cx1b+= _0x261c[55];_0x943cx1b+= _0x261c[57]}{_0x943cx1b+= _0x261c[51];_0x943cx1b+= _0x261c[52];_0x943cx1b+= _0x261c[73]+ Str_Color+ _0x261c[74];_0x943cx1b+= _0x261c[55];_0x943cx1b+= _0x261c[52];_0x943cx1b+= _0x261c[75]+ MapItem[_0x261c[17]][IdxCol]+ _0x261c[76];_0x943cx1b+= _0x261c[77]+ _0x943cx1d[0]+ _0x261c[78];_0x943cx1b+= _0x261c[79]+ _0x943cx1d[1]+ _0x261c[78];_0x943cx1b+= _0x261c[80]+ _0x943cx1d[2]+ _0x261c[78];_0x943cx1b+= _0x261c[55];_0x943cx1b+= _0x261c[57]}{_0x943cx1b+= _0x261c[51];_0x943cx1b+= _0x261c[52];_0x943cx1b+= _0x261c[53]+ Str_Color+ _0x261c[18]+ Str_Status+ _0x261c[54];_0x943cx1b+= _0x261c[81];_0x943cx1b+= _0x261c[55];_0x943cx1b+= _0x261c[82];_0x943cx1b+= UpDtCl();_0x943cx1b+= _0x261c[55];_0x943cx1b+= _0x261c[57]}{_0x943cx1b+= _0x261c[51];_0x943cx1b+= _0x261c[52];_0x943cx1b+= _0x261c[53]+ Str_Ubicacion+ _0x261c[54];_0x943cx1b+= _0x261c[55];_0x943cx1b+= _0x261c[56];_0x943cx1b+= _0x261c[83];_0x943cx1b+= _0x261c[61];_0x943cx1b+= _0x261c[84];for(var _0x943cx14=0;_0x943cx14< VarTree[_0x261c[16]];_0x943cx14++){if(VarTree[_0x943cx14][0][_0x261c[86]](_0x261c[85])!=  -1){_0x943cx1b+= _0x261c[69]+ VarTree[_0x943cx14][0]+ _0x261c[63];if(VarTree[_0x943cx14][0]== MapItem[_0x261c[20]]){_0x943cx1b+= _0x261c[64]};_0x943cx1b+= _0x261c[65]+ VarTree[_0x943cx14][0]+ _0x261c[66]}};_0x943cx1b+= _0x261c[67];_0x943cx1b+= _0x261c[87];_0x943cx1b+= GetIdVal(MapItem[_0x261c[20]]);_0x943cx1b+= _0x261c[88];_0x943cx1b+= _0x261c[55];_0x943cx1b+= _0x261c[57]}{_0x943cx1b+= _0x261c[51];_0x943cx1b+= _0x261c[52];_0x943cx1b+= _0x261c[89]+ Str_ZoomRange+ _0x261c[90]+ _0x943cx1c+ _0x261c[91];_0x943cx1b+= _0x261c[55];_0x943cx1b+= _0x261c[56];_0x943cx1b+= _0x261c[92]+ _0x943cx1c[0]+ _0x261c[78];_0x943cx1b+= _0x261c[93]+ _0x943cx1c[1]+ _0x261c[78];_0x943cx1b+= _0x261c[55];_0x943cx1b+= _0x261c[57]}{_0x943cx1b+= _0x261c[51];_0x943cx1b+= _0x261c[52];_0x943cx1b+= _0x261c[53]+ Str_Representacion+ _0x261c[54];_0x943cx1b+= _0x261c[55];_0x943cx1b+= _0x261c[56];_0x943cx1b+= _0x261c[94];_0x943cx1b+= GenOptionsV(OptGraphC,MapItem[_0x261c[32]]);_0x943cx1b+= _0x261c[67];_0x943cx1b+= _0x261c[55];_0x943cx1b+= _0x261c[57]}_0x943cx1b+= _0x261c[95];if(MapItem[_0x261c[38]]== 0){_0x943cx1b+= _0x261c[96]+ Str_Add+ _0x261c[97]}else {_0x943cx1b+= _0x261c[96]+ Str_save+ _0x261c[98]+ MapItem[_0x261c[38]]+ _0x261c[99]};_0x943cx1b+= _0x261c[96]+ Str_Close+ _0x261c[100];if(document[_0x261c[24]](_0x261c[46])){document[_0x261c[24]](_0x261c[46])[_0x261c[22]]= _0x943cx1b};return _0x943cx1b}function chgps(_0x943cx1f){var _0x943cx20;FncMapClk= fncnone;if(_0x943cx1f!= _0x261c[0]){if(_0x943cx1f!= _0x261c[101]){MapItem[_0x261c[20]]= _0x943cx1f;document[_0x261c[24]](_0x261c[23])[_0x261c[22]]= GetIdVal(MapItem[_0x261c[20]])}else {if(MapItem[_0x261c[30]][_0x261c[102]](_0x261c[18])!=  -1){document[_0x261c[24]](_0x261c[23])[_0x261c[22]]= _0x261c[0];_0x943cx20= MapItem[_0x261c[30]][_0x261c[103]](0,MapItem[_0x261c[30]][_0x261c[102]](_0x261c[18]));_0x943cx20= _0x943cx20+ _0x261c[104];MapItem[_0x261c[20]]= _0x943cx20;FncMapClk= setitmpos}else {alert(Str_AlertSelectVar)}}}}function setitmpos(_0x943cx22){if(MapItem[_0x261c[32]][_0x261c[86]](_0x261c[105])!=  -1){document[_0x261c[24]](_0x261c[23])[_0x261c[22]]= (Math[_0x261c[107]](_0x943cx22[_0x261c[106]][1]* 10000)/ 10000)+ _0x261c[43]+ (Math[_0x261c[107]](_0x943cx22[_0x261c[106]][0]* 10000)/ 10000)+ _0x261c[43]+ _0x943cx22[_0x261c[33]]};if(MapItem[_0x261c[32]][_0x261c[86]](_0x261c[108])!=  -1){document[_0x261c[24]](_0x261c[23])[_0x261c[22]]+= (Math[_0x261c[107]](_0x943cx22[_0x261c[106]][1]* 10000)/ 10000)+ _0x261c[43]+ (Math[_0x261c[107]](_0x943cx22[_0x261c[106]][0]* 10000)/ 10000)+ _0x261c[43]}}function changeZoom(_0x943cx1d){var _0x943cx24=document[_0x261c[24]](_0x261c[109]);var _0x943cx25=document[_0x261c[24]](_0x261c[110]);if(_0x943cx1d== 0){if(parseInt(_0x943cx24[_0x261c[111]])> parseInt(_0x943cx25[_0x261c[111]])){_0x943cx25[_0x261c[111]]= _0x943cx24[_0x261c[111]]}};if(_0x943cx1d== 1){if(parseInt(_0x943cx25[_0x261c[111]])< parseInt(_0x943cx24[_0x261c[111]])){_0x943cx24[_0x261c[111]]= _0x943cx25[_0x261c[111]]}};MapItem[_0x261c[33]]= _0x943cx24[_0x261c[111]]+ _0x261c[43]+ _0x943cx25[_0x261c[111]];document[_0x261c[24]](_0x261c[112])[_0x261c[22]]= Str_ZoomRange+ _0x261c[90]+ MapItem[_0x261c[33]]+ _0x261c[113];RefreshMapItem()}function changeAll(){var _0x943cx1d=[0,0,0];_0x943cx1d[0]= document[_0x261c[24]](_0x261c[114])[_0x261c[111]];_0x943cx1d[1]= document[_0x261c[24]](_0x261c[115])[_0x261c[111]];_0x943cx1d[2]= document[_0x261c[24]](_0x261c[116])[_0x261c[111]];document[_0x261c[24]](_0x261c[119])[_0x261c[118]][_0x261c[117]]= _0x261c[120]+ _0x943cx1d[0]+ _0x261c[43]+ _0x943cx1d[1]+ _0x261c[43]+ _0x943cx1d[2]+ _0x261c[121];document[_0x261c[24]](_0x261c[119])[_0x261c[118]][_0x261c[17]]= _0x261c[120]+ (255- _0x943cx1d[0])+ _0x261c[43]+ (255- _0x943cx1d[1])+ _0x261c[43]+ (255- _0x943cx1d[2])+ _0x261c[121];MapItem[_0x261c[17]][IdxCol+ 1]= _0x943cx1d[0]+ _0x261c[43]+ _0x943cx1d[1]+ _0x261c[43]+ _0x943cx1d[2];UpDtCl()}function AddStsVarCol(){var _0x943cx14=MapItem[_0x261c[17]][_0x261c[16]];_0x943cx14-= (_0x943cx14% 2);MapItem[_0x261c[17]][_0x943cx14]= _0x261c[40];MapItem[_0x261c[17]][_0x943cx14+ 1]= _0x261c[122]}function UpDtCl(){var _0x943cx1b=_0x261c[0];var _0x943cx1d=[0,0,0];if(MapItem[_0x261c[17]][_0x261c[16]]<= IdxCol){IdxCol= 0};if((MapItem[_0x261c[17]][_0x261c[16]]% 2)== 0){for(var _0x943cx14=0;_0x943cx14< MapItem[_0x261c[17]][_0x261c[16]];_0x943cx14+= 2){_0x943cx1d= MapItem[_0x261c[17]][_0x943cx14+ 1][_0x261c[44]](_0x261c[43]);_0x943cx1b+= _0x261c[123]+ (255- _0x943cx1d[0])+ _0x261c[43]+ (255- _0x943cx1d[1])+ _0x261c[43]+ (255- _0x943cx1d[2])+ _0x261c[124]+ _0x943cx1d[0]+ _0x261c[43]+ _0x943cx1d[1]+ _0x261c[43]+ _0x943cx1d[2]+ _0x261c[125]+ _0x943cx14+ _0x261c[126]+ MapItem[_0x261c[17]][_0x943cx14]+ _0x261c[74];_0x943cx1b+= _0x261c[127]+ _0x943cx14+ _0x261c[128]};if(document[_0x261c[24]](_0x261c[129])){document[_0x261c[24]](_0x261c[129])[_0x261c[22]]= _0x943cx1b}};return _0x943cx1b}function WinMapResized(){setTimeout(function(){map[_0x261c[130]]()},200)}function UpDateMap(){var _0x943cx2b;var _0x943cx2c=_0x261c[131];var _0x943cx2d;var _0x943cx1f=_0x261c[0];var _0x943cx2e=_0x261c[0];var _0x943cx2f;var _0x943cx30=0;var _0x943cx14=0;var _0x943cx31=0;winList[_0x261c[132]].FixSize(mapFixedSize);winList[_0x261c[132]][_0x261c[133]]= WinMapResized;_0x943cx14= 0;while(_0x943cx14< MapItemList[_0x261c[16]]){_0x943cx2f= MapItemList[_0x943cx14][3][_0x261c[44]](_0x261c[43]);_0x943cx30= map[_0x261c[135]]()[_0x261c[134]]();if(_0x943cx30>= parseInt(_0x943cx2f[0])&& _0x943cx30<= parseInt(_0x943cx2f[1])){_0x943cx2c= _0x261c[131];_0x943cx1f= GetIdVal(MapItemList[_0x943cx14][1]);_0x943cx2b= MapItemList[_0x943cx14][5][_0x261c[44]](_0x261c[18]);_0x943cx2e= GetIdVal(MapItemList[_0x943cx14][6]);RemoveUnusedItem(_0x943cx2b);for(var _0x943cx32=0;_0x943cx32< _0x943cx2b[_0x261c[16]];_0x943cx32+= 2){if(_0x943cx1f[_0x261c[86]](_0x943cx2b[_0x943cx32])!=  -1){_0x943cx2d= _0x943cx2b[_0x943cx32+ 1][_0x261c[44]](_0x261c[43]);_0x943cx2c= _0x261c[136]+ _0x943cx2d[0]+ _0x261c[43]+ _0x943cx2d[1]+ _0x261c[43]+ _0x943cx2d[2]+ _0x261c[137]+ _0x943cx2d[0]+ _0x261c[43]+ _0x943cx2d[1]+ _0x261c[43]+ _0x943cx2d[2]+ _0x261c[138]}};UpDtMapItm(MapItemList[_0x943cx14][1],MapItemList[_0x943cx14][2],_0x943cx2e,_0x943cx2c)}else {DelMapItm(MapItemList[_0x943cx14][1])};_0x943cx14++}}function SetMapSts(_0x943cx34){var _0x943cx31=0;var _0x943cx2c=_0x261c[131];var _0x943cx13;if(FastSts[_0x943cx34][_0x261c[139]]){if(FastSts[_0x943cx34][_0x261c[139]][_0x261c[86]](_0x261c[140])!=  -1){_0x943cx2c= _0x261c[141]};if(FastSts[_0x943cx34][_0x261c[139]][_0x261c[86]](_0x261c[142])!=  -1){_0x943cx2c= _0x261c[143]}};if(FastSts[_0x943cx34][_0x261c[144]]){for(_0x943cx31= 0;_0x943cx31< FastSts[_0x943cx34][_0x261c[144]][_0x261c[16]];_0x943cx31++){if(FastSts[_0x943cx34][_0x261c[144]][_0x943cx31]){_0x943cx13= _0x943cx2c;if(FastSts[_0x943cx34][_0x261c[144]][_0x943cx31][_0x261c[145]]){if(FastSts[_0x943cx34][_0x261c[144]][_0x943cx31][_0x261c[145]][_0x261c[86]](_0x261c[146])!=  -1){_0x943cx13= _0x261c[147]};if(FastSts[_0x943cx34][_0x261c[144]][_0x943cx31][_0x261c[145]][_0x261c[86]](_0x261c[148])!=  -1){_0x943cx13= _0x261c[149]}};if(FastSts[_0x943cx34][_0x261c[144]][_0x943cx31][_0x261c[85]]){UpDtMapItm(FastSts[_0x943cx34][_0x261c[150]]+ _0x261c[18]+ FastSts[_0x943cx34][_0x261c[144]][_0x943cx31][_0x261c[151]],_0x261c[3],FastSts[_0x943cx34][_0x261c[144]][_0x943cx31].Location,_0x943cx13)}}}};if(FastSts[_0x943cx34][_0x261c[152]]){for(_0x943cx31= 0;_0x943cx31< FastSts[_0x943cx34][_0x261c[152]][_0x261c[16]];_0x943cx31++){if(FastSts[_0x943cx34][_0x261c[152]][_0x943cx31]){_0x943cx13= _0x261c[131];if(FastSts[_0x943cx34][_0x261c[152]][_0x943cx31][_0x261c[145]]){if(FastSts[_0x943cx34][_0x261c[152]][_0x943cx31][_0x261c[145]][_0x261c[86]](_0x261c[153])!=  -1){_0x943cx13= _0x261c[143]}};if(FastSts[_0x943cx34][_0x261c[152]][_0x943cx31][_0x261c[85]]){UpDtMapItm(FastSts[_0x943cx34][_0x261c[150]]+ _0x261c[154]+ _0x943cx31+ _0x261c[113],_0x261c[155],FastSts[_0x943cx34][_0x261c[144]][_0x943cx31].Location,_0x943cx13)}}}}}function GetBuble(_0x943cx36){var _0x943cx37=_0x261c[0];var _0x943cx1b=_0x261c[156];for(var _0x943cx14=0;_0x943cx14< MapItemList[_0x261c[16]];_0x943cx14++){if(MapItemList[_0x943cx14][1]== _0x943cx36){_0x943cx1b+= _0x261c[157]+ _0x943cx14+ _0x261c[158]+ _0x943cx36;_0x943cx1b+= _0x261c[159];_0x943cx37= MapItemList[_0x943cx14][4];_0x943cx37= replaceAll(_0x943cx37,_0x261c[160],_0x261c[0]);_0x943cx37= _0x943cx37[_0x261c[44]](_0x261c[43]);RemoveUnusedItem(_0x943cx37);for(var _0x943cx31=0;_0x943cx31< _0x943cx37[_0x261c[16]];_0x943cx31++){_0x943cx1b+= _0x943cx37[_0x943cx31][_0x261c[103]](_0x943cx37[_0x943cx31][_0x261c[102]](_0x261c[18])+ 1);_0x943cx1b+= _0x261c[161];_0x943cx1b+= GetIdVal(_0x943cx37[_0x943cx31])+ _0x261c[162]};_0x943cx1b+= _0x261c[162];break}};_0x943cx1b+= _0x261c[163];return _0x943cx1b}function SearchItem(_0x943cx39){for(var _0x943cx32=0;_0x943cx32< MapItems[_0x261c[16]];_0x943cx32++){if(MapItems[_0x943cx32][_0x261c[164]]== _0x943cx39){return _0x943cx32}};return _0x943cx32}function DelMapItm(_0x943cx3b){var _0x943cx34=SearchItem(_0x943cx3b);if(_0x943cx34< MapItems[_0x261c[16]]){vector[_0x261c[166]]()[_0x261c[165]](MapItems[_0x943cx34].Feature);MapItems[_0x261c[167]](_0x943cx34,1)}}function UpDtMapItm(_0x943cx3b,_0x943cx3d,_0x943cx3e,_0x943cx13){var _0x943cx3f;_0x943cx3d= _0x943cx3d[_0x261c[44]](_0x261c[168]);var _0x943cx40=_0x943cx3e[_0x261c[44]](_0x261c[43]);_0x943cx13= _0x943cx13[_0x261c[44]](_0x261c[168]);if(_0x943cx3d[0][_0x261c[86]](_0x261c[105])!=  -1){var _0x943cx41=parseFloat(_0x943cx40[0]);var _0x943cx42=parseFloat(_0x943cx40[1]);if(isNaN(_0x943cx41)|| isNaN(_0x943cx42)){return}else {idx= SearchItem(_0x943cx3b);if(idx== MapItems[_0x261c[16]]){MapItems[idx]=  new Object()}else {_0x943cx3f= compare2objects(MapItems[idx][_0x261c[169]],ol[_0x261c[171]][_0x261c[170]]([_0x943cx42,_0x943cx41]));if(_0x943cx3f){_0x943cx3f= compare2objects(MapItems[idx].Style, new ol[_0x261c[118]].Style({stroke: new ol[_0x261c[118]].Stroke({color:_0x943cx13[0],width:5}),fill: new ol[_0x261c[118]].Fill({color:_0x943cx13[1]}),radius:parseInt(_0x943cx3d[1])}));if(_0x943cx3f){return}};vector[_0x261c[166]]()[_0x261c[165]](MapItems[idx].Feature)};MapItems[idx][_0x261c[164]]= _0x943cx3b;MapItems[idx][_0x261c[169]]= ol[_0x261c[171]][_0x261c[170]]([_0x943cx42,_0x943cx41]);MapItems[idx][_0x261c[172]]=  new ol.Feature( new ol[_0x261c[173]].Circle(MapItems[idx][_0x261c[169]],parseInt(_0x943cx3d[1])));MapItems[idx][_0x261c[174]]=  new ol[_0x261c[118]].Style({stroke: new ol[_0x261c[118]].Stroke({color:_0x943cx13[0],width:5}),fill: new ol[_0x261c[118]].Fill({color:_0x943cx13[1]}),radius:parseInt(_0x943cx3d[1])});MapItems[idx][_0x261c[172]][_0x261c[175]](MapItems[idx].Style);MapItems[idx][_0x261c[172]][_0x261c[176]]= idx;vector[_0x261c[166]]()[_0x261c[177]](MapItems[idx].Feature)}};if(_0x943cx3d[0][_0x261c[86]](_0x261c[178])!=  -1){var _0x943cx43=parseFloat(_0x943cx40[0]);var _0x943cx44=parseFloat(_0x943cx40[1]);var _0x943cx45=parseFloat(_0x943cx40[2]);var _0x943cx46=parseFloat(_0x943cx40[3]);if(isNaN(_0x943cx43)|| isNaN(_0x943cx44)|| isNaN(_0x943cx45)|| isNaN(_0x943cx46)){return}else {idx= SearchItem(_0x943cx3b);if(idx== MapItems[_0x261c[16]]){MapItems[idx]=  new Object()}else {_0x943cx3f= compare2objects(MapItems[idx][_0x261c[169]],[ol[_0x261c[171]][_0x261c[170]]([_0x943cx44,_0x943cx43]),ol[_0x261c[171]][_0x261c[170]]([_0x943cx46,_0x943cx45])]);if(_0x943cx3f){_0x943cx3f= compare2objects(MapItems[idx].Style, new ol[_0x261c[118]].Style({stroke: new ol[_0x261c[118]].Stroke({color:_0x943cx13[0],width:parseInt(_0x943cx3d[1])})}));if(_0x943cx3f){return}};vector[_0x261c[166]]()[_0x261c[165]](MapItems[idx].Feature)};MapItems[idx][_0x261c[164]]= _0x943cx3b;MapItems[idx][_0x261c[169]]= [ol[_0x261c[171]][_0x261c[170]]([_0x943cx44,_0x943cx43]),ol[_0x261c[171]][_0x261c[170]]([_0x943cx46,_0x943cx45])];MapItems[idx][_0x261c[172]]=  new ol.Feature( new ol[_0x261c[173]].LineString(MapItems[idx][_0x261c[169]]));MapItems[idx][_0x261c[174]]=  new ol[_0x261c[118]].Style({stroke: new ol[_0x261c[118]].Stroke({color:_0x943cx13[0],width:parseInt(_0x943cx3d[1])})});MapItems[idx][_0x261c[172]][_0x261c[175]](MapItems[idx].Style);MapItems[idx][_0x261c[172]][_0x261c[176]]= idx;vector[_0x261c[166]]()[_0x261c[177]](MapItems[idx].Feature)}}}function InitWinOL(){document[_0x261c[24]](_0x261c[179])[_0x261c[22]]= Str_Map;document[_0x261c[24]](_0x261c[180])[_0x261c[22]]= _0x261c[181];winList[_0x261c[132]].SetH(winList[_0x261c[132]][_0x261c[183]][_0x261c[118]][_0x261c[182]]);winUdate();winList[_0x261c[132]][_0x261c[48]]();var _0x943cx34=Reqest[_0x261c[16]];Reqest[_0x943cx34]=  new Object();Reqest[_0x943cx34][_0x261c[164]]= Str_MapItem;Reqest[_0x943cx34][_0x261c[184]]= _0x261c[35];Reqest[_0x943cx34][_0x261c[185]]= rcvMapListBK;Reqest[_0x943cx34][_0x261c[145]]= 0;Reqest[_0x943cx34][_0x261c[186]]= 10000;Reqest[_0x943cx34][_0x261c[187]]= 0;GetUrlB(_0x261c[35],rcvMapListBK)}function InitOL(){var _0x943cx22=GlobView[_0x261c[44]](_0x261c[43]);var _0x943cx41=parseFloat(_0x943cx22[0]);var _0x943cx42=parseFloat(_0x943cx22[1]);_0x943cx22= ol[_0x261c[171]][_0x261c[170]]([_0x943cx42,_0x943cx41]);container= document[_0x261c[24]](_0x261c[188]);content= document[_0x261c[24]](_0x261c[189]);closer= document[_0x261c[24]](_0x261c[190]);container[_0x261c[118]][_0x261c[191]]= _0x261c[192];popup=  new ol.Overlay({position:_0x943cx22,element:container});layer=  new ol[_0x261c[194]].Tile({source: new ol[_0x261c[193]].OSM()});source=  new ol[_0x261c[193]].Vector({wrapX:false});StyleVar=  new ol[_0x261c[118]].Style({fill: new ol[_0x261c[118]].Fill({color:_0x261c[195]}),stroke: new ol[_0x261c[118]].Stroke({color:_0x261c[196],width:2}),image: new ol[_0x261c[118]].Circle({radius:17,fill: new ol[_0x261c[118]].Fill({color:_0x261c[196]})})});vector=  new ol[_0x261c[194]].Vector({source:source,style:StyleVar});View=  new ol.View({center:ol[_0x261c[171]][_0x261c[199]]([_0x943cx42,_0x943cx41],_0x261c[197],_0x261c[198]),zoom:12});map=  new ol.Map({target:_0x261c[200],layers:[layer],overlays:[popup],view:View});map[_0x261c[201]](vector);map[_0x261c[202]](popup);map[_0x261c[204]](_0x261c[203],OnClickMap)}function OnMoveMap(_0x943cx4a){if(_0x943cx4a[_0x261c[205]]){return};displayFeatureInfo(map[_0x261c[207]](_0x943cx4a[_0x261c[206]]))}function OnClickMap(_0x943cx4a){var _0x943cx1b=_0x261c[0];var _0x943cx4c=_0x943cx4a[_0x261c[208]];var _0x943cx4d=ol[_0x261c[208]][_0x261c[209]](ol[_0x261c[171]][_0x261c[199]](_0x943cx4c,_0x261c[198],_0x261c[197]));var _0x943cx22= new Object();_0x943cx22[_0x261c[106]]= ol[_0x261c[171]][_0x261c[199]](_0x943cx4c,_0x261c[198],_0x261c[197]);_0x943cx22[_0x261c[33]]= map[_0x261c[135]]()[_0x261c[134]]();LOG(_0x261c[210]+ _0x943cx22[_0x261c[106]]+ _0x261c[211]+ _0x943cx22[_0x261c[33]]+ _0x261c[212]);FncMapClk(_0x943cx22);popup[_0x261c[213]](_0x943cx4c);var _0x943cx4e=map[_0x261c[215]](_0x943cx4a[_0x261c[214]],function(_0x943cx4e,layer){return _0x943cx4e});if(_0x943cx4e){container[_0x261c[118]][_0x261c[191]]= _0x261c[0];content[_0x261c[22]]= _0x261c[0];content[_0x261c[22]]+= GetBuble(MapItems[_0x943cx4e[_0x261c[176]]].Name);content[_0x261c[22]]+= _0x261c[216]+ _0x943cx4d+ _0x261c[217]}else {container[_0x261c[118]][_0x261c[191]]= _0x261c[192]}}function delfnc(){var _0x943cx50=vector[_0x261c[166]]();var _0x943cx51=_0x943cx50[_0x261c[218]]();for(var _0x943cx14=0;_0x943cx14< _0x943cx51[_0x261c[16]];_0x943cx14++){_0x943cx50[_0x261c[165]](_0x943cx51[_0x943cx14])}}function MapStrPos(_0x943cx22){_0x943cx22= _0x943cx22[_0x261c[44]](_0x261c[43]);MapPos(_0x943cx22[0],_0x943cx22[1],_0x943cx22[2])}function MapPos(_0x943cx41,_0x943cx42,zoom){_0x943cx41= parseFloat(_0x943cx41);_0x943cx42= parseFloat(_0x943cx42);map[_0x261c[135]]()[_0x261c[219]](ol[_0x261c[171]][_0x261c[170]]([_0x943cx42,_0x943cx41]));map[_0x261c[135]]()[_0x261c[220]](zoom)}function rcvMapListBK(_0x943cx55){_0x943cx55= rcvtbl(_0x943cx55);MapItemListBk= owl[_0x261c[221]](MapItemList);MapItemList= owl[_0x261c[221]](_0x943cx55);UpDateMap()}function rcvMapList(_0x943cx55){_0x943cx55= rcvtbl(_0x943cx55);MapItemList= owl[_0x261c[221]](_0x943cx55);if(winList[_0x261c[222]]){winList[_0x261c[222]][_0x261c[48]]();winList[_0x261c[222]].SetH((4+ 25+ (_0x943cx55[_0x261c[16]]* 50))+ _0x261c[223]);winList[_0x261c[222]].SetW(500+ _0x261c[223])};document[_0x261c[24]](_0x261c[224])[_0x261c[22]]= Str_MapList;document[_0x261c[24]](_0x261c[225])[_0x261c[22]]= ShowMapList(_0x943cx55)}function ShowMapList(_0x943cx55){var _0x943cx58=0;var _0x943cx59=0;var _0x943cx5a=_0x261c[0];var _0x943cx1b=_0x261c[0];_0x943cx1b+= _0x261c[96]+ Str_Close+ _0x261c[226];_0x943cx1b+= _0x261c[50];{_0x943cx1b+= _0x261c[227];_0x943cx1b+= _0x261c[52];_0x943cx1b+= _0x261c[55];_0x943cx1b+= _0x261c[52];_0x943cx1b+= _0x261c[53]+ Str_Ident+ _0x261c[54];_0x943cx1b+= _0x261c[55];_0x943cx1b+= _0x261c[56];_0x943cx1b+= _0x261c[53]+ Str_Type+ _0x261c[54];_0x943cx1b+= _0x261c[55];_0x943cx1b+= _0x261c[56];_0x943cx1b+= _0x261c[53]+ Str_Zoom+ _0x261c[54];_0x943cx1b+= _0x261c[55];_0x943cx1b+= _0x261c[56];_0x943cx1b+= _0x261c[53]+ Str_BubleInfos+ _0x261c[54];_0x943cx1b+= _0x261c[55];_0x943cx1b+= _0x261c[56];_0x943cx1b+= _0x261c[53]+ Str_Color+ _0x261c[54];_0x943cx1b+= _0x261c[55];_0x943cx1b+= _0x261c[56];_0x943cx1b+= _0x261c[53]+ Str_Ubicacion+ _0x261c[54];_0x943cx1b+= _0x261c[55];_0x943cx1b+= _0x261c[228];_0x943cx1b+= _0x261c[55];_0x943cx1b+= _0x261c[57]}_0x943cx59= 0;while(_0x943cx59< _0x943cx55[_0x261c[16]]){if((_0x943cx59% 2)== 0){_0x943cx5a= _0x261c[229]}else {_0x943cx5a= _0x261c[230]};_0x943cx1b+= _0x261c[231]+ _0x943cx5a+ _0x261c[232];_0x943cx1b+= _0x261c[233]+ _0x943cx59+ _0x261c[234];_0x943cx1b+= _0x261c[235];_0x943cx1b+= _0x261c[55];{_0x943cx1b+= _0x261c[56];_0x943cx1b+= _0x261c[53]+ _0x943cx55[_0x943cx59][1]+ _0x261c[54];_0x943cx1b+= _0x261c[55];_0x943cx1b+= _0x261c[56];_0x943cx1b+= _0x261c[53]+ _0x943cx55[_0x943cx59][2]+ _0x261c[54];_0x943cx1b+= _0x261c[55];_0x943cx1b+= _0x261c[56];_0x943cx1b+= _0x261c[53]+ _0x943cx55[_0x943cx59][3]+ _0x261c[54];_0x943cx1b+= _0x261c[55];_0x943cx1b+= _0x261c[56];_0x943cx1b+= _0x261c[53]+ _0x943cx55[_0x943cx59][4]+ _0x261c[54];_0x943cx1b+= _0x261c[55];_0x943cx1b+= _0x261c[56];_0x943cx1b+= _0x261c[53]+ _0x943cx55[_0x943cx59][5]+ _0x261c[54];_0x943cx1b+= _0x261c[55];_0x943cx1b+= _0x261c[236]+ GetIdVal(_0x943cx55[_0x943cx59][6])+ _0x261c[237];_0x943cx1b+= _0x261c[238]+ GetIdVal(_0x943cx55[_0x943cx59][6])+ _0x261c[54];_0x943cx1b+= _0x261c[55]}_0x943cx1b+= _0x261c[239]+ _0x943cx55[_0x943cx59][1]+ _0x261c[240]+ _0x943cx55[_0x943cx59][0]+ _0x261c[241];_0x943cx1b+= _0x261c[242];_0x943cx1b+= _0x261c[55];_0x943cx1b+= _0x261c[57];_0x943cx59++};_0x943cx1b+= _0x261c[95];return _0x943cx1b}
+var zoom=12;
+var FncMapClk=fncnone;
+var IdxCol=0;
+//---------------------------------------------------------------------------------------------------------------------------------------
+var layer;
+var source;
+var View;
+var map;
+var MapItems=new Array();
+var vector;
+var markers;
+//---------------------------------------------------------------------------------------------------------------------------------------
+var popup
+var container;
+var content;
+var closer;
+var mapFixedSize=4;
+//var overlay;
+var ItemText
+var MapItem=new Object();
+var MapItemList;
+var MapItemListBk;
+var OptLayers=[0,Str_Controllers,1,Str_Cameras];
+OptGraphC=["","","Circle 10","Circle 1","Circle 20","Circle 2","Circle 30","Circle 3","Circle 40","Circle 4","LineString 5","LineString 1","LineString 10","LineString 2","LineString 15","LineString 3"];
+//OptGraph=["","","Circle","Circle","LineString","LineString","Polygon","Polygon"];
+
+function AddMapItm()
+{
+		RemoveUnusedItem(MapItem.infcmp);
+		var Color="";
+		for(var i=0;i<MapItem.color.length;i++)
+		{
+			Color+="/"+MapItem.color[i];
+		}
+		{
+			GetUrlB("./setitems.jsp?sql=INSERT INTO variables (id,lstchg,value) VALUES (\'"+MapItem.gps+"\',LOCALTIMESTAMP,\'"+document.getElementById("Itmpos").innerHTML+"\')",fncnone);
+			GetUrlB("./setitems.jsp?sql=UPDATE variables SET (id,lstchg,value)%3D(\'"+MapItem.gps+"\',LOCALTIMESTAMP,\'"+document.getElementById("Itmpos").innerHTML+"\')%20WHERE%20id%3D%27"+MapItem.gps+"%27",fncnone);
+		}
+		GetUrlB("./setitems.jsp?sql=INSERT INTO mapitems (layer,variable,graph,zoomrange,infcmps,color,pos) VALUES (%27"+MapItem.layer+"%27,%27"+MapItem.variable+"%27,%27"+MapItem.graph+"%27,%27"+MapItem.zoom+"%27,%27"+MapItem.infcmp+"%27,%27"+Color+"%27,%27"+MapItem.gps+"%27)",fncnone);
+		GetUrlB('./getlist.jsp?cmps=*&tbl=mapitems&ord=variable',rcvMapList);
+}
+function ModMapItm(key)
+{
+		RemoveUnusedItem(MapItem.infcmp);
+		var Color="";
+		for(var i=0;i<MapItem.color.length;i++)
+		{
+			Color+="/"+MapItem.color[i];
+		}
+		{
+			GetUrlB("./setitems.jsp?sql=INSERT INTO variables (id,lstchg,value) VALUES (\'"+MapItem.gps+"\',LOCALTIMESTAMP,\'"+document.getElementById("Itmpos").innerHTML+"\')",fncnone);
+			GetUrlB("./setitems.jsp?sql=UPDATE variables SET (id,lstchg,value)%3D(\'"+MapItem.gps+"\',LOCALTIMESTAMP,\'"+document.getElementById("Itmpos").innerHTML+"\')%20WHERE%20id%3D%27"+MapItem.gps+"%27",fncnone);
+		}
+		GetUrlB("./setitems.jsp?sql=UPDATE mapitems SET (variable,graph,zoomrange,infcmps,color,pos)%3D(%27"+MapItem.variable+"%27,%27"+MapItem.graph+"%27,%27"+MapItem.zoom+"%27,%27"+MapItem.infcmp+"%27,%27"+Color+"%27,%27"+MapItem.gps+"%27)%20WHERE%20key%3D"+key,fncnone);
+		GetUrlB('./getlist.jsp?cmps=*&tbl=mapitems&ord=variable',rcvMapList);
+}
+function NewMapItm()
+{
+	IdxCol=0;
+	MapItem.key=0;
+	MapItem.layer="0";
+	MapItem.variable="";
+	MapItem.graph="Circle 20";
+	MapItem.zoom="0,28";
+	MapItem.infcmp=["","","",""];
+	MapItem.color=["X","150,255,150"];
+	MapItem.gps="";
+}
+function rcvMapFncList(i)
+{
+	IdxCol=0;
+	MapItem.key=MapItemList[i][0];
+	MapItem.variable=MapItemList[i][1];
+	MapItem.graph=MapItemList[i][2];//="Circle";
+	MapItem.zoom=MapItemList[i][3];
+	MapItem.infcmp=MapItemList[i][4];
+	MapItem.infcmp=replaceAll(MapItem.infcmp,",undefined","");
+	MapItem.infcmp=MapItem.infcmp.split(",");
+	RemoveUnusedItem(MapItem.infcmp);
+	MapItem.color=MapItemList[i][5].split("/");
+	RemoveUnusedItem(MapItem.color);
+	MapItem.gps=MapItemList[i][6];
+	MapItem.layer=""+parseInt("0"+MapItemList[i][7]);
+	RefreshMapItem();
+}
+function RefreshMapItem()
+{
+	document.getElementById("TcHttpConfTitle").innerHTML=Str_MapList;
+	document.getElementById("TcHttpConfBody").innerHTML=ShowMapItem();
+	if (winList['TcHttpConf'])
+	{
+		winList["TcHttpConf"].open();
+		winList["TcHttpConf"].SetH("400px");
+	}
+}
+
+function SetMapItemVar(VarName)
+{
+	if(VarName!='')
+	{
+		if(VarName=='New')
+		{
+			VarName=prompt(Str_InNameCamera)
+			if(VarName!='')
+			{
+				VarName=replaceAll(VarName," ","_");
+				MapItem.variable='/'+Str_Cameras+'/'+VarName+'/status';
+				GetUrlB("./setitems.jsp?sql=INSERT INTO variables (id,lstchg,value) VALUES (\'%2F"+Str_Cameras+"%2F"+VarName+"%2Fstatus\',LOCALTIMESTAMP,\'ok\')",fncnone);
+				GetUrlB('./getitems.jsp?sql=SELECT * FROM variables order by id',rcvFastSts);
+				GetUrlB('./getitems.jsp?sql=SELECT * FROM variables order by id',ShowMapItem);
+			}
+		}
+		else
+		{
+			MapItem.variable=VarName;
+			setTimeout('ShowMapItem()',500);
+		}
+	}
+}
+function ShowMapItem()
+{
+	var out="";
+	var Z=[0,28];
+	Z=MapItem.zoom.split(",");
+	var C=[128,128,128];
+	if((MapItem.color.length%2)==0)
+		C=MapItem.color[IdxCol+1].split(",");
+	MapItem.layer=parseInt(MapItem.layer);
+	out+="<table border=\"1\" cellpadding=\"2\" cellspacing=\"0\" align=\"center\" background=\"\" width=\"100%\" style=\"border-collapse:collapse;border:2px solid #000000;\">\n";
+	//---------------------------------------------------------------------
+	{
+		out+="<tr align=\"center\" bgcolor=\"#C0C0C0\">\n";
+		out+="	<td align=\"center\">\n";
+		out+="		<font size=\"1\" face=\"Verdana\">"+Str_Parameter+"</font>\n";
+		out+="	</td>\n";
+		out+="	<td align=\"center\" valign=\"middle\">\n";
+		out+="		<font size=\"1\" face=\"Verdana\">"+Str_Config+"</font>\n";
+		out+="	</td>\n";
+		out+="</tr>\n";
+	}
+	//---------------------------------------------------------------------
+	{
+		out+="<tr align=\"center\" bgcolor=\"#C0C0C0\">\n";
+		out+="	<td align=\"center\">\n";
+		out+="		<font size=\"1\" face=\"Verdana\">"+Str_Layer+"</font>\n";
+		out+="	</td>\n";
+		out+="	<td align=\"center\" valign=\"middle\">\n";
+		out+="		<select class=\"INTEXT\" onchange=\"if(this.value!=''){MapItem.layer=this.value;ShowMapItem();}return false;\" >\n";
+		out+=GenOptionsV(OptLayers,parseInt(MapItem.layer));
+		out+="		</select><br/>\n";
+		out+="	</td>\n";
+		out+="</tr>\n";
+	}
+	//---------------------------------------------------------------------
+	{
+		out+="<tr align=\"center\" bgcolor=\"#C0C0C0\">\n";
+		out+="	<td align=\"center\">\n";
+		out+="		<font size=\"1\" face=\"Verdana\">"+Str_Variable+"</font>\n";
+		out+="	</td>\n";
+		out+="	<td align=\"center\" valign=\"middle\">\n";
+		if(MapItem.layer==0)
+		{
+			out+="<select class=\"INTEXT\" onchange=\"if(this.value!=''){MapItem.variable=this.value;}return false;\"";
+		}
+		if(MapItem.layer==1)
+		{
+			out+="<select class=\"INTEXT\" onchange=\"SetMapItemVar(this.value);return false;\"";
+		}
+		if(MapItem.key!=0)
+			out+=" disabled";
+		out+=" >\n";
+		out+="			<option value=\"\" ></option>\n";
+		if(MapItem.layer==1)
+			out+="			<option value=\"New\" >New</option>\n";
+		for(var i=0;i<VarTree.length;i++)
+		{
+			if( MapItem.layer==0 || (MapItem.layer==1  && (VarTree[i][0].indexOf('/'+Str_Cameras)!=-1) ) )
+			{
+				out+="<option value=\""+VarTree[i][0]+"\"";
+				if(VarTree[i][0]==MapItem.variable)
+					out+=" selected=\"selected\"";
+				out+=" >"+VarTree[i][0]+"</option>\n";
+			}
+		}
+		out+="		</select><br/>\n";
+		out+="	</td>\n";
+		out+="</tr>\n";
+	}
+	//---------------------------------------------------------------------
+	if(MapItem.layer==0)
+	{
+		{
+			out+="<tr align=\"center\" bgcolor=\"#C0C0C0\">\n";
+			out+="	<td align=\"center\">\n";
+			out+="		<font size=\"1\" face=\"Verdana\">"+Str_BubleInfos+"</font>\n";
+			out+="	</td>\n";
+			out+="	<td align=\"center\" valign=\"middle\">\n";
+			out+="		<select class=\"INTEXT\" onchange=\"if(this.value!=''){MapItem.infcmp[0]=this.value;}return false;\" >\n";
+			out+="			<option value=\"\" ></option>\n";
+			for(var i=0;i<VarTree.length;i++)
+			{
+				out+="		<option value=\""+VarTree[i][0]+"\"";
+				if(VarTree[i][0]==MapItem.infcmp[0])
+					out+=" selected=\"selected\"";
+				out+=" >"+VarTree[i][0]+"</option>\n";
+			}
+			out+="		</select><br/>\n";
+			out+="		<select class=\"INTEXT\" onchange=\"if(this.value!=''){MapItem.infcmp[1]=this.value;}return false;\" >\n";
+			out+="			<option value=\"\" ></option>\n";
+			for(var i=0;i<VarTree.length;i++)
+			{
+				out+="		<option value=\""+VarTree[i][0]+"\"";
+				if(VarTree[i][0]==MapItem.infcmp[1])
+					out+=" selected=\"selected\"";
+				out+=" >"+VarTree[i][0]+"</option>\n";
+			}
+			out+="		</select><br/>\n";
+			out+="		<select class=\"INTEXT\" onchange=\"if(this.value!=''){MapItem.infcmp[2]=this.value;}return false;\" >\n";
+			out+="			<option value=\"\" ></option>\n";
+			for(var i=0;i<VarTree.length;i++)
+			{
+				out+="		<option value=\""+VarTree[i][0]+"\"";
+				if(VarTree[i][0]==MapItem.infcmp[2])
+					out+=" selected=\"selected\"";
+				out+=" >"+VarTree[i][0]+"</option>\n";
+			}
+			out+="		</select><br/>\n";
+			out+="		<select class=\"INTEXT\" onchange=\"if(this.value!=''){MapItem.infcmp[3]=this.value;}return false;\" >\n";
+			out+="			<option value=\"\" ></option>\n";
+			for(var i=0;i<VarTree.length;i++)
+			{
+				out+="		<option value=\""+VarTree[i][0]+"\"";
+				if(VarTree[i][0]==MapItem.infcmp[3])
+					out+=" selected=\"selected\"";
+				out+=" >"+VarTree[i][0]+"</option>\n";
+			}
+			out+="		</select><br/>\n";
+			out+="	</td>\n";
+			out+="</tr>\n";
+		}
+		//---------------------------------------------------------------------
+		{
+			out+="<tr align=\"center\" bgcolor=\"#C0C0C0\">\n";
+			out+="	<td align=\"center\">\n";
+			out+="		<font id=\"ShwColor\"  style=\"color: #000000; background-color: #ffffff\" size=\"2\" face=\"Verdana\">[ "+Str_Color+" ]</font>\n";
+			out+="	</td>\n";
+			out+="	<td align=\"center\">\n";
+			out+="	<input class=\"INTEXT\" size=\"5\" maxlength=\"25\" value=\""+MapItem.color[IdxCol]+"\" onkeyup=\"MapItem.color[IdxCol]=this.value;UpDtCl();\" /><br/>\n";
+			out+="	R<input onchange=\"changeAll();\" id=\"slideRed\"  min=\"0\" max=\"255\" type=\"range\" value =\""+C[0]+"\" /><br/>";
+			out+="	G<input onchange=\"changeAll();\" id=\"slideGreen\" min=\"0\" max=\"255\" type=\"range\" value =\""+C[1]+"\" /><br/>";
+			out+="	B<input onchange=\"changeAll();\" id=\"slideBlue\" min=\"0\" max=\"255\" type=\"range\" value =\""+C[2]+"\" /><br/>";
+			out+="	</td>\n";
+			out+="</tr>\n";
+		}
+		//---------------------------------------------------------------------
+		{
+			out+="<tr align=\"center\" bgcolor=\"#C0C0C0\">\n";
+			out+="	<td align=\"center\">\n";
+			out+="		<font size=\"1\" face=\"Verdana\">"+Str_Color+"/"+Str_Status+"</font>\n";
+			out+="		<img src=\"../img/add.png\" width=\"18\" height=\"18\" border=\"0\" onclick=\"AddStsVarCol();UpDtCl();\" /><br />\n";
+			out+="	</td>\n";
+			out+="	<td align=\"center\" valign=\"middle\" id=\"StsCol\">\n";
+			out+=UpDtCl();
+			out+="	</td>\n";
+			out+="</tr>\n";
+		}
+	}
+	//=====================================================================
+	if(MapItem.layer==1)
+	{
+		//---------------------------------------------------------------------
+		{
+			out+="<tr align=\"center\" bgcolor=\"#C0C0C0\">\n";
+			out+="	<td align=\"center\">\n";
+			out+="		<font size=\"1\" face=\"Verdana\">"+Str_URL+"</font>\n";
+			out+="	</td>\n";
+			out+="	<td align=\"center\" valign=\"middle\">\n";
+			out+="<input onchange=\"MapItem.infcmp=this.value;return false;\" value =\""+MapItem.infcmp+"\" /><br/>";
+			out+="	</td>\n";
+			out+="</tr>\n";
+		}
+	}
+	//---------------------------------------------------------------------
+	{
+		out+="<tr align=\"center\" bgcolor=\"#C0C0C0\">\n";
+		out+="	<td align=\"center\">\n";
+		out+="		<font size=\"1\" face=\"Verdana\">"+Str_Ubicacion+"</font>\n";
+		out+="	</td>\n";
+		out+="	<td align=\"center\" valign=\"middle\">\n";
+		out+="		<select class=\"INTEXT\" onchange=\"chgps(this.value);return false;\" >\n";
+		out+="			<option value=\"\" ></option>\n";
+		out+="			<option value=\"New\" >New</option>\n";
+		for(var i=0;i<VarTree.length;i++)
+		{
+			if(VarTree[i][0].indexOf("Location")!=-1)
+			{
+				out+="		<option value=\""+VarTree[i][0]+"\"";
+				if(VarTree[i][0]==MapItem.gps)
+					out+=" selected=\"selected\"";
+				out+=" >"+VarTree[i][0]+"</option>\n";
+			}
+		}
+		out+="		</select><br/>\n";
+		out+="		<font size=\"1\" id=\"Itmpos\" face=\"Verdana\" onclick=\"MapStrPos(this.innerHTML);\" >";
+		out+=GetIdVal(MapItem.gps);
+		out+="		</font>\n";
+		out+="	</td>\n";
+		out+="</tr>\n";
+	}
+	//---------------------------------------------------------------------
+	{
+		out+="<tr align=\"center\" bgcolor=\"#C0C0C0\">\n";
+		out+="	<td align=\"center\">\n";
+		out+="		<font size=\"1\" id=\"Itmzoom\" face=\"Verdana\">"+Str_ZoomRange+"["+Z+"]</font>\n";
+		out+="	</td>\n";
+		out+="	<td align=\"center\" valign=\"middle\">\n";
+		out+="	<input onchange=\"changeZoom(0);\" id=\"StartZoom\"  min=\"0\" max=\"28\" type=\"range\" value =\""+Z[0]+"\" /><br/>";
+		out+="	<input onchange=\"changeZoom(1);\" id=\"EndZoom\" min=\"0\" max=\"28\" type=\"range\" value =\""+Z[1]+"\" /><br/>";
+		out+="	</td>\n";
+		out+="</tr>\n";
+	}
+	//---------------------------------------------------------------------
+	{
+		out+="<tr align=\"center\" bgcolor=\"#C0C0C0\">\n";
+		out+="	<td align=\"center\">\n";
+		out+="		<font size=\"1\" face=\"Verdana\">"+Str_Representacion+"</font>\n";
+		out+="	</td>\n";
+		out+="	<td align=\"center\" valign=\"middle\">\n";
+		if(MapItem.layer==0)
+		{
+			out+="		<select class=\"INTEXT\" onchange=\"if(this.value!=''){MapItem.graph=this.value;}return false;\" >\n";
+			out+=GenOptionsV(OptGraphC,MapItem.graph);
+			out+="		</select><br/>\n";
+		}
+		if(MapItem.layer==1)
+		{
+			MapItem.graph='../img/camera.png';
+			out+="<img src=\"../img/camera.png\" width=\"18\" height=\"18\" border=\"0\" /><br />\n";
+		}
+		out+="	</td>\n";
+		out+="</tr>\n";
+	}// */
+	//---------------------------------------------------------------------
+	out+="</table>\n";
+	if(MapItem.key==0)
+	{
+		out+="<input type=\"button\" class=\"INTEXT2\" value=\""+Str_Add+"\" onclick=\"AddMapItm();winList['TcHttpConf'].close();return false;\" />\n";
+	}
+	else
+	{
+		out+="<input type=\"button\" class=\"INTEXT2\" value=\""+Str_save+"\" onclick=\"ModMapItm("+MapItem.key+");winList['TcHttpConf'].close();return false;\" />\n";
+	}
+	out+="<input type=\"button\" class=\"INTEXT2\" value=\""+Str_Close+"\" onclick=\"FncMapClk=fncnone;winList['TcHttpConf'].close();return false;\" />\n";
+	if(document.getElementById("TcHttpConfBody"))
+		document.getElementById("TcHttpConfBody").innerHTML=out;
+	return out;
+}
+//---------------------------------------------------------------------------------------------------------------------------------------
+function chgps(valor)
+{
+	var id
+	FncMapClk=fncnone;
+	if(valor!='')
+	{
+		if(valor!='New')
+		{
+			MapItem.gps=valor;
+			document.getElementById("Itmpos").innerHTML=GetIdVal(MapItem.gps);
+		}
+		else
+		{
+			if(MapItem.variable.lastIndexOf("/")!=-1)
+			{
+				document.getElementById("Itmpos").innerHTML="";
+				id=MapItem.variable.substring(0,MapItem.variable.lastIndexOf("/"));
+				id=id+"/Location";
+				MapItem.gps=id;
+				FncMapClk=setitmpos;
+			}
+			else
+				alert(Str_AlertSelectVar);
+		}
+	}
+}
+function setitmpos(pos) 
+{
+	if(MapItem.graph.indexOf("Circle")!=-1)
+		document.getElementById("Itmpos").innerHTML=(Math.round(pos.cord[1]*10000)/10000)+","+(Math.round(pos.cord[0]*10000)/10000)+","+pos.zoom;
+	if(MapItem.graph.indexOf("LineString")!=-1)
+		document.getElementById("Itmpos").innerHTML+=(Math.round(pos.cord[1]*10000)/10000)+","+(Math.round(pos.cord[0]*10000)/10000)+",";
+}
+//---------------------------------------------------------------------------------------------------------------------------------------
+function changeZoom(C) 
+{
+    var ObjS=document.getElementById('StartZoom');
+    var ObjE=document.getElementById('EndZoom');
+		if(C==0)
+		{
+			if(parseInt(ObjS.value)>parseInt(ObjE.value))
+				ObjE.value=ObjS.value;
+		}
+		if(C==1)
+		{
+			if(parseInt(ObjE.value)<parseInt(ObjS.value))
+				ObjS.value=ObjE.value;
+		}
+		MapItem.zoom=ObjS.value+","+ObjE.value;
+		document.getElementById('Itmzoom').innerHTML=Str_ZoomRange+"["+MapItem.zoom+"]";
+		RefreshMapItem();
+}
+function changeAll() 
+{
+    var C =[0,0,0]
+		C[0]=document.getElementById('slideRed').value;
+    C[1]=document.getElementById('slideGreen').value;
+    C[2]=document.getElementById('slideBlue').value;
+    document.getElementById('ShwColor').style.backgroundColor = "rgb("+C[0]+","+C[1]+","+C[2]+")";
+		document.getElementById('ShwColor').style.color = "rgb("+(255-C[0])+","+(255-C[1])+","+(255-C[2])+")";
+		MapItem.color[IdxCol+1]=C[0]+","+C[1]+","+C[2];
+		UpDtCl();
+}
+function AddStsVarCol()
+{
+	var i=MapItem.color.length
+	i-=(i%2);
+	MapItem.color[i]="X";
+	MapItem.color[i+1]="255,255,255";
+}
+function UpDtCl()
+{
+		var out="";
+    var C =[0,0,0]
+		if(MapItem.color.length<=IdxCol)
+			IdxCol=0;
+		if((MapItem.color.length%2)==0)
+		{
+			for(var i=0;i<MapItem.color.length;i+=2)
+			{
+				C=MapItem.color[i+1].split(",");
+				out+="<font style=\"color:rgba("+(255-C[0])+","+(255-C[1])+","+(255-C[2])+",1);background-color:rgba("+C[0]+","+C[1]+","+C[2]+",1);\" size=\"2\" face=\"Verdana\" onclick=\"IdxCol="+i+";ShowMapItem();\">[ "+MapItem.color[i]+" ]</font>\n";
+			  out+="<img src=\"../img/error1.jpg\" width=\"18\" height=\"18\" border=\"0\" onclick=\"MapItem.color.splice("+i+",2);IdxCol=0;UpDtCl();\" /><br />\n";
+			}
+			if(document.getElementById('StsCol'))
+				document.getElementById('StsCol').innerHTML=out;
+		}
+		return out;
+}
+//---------------------------------------------------------------------------------------------------------------------------------------
+function WinMapResized()
+{
+	setTimeout( function() { map.updateSize();}, 200);
+}
+function UpDateMap()
+{
+	var color;
+	var Color2 = "rgba(150,150,150,1) rgba(100,100,100,0.8)";
+	var col;
+	var valor="";
+	var Location="";
+	var Zoom;
+	var MapZoom=0;
+	var i=0;
+	var b=0;
+	winList["WinAllMap"].FixSize(mapFixedSize);
+	winList["WinAllMap"].ResizeFnc=WinMapResized;
+	/*while(i<MapItemList.length && b<MapItemListBk.length)
+	{
+		if(MapItemList[i][0]>MapItemListBk[b][0])
+		{
+			//alert("Borrado:"+MapItemListBk[b][1]);
+			b++;
+		}
+		if(MapItemList[i][0]<MapItemListBk[b][0])
+		{
+			//alert("Agregado:"+MapItemList[i][1]);
+			i++;
+		}
+		if(MapItemList[i][0]==MapItemListBk[b][0])
+		{
+			i++;
+			b++;
+		}
+	}// */
+	i=0;
+	while(i<MapItemList.length)
+	{
+		Zoom=MapItemList[i][3].split(",");
+		MapZoom=map.getView().getZoom();
+		if(MapZoom>=parseInt(Zoom[0]) && MapZoom<=parseInt(Zoom[1]))
+		{
+			Color2 = "rgba(150,150,150,1) rgba(100,100,100,0.8)";
+			valor=GetIdVal(MapItemList[i][1]);
+			Location=GetIdVal(MapItemList[i][6]);
+			if(parseInt('0'+MapItemList[i][7])==0)	//controllers
+			{
+				color=MapItemList[i][5].split("/");
+				RemoveUnusedItem(color);
+				for(var a=0;a<color.length;a+=2)
+				{
+					if(valor.indexOf(color[a])!=-1)
+					{
+						col=color[a+1].split(",");
+						Color2="rgba("+col[0]+","+col[1]+","+col[2]+",1) rgba("+col[0]+","+col[1]+","+col[2]+",0.8)"
+					}
+				}
+				UpDtMapItm(MapItemList[i][1],MapItemList[i][2],Location,Color2);
+			}
+			if(parseInt('0'+MapItemList[i][7])==1)	//Cameras
+			{
+				UpDtMapMrk(MapItemList[i][1],MapItemList[i][2],Location,Color2);
+			}			
+		}
+		else
+		{
+			DelMapItm(MapItemList[i][1],parseInt('0'+MapItemList[i][7]));
+		}
+		i++;
+	}
+}
+
+function SetMapSts(idx)
+{
+	var b=0;
+	var Color2 = "rgba(150,150,150,1) rgba(100,100,100,0.8)";
+	var Color;
+	if(FastSts[idx].Lnk)
+	{
+		if(FastSts[idx].Lnk.indexOf("Timeout")!=-1)
+			Color2= "rgba(150,150,255,1) rgba(100,100,150,0.8)";
+		if(FastSts[idx].Lnk.indexOf("ok")!=-1)
+			Color2= "rgba(150,255,150,1) rgba(100,150,100,0.8)";
+	}
+	if(FastSts[idx].Plcs)
+	{
+		for(b=0;b<FastSts[idx].Plcs.length;b++)
+		{
+			if(FastSts[idx].Plcs[b])
+			{
+				Color=Color2;
+				if(FastSts[idx].Plcs[b].Status)
+				{
+					if(FastSts[idx].Plcs[b].Status.indexOf("Error")!=-1)
+						Color = "rgba(255,150,150,1) rgba(150,100,100,0.8)";
+					if(FastSts[idx].Plcs[b].Status.indexOf("Flashing")!=-1)
+						Color = "rgba(150,150,100,1) rgba(255,255,150,0.8)";
+				}
+				if(FastSts[idx].Plcs[b].Location)
+					UpDtMapItm(FastSts[idx].Id+"/"+FastSts[idx].Plcs[b].Nombre,"Circle 20",FastSts[idx].Plcs[b].Location,Color);
+			}
+		}
+	}
+	if(FastSts[idx].IOs)
+	{
+		for(b=0;b<FastSts[idx].IOs.length;b++)
+		{
+			if(FastSts[idx].IOs[b])
+			{
+				Color = "rgba(150,150,150,1) rgba(100,100,100,0.8)";
+				if(FastSts[idx].IOs[b].Status)
+				{
+					if(FastSts[idx].IOs[b].Status.indexOf("precent")!=-1)
+						Color = "rgba(150,255,150,1) rgba(100,150,100,0.8)";
+				}
+				if(FastSts[idx].IOs[b].Location)
+					UpDtMapItm(FastSts[idx].Id+"/IOs["+b+"]","Circle 15",FastSts[idx].Plcs[b].Location,Color);
+			}
+		}
+	}
+}
+
+function GetBuble(IdPlcSts)
+{
+	var campos="";
+	var out ="<p>";
+	for(var i=0;i<MapItemList.length;i++)
+	{
+		if(MapItemList[i][1]==IdPlcSts)
+		{
+			if(parseInt('0'+MapItemList[i][7])==0)
+			{
+				out+="<img src=\"../img/efile.png\" width=\"18\" height=\"18\" border=\"0\" onclick=\"rcvMapFncList("+i+");\" />"+IdPlcSts;
+				out+="<br />\n";
+				campos=MapItemList[i][4];
+				campos=replaceAll(campos,"undefined","");
+				campos=campos.split(",");
+				RemoveUnusedItem(campos);
+				for(var b=0;b<campos.length;b++)
+				{
+					out+=campos[b].substring(campos[b].lastIndexOf("/")+1);
+					out+=":";
+					out+=GetIdVal(campos[b])+"<br />";
+				}
+				out+="<br />";
+				break;
+			}
+			if(parseInt('0'+MapItemList[i][7])==1)
+			{
+				out+="<img src=\"../img/efile.png\" width=\"18\" height=\"18\" border=\"0\" onclick=\"rcvMapFncList("+i+");\" />"+IdPlcSts;
+				out+="<br />\n";
+				out+='<video src="'+MapItemList[i][4]+'">Your browser does not support the VIDEO tag and/or RTP streams.</video>';
+			}
+		}
+	}
+	out+="</p>\n";
+	//out+="<a href=\"\" onclick=\"GetUrlB('./cruces/"+IdPlcSts+".svg',rcvPlcSts);return false;\" >\n"+Str_Cruce+"</a><br />\n"; //MapItems[feature.idx].Name
+	return out;
+}
+//---------------------------------------------------------------------------------------------------------------------------------------
+function SearchItem(name)
+{
+	for(var a=0;a<MapItems.length;a++)
+	{
+		if(MapItems[a].Name==name)
+			return a;
+	}
+	return a;
+}
+
+function DelMapItm(Name,Layer)
+{
+	var idx=SearchItem(Name);
+	if(idx<MapItems.length)
+	{
+		if(Layer==0)
+		{
+			vector.getSource().removeFeature(MapItems[idx].Feature);
+			MapItems.splice(idx,1);
+		}
+		if(Layer==1)
+		{
+			markers.getSource().removeFeature(MapItems[idx].Feature);
+			MapItems.splice(idx,1);
+		}
+	}
+}
+
+function UpDtMapItm(Name,Type,Cord2,Color)
+{
+	var res;
+	Type=Type.split(" ");
+	var Cord=Cord2.split(",");
+	Color=Color.split(" ");
+	if(Type[0].indexOf('Circle')!=-1)
+	{
+			var lat=parseFloat(Cord[0]);
+			var lon=parseFloat(Cord[1]);
+			if(isNaN(lat) || isNaN(lon))
+			{
+				return;
+			}
+			else
+			{
+				idx=SearchItem(Name);
+				if(idx==MapItems.length)
+				{
+					MapItems[idx]= new Object();
+				}
+				else
+				{
+					res=compare2objects(MapItems[idx].pos,ol.proj.fromLonLat([lon,lat]));
+					if(res)	
+					{
+						res=compare2objects(MapItems[idx].Style,new ol.style.Style({stroke:new ol.style.Stroke({color:Color[0],width:5}),fill:new ol.style.Fill({color:Color[1]}),radius:parseInt(Type[1])}));
+						if(res)
+						{
+							return
+						}
+					}
+					vector.getSource().removeFeature(MapItems[idx].Feature);
+				}
+				MapItems[idx].Name=Name;
+				MapItems[idx].pos=ol.proj.fromLonLat([lon,lat]);
+				MapItems[idx].Feature=new ol.Feature(new ol.geom.Circle(MapItems[idx].pos,parseInt(Type[1])));
+				MapItems[idx].Style=new ol.style.Style({stroke:new ol.style.Stroke({color:Color[0],width:5}),fill:new ol.style.Fill({color:Color[1]}),radius:parseInt(Type[1])})
+				MapItems[idx].Feature.setStyle(MapItems[idx].Style);
+				MapItems[idx].Feature.idx=idx;
+				vector.getSource().addFeature(MapItems[idx].Feature);
+			}
+	}
+	if(Type[0].indexOf('Line')!=-1)
+	{
+			var lat1=parseFloat(Cord[0]);
+			var lon1=parseFloat(Cord[1]);
+			var lat2=parseFloat(Cord[2]);
+			var lon2=parseFloat(Cord[3]);
+			if(isNaN(lat1) || isNaN(lon1) || isNaN(lat2) || isNaN(lon2))
+			{
+				return;
+			}
+			else
+			{
+				idx=SearchItem(Name);
+				if(idx==MapItems.length)
+				{
+					MapItems[idx]= new Object();
+				}
+				else
+				{
+					res=compare2objects(MapItems[idx].pos,[ol.proj.fromLonLat([lon1,lat1]),ol.proj.fromLonLat([lon2,lat2])]);
+					if(res)	
+					{
+						res=compare2objects(MapItems[idx].Style,new ol.style.Style({stroke: new ol.style.Stroke({color:Color[0],width:parseInt(Type[1])})	}));
+						if(res)
+						{
+							return
+						}
+					}
+					vector.getSource().removeFeature(MapItems[idx].Feature);
+				}
+				MapItems[idx].Name=Name;
+				MapItems[idx].pos =[ol.proj.fromLonLat([lon1,lat1]),ol.proj.fromLonLat([lon2,lat2])];
+				MapItems[idx].Feature=new ol.Feature(new ol.geom.LineString(MapItems[idx].pos));
+				MapItems[idx].Style=new ol.style.Style({stroke: new ol.style.Stroke({color:Color[0],width:parseInt(Type[1])})	});
+				MapItems[idx].Feature.setStyle(MapItems[idx].Style);
+				MapItems[idx].Feature.idx=idx;
+				vector.getSource().addFeature(MapItems[idx].Feature);
+			}
+	}
+}
+
+function UpDtMapMrk(Name,Type,Cord2,Color)
+{
+	var res;
+	var Cord=Cord2.split(",");
+	Color=Color.split(" ");
+	if(Type.indexOf('png')!=-1)
+	{
+			var lat=parseFloat(Cord[0]);
+			var lon=parseFloat(Cord[1]);
+			if(isNaN(lat) || isNaN(lon))
+			{
+				return;
+			}
+			else
+			{
+				idx=SearchItem(Name);
+				if(idx==MapItems.length)
+				{
+					MapItems[idx]= new Object();
+				}
+				else
+				{
+					res=compare2objects(MapItems[idx].pos,ol.proj.fromLonLat([lon,lat]));
+					if(res)	
+					{
+						res=compare2objects(MapItems[idx].Style,new ol.style.Style({stroke:new ol.style.Stroke({color:Color[0],width:5}),fill:new ol.style.Fill({color:Color[1]}),radius:parseInt(Type[1])}));
+						if(res)
+						{
+							return
+						}
+					}
+					markers.getSource().removeFeature(MapItems[idx].Feature);
+				}
+				MapItems[idx].Name=Name;
+				MapItems[idx].pos=ol.proj.fromLonLat([lon,lat]);
+				MapItems[idx].Feature=new ol.Feature(new ol.geom.Point(ol.proj.fromLonLat([lon,lat])));
+				
+				MapItems[idx].Style=new ol.style.Style({
+								image:new ol.style.Icon({
+										anchor: [0.5, 46],
+										anchorXUnits: 'fraction',
+										anchorYUnits: 'pixels',
+										opacity: 0.95,
+										src:Type //'icon.png'
+										}),
+								stroke:new ol.style.Stroke({width: 3,color: [255, 0, 0, 1]}),
+								fill:new ol.style.Fill({color: [0, 0, 255, 0.6]})
+								});
+				MapItems[idx].Feature.setStyle(MapItems[idx].Style);
+				MapItems[idx].Feature.idx=idx;
+				markers.getSource().addFeature(MapItems[idx].Feature);
+			}
+	}
+}
+//---------------------------------------------------------------------------------------------------------------------------------------
+function InitWinOL()
+{
+	document.getElementById("WinAllMapTitle").innerHTML=Str_Map;
+	document.getElementById("WinAllMapBody").innerHTML="<div id=\"AllMap\" class=\"map\"><div id=\"info\"></div></div>";
+	winList["WinAllMap"].SetH(winList["WinAllMap"].frame.style.width);
+	winUdate();
+	winList["WinAllMap"].open();
+	var idx=Reqest.length;
+	//-------------------------------------------
+	Reqest[idx]= new Object();
+	Reqest[idx].Name=Str_MapItem;
+	Reqest[idx].Url="./getlist.jsp?cmps=*&tbl=mapitems&ord=variable";
+	Reqest[idx].Fnc=rcvMapListBK;
+	Reqest[idx].Status=0;
+	Reqest[idx].Refresh=10000;
+	Reqest[idx].LstRqst=0;
+	GetUrlB("./getlist.jsp?cmps=*&tbl=mapitems&ord=variable",rcvMapListBK);
+}
+function InitOL()
+{
+	var pos =GlobView.split(",");
+	var lat=parseFloat(pos[0]);	//-34.62933;
+	var lon=parseFloat(pos[1]);
+	pos = ol.proj.fromLonLat([lon,lat]);
+	//--------------------------------------------------------
+	container = document.getElementById('popup');
+	content = document.getElementById('popup-content');
+	closer = document.getElementById('popup-closer');
+	container.style.display = "none";
+	//-------------------------------------------------------- Mapa
+	layer = new ol.layer.Tile({source: new ol.source.OSM()});
+	//-------------------------------------------------------- Overlay
+	popup = new ol.Overlay({position: pos,element:container});
+	/*var OverMk = new ol.Overlay({
+                        position: [lat, lon],
+                        positioning: 'center-center',
+                        element: document.getElementById('OverMk'),
+                        stopEvent: false
+                    });// */
+	//-----------------------------------------------------
+	var pointFeature = new ol.Feature(new ol.geom.Point(ol.proj.fromLonLat([lon,lat])));
+	var iconstyle = new ol.style.Style({
+							image:	new ol.style.Icon({
+										anchor: [0.5, 46],
+										anchorXUnits: 'fraction',
+										anchorYUnits: 'pixels',
+										opacity: 0.95,
+										src:'icon.png'	//'https://openlayers.org/en/v3.20.1/examples/data/icon.png'	//'/icon.png'	//
+										}),
+							stroke:	new ol.style.Stroke({width: 3,color: [255, 0, 0, 1]}),
+							fill:	new ol.style.Fill({color: [0, 0, 255, 0.6]})
+							});
+	var iconsource = new ol.source.Vector({
+						wrapX: false,
+						ratio: 1,
+						params: {'LAYERS': 'show:0'},
+						features: [] //pointFeature
+						});
+	markers = new ol.layer.Vector({
+						title:'Camaras',
+						source: iconsource,
+						style: iconstyle
+						});
+	//-----------------------------------------------------
+	StyleVar = new ol.style.Style({
+						fill: new ol.style.Fill({color: 'rgba(255, 100, 100, 0.8)'}),
+						stroke: new ol.style.Stroke({color: '#ff3333',width: 2}),
+						image: new ol.style.Circle({radius: 17,fill: new ol.style.Fill({color: '#ff3333'})})
+					});
+	source = new ol.source.Vector({
+						wrapX: false,
+						ratio: 1,
+						params: {'LAYERS': 'show:0'},
+					});
+	vector = new ol.layer.Vector({
+                        title: 'Controladores',
+						source:source,
+						style:StyleVar
+					});// */
+	//-----------------------------------------------------
+	View = new ol.View({center: ol.proj.transform([lon,lat],'EPSG:4326','EPSG:3857'),zoom:12})
+	map = new ol.Map({
+				target:'AllMap',
+				layers:[layer],
+				overlays: [popup],
+				view:View
+				});
+	//--------------------------------------------------------
+	var layerSwitcher = new ol.control.LayerSwitcher({tipLabel: 'Légende'});
+	//AddMrk();
+	//--------------------------------------------------------
+	map.addLayer(vector);
+	map.addLayer(markers);
+	map.addOverlay(popup);
+    //map.addOverlay(OverMk);
+    map.addControl(layerSwitcher);
+	//--------------------------------------------------------
+	//map.on('pointermove',OnMoveMap);
+	map.on('click',OnClickMap);
+}
+
+function AddMrk(lat,lon)
+{
+	var size = new ol.Size(21,25);
+	var offset = new ol.Pixel(-(size.w/2), -size.h);
+	var icon = new ol.Icon('http://www.openlayers.org/dev/img/marker.png',size,offset);
+	markers.addMarker(new ol.Marker(new ol.LonLat(lon,lat),icon));
+}
+
+function OnMoveMap(evt)
+{
+	if (evt.dragging)
+	{
+		return;
+	}
+	displayFeatureInfo(map.getEventPixel(evt.originalEvent));
+}
+function OnClickMap(evt)
+{
+	var out="";
+	var coordinate = evt.coordinate;
+	var hdms = ol.coordinate.toStringHDMS(ol.proj.transform(coordinate, 'EPSG:3857', 'EPSG:4326'));
+	var pos= new Object();
+	pos.cord=ol.proj.transform(coordinate, 'EPSG:3857', 'EPSG:4326');
+	pos.zoom=map.getView().getZoom();
+	LOG("Map:"+pos.cord+" Zoom:"+pos.zoom+"\n");
+	FncMapClk(pos);
+	popup.setPosition(coordinate);
+	var feature = map.forEachFeatureAtPixel(evt.pixel, function(feature, layer){return feature;});
+	if(feature) //feature.idx!=='undefined'
+	{
+		container.style.display = "";
+		content.innerHTML="";
+		content.innerHTML+=GetBuble(MapItems[feature.idx].Name);
+		content.innerHTML+="<code>"+hdms+"</code>";
+	}
+	else
+	{
+		container.style.display = "none";
+	}
+}
+function delfnc()
+{
+	var iter=vector.getSource();
+	var fea=iter.getFeatures();
+	for(var i=0;i<fea.length;i++)
+	{
+		iter.removeFeature(fea[i]);
+	}
+}
+function MapStrPos(pos)
+{
+	pos=pos.split(',');
+	MapPos(pos[0],pos[1],pos[2])
+}
+function MapPos(lat,lon,zoom)
+{
+	lat=parseFloat(lat);
+	lon=parseFloat(lon);
+	map.getView().setCenter(ol.proj.fromLonLat([lon, lat]));
+	map.getView().setZoom(zoom);
+}
+//---------------------------------------------------------------------------------------------------------------------------------------
+function rcvMapListBK(Datos)
+{
+	Datos=rcvtbl(Datos);
+	MapItemListBk=owl.deepCopy(MapItemList);
+	MapItemList=owl.deepCopy(Datos);
+	UpDateMap();
+}
+function rcvMapList(Datos)
+{
+	Datos=rcvtbl(Datos);
+	MapItemList=owl.deepCopy(Datos);
+	if (winList["List"])
+	{
+		winList["List"].open();
+		winList["List"].SetH((4+25+(Datos.length*50))+"px");
+		winList["List"].SetW(500+"px");
+	}
+	document.getElementById("ListTitle").innerHTML=Str_MapList;
+	document.getElementById("ListBody").innerHTML=ShowMapList(Datos);
+}
+function ShowMapList(Datos)
+{
+	var x=0;
+	var y=0;
+	var bgcolor="";
+	var out="";
+	out+="<input type=\"button\" class=\"INTEXT2\" value=\""+Str_Close+"\" onclick=\"winList['List'].close();return false;\" />\n";
+	out+="<table border=\"1\" cellpadding=\"2\" cellspacing=\"0\" align=\"center\" background=\"\" width=\"100%\" style=\"border-collapse:collapse;border:2px solid #000000;\">\n";
+	//---------------------------------------------------------------------
+	{
+		out+="<tr align=\"center\" bgcolor=\"#C0C0C0\" >\n";
+		out+="	<td align=\"center\">\n";
+		out+="	</td>\n";
+		out+="	<td align=\"center\">\n";
+		out+="		<font size=\"1\" face=\"Verdana\">"+Str_Ident+"</font>\n";
+		out+="	</td>\n";
+		out+="	<td align=\"center\" valign=\"middle\">\n";
+		out+="		<font size=\"1\" face=\"Verdana\">"+Str_Type+"</font>\n";
+		out+="	</td>\n";
+		out+="	<td align=\"center\" valign=\"middle\">\n";
+		out+="		<font size=\"1\" face=\"Verdana\">"+Str_Zoom+"</font>\n";
+		out+="	</td>\n";
+		out+="	<td align=\"center\" valign=\"middle\">\n";
+		out+="		<font size=\"1\" face=\"Verdana\">"+Str_BubleInfos+"</font>\n";
+		out+="	</td>\n";
+		out+="	<td align=\"center\" valign=\"middle\">\n";
+		out+="		<font size=\"1\" face=\"Verdana\">"+Str_Color+"</font>\n";
+		out+="	</td>\n";
+		out+="	<td align=\"center\" valign=\"middle\">\n";
+		out+="		<font size=\"1\" face=\"Verdana\">"+Str_Ubicacion+"</font>\n";
+		out+="	</td>\n";
+		out+="	<td align=\"center\" >\n";
+		out+="	</td>\n";
+		out+="</tr>\n";
+	}
+	//---------------------------------------------------------------------
+	y=0;
+	while(y<Datos.length)
+	{
+		if((y%2)==0)
+			bgcolor="#808080";
+		else
+			bgcolor="#A0A0A0";
+		out+="<tr align=\"center\" bgcolor=\""+bgcolor+"\" >\n";
+		out+="	<td align=\"center\" valign=\"middle\" onclick=\"rcvMapFncList("+y+");\">\n";
+		out+="		<img src=\"../img/efile.png\" width=\"18\" height=\"18\" border=\"0\" />";
+		out+="	</td>\n";
+		{
+			out+="	<td align=\"center\" valign=\"middle\">\n";
+			out+="		<font size=\"1\" face=\"Verdana\">"+Datos[y][1]+"</font>\n";
+			out+="	</td>\n";
+			out+="	<td align=\"center\" valign=\"middle\">\n";
+			out+="		<font size=\"1\" face=\"Verdana\">"+Datos[y][2]+"</font>\n";
+			out+="	</td>\n";
+			out+="	<td align=\"center\" valign=\"middle\">\n";
+			out+="		<font size=\"1\" face=\"Verdana\">"+Datos[y][3]+"</font>\n";
+			out+="	</td>\n";
+			out+="	<td align=\"center\" valign=\"middle\">\n";
+			out+="		<font size=\"1\" face=\"Verdana\">"+Datos[y][4]+"</font>\n";
+			out+="	</td>\n";
+			out+="	<td align=\"center\" valign=\"middle\">\n";
+			out+="		<font size=\"1\" face=\"Verdana\">"+Datos[y][5]+"</font>\n";
+			out+="	</td>\n";
+			out+="	<td align=\"center\" valign=\"middle\" onclick=\"MapStrPos('"+GetIdVal(Datos[y][6])+"');\" >\n";
+			out+="		<font size=\"1\" face=\"Verdana\" >"+GetIdVal(Datos[y][6])+"</font>\n";
+			out+="	</td>\n";
+		}
+		out+="	<td align=\"center\" valign=\"middle\" onclick=\"DelMapItm('"+Datos[y][1]+"');GetUrlB('./setitems.jsp?sql=DELETE FROM mapitems WHERE key="+Datos[y][0]+"',fncnone);GetUrlB('./getlist.jsp?cmps=*&tbl=mapitems&ord=variable',rcvMapList);\">\n";
+		out+="		<img src=\"../img/defile.png\" width=\"18\" height=\"18\" border=\"0\" />";
+		out+="	</td>\n";
+		out+="</tr>\n";
+		y++;
+	}
+	//---------------------------------------------------------------------
+	out+="</table>\n";
+	return out;
+}
+//---------------------------------------------------------------------------------------------------------------------------------------
+/*		var LinePoints=[ol.proj.fromLonLat([-46.776000,-23.523000]),ol.proj.fromLonLat([-46.779000,-23.521000])];
+		var lineFeature = 		new ol.Feature(new ol.geom.LineString(LinePoints));
+		var lineStyle = new ol.style.Style({stroke: new ol.style.Stroke({color:'rgba(140,20,20,0.7)',width:10})	});
+		lineFeature.setStyle(lineStyle);
+		source.addFeature(lineFeature);	// */
+
+		/*var LinePoints=[ol.proj.fromLonLat([-46.776000,-23.521000]),ol.proj.fromLonLat([-46.779000,-23.523000])];
+		var lineFeature = 		new ol.Feature(new ol.geom.LineString(LinePoints));
+		var lineStyle = new ol.style.Style({stroke: new ol.style.Stroke({color:'rgba(20,140,20,0.7)',width:10})	});
+		lineFeature.setStyle(lineStyle);
+		source.addFeature(lineFeature); // */
+		
+		/*var PolyPoints=[ol.proj.fromLonLat([-46.776000,-23.523000]),
+										ol.proj.fromLonLat([-46.776000,-23.521000]),
+										ol.proj.fromLonLat([-46.779000,-23.521000]),
+										ol.proj.fromLonLat([-46.779000,-23.523000]),
+										ol.proj.fromLonLat([-46.776000,-23.523000])];
+		var polygonFeature = 	new ol.Feature(new ol.geom.Polygon([PolyPoints]));
+		source.addFeature(polygonFeature); // */
