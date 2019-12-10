@@ -56,6 +56,11 @@ function fnc0()
 		URLs.splice(0,1);
 		return;
 	}
+	else
+	{
+		if(Reqest[PoolData].Status!=0)
+			Reqest[PoolData].Status=1;
+	}
 	//else
 	{
 		if(Reqest[PoolData].Status==0)
@@ -116,6 +121,10 @@ function RcvMoni(Datos)
 		}
 		PoolData++;
 		PoolData%=Reqest.length;
+	}
+	else
+	{
+		LOG("No data!"+Reqest[PoolData].LstRqst+" "+ms+" "+(ms-Reqest[PoolData].LstRqst)+"\n");
 	}
 	Reqest[PoolData].Status=0;
 }
