@@ -1,4 +1,4 @@
-var enProceso = false;
+var enProceso = 0;
 var http = getHTTPObject();
 var response;
 var fnc_error=0;
@@ -15,7 +15,8 @@ function fncnone(Data)
 
 function GetUrl(url,fnc)
 {
-	if (typeof fnc == "function" && !enProceso)
+	var digital = new Date();
+	if (typeof fnc == "function" && (enProceso+1000)<digital.getTime())
 	{
 		fnc_error=0;
 	}
@@ -24,10 +25,9 @@ function GetUrl(url,fnc)
 		fnc_error++;
 		return 1;
 	}
-  var digital = new Date();
-  if (!enProceso && http)
+	if ((enProceso+1000)<digital.getTime() && http)
   {
-		enProceso = true;
+		enProceso = digital.getTime();
 		response=fnc;
 		var timtemp;
 		var hours = digital.getHours();
@@ -79,6 +79,25 @@ function handleHttpResponse()
 		break;
 		case 4:
  		{
+			if (http.status == 200)
+			{
+				if (http.responseText.indexOf('invalid') == -1)
+				{
+					if(Log_En>1)LOG("http.status:"+http.readyState+","+http.status+"\n");
+					enProceso = 0;
+					response(http);
+				}
+				else
+				{
+					if(Log_En>1)LOG("Response invalid<br />");
+				}
+			}
+			else
+			{
+				if(Log_En)LOG("Error:"+http.readyState+","+http.status+":"+http.statusText+"\n");
+				enProceso = 0;
+				response(http);
+			}
 		}
 		break;
 		default:
@@ -86,35 +105,6 @@ function handleHttpResponse()
 			if(Log_En)LOG("Error:"+http.readyState+","+http.status+":"+http.statusText+"\n");
  		}
 		break;
-	}
-	var chklogout="";
-	if (http.readyState == 4)
-	{
-		if (http.status == 200)
-		{
-			if (http.responseText.indexOf('invalid') == -1)
-			{
-				enProceso = false;
-				chklogout=http.responseText;
-				if(chklogout.indexOf("[*]")!=-1)
-					window.location.href = '../index.htm';
-				response(http);
-			}
-			else
-			{
-				if(Log_En>1)LOG("Response invalid<br />");
-			}
-		}
-		else
-		{
-			//LOG("Error:"+http.readyState+","+http.status+":"+http.statusText+"\n");
-			response(http);
-			enProceso = false;
-		}
-	}
-	else
-	{
-		//LOG("Error2:"+http.readyState+","+http.status+":"+http.statusText+"\n");
 	}
 }
 
