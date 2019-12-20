@@ -123,7 +123,7 @@ public class SrvPdgvX
 		InetAddress IPAddress=null;
 		InetAddress SubIPAddress=null;
 		serverSocket = new DatagramSocket(port);
-		SubserverSocket = new DatagramSocket(port);
+		SubserverSocket = new DatagramSocket((port+1000));
 		//-----------------------------------------------------
 		Connection c 	=null;
 		Statement stmt	=null;
@@ -181,15 +181,31 @@ public class SrvPdgvX
 					try
 					{
 						SubIPAddress = InetAddress.getByName("pdgvtc.ingavanzada.com.ar");
-						sendPacketP = new DatagramPacket(receivePacketP.getData(),receivePacketP.getLength(), SubIPAddress, port);
-						SubserverSocket.send(sendPacketP);
+						if(SubIPAddress!=null)
+						{
+							try
+							{
+								sendPacketP = new DatagramPacket(receivePacketP.getData(),receivePacketP.getLength(), SubIPAddress, port);
+								SubserverSocket.send(sendPacketP);
+							}
+							catch (SecurityException e)
+							{
+								System.err.println("\tErr[mn.x]:"+e.getClass().getName() + ":" + e.getMessage() );
+							}
+							catch (UnknownHostException e)
+							{
+								System.err.println("\tErr[mn.x]:"+e.getClass().getName() + ":" + e.getMessage() );
+							}
+							catch ( Exception e )
+							{
+								System.err.println("\tErr[mn.x]:"+e.getClass().getName() + ":" + e.getMessage() );
+							}
+						}
 					}
 					catch ( Exception e )
 					{
 						System.err.println("SubserverSocket["+e.getClass().getName()+":"+e.getMessage()+"]");
-						System.exit(0);
 					}
-
 				}
 				catch ( Exception e )
 				{
