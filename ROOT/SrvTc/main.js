@@ -47,19 +47,14 @@ function WebStart()
 
 function fnc0()
 {
-	var digital = new Date();
-	var ms = digital.getTime();
-	if(URLs.length && (enProceso+1000)<digital.getTime())
+	var d = new Date();
+	var ms = d.getTime();
+	if(URLs.length && enProceso==false)
 	{
 		GetUrl(URLs[0],FNCs[0]);
 		FNCs.splice(0,1);
 		URLs.splice(0,1);
 		return;
-	}
-	else
-	{
-		if(Reqest[PoolData].Status!=0)
-			Reqest[PoolData].Status=0;
 	}
 	//else
 	{
@@ -94,39 +89,32 @@ function RcvMoni(Datos)
 {
 	var out="";
 	var hora = new Date();
-	if(Datos)
+	if(Datos && Reqest[PoolData].Status==1)
 	{
-		if(Reqest[PoolData].Status==1)
+		if(Datos.status==200)
 		{
-			if(Datos.status==200)
+			if(Reqest[PoolData].WinName)
 			{
-				if(Reqest[PoolData].WinName)
-				{
-					document.getElementById(Reqest[PoolData].WinName+"Title").innerHTML="";
-					//document.getElementById(Reqest[PoolData].WinName+"Title").innerHTML+="<img src='./img/reload.png' onclick='chgsts("+PoolData+");' width='14' height='14' /> ";
-					document.getElementById(Reqest[PoolData].WinName+"Title").innerHTML+=Reqest[PoolData].Name;
-					document.getElementById(Reqest[PoolData].WinName+"Hora").innerHTML=hora.getHours()+":"+hora.getMinutes()+":"+hora.getSeconds()+" ";
-					document.getElementById(Reqest[PoolData].WinName+"Body").innerHTML=Reqest[PoolData].Fnc(Datos);
-				}
-				else
-				{
-					Reqest[PoolData].Fnc(Datos);
-				}
+				document.getElementById(Reqest[PoolData].WinName+"Title").innerHTML="";
+				//document.getElementById(Reqest[PoolData].WinName+"Title").innerHTML+="<img src='./img/reload.png' onclick='chgsts("+PoolData+");' width='14' height='14' /> ";
+				document.getElementById(Reqest[PoolData].WinName+"Title").innerHTML+=Reqest[PoolData].Name;
+				document.getElementById(Reqest[PoolData].WinName+"Hora").innerHTML=hora.getHours()+":"+hora.getMinutes()+":"+hora.getSeconds()+" ";
+				document.getElementById(Reqest[PoolData].WinName+"Body").innerHTML=Reqest[PoolData].Fnc(Datos);
 			}
 			else
 			{
-				if(Reqest[PoolData].WinName)
-					document.getElementById(Reqest[PoolData].WinName+"Body").innerHTML=Datos.status+" "+Datos.statusText;
+				Reqest[PoolData].Fnc(Datos);
 			}
 		}
-		PoolData++;
-		PoolData%=Reqest.length;
+		else
+		{
+			if(Reqest[PoolData].WinName)
+				document.getElementById(Reqest[PoolData].WinName+"Body").innerHTML=Datos.status+" "+Datos.statusText;
+		}
+		Reqest[PoolData].Status=0;
 	}
-	else
-	{
-		LOG("No data!"+Reqest[PoolData].LstRqst+" "+ms+" "+(ms-Reqest[PoolData].LstRqst)+"\n");
-	}
-	Reqest[PoolData].Status=0;
+	PoolData++;
+	PoolData%=Reqest.length;
 }
 
 function CountItem(Aray,Item)

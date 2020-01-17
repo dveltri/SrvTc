@@ -1,2 +1,2 @@
-javac -Xlint SrvPdgv.java
+javac -Xlint procDat.java procSql.java SrvPdgvX.java
 javac -Xlint SrvPdgvX.java
