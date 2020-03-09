@@ -432,7 +432,7 @@ public class procDat implements Runnable
 										//if((tmpI&0x00200000)!=0)tmpT+=",EV";
 										//if((tmpI&0x40000000)!=0)tmpT+=",Tmin";
 										InsSql = "INSERT INTO variables (id,lstchg,value) VALUES (\'/"+id+"/PLC"+(tmpL+1)+"/Status\',LOCALTIMESTAMP,\'"+modo[(tmpI&0x0F)]+tmpT+"\');";
-										UdtSql = "UPDATE variables SET (lstchg,value) =	(LOCALTIMESTAMP,\'"+modo[(tmpI&0x0F)]+tmpT+"\') WHERE id = \'/"+id+"/PLC"+(tmpL+1)+"/Status\' value<>\'"+modo[(tmpI&0x0F)]+tmpT+"\'";
+										UdtSql = "UPDATE variables SET (lstchg,value) =	(LOCALTIMESTAMP,\'"+modo[(tmpI&0x0F)]+tmpT+"\') WHERE id = \'/"+id+"/PLC"+(tmpL+1)+"/Status\' AND value<>\'"+modo[(tmpI&0x0F)]+tmpT+"\'";
 										if((log&4)!=0)System.out.println("\tMode:"+modo[(tmpI&0x0F)]+tmpT+"("+Integer.toHexString(tmpI)+")");
 										dgvsqlTH(InsSql,UdtSql);
 										InsSql = "INSERT INTO variables (id,lstchg,value) VALUES (\'/"+id+"/PLC"+(tmpL+1)+"/Nombre\',LOCALTIMESTAMP,\'Ctrl"+(tmpL+1)+"\');";
