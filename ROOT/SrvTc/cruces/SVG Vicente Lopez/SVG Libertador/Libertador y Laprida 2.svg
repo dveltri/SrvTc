@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="520" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <g transform="matrix(0, 1, 1, 0, -82.801033, 82.801018)">
+    <title>Layer 1</title>
+    <rect fill="#999999" y="-4.528" x="117.662" height="459.735" width="401.542" id="rect2989" style=""/>
+    <rect fill="#00ff00" stroke="#000000" stroke-width="1.711172" stroke-miterlimit="4" y="0.926" x="396.96" height="450.287" width="123.749" id="rect3775" style=""/>
+    <g fill="#000080" id="g4028-8"/>
+    <g id="phase4">
+      <g stroke="#000000" stroke-width="2.681819" stroke-miterlimit="4" id="g4114-7-4">
+        <rect fill="#ffffff" stroke="#000000" stroke-width="2.681819" transform="matrix(0.372881, 0, 0, 0.372881, 394.96, 616.364)" stroke-miterlimit="4" y="-825.169191" x="-116.860427" height="61.701942" width="8.226926" id="rect3915-1-7-1"/>
+        <rect fill="#ffffff" stroke="#000000" stroke-width="2.681819" transform="matrix(0.372881, 0, 0, 0.372881, 394.96, 616.364)" stroke-miterlimit="4" y="-825.169191" x="-99.378217" height="61.701942" width="8.226926" id="rect3915-0-3-3-4"/>
+        <rect fill="#ffffff" stroke="#000000" stroke-width="2.681819" transform="matrix(0.372881, 0, 0, 0.372881, 394.96, 616.364)" stroke-miterlimit="4" y="-825.169191" x="-81.895977" height="61.701942" width="8.226926" id="rect3915-0-7-5-7-4"/>
+        <rect fill="#ffffff" stroke="#000000" stroke-width="2.681819" transform="matrix(0.372881, 0, 0, 0.372881, 394.96, 616.364)" stroke-miterlimit="4" y="-825.169191" x="-64.413777" height="61.701942" width="8.226926" id="rect3915-0-2-4-3-6"/>
+        <rect fill="#ffffff" stroke="#000000" stroke-width="2.681819" transform="matrix(0.372881, 0, 0, 0.372881, 394.96, 616.364)" stroke-miterlimit="4" y="-825.169191" x="-46.931577" height="61.701942" width="8.226926" id="rect3915-0-5-3-1-5"/>
+        <rect fill="#ffffff" stroke="#000000" stroke-width="2.681819" transform="matrix(0.372881, 0, 0, 0.372881, 394.96, 616.364)" stroke-miterlimit="4" y="-825.169191" x="-29.449337" height="61.701942" width="8.226926" id="rect3915-0-6-7-15-7"/>
+        <rect fill="#ffffff" stroke="#000000" stroke-width="2.681819" stroke-miterlimit="4" transform="matrix(0, 0.372881, -0.372881, 0, 394.96, 616.364)" y="21.222397" x="-758.359741" height="95.638008" width="8.226926" id="rect3915-0-6-3-23-0-1"/>
+      </g>
+      <g stroke="#000000" stroke-width="2.681819" stroke-miterlimit="4" id="g4114-7-4-2">
+        <rect fill="#ffffff" stroke="#000000" stroke-width="2.681819" transform="matrix(0.372881, 0, 0, 0.372881, 303.786, 615.591)" stroke-miterlimit="4" y="-825.169267" x="-116.860412" height="61.701942" width="8.226926" id="rect3915-1-7-1-0"/>
+        <rect fill="#ffffff" stroke="#000000" stroke-width="2.681819" transform="matrix(0.372881, 0, 0, 0.372881, 303.786, 615.591)" stroke-miterlimit="4" y="-825.169267" x="-99.378202" height="61.701942" width="8.226926" id="rect3915-0-3-3-4-9"/>
+        <rect fill="#ffffff" stroke="#000000" stroke-width="2.681819" transform="matrix(0.372881, 0, 0, 0.372881, 303.786, 615.591)" stroke-miterlimit="4" y="-825.169267" x="-81.895962" height="61.701942" width="8.226926" id="rect3915-0-7-5-7-4-6"/>
+        <rect fill="#ffffff" stroke="#000000" stroke-width="2.681819" transform="matrix(0.372881, 0, 0, 0.372881, 303.786, 615.591)" stroke-miterlimit="4" y="-825.169267" x="-64.413752" height="61.701942" width="8.226926" id="rect3915-0-2-4-3-6-3"/>
+        <rect fill="#ffffff" stroke="#000000" stroke-width="2.681819" transform="matrix(0.372881, 0, 0, 0.372881, 303.786, 615.591)" stroke-miterlimit="4" y="-825.169267" x="-46.931552" height="61.701942" width="8.226926" id="rect3915-0-5-3-1-5-3"/>
+        <rect fill="#ffffff" stroke="#000000" stroke-width="2.681819" transform="matrix(0.372881, 0, 0, 0.372881, 303.786, 615.591)" stroke-miterlimit="4" y="-825.169267" x="-29.449322" height="61.701942" width="8.226926" id="rect3915-0-6-7-15-7-1"/>
+        <rect fill="#ffffff" stroke="#000000" stroke-width="2.681819" stroke-miterlimit="4" transform="matrix(0, 0.372881, -0.372881, 0, 303.786, 615.591)" y="21.222382" x="-758.359817" height="95.638008" width="8.226926" id="rect3915-0-6-3-23-0-1-9"/>
+      </g>
+    </g>
+    <rect fill="#ffffff" transform="matrix(0.99999536,-0.00304721,0.00283851,0.99999597,0,0)" y="353.89157" x="365.59436" height="99.012009" width="1.160006" id="rect3915-0-6-78-3-6-4-0-6"/>
+    <rect fill="#ffffff" transform="matrix(0.99999536,-0.00304721,0.00283851,0.99999597,0,0)" y="352.9487" x="276.15521" height="99.012009" width="1.160006" id="rect3915-0-6-78-3-6-4-0-6-7"/>
+    <g id="phase3">
+      <path fill="#0000ff" stroke="#000000" stroke-width="0.743965" stroke-miterlimit="4" d="m257.386993,366.320801l7.127014,-18.214966l6.220001,16.763977l-3.34201,-2.565002l0.190002,14.478027l-6.438995,0.01001l0.209991,-14.595032l-3.966003,4.122986z" id="path4877-3-9-3-7"/>
+      <path fill="#0000ff" stroke="#000000" stroke-width="0.743965" stroke-miterlimit="4" d="m285.746002,366.320801l7.126984,-18.214966l6.220032,16.763977l-3.34201,-2.565002l0.19101,14.478027l-6.439026,0.01001l0.210022,-14.595032l-3.96701,4.122986z" id="path4877-3-9-3-8"/>
+      <path fill="#0000ff" stroke="#000000" stroke-width="0.743965" stroke-miterlimit="4" d="m348.282013,366.320801l7.126984,-18.214966l6.221008,16.763977l-3.343018,-2.565002l0.19101,14.478027l-6.438995,0.01001l0.209991,-14.595032l-3.96698,4.122986z" id="path4877-3-9-3-73"/>
+      <path fill="#0000ff" stroke="#000000" stroke-width="0.743965" stroke-miterlimit="4" d="m373.006012,366.320801l7.126984,-18.214966l6.220001,16.763977l-3.34201,-2.565002l0.19101,14.478027l-6.440002,0.01001l0.209991,-14.595032l-3.965973,4.122986z" id="path4877-3-9-3-73-4"/>
+    </g>
+    <text transform="matrix(0, 1.474318, 1.404084, 0, 293.016571, -300.86731)" style="fill: rgb(64, 192, 234); font-size: 11.4px; line-height: 26.7463px; stroke: rgb(68, 225, 206); white-space: pre;" x="215.194" y="23.672">Av. Libertador</text>
+    <text transform="matrix(0, 1.333522, 1.353101, 0, 101.611397, -88.606323)" style="fill: rgb(64, 192, 234); font-size: 11.4px; line-height: 26.7463px; stroke: rgb(68, 225, 206); white-space: pre;" x="215.194" y="23.672">Laprida 2<tspan x="215.19400024414062" dy="1em">​</tspan><tspan x="215.19400024414062" dy="1em">​</tspan></text>
+    <rect fill="#5fbf00" x="-267.215" width="171.494" height="107.91" stroke="#000000" rx="20" ry="20" id="svg_72" style="" y="0.244" transform="matrix(0, 1, 1, 0, 120.188671, 549.06461)"/>
+    <g id="g-8" transform="matrix(-1.262931, 0, 0, 1.241421, 545.731262, -20.835548)" style="">
+      <path id="path-2" fill="#999999" stroke="#000000" d="m285.5,182l10,7l0,-5l20,0l0,-4c-6.66666,0 -13.33334,0 -20,0c0,-1.66667 0,-3.33333 0,-5l-10,7z"/>
+      <path id="path-3" fill="#999999" stroke="#000000" d="m285.5,220l10,7l0,-5l20,0l0,-4c-6.66699,0 -13.33301,0 -20,0c0,-1.66701 0,-3.33299 0,-5l-10,7z"/>
+    </g>
+    <rect fill="#5fbf00" x="267.215" width="171.494" height="107.91" stroke="#000000" rx="20" ry="20" id="rect-1" style="" y="-0.244" transform="matrix(0, 1, 1, 0, 120.263276, -268.129669)"/>
+    <g id="g-5" style="" transform="matrix(-0.002436, 1.302876, 2.302255, -0.019718, -99.813972, -30.307959)" bx:origin="0.915 0.513">
+      <g id="g-6" transform="rotate(90, 200, 126)">
+        <line fill="none" stroke="#ffffff" stroke-width="4" x1="203.99949" y1="105.99813" x2="218.288" y2="106.504" id="line-18"/>
+        <line fill="none" stroke="#ffffff" stroke-width="4" x1="203.99949" y1="115.99813" x2="217.908" y2="116.739" id="line-19"/>
+        <line fill="none" stroke="#ffffff" stroke-width="4" x1="203.99949" y1="125.99813" x2="218.099" y2="126.412" id="line-20"/>
+        <line fill="none" stroke="#ffffff" stroke-width="4" x1="203.99949" y1="135.99813" x2="217.901" y2="135.818" id="line-21"/>
+        <line fill="none" stroke="#ffffff" stroke-width="4" x1="203.99949" y1="95.99813" x2="218.059" y2="96.994" id="line-22"/>
+        <line fill="none" stroke="#ffffff" stroke-width="4" x1="203.99949" y1="145.99813" x2="217.871" y2="145.753" id="line-23"/>
+        <line fill="none" stroke="#ffffff" stroke-width="4" x1="203.99949" y1="155.99813" x2="217.799" y2="156.679" id="line-24"/>
+        <line fill="none" stroke="#ffffff" stroke-width="4" x1="199.99949" y1="93.99813" x2="199.99949" y2="157.99813" id="line-25"/>
+      </g>
+      <g id="g-7" transform="rotate(-90, 200, 274)"/>
+    </g>
+  </g>
+</svg>

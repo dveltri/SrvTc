@@ -10,6 +10,7 @@
    <metadata id="svg_65">image/svg xml</metadata>
    <rect x="0" y="-1" fill="#7f7f7f" stroke="#000000" width="400" height="400" id="svg_70"/>
    <rect fill="#eaeaea" x="275.62488" y="655.10946" width="0" height="61.91583" id="svg_69"/>
+
    <rect fill="#5fbf00" x="-0.54348" y="0" width="160" height="160" stroke="#000000" rx="20" ry="20" id="svg_71"/>
    <rect fill="#5fbf00" x="240" y="0" width="160" height="160" stroke="#000000" rx="20" ry="20" id="svg_72"/>
    <rect fill="#5fbf00" x="0" y="240" width="160" height="160" stroke="#000000" rx="20" ry="20" id="svg_73"/>
@@ -18,18 +19,11 @@
    <line fill="none" stroke="#ffff00" x1="280" y1="200" x2="400" y2="200" stroke-width="2" id="svg_76"/>
    <line fill="none" stroke="#ffff00" x1="200" y1="0" x2="200" y2="120" stroke-width="2" id="svg_77"/>
    <line fill="none" stroke="#ffff00" x1="200" y1="280" x2="200" y2="400" stroke-width="2" id="svg_78"/>
-   <g id="input0">
-	<rect height="63" width="23" y="169" x="97" stroke="rgb(100, 100, 100)" fill="rgb(100, 100, 100)"/>
-   </g>
-   <g id="input1">
-	<rect height="23" width="63" y="97" x="169" stroke="rgb(100, 100, 100)" fill="rgb(100, 100, 100)"/>
-   </g>
-   <g id="input2">
-	<rect height="30" width="30" y="165" x="285" stroke="rgb(100, 100, 100)" fill="rgb(100, 100, 100)"/>
-   </g>
-   <g id="input3">
-	<rect height="30" width="30" y="205" x="285" stroke="rgb(100, 100, 100)" fill="rgb(100, 100, 100)"/>
-   </g>
+   <rect id="input0" height="63" width="23" y="169" x="97" stroke="rgb(100, 100, 100)" fill="rgb(100, 100, 100)"/>
+
+   <rect id="input1" height="23" width="63" y="97" x="169" stroke="rgb(100, 100, 100)" fill="rgb(100, 100, 100)"/>
+   <rect id="input2" height="30" width="30" y="165" x="285" stroke="rgb(100, 100, 100)" fill="rgb(100, 100, 100)"/>
+   <rect id="input3" height="30" width="30" y="205" x="285" stroke="rgb(100, 100, 100)" fill="rgb(100, 100, 100)"/>
    <g id="phase0">
     <path transform="rotate(-180, 97, 217)" id="svg_116" fill="#999999" stroke="#000000" d="m82.5,217.5l10,7l0,-5l20,0l0,-4c-6.66699,0 -13.33301,0 -20,0c0,-1.66701 0,-3.33299 0,-5l-10,7z"/>
     <path transform="rotate(-180, 97, 200)" id="svg_116" fill="#999999" stroke="#000000" d="m82.5,217.5l10,7l0,-5l20,0l0,-4c-6.66699,0 -13.33301,0 -20,0c0,-1.66701 0,-3.33299 0,-5l-10,7z"/>

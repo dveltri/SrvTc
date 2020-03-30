@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <marker id="se_marker_end_" markerUnits="strokeWidth" orient="auto" viewBox="0 0 100 100" markerWidth="5" markerHeight="5" refX="50" refY="50">
+      <path d="m100,50l-100,40l30,-40l-30,-40l100,40z" fill="#000000" stroke="#000000" stroke-width="10"/>
+    </marker>
+  </defs>
+  <g style="" transform="matrix(1.211156, 0, 0, 1.136607, 0.001223, 0.136607)">
+    <title>Layer 1</title>
+    <g id="bodyFile" transform="matrix(1, 0, 0, 1, 0, 0.092206)">
+      <rect x="-1.411" y="-0.267" fill="#7f7f7f" stroke="#000000" width="400" height="399.314" id="svg_70" style=""/>
+      <rect fill="#eaeaea" x="275.62488" y="655.10946" width="0" height="61.91583" id="svg_69"/>
+      <rect fill="#5fbf00" x="-0.589" width="156.147" height="89.825" stroke="#000000" rx="28.795" ry="28.795" id="svg_71" style=""/>
+      <rect fill="#5fbf00" x="243.58" width="156.326" height="88.75" stroke="#000000" rx="20" ry="20" id="svg_72" style="" y="-0.201"/>
+      <rect fill="#5fbf00" x="380.431" y="312.734" width="150.668" height="85.65" stroke="#000000" rx="20" ry="20" id="svg_74" style="" transform="matrix(0.999992, 0.004033, 0, 1.000008, -131.889572, -1.913443)"/>
+      <line fill="none" stroke="#ffff00" x1="-0.234" y1="274.119" x2="101.34" y2="273.914" id="svg_75" stroke-width="2" style=""/>
+      <line fill="none" stroke="#ffff00" x1="294.919" y1="273.31" x2="399.581" y2="273.41" stroke-width="2" id="svg_76" style=""/>
+      <g id="phase0" transform="matrix(1, 0, 0, 1, -19.417004, 73.509697)">
+        <path transform="rotate(-180, 97, 217)" id="svg_116" fill="#999999" stroke="#000000" d="m82.5,217.5l10,7l0,-5l20,0l0,-4c-6.66699,0 -13.33301,0 -20,0c0,-1.66701 0,-3.33299 0,-5l-10,7z"/>
+        <path transform="rotate(-180, 97, 200)" id="svg_116" fill="#999999" stroke="#000000" d="m82.5,217.5l10,7l0,-5l20,0l0,-4c-6.66699,0 -13.33301,0 -20,0c0,-1.66701 0,-3.33299 0,-5l-10,7z"/>
+      </g>
+      <g id="phase2" style="" transform="matrix(0.985692, -0.001964, -0.01635, 2.03443, -27.677851, -199.654266)" bx:origin="0.915 0.513">
+        <g id="svg_106" transform="rotate(-90, 200, 274)"/>
+      </g>
+      <g id="phase3" transform="matrix(1.288304, 0, 0, 1, -58.875401, 73.54126)" style="">
+        <g id="svg_87">
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="130" y1="180" x2="154" y2="180" id="svg_79"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="130" y1="190" x2="154" y2="190" id="svg_80"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="130" y1="200" x2="154" y2="200" id="svg_81"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="130" y1="210" x2="154" y2="210" id="svg_82"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="130" y1="170" x2="154" y2="170" id="svg_83"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="130" y1="220" x2="154" y2="220" id="svg_84"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="130" y1="230" x2="154" y2="230" id="svg_85"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="126" y1="168" x2="126" y2="232" id="svg_86"/>
+        </g>
+        <g id="svg_88" transform="rotate(180, 274.003, 200.003)">
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="278.00187" y1="180.00102" x2="302.00187" y2="180.00102" id="svg_89"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="278.00187" y1="190.00102" x2="302.00187" y2="190.00102" id="svg_90"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="278.00187" y1="200.00102" x2="302.00187" y2="200.00102" id="svg_91"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="278.00187" y1="210.00102" x2="302.00187" y2="210.00102" id="svg_92"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="278.00187" y1="170.00102" x2="302.00187" y2="170.00102" id="svg_93"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="278.00187" y1="220.00102" x2="302.00187" y2="220.00102" id="svg_94"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="278.00187" y1="230.00102" x2="302.00187" y2="230.00102" id="svg_95"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="274.00187" y1="168.00102" x2="274.00187" y2="232.00102" id="svg_96"/>
+        </g>
+      </g>
+      <rect fill="#5fbf00" x="-0.909" y="309.303" width="148.474" height="88.913" stroke="#000000" id="svg_73" rx="24.233" ry="24.233" style=""/>
+      <g id="g-1" transform="matrix(1.270801, 0.00014, 0, 1, -56.622562, -73.026871)" style="" bx:origin="0.488 0.051">
+        <g id="g-2">
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="130" y1="180" x2="154" y2="180" id="line-2"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="130" y1="190" x2="154" y2="190" id="line-3"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="130" y1="200" x2="154" y2="200" id="line-4"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="130" y1="210" x2="154" y2="210" id="line-5"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="130" y1="170" x2="154" y2="170" id="line-6"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="130" y1="220" x2="154" y2="220" id="line-7"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="130" y1="230" x2="154" y2="230" id="line-8"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="126" y1="168" x2="126" y2="232" id="line-9"/>
+        </g>
+        <g id="g-3" transform="rotate(180, 274.003, 200.003)">
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="278.00187" y1="180.00102" x2="302.00187" y2="180.00102" id="line-10"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="278.00187" y1="190.00102" x2="302.00187" y2="190.00102" id="line-11"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="278.00187" y1="200.00102" x2="302.00187" y2="200.00102" id="line-12"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="278.00187" y1="210.00102" x2="302.00187" y2="210.00102" id="line-13"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="278.00187" y1="170.00102" x2="302.00187" y2="170.00102" id="line-14"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="278.00187" y1="220.00102" x2="302.00187" y2="220.00102" id="line-15"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="278.00187" y1="230.00102" x2="302.00187" y2="230.00102" id="line-16"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="274.00187" y1="168.00102" x2="274.00187" y2="232.00102" id="line-17"/>
+        </g>
+      </g>
+      <g id="g-4" transform="matrix(-1.07679, 0, 0, 1.237417, 431.456268, -124.199959)" style="">
+        <path transform="rotate(-180, 97, 217)" id="path-1" fill="#999999" stroke="#000000" d="m82.5,217.5l10,7l0,-5l20,0l0,-4c-6.66699,0 -13.33301,0 -20,0c0,-1.66701 0,-3.33299 0,-5l-10,7z"/>
+        <path transform="rotate(-180, 97, 200)" id="path-1" fill="#999999" stroke="#000000" d="m82.5,217.5l10,7l0,-5l20,0l0,-4c-6.66699,0 -13.33301,0 -20,0c0,-1.66701 0,-3.33299 0,-5l-10,7z"/>
+      </g>
+      <rect fill="#5fbf00" x="0.614" y="163.485" width="140.409" height="70.747" stroke="#000000" id="rect-1" style=""/>
+      <g id="g-5" style="" transform="matrix(1.075729, -0.002143, -0.01628, 2.025551, -14.569024, -201.332001)" bx:origin="0.915 0.513">
+        <g id="g-6" transform="rotate(90, 200, 126)">
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="203.99949" y1="105.99813" x2="218.288" y2="106.504" id="line-18"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="203.99949" y1="115.99813" x2="217.908" y2="116.739" id="line-19"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="203.99949" y1="125.99813" x2="218.099" y2="126.412" id="line-20"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="203.99949" y1="135.99813" x2="217.901" y2="135.818" id="line-21"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="203.99949" y1="95.99813" x2="218.059" y2="96.994" id="line-22"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="203.99949" y1="145.99813" x2="217.871" y2="145.753" id="line-23"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="203.99949" y1="155.99813" x2="217.799" y2="156.679" id="line-24"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="199.99949" y1="93.99813" x2="199.99949" y2="157.99813" id="line-25"/>
+        </g>
+        <g id="g-7" transform="rotate(-90, 200, 274)">
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="203.99949" y1="254.00101" x2="219.017" y2="254.4" id="line-26"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="203.99949" y1="264.00101" x2="219.257" y2="263.273" id="line-27"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="203.99949" y1="274.00101" x2="219.188" y2="273.362" id="line-28"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="203.99949" y1="284.00101" x2="219.298" y2="283.292" id="line-29"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="203.99949" y1="244.00101" x2="219.139" y2="244.149" id="line-30"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="203.99949" y1="294.00101" x2="219.42" y2="292.977" id="line-31"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="203.99949" y1="304.00101" x2="219.887" y2="302.755" id="line-32"/>
+          <line fill="none" stroke="#ffffff" stroke-width="4" x1="199.99949" y1="242.00101" x2="199.99949" y2="306.00101" id="line-33"/>
+        </g>
+      </g>
+      <g id="g-8" transform="matrix(0, -1.038696, 1.131618, 0, -32.202816, 340.265656)" style="">
+        <path id="path-2" fill="#999999" stroke="#000000" d="m285.5,182l10,7l0,-5l20,0l0,-4c-6.66666,0 -13.33334,0 -20,0c0,-1.66667 0,-3.33333 0,-5l-10,7z"/>
+        <path id="path-3" fill="#999999" stroke="#000000" d="m285.5,220l10,7l0,-5l20,0l0,-4c-6.66699,0 -13.33301,0 -20,0c0,-1.66701 0,-3.33299 0,-5l-10,7z"/>
+      </g>
+      <line fill="none" stroke="#ffff00" x1="1.327" y1="123.117" x2="101.982" y2="123.117" id="line-1" stroke-width="2" style=""/>
+      <line fill="none" stroke="#ffff00" x1="292.565" y1="123.933" x2="400.72" y2="123.083" id="line-34" stroke-width="2" style=""/>
+      <text transform="matrix(1.241075, 0, 0, 1.208207, -89.277802, 346.269684)" style="fill: rgb(112, 228, 244); font-size: 11.4px; line-height: 26.7463px; stroke: rgb(68, 225, 206); white-space: pre;" x="215.194" y="23.672">Alsina</text>
+      <text transform="matrix(1.217282, 0, 0, 1.235329, -253.967804, 115.903755)" style="fill: rgb(64, 192, 234); font-size: 11.4px; line-height: 26.7463px; stroke: rgb(68, 225, 206); white-space: pre;" x="215.194" y="23.672">Av. Maipu</text>
+      <text transform="matrix(1.217282, 0, 0, 1.235329, 60.144764, 267.112823)" style="fill: rgb(64, 192, 234); font-size: 11.4px; line-height: 26.7463px; stroke: rgb(68, 225, 206); white-space: pre;" x="215.194" y="23.672">Av. Maipu</text>
+      <text x="432.117" y="169.065" style="white-space: pre; fill: rgb(51, 51, 51); font-size: 24px;"> </text>
+      <text x="439.71" y="163.565" style="white-space: pre; fill: rgb(51, 51, 51); font-size: 24px;"> </text>
+      <text x="458.82" y="151.674" style="white-space: pre; fill: rgb(51, 51, 51); font-size: 24px;"> </text>
+      <rect fill="#5fbf00" x="256.228" y="164.393" width="141.856" height="70.747" stroke="#000000" id="rect-2" style=""/>
+    </g>
+  </g>
+</svg>
