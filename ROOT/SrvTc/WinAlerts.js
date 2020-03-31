@@ -203,7 +203,7 @@ function alertDelFlt()
 		for(var i=0;i<Altrafltr.length;i++)
 		{
 			if(i==0)
-				Url+="%description LIKE %27%25"+Altrafltr[i]+"%25%27"
+				Url+="%20description LIKE %27%25"+Altrafltr[i]+"%25%27"
 			else
 				Url+="%20OR description LIKE %27%25"+Altrafltr[i]+"%25%27"
 		}
@@ -224,7 +224,7 @@ function ShowAlerts()
 	out+="</td>\n";
 	out+="<td align=\"center\">\n";
 	out+="<input type=\"button\" class=\"INTEXT2\" value=\""+Str_Delet+" "+Str_Viewed+"\" onclick=\"GetUrlB('./setitems.jsp?sql=DELETE FROM alerts WHERE status=%27Delet%27',fncnone);return false;\" />\n";
-	out+="<input type=\"button\" class=\"INTEXT2\" value=\""+Str_Delet+" "+Str_Filtro+"\" onclick=\"alertDelFlt();return false;\" />\n";
+	out+="<input type=\"button\" class=\"INTEXT2\" value=\""+Str_Delet+" "+Str_Filtred+"\" onclick=\"alertDelFlt();return false;\" />\n";
 	out+="</td>\n";
 	out+="<td align=\"center\">\n";
 	out+="<input type=\"button\" class=\"INTEXT2\" value=\""+Str_Filtro+"\" onclick=\"Altrafltr[Altrafltr.length]=prompt('"+Str_Filtro+"','');UpDateUrl();\" /><br />\n";
