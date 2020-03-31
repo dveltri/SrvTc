@@ -1,9 +1,12 @@
 #!/bin/bash
 set -e
-/opt/tomcat/latest/bin/./startup.sh
 cd /opt/tomcat/latest/webapps/
 git checkout anibal
 git pull
+cd ROOT/lp3
+git checkout anibal
+git pull
+/opt/tomcat/latest/bin/./startup.sh
 #cd /usr/lib/postgresql/12/bin
 cd /
 su postgres dgvdb.sh

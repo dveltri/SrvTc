@@ -1,9 +1,14 @@
 FROM postgres AS build
 #---------------------------------------
+RUN dpkg --configure -a
+RUN apt-get install -f
 RUN apt-get update
-RUN apt-get install -y -qq --no-install-recommends software-properties-common git nano sudo wget net-tools
+RUN apt-get install -y -qq --no-install-recommends git
+RUN apt-get install -y -qq --no-install-recommends nano sudo wget
+RUN apt-get install -y -qq --no-install-recommends software-properties-common
 RUN apt-get install -y -qq --no-install-recommends cmake unzip ca-certificates build-essential python mc
 RUN apt-get install -y -qq --no-install-recommends default-jdk tmux
+RUN apt-get install -y -qq --no-install-recommends net-tools
 
 #RUN apt-get install -y -qq openjdk-8-jdk
 #RUN apt-get install -y -qq --no-install-recommends libfile-spec-native-perl libcurl4-openssl-dev libssl-dev uuid-dev zlib1g-dev libpulse-dev
