@@ -46,22 +46,21 @@ dbuild.sh   o   sudo docker build -t srv:latest .
 
 docker pull dpage/pgadmin4
 
-dpgadmi.sh
+**3- Habilitar puertos para el acceso web, driver, postgres, pgadmin
+   sudo ufw allow 8080
+   sudo ufw allow 2024
+   sudo ufw allow 2025
+   sudo ufw allow 2026
+   sudo ufw allow 5432
+   sudo ufw allow 5050
 
-**3- Inicia la imagen en un container docker**
+**4- Inicia la imagen en un container docker**
    create_container_srv.sh
+   create_container_pgadmin.sh
 
-   o
+   docker run --name srv -e SEND_HOST="localhost" -p 2024:2024 -p 2025:2025 -p 2026:2026 -p 5432:5432 -p 8080:8080 srv:latest
+   docker run --name pgadmin -p 5050:80 -e "PGADMIN_DEFAULT_EMAIL=dgv@ingavanzada.com" -e
 
-   docker run --name srs -p 1935:1935 -p 1985:1985 -p 8080:8080 -p 8085:8085 mysrs:latest
-
-**4- Habilitar puertos para el acceso web, driver, postgres, pgadmin
-	sudo ufw allow 8080
-	sudo ufw allow 2024
-	sudo ufw allow 2025
-	sudo ufw allow 2026
-	sudo ufw allow 5432
-	sudo ufw allow 5050
 =====================================================================================================
 
 # Otros comandos útiles. 
