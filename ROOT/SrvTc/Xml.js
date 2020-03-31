@@ -1,4 +1,4 @@
-var enProceso = false;
+var enProceso = 0;
 var http = getHTTPObject();
 var response;
 var fnc_error=0;
@@ -15,7 +15,8 @@ function fncnone(Data)
 
 function GetUrl(url,fnc)
 {
-	if (typeof fnc == "function" && !enProceso)
+	var digital = new Date();
+	if (typeof fnc == "function" && (enProceso+1000)<digital.getTime())
 	{
 		fnc_error=0;
 	}
@@ -24,10 +25,9 @@ function GetUrl(url,fnc)
 		fnc_error++;
 		return 1;
 	}
-  var digital = new Date();
-  if (!enProceso && http)
-  {
-		enProceso = true;
+	if ((enProceso+1000)<digital.getTime() && http)
+	{
+		enProceso = digital.getTime();
 		response=fnc;
 		var timtemp;
 		var hours = digital.getHours();
@@ -49,12 +49,12 @@ function GetUrl(url,fnc)
 		//http.onload = handleHttpResponse;
 		http.send(null);
 		return 0;
-  }
-  return 1;
+	}
+	return 1;
 }
 
 function handleHttpResponse()  
-{ 
+{
 	switch(http.readyState)
 	{
 		case 0:
@@ -79,60 +79,53 @@ function handleHttpResponse()
 		break;
 		case 4:
  		{
-		}
-		break;
-		default:
- 		{
-			if(Log_En)LOG("Error:"+http.readyState+","+http.status+":"+http.statusText+"\n");
- 		}
-		break;
-	}
-	var chklogout="";
-	if (http.readyState == 4)
-	{
-		if (http.status == 200)
-		{
-			if (http.responseText.indexOf('invalid') == -1)
+			if (http.status == 200)
 			{
-				enProceso = false;
-				chklogout=http.responseText;
-				if(chklogout.indexOf("[*]")!=-1)
-					window.location.href = '../index.htm';
-				response(http);
+				if (http.responseText.indexOf('invalid') == -1)
+				{
+					if(Log_En>1)LOG("http.status:"+http.readyState+","+http.status+"\n");
+					enProceso = 0;
+					var chklogout=http.responseText;
+					if(chklogout.indexOf("[*]")!=-1)
+						window.location.href = '../index.htm';
+					response(http);
+				}
+				else
+				{
+					if(Log_En>1)LOG("Response invalid<br />");
+				}
 			}
 			else
 			{
-				if(Log_En>1)LOG("Response invalid<br />");
+				if(Log_En)LOG("Error:"+http.readyState+","+http.status+":"+http.statusText+"\n");
+				enProceso = 0;
+				response(http);
 			}
 		}
-		else
+		break;
+		default:
 		{
-			//LOG("Error:"+http.readyState+","+http.status+":"+http.statusText+"\n");
-			response(http);
-			enProceso = false;
+			if(Log_En)LOG("Error:"+http.readyState+","+http.status+":"+http.statusText+"\n");
 		}
-	}
-	else
-	{
-		//LOG("Error2:"+http.readyState+","+http.status+":"+http.statusText+"\n");
+		break;
 	}
 }
 
 function getHTTPObject() 
 {
- var xmlhttp;
- if (!xmlhttp && typeof XMLHttpRequest != 'undefined') 
- {
-  	try
+	var xmlhttp;
+	if (!xmlhttp && typeof XMLHttpRequest != 'undefined') 
 	{
-		xmlhttp = new XMLHttpRequest();
+		try
+		{
+			xmlhttp = new XMLHttpRequest();
+		}
+		catch (e) 
+		{
+			xmlhttp = false;
+		}
 	}
-  	catch (e) 
-	{
- 		xmlhttp = false;
- 	}
- }
- return xmlhttp;
+	return xmlhttp;
 }
 
 function HTMLEncode(str)
@@ -167,28 +160,28 @@ function HTMLEncode(str)
 
 function HexEncode(str)
 {
-    var r="";
-    var c=0;
-    var h;
-    while(c<str.length)
+	var r="";
+	var c=0;
+	var h;
+	while(c<str.length)
 	{
-        h=str.charCodeAt(c);
+		h=str.charCodeAt(c);
 		h=h.toString(16);
 		h=h.toUpperCase();
-        while(h.length<2) h="0"+h;
-        r+="0x"+h+" ";
+		while(h.length<2) h="0"+h;
+		r+="0x"+h+" ";
 		c++;
 		if((c%4)==0)r+="\n";
-    }
-    return r;
+	}
+	return r;
 }
 
 function HexDecode(str)
 {
-    var r="";
-    var ptr=0
+	var r="";
+	var ptr=0
 	var ptrM=0
-    while(ptr!=-1)
+	while(ptr!=-1)
 	{
 		ptr=str.substring(ptrM+ptr).indexOf("0x");
 		if(ptr!=-1)
@@ -198,6 +191,6 @@ function HexDecode(str)
 			r+=String.fromCharCode(str.substring(ptrM,ptrM+4));
 			ptrM++;
 		}
-    }
-    return r;
+	}
+	return r;
 }
