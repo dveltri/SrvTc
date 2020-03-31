@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+export TOMCAT="/opt/tomcat/latest/webapps/"
 cd /opt/tomcat/latest/webapps/
 git checkout anibal
 git pull
