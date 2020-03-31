@@ -72,6 +72,9 @@ dpgadmi.sh
 - **Para correr el container** 
     docker start srv
 
+- **Para obeter el log del container**
+    docker logs srv --tail
+
 - **Para ver que container estan corriendo**
     docker ps
 
