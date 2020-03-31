@@ -1,30 +1,9 @@
-# Información del proyecto SRS
+# Información del proyecto srv dgv
 
-Fork de [SRS](https://github.com/ossrs/srs) versión 2.0.263
+=================================================================================================
 
-Se agregaron las siguientes cosas:
+# Pasos para instalar docker en linux:
 
-- DVR en formatos .ts y .mp4
-- DVR plan "advanced" (corta los segmentos por tiempo y por inicio/fin de sesión)
-- VOD server
-- API recording status
-- DVR cleaner, automático y manual
-- Soporte para AWS S3
-- callback on_http_resource
-- soporte rtmps y https
-- otros detalles (ver lista de commits)
-
-Más [info](https://drive.google.com/file/d/1RRuVZ10x6HTUFUoXLzfp5GCjxSEFHw8w/view?usp=sharing)
-
-=====================================================================================================
-
-# Pasos para instalar docker:
-
-# 1- Bajar el repo
-
-https://gitlab.hipcam.com/hipcam/backend/srs.git
-
-# 2- Chequear si hay una instalación previa de docker
 **a) Chequear si esta instalado docker.**
   
 docker -v
@@ -63,59 +42,46 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 **2- Crear la imagen de docker** 
 
-sudo docker build -t srv:latest .
+dbuild.sh   o   sudo docker build -t srv:latest .
+
 docker pull dpage/pgadmin4
+
 dpgadmi.sh
 
 **3- Inicia la imagen en un container docker**
+   create_container_srv.sh
 
-docker run --name srs -p 1935:1935 -p 1985:1985 -p 8080:8080 -p 8085:8085 mysrs:latest
+   o
 
+   docker run --name srs -p 1935:1935 -p 1985:1985 -p 8080:8080 -p 8085:8085 mysrs:latest
+
+**4- Habilitar puertos para el acceso web, driver, postgres, pgadmin
+	sudo ufw allow 8080
+	sudo ufw allow 2024
+	sudo ufw allow 2025
+	sudo ufw allow 2026
+	sudo ufw allow 5432
+	sudo ufw allow 5050
 =====================================================================================================
 
 # Otros comandos útiles. 
 
 - **Parar el container srs** 
+    docker stop srv
 
-    docker stop srs
+- **Para correr el container** 
+    docker start srv
 
-- **Inicia nuevamente el container** 
-
-    docker start srs
-
-- **Abrir un bash del container que esta corriendo**
-
-    docker exec -it srs bash
-
-- **Parar y remover el container**
-
-    docker rm --force srs
-
-- **Eliminar todos los containes que no esten corriendo**
-
-    docker container prune
-
-- **Visualizar instancias de docker** 
-
+- **Para ver que container estan corriendo**
     docker ps
 
-- **Para crear nuestro propio certificado e usar ssl en nuestra computador** 
+- **Para ver que containers estan creados**
+    docker ps -a
 
-    sudo openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout myserver.key -out myserver.crt
+- **Parar y remover el container que no estan corriendo**
+    docker rm srv
 
-    ssl
-    {
-        enabled     on;
-        cert_file   /srs/conf/myserver.crt;
-        key_file    /srs/conf/myserver.key;
-    }
-- **Para recargar la configuracion del archivo .conf**
-
-    The usage of reload: killall -1 srs
-    Or send signal to process: kill -1 7635
-    Or use SRS scripts: /etc/init.d/srs reload
+- **Eliminar todos los containes que no esten corriendo**
+    docker container prune
 
 =====================================================================================================
-    Para mas informacion:
-    https://github.com/ossrs/srs/blob/3.0release/README.md
-
