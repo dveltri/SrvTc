@@ -170,7 +170,7 @@ function clock()
  var seconds = digital.getSeconds();
  var days =digital.getMonth()+1;
  days=digital.getDate()+"/"+days+"/"+digital.getYear();
- window.status = hours+" "+days+"  ( SkyNet® v8.03.12 )    Resolucion: "+screenz()+"        ";
+ window.status = hours+" "+days+"  ( SkyNetï¿½ v8.03.12 )    Resolucion: "+screenz()+"        ";
  setTimeout("clock()", 30000);
 }
 
