@@ -194,6 +194,23 @@ function AddRep()
 	GetUrlB('./getlist.jsp?cmps=*&tbl=reports&ord=date',rcvReportsList);
 }
 
+function alertDelFlt()
+{
+	Url='./setitems.jsp?sql=DELETE FROM alerts';
+	if(Altrafltr.length>=1)
+	{
+		Url+="%20WHERE";
+		for(var i=0;i<Altrafltr.length;i++)
+		{
+			if(i==0)
+				Url+="%20description LIKE %27%25"+Altrafltr[i]+"%25%27"
+			else
+				Url+="%20OR description LIKE %27%25"+Altrafltr[i]+"%25%27"
+		}
+	}
+	GetUrlB(Url,fncnone);
+}
+
 function ShowAlerts()
 {
 	var bgcolor="";
@@ -207,7 +224,7 @@ function ShowAlerts()
 	out+="</td>\n";
 	out+="<td align=\"center\">\n";
 	out+="<input type=\"button\" class=\"INTEXT2\" value=\""+Str_Delet+" "+Str_Viewed+"\" onclick=\"GetUrlB('./setitems.jsp?sql=DELETE FROM alerts WHERE status=%27Delet%27',fncnone);return false;\" />\n";
-	out+="<input type=\"button\" class=\"INTEXT2\" value=\""+Str_Delet+" Reportadas\" onclick=\"GetUrlB('./setitems.jsp?sql=DELETE FROM alerts WHERE status=%27Reported%27',fncnone);return false;\" />\n";
+	out+="<input type=\"button\" class=\"INTEXT2\" value=\""+Str_Delet+" "+Str_Filtred+"\" onclick=\"alertDelFlt();return false;\" />\n";
 	out+="</td>\n";
 	out+="<td align=\"center\">\n";
 	out+="<input type=\"button\" class=\"INTEXT2\" value=\""+Str_Filtro+"\" onclick=\"Altrafltr[Altrafltr.length]=prompt('"+Str_Filtro+"','');UpDateUrl();\" /><br />\n";
@@ -242,6 +259,8 @@ function ShowAlerts()
 	//---------------------------------------------------------------------
 	for(var a=0;a<Alerts.length;a++)
 	{
+		if(!Alerts[a][0])
+			return "";
 		rawcolor=Altrawcolor.slice();
 		if((a%2)==0)
 		{

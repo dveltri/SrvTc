@@ -1,6 +1,16 @@
 #!/bin/bash
 set -e
-#/srs/objs/srs -c /srs/conf/hipcam.conf
-#cp /opt/srs/env/dev/* /srs/conf/
-#srs -c /srs/conf/dgv1.conf
+export TOMCAT="/opt/tomcat/latest/webapps/"
+cd /opt/tomcat/latest/webapps/
+git checkout ingAv
+git pull
+cd ROOT/lp3
+git checkout ingAv
+git pull
+/opt/tomcat/latest/bin/./startup.sh
+#cd /usr/lib/postgresql/12/bin
+cd /
+chmod 666 /tmp/logs.log
+su postgres dgvdb.sh
+echo "docker-entrypoint.sh finish" >> /tmp/logs.log
 tail -f /tmp/logs.log

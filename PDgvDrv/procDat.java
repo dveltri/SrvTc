@@ -88,23 +88,25 @@ public class procDat implements Runnable
 	public static int SrvId=0;
 	public static String drv="";
 	//---------------------------------------
-	public final BlockingQueue<String[]> queueTH;
-	public final BlockingQueue<dat2proc> queueTHd;
+	public final BlockingQueue<String[]> queueSql;
+	public final BlockingQueue<dat2proc> queuePdgvRx;
+	public final BlockingQueue<dat2proc> queuePdgvTx;
 	public dat2proc dat=null;
 	public Statement stmtD=null;
 	//---------------------------------------
 	private DatagramPacket sendPacket=null;
 	public byte[] sendData = new byte[1024];
-	public int log=1;
+	public int log=3;
 	//----------------------------------------------------------------------
 	//private static final int quezise	=1000;
 	//private static String conection="jdbc:postgresql://localhost:5432/SrvDb";
 	//private final BlockingQueue<String[]> queueSQ;
 	//----------------------------------------------------------------------
-	public procDat(String drvo,int srvid,BlockingQueue<dat2proc> queued,BlockingQueue<String[]> queue,Statement stmt)
+	public procDat(String drvo,int srvid,BlockingQueue<dat2proc> queuepdgvrx,BlockingQueue<String[]> queuesql,BlockingQueue<dat2proc> queuepdgvtx,Statement stmt)
 	{
-		queueTH=queue;
-		queueTHd=queued;
+		queueSql=queuesql;
+		queuePdgvRx=queuepdgvrx;
+		queuePdgvTx=queuepdgvtx;
 		stmtD=stmt;
 		SrvId=srvid;
 		drv=drvo;
@@ -114,8 +116,8 @@ public class procDat implements Runnable
 	{
 		try
 		{
-//			System.out.println("<<dgvsqlTH>>["+queueTH.remainingCapacity()+"]");
-			queueTH.put(new String[]{InsSql,UdtSql});
+			//System.out.println("<<dgvsqlTH>>["+queueSql.remainingCapacity()+"]");
+			queueSql.put(new String[]{InsSql,UdtSql});
 		}
 		catch ( Exception e )
 		{
@@ -267,16 +269,18 @@ public class procDat implements Runnable
 		else
 		{
 			if((log&1)!=0)System.out.print("\tTH("+Thread.currentThread().getId()+")Pdgv_Osi3 Err Pk.CRC:"+ Long.toHexString(crc1)+ " Cal.CRC:"+Long.toHexString(crc2)+"\n");
-			return 0;
+			return 1;
 		}
 		if(pucBuffer1[CmpIdT]==(byte)SrvId)
 		{
-			return 1;
+			return 0;
 		}
 		else
 		{
+			if(pucBuffer1[CmpIdS]==(byte)SrvId)
+				return 2;
 			if((log&1)!=0)System.out.print("\tTH("+Thread.currentThread().getId()+")Pdgv_Osi3 Err ID:"+pucBuffer1[CmpIdT]+"!="+SrvId+"\n");
-			return 0;
+			return 1;
 		}
 	}
 	public int Pdgv_Osi4(byte[] pucBuffer1,int ulLen,long ori,InetAddress IPAddress, int port)
@@ -642,23 +646,38 @@ public class procDat implements Runnable
 			try
 			{
 				dat=null;
-				dat=queueTHd.take();
+				dat=queuePdgvRx.take();
 				int rxret=0;
 				rxret=Pdgv_Osi2(dat.RxData,dat.RxData.length,1,dat.IPAddress,dat.port);
 				if(rxret!=0)
 				{
 					if((log&1)!=0)System.out.println("\n\tTH("+Thread.currentThread().getId()+")Pdgv_Osi2.ByteRx:"+dat.RxData.length+" From ip:"+dat.IPAddress+":"+dat.port+" "+new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new java.util.Date()));
 					rxret=Pdgv_Osi3(dat.RxData,dat.RxData.length,(byte)rxret,dat.IPAddress,dat.port);
-				}
-				if(rxret!=0)
-				{
-					rxret=Pdgv_Osi4(dat.RxData,dat.RxData.length,SrvId,dat.IPAddress,dat.port);
-					if(rxret!=0)
+					if(rxret==0)
 					{
-						System.out.println("\tack->");
-						serverSocket.send(sendPacket);
+						rxret=Pdgv_Osi4(dat.RxData,dat.RxData.length,SrvId,dat.IPAddress,dat.port);
+						if(rxret!=0)
+						{
+							System.out.println("\tack->");
+							serverSocket.send(sendPacket);
+						}
+						rxret=Pdgv_Osi5(dat.RxData,dat.RxData.length,SrvId,dat.IPAddress,dat.port);
 					}
-					rxret=Pdgv_Osi5(dat.RxData,dat.RxData.length,SrvId,dat.IPAddress,dat.port);
+					else
+					{
+						if(rxret==2)
+						{
+							try
+							{
+								queuePdgvTx.put(dat);
+							}
+							catch ( Exception e )
+							{
+								System.err.println("procDatSub["+e.getClass().getName()+":"+e.getMessage()+"]");
+								System.exit(0);
+							}
+						}
+					}
 				}
 				dat.RxData=null;
 			}
