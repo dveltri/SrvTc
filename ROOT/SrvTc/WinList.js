@@ -171,7 +171,6 @@ function AdmDelVar(obj)
 {
 		GetUrlB("./setitems.jsp?sql=DELETE FROM variables WHERE id LIKE %27"+obj.name+"%25%27",fncnone);
 		hideFlyMnu();
-		//GetUrlB('./getitems.jsp?sql=SELECT * FROM variables order by id',rcvList);//rcvFastSts
 		setTimeout('ShowList()',500);
 }
 

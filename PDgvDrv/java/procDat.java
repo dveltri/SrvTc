@@ -278,7 +278,7 @@ public class procDat implements Runnable
 		{
 			if(pucBuffer1[CmpIdS]==(byte)SrvId)
 				return 2;
-			if((log&1)!=0)System.out.print("\tTH("+Thread.currentThread().getId()+")Pdgv_Osi3 Err ID:"+pucBuffer1[CmpIdT]+"!="+SrvId+"\n");
+			System.out.print("\tTH("+Thread.currentThread().getId()+")Pdgv_Osi3 Err ID:"+pucBuffer1[CmpIdT]+"!="+SrvId+"\n");
 			return 1;
 		}
 	}
@@ -656,9 +656,9 @@ public class procDat implements Runnable
 				{
 					if((log&1)!=0)System.out.println("\n\tTH("+Thread.currentThread().getId()+")Pdgv_Osi2.ByteRx:"+dat.RxData.length+" From ip:"+dat.IPAddress+":"+dat.port+" "+new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new java.util.Date()));
 					rxret=Pdgv_Osi3(dat.RxData,dat.RxData.length,(byte)rxret,dat.IPAddress,dat.port);
+					System.out.print("p"+Thread.currentThread().getId());
 					if(rxret==0)
 					{
-						System.out.print("p"+Thread.currentThread().getId());
 						rxret=Pdgv_Osi4(dat.RxData,dat.RxData.length,SrvId,dat.IPAddress,dat.port);
 						if(rxret!=0)
 						{
@@ -670,7 +670,7 @@ public class procDat implements Runnable
 					}
 					else
 					{
-						if(rxret==2)	// TODO: hayq ue verificar si esto vamos a hacer asi...
+						if(rxret==2)	// TODO: hay que verificar si esto vamos a hacer asi...
 						{
 							try
 							{
