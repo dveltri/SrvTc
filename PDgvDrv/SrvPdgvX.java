@@ -41,6 +41,7 @@ public class SrvPdgvX
 	public static String conection="jdbc:postgresql://localhost:5432/SrvDb";
 	private static DatagramPacket sendPacketP;
 	private static int log=1;
+	private static int route=1;
 	private static Thread procdat,procsql;
 	//----------------------------------------------------------------------*/
 	public static int dgvsql(String InsSql,String UdtSql)
@@ -106,6 +107,7 @@ public class SrvPdgvX
 		long temp=0;
 		int THS=1;
 		int THD=1;
+		java.util.Date proc_st= new java.util.Date();
 		//-----------------------------------------------------
 		drv=args[0];
 		SrvId=Integer.parseInt(args[1]);
@@ -113,6 +115,7 @@ public class SrvPdgvX
 		if(args.length>3)THS=Integer.parseInt(args[3]);
 		if(args.length>4)THD=Integer.parseInt(args[4]);
 		if(args.length>5)log=Integer.parseInt(args[5]);
+		if(args.length>6)route=Integer.parseInt(args[6]);
 		//-----------------------------------------------------
 		System.out.println("Drv Name:"+drv);
 		System.out.println("Pdgv ID:"+SrvId);
@@ -170,6 +173,10 @@ public class SrvPdgvX
 		while(true)
 		{
 			countloop++;
+			if((dt0.getTime() - proc_st.getTime())>(1*60*60*1000))
+			{
+				System.exit(0);
+			}
 			//-----------------------------------------------------------------------------
 			try
 			{
@@ -178,18 +185,19 @@ public class SrvPdgvX
 				{
 					queuePd.put(new dat2proc(receivePacketP.getData(),receivePacketP.getAddress(),receivePacketP.getPort()));
 					sendPacketP=null;
-					try
+					if(route!=0)
 					{
-						SubIPAddress = InetAddress.getByName("pdgvtc.ingavanzada.com.ar");
-						sendPacketP = new DatagramPacket(receivePacketP.getData(),receivePacketP.getLength(), SubIPAddress, port);
-						SubserverSocket.send(sendPacketP);
+						try
+						{
+							SubIPAddress = InetAddress.getByName("pdgvtc.ingavanzada.com.ar");
+							sendPacketP = new DatagramPacket(receivePacketP.getData(),receivePacketP.getLength(), SubIPAddress, port);
+							SubserverSocket.send(sendPacketP);
+						}
+						catch ( Exception e )
+						{
+							//System.err.println("SubserverSocket["+e.getClass().getName()+":"+e.getMessage()+"]");
+						}
 					}
-					catch ( Exception e )
-					{
-						System.err.println("SubserverSocket["+e.getClass().getName()+":"+e.getMessage()+"]");
-						System.exit(0);
-					}
-
 				}
 				catch ( Exception e )
 				{
