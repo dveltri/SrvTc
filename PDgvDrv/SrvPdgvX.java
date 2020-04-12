@@ -126,7 +126,7 @@ public class SrvPdgvX
 		InetAddress IPAddress=null;
 		InetAddress SubIPAddress=null;
 		serverSocket = new DatagramSocket(port);
-		SubserverSocket = new DatagramSocket(port);
+		SubserverSocket = new DatagramSocket(port+1000);
 		//-----------------------------------------------------
 		Connection c 	=null;
 		Statement stmt	=null;
@@ -169,11 +169,13 @@ public class SrvPdgvX
 			procdat.start();
 		}
 		//-----------------------------------------------------------------------------
+		System.out.println("totalMemory:"+Runtime.getRuntime().totalMemory());
+		System.out.println("freeMemory:"+Runtime.getRuntime().freeMemory());
 		countloop=0;
 		while(true)
 		{
 			countloop++;
-			if((dt0.getTime() - proc_st.getTime())>(1*60*60*1000))
+			if((dt0.getTime() - proc_st.getTime())>(24*60*60*1000))
 			{
 				System.exit(0);
 			}
@@ -337,13 +339,14 @@ public class SrvPdgvX
 			//System.out.print("\033[s");
 			//System.out.print("\033["+0+";"+0+"H");
 			//System.out.print("\033[37;101m");
+			temp=((24*60*60*1000)-(dt0.getTime() - proc_st.getTime()))/1000;
 			if(queueP.remainingCapacity()==(quezise*10))
 			{
-				System.out.print("\n\0337\033[37;44mSrvPdgv-"+drv+" SqlQ("+queueP.remainingCapacity()+") DatQ("+queuePd.remainingCapacity()+") THS("+THS+") THD("+THD+") heap("+Runtime.getRuntime().freeMemory()+")\0338\n");
+				System.out.print("\n\0337\033[37;44m("+temp+")SrvPdgv-"+drv+" SqlQ("+queueP.remainingCapacity()+") DatQ("+queuePd.remainingCapacity()+") THS("+THS+") THD("+THD+")\0338\n");
 			}
 			else
 			{
-				System.out.print("\n\0337\033[37;101mSrvPdgv-"+drv+" SqlQ("+queueP.remainingCapacity()+") DatQ("+queuePd.remainingCapacity()+") THS("+THS+") THD("+THD+")\0338\n");
+				System.out.print("\n\0337\033[37;101m("+temp+")SrvPdgv-"+drv+" SqlQ("+queueP.remainingCapacity()+") DatQ("+queuePd.remainingCapacity()+") THS("+THS+") THD("+THD+")\0338\n");
 				if(queueP.remainingCapacity()<(quezise*4))
 				{
 					System.out.print("Restart Drv by queue size");

@@ -40,7 +40,8 @@ public class procSql implements Runnable
 			{
 				take=null;
 				take = queueSQ.take();
-				System.out.print(".");
+				System.out.print("s"+Thread.currentThread().getId());
+				//System.out.print(".");
 				//if(queueSQ.remainingCapacity()==(quezise*10))System.out.print("\n");
 					//System.out.println("SQL("+Thread.currentThread().getId()+")Send Sql");
 				//------------------------------

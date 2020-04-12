@@ -95,7 +95,7 @@ public class procDat implements Runnable
 	//---------------------------------------
 	private DatagramPacket sendPacket=null;
 	public byte[] sendData = new byte[1024];
-	public int log=1;
+	public int log=0;
 	//----------------------------------------------------------------------
 	//private static final int quezise	=1000;
 	//private static String conection="jdbc:postgresql://localhost:5432/SrvDb";
@@ -655,10 +655,11 @@ public class procDat implements Runnable
 				}
 				if(rxret!=0)
 				{
+					System.out.print("p"+Thread.currentThread().getId());
 					rxret=Pdgv_Osi4(dat.RxData,dat.RxData.length,SrvId,dat.IPAddress,dat.port);
 					if(rxret!=0)
 					{
-						System.out.println("\tack->");
+						if((log&1)!=0)System.out.println("\tack->");
 						serverSocket.send(sendPacket);
 						sendPacket = null;
 					}
