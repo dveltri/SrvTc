@@ -269,7 +269,6 @@ public class SrvPdgvX
 			}
 			catch ( Exception e )
 			{
-				//Error recibing
 				System.err.println("serverSocket["+e.getClass().getName()+":"+e.getMessage()+"]");
 			}
 			//-----------------------------------------------------------------------------
