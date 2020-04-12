@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.lang.management.ManagementFactory;
 
 public class SrvPdgvX
 {
@@ -162,7 +163,7 @@ public class SrvPdgvX
 		serverSocket.setSoTimeout(1000);
 		SubserverSocket.setSoTimeout(1000);
 		{
-			/*Thread thread = new Thread(){	//thread for RX subserver
+			Thread thread = new Thread(){	//thread for RX subserver
 				public void run(){
 					DatagramPacket receivePacketS=null;
 					receivePacketS=null;
@@ -171,6 +172,7 @@ public class SrvPdgvX
 					{
 						try
 						{
+							System.out.print("@"+Thread.currentThread().getId());
 							SubserverSocket.receive(receivePacketS);
 							try
 							{
@@ -184,8 +186,7 @@ public class SrvPdgvX
 						}
 						catch ( Exception e )
 						{
-							//Error recibing
-							System.err.println("SubserverSocket["+e.getClass().getName()+":"+e.getMessage()+"]");
+							//System.err.println("SubserverSocket["+e.getClass().getName()+":"+e.getMessage()+"]");
 						}
 					}
 				}
@@ -206,6 +207,8 @@ public class SrvPdgvX
 		//-----------------------------------------------------------------------------
 		System.out.println("totalMemory:"+Runtime.getRuntime().totalMemory());
 		System.out.println("freeMemory:"+Runtime.getRuntime().freeMemory());
+		System.out.println("freeMemory:"+ManagementFactory.getRuntimeMXBean().getName().split("@")[0]);
+		System.out.println("-----------------------------------------------------------------------------");
 		countloop=0;
 		while(true)
 		{
@@ -249,7 +252,7 @@ public class SrvPdgvX
 							}
 							else
 							{
-								System.out.println("SubserverSocket[null]");
+								//System.out.println("SubserverSocket[null]");
 							}
 						}
 						catch ( Exception e )
@@ -399,7 +402,24 @@ public class SrvPdgvX
 				{
 					dat=null;
 					dat=queuePdgvTx.take();
-					System.out.println("data to tx");
+					System.out.println("@->c");
+					sql="SELECT * FROM pdgv where drv LIKE '"+drv+"' and pdgvid == "+dat.RxData[CmpIdT]+"";
+					rs = null;
+					rs = stmt.executeQuery(sql);
+					while(rs.next())
+					{
+						port		= rs.getInt("ipport");
+						idt			= rs.getInt("pdgvid");
+						str			= rs.getString("ip");
+						str			= str.replace("/","");
+						IPAddress	= InetAddress.getByName(str);
+						System.out.print("@TxPk:->"+IPAddress+":"+port+"\n");
+						sendPacketP=null;
+						sendPacketP = new DatagramPacket(dat.RxData,dat.RxData.length, IPAddress, port);
+						serverSocket.send(sendPacketP);
+					}
+					try { if (rs != null) rs.close(); } catch (Exception e) {};
+					dat.RxData=null;
 				}
 				catch ( Exception e )
 				{
