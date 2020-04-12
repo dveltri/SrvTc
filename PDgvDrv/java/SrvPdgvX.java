@@ -176,7 +176,7 @@ public class SrvPdgvX
 							SubserverSocket.receive(receivePacketS);
 							try
 							{
-								queuePdgvRx.put(new dat2proc(receivePacketS.getData(),receivePacketS.getAddress(),receivePacketS.getPort()));
+								queuePdgvRx.put(new dat2proc(receivePacketS.getData(),receivePacketS.getLength(),receivePacketS.getAddress(),receivePacketS.getPort()));
 							}
 							catch ( Exception e )
 							{
@@ -223,7 +223,8 @@ public class SrvPdgvX
 				serverSocket.receive(receivePacketP);
 				try
 				{
-					queuePdgvRx.put(new dat2proc(receivePacketP.getData(),receivePacketP.getAddress(),receivePacketP.getPort()));
+					System.out.print("\n\0337\033[37;32mm->"+receivePacketP.getAddress()+":"+receivePacketP.getPort()+"["+receivePacketP.getLength()+"]\0338");
+					queuePdgvRx.put(new dat2proc(receivePacketP.getData(),receivePacketP.getLength(),receivePacketP.getAddress(),receivePacketP.getPort()));
 					sendPacketP=null;
 					if(route!=0)
 					{
