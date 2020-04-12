@@ -179,7 +179,6 @@ public class procDat implements Runnable
 		//------------------------------------------------
 		//byte[] pucBuffer=Arrays.copyOf(pucBuffer1,ulLen);
 		if((log&4)!=0)System.out.printf("\tRxDat["/*+Arrays.toString(pucBuffer)*/+"] Size:"+ulLen+" IP:"+IPAddress.toString()+":"+port+"\n");
-		byte[] TmpBf;
 		while(idx<ulLen)
 		{
 			Data=pucBuffer[idx];
@@ -306,7 +305,7 @@ public class procDat implements Runnable
 		String tmpT="";
 		String InsSql="";
 		String UdtSql="";
-		java.util.Date dt = new java.util.Date();
+		java.util.Date dt;
 		float tmpF=0;
 		long tmpL=0;
 		int tmpI=0;
@@ -319,7 +318,9 @@ public class procDat implements Runnable
 		ResultSet rs;
 		if((log&1)!=0)System.out.print("\tTH("+Thread.currentThread().getId()+")Osi5:\n");
 		//-----------------------------------------------------
+		//dt = new java.util.Date();
 		//UdtSql="SELECT * FROM pdgv where drv LIKE '"+drv+"%' AND action NOT LIKE '%Sended%' AND lstchg < to_timestamp("+(dt.getTime()/1000)+")" ;
+		//dt = null
 		UdtSql="SELECT * FROM pdgv where drv LIKE '"+drv+"' AND pdgvid="+((int)pucBuffer1[CmpIdS]&0xFF);
 		try
 		{
@@ -395,9 +396,11 @@ public class procDat implements Runnable
 									tmpL*=1000;
 									dt = new java.util.Date(tmpL);
 									tmpT=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(dt);
+									dt = null;
 									InsSql = "INSERT INTO variables VALUES (\'/"+id+"/RTC\',\' \',LOCALTIMESTAMP)";
 									UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'"+tmpT+"\') WHERE id=\'/"+id+"/RTC\'";
 									if((log&4)!=0)System.out.println("\tDate:"+tmpL+"("+tmpT+")");
+									tmpT = null;
 									dgvsqlTH(InsSql,UdtSql);
 								}
 								break;
@@ -657,6 +660,7 @@ public class procDat implements Runnable
 					{
 						System.out.println("\tack->");
 						serverSocket.send(sendPacket);
+						sendPacket = null;
 					}
 					rxret=Pdgv_Osi5(dat.RxData,dat.RxData.length,SrvId,dat.IPAddress,dat.port);
 				}

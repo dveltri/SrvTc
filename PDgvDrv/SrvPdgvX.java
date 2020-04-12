@@ -211,6 +211,7 @@ public class SrvPdgvX
 				try
 				{
 					sql="SELECT * FROM pdgv where drv LIKE '"+drv+"'";
+					rs = null;
 					rs = stmt.executeQuery(sql);
 					while(rs.next())
 					{
@@ -224,7 +225,6 @@ public class SrvPdgvX
 						dt3 		= rs.getTimestamp("lstupd");
 						sts			= ""+rs.getString("status");
 						model 		= rs.getString("model");
-						//try { if (rs != null) rs.close(); } catch (Exception e) {};
 						//-------------------------------------
 						if(	drv.indexOf("Rtc")!=-1 && (	(dt2.getTime()+(timeout*1000)) <= dt0.getTime() ) ) // send RTC
 						{
@@ -276,13 +276,13 @@ public class SrvPdgvX
 						sql = "SELECT * FROM variables WHERE id LIKE \'/"+id+"/%\' AND typ LIKE \'%W%\'";
 						sql+= " AND lstchg > to_timestamp("+((dt1.getTime()/1000))+")";
 						/*System.out.println(""+sql); //{"+new java.util.Date().getTime()/1000+"} // */
+						rs2 = null;
 						rs2 	= stmt2.executeQuery(sql);
 						while(rs2.next())
 						{
 							str =rs2.getString("id");
 							Sval =rs2.getString("value");
 							typ =rs2.getString("typ");
-							//try { if (rs2 != null) rs2.close(); } catch (Exception e) {};
 							//-------------------------------------
 							System.out.println(""+str+" "+Sval+" "+typ);
 							str=str.replaceAll("/"+id+"/","");
@@ -331,7 +331,7 @@ public class SrvPdgvX
 			//System.out.print("\033[37;101m");
 			if(queueP.remainingCapacity()==(quezise*10))
 			{
-				System.out.print("\n\0337\033[37;44mSrvPdgv-"+drv+" SqlQ("+queueP.remainingCapacity()+") DatQ("+queuePd.remainingCapacity()+") THS("+THS+") THD("+THD+")\0338\n");
+				System.out.print("\n\0337\033[37;44mSrvPdgv-"+drv+" SqlQ("+queueP.remainingCapacity()+") DatQ("+queuePd.remainingCapacity()+") THS("+THS+") THD("+THD+") heap("+Runtime.getRuntime().freeMemory()+")\0338\n");
 			}
 			else
 			{
