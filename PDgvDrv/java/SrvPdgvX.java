@@ -124,6 +124,7 @@ public class SrvPdgvX
 		System.out.println("Drv Name:"+drv);
 		System.out.println("Pdgv ID:"+SrvId);
 		System.out.println("UDP port:"+port);
+		System.out.println("Route:"+route);
 		//getmac();
 		//-----------------------------------------------------
 		DatagramPacket receivePacketP=null;
@@ -162,6 +163,7 @@ public class SrvPdgvX
 		receivePacketP=new DatagramPacket(receiveData, receiveData.length);
 		serverSocket.setSoTimeout(1000);
 		SubserverSocket.setSoTimeout(1000);
+		if(route!=0)
 		{
 			Thread thread = new Thread(){	//thread for RX subserver
 				public void run(){
@@ -397,35 +399,40 @@ public class SrvPdgvX
 				dt1 = new java.util.Date(dt0.getTime());
 			}
 			//-----------------------------------------------------------------------------
-			while(queuePdgvTx.size()!=0)
 			{
-				try
+				while(queuePdgvTx.size()!=0)
 				{
-					dat=null;
-					dat=queuePdgvTx.take();
-					System.out.println("@->c");
-					sql="SELECT * FROM pdgv where drv LIKE '"+drv+"' and pdgvid == "+dat.RxData[CmpIdT]+"";
-					rs = null;
-					rs = stmt.executeQuery(sql);
-					while(rs.next())
+					try
 					{
-						port		= rs.getInt("ipport");
-						idt			= rs.getInt("pdgvid");
-						str			= rs.getString("ip");
-						str			= str.replace("/","");
-						IPAddress	= InetAddress.getByName(str);
-						System.out.print("@TxPk:->"+IPAddress+":"+port+"\n");
-						sendPacketP=null;
-						sendPacketP = new DatagramPacket(dat.RxData,dat.RxData.length, IPAddress, port);
-						serverSocket.send(sendPacketP);
+						dat=null;
+						dat=queuePdgvTx.take();
+						System.out.println("@->c("+dat.RxData.length+")");
+						if(route!=0)
+						{
+							sql="SELECT * FROM pdgv where drv LIKE '"+drv+"' and pdgvid == "+dat.RxData[CmpIdT]+"";
+							rs = null;
+							rs = stmt.executeQuery(sql);
+							while(rs.next())
+							{
+								port		= rs.getInt("ipport");
+								idt			= rs.getInt("pdgvid");
+								str			= rs.getString("ip");
+								str			= str.replace("/","");
+								IPAddress	= InetAddress.getByName(str);
+								System.out.print("@TxPk:->"+IPAddress+":"+port+"\n");
+								sendPacketP=null;
+								sendPacketP = new DatagramPacket(dat.RxData,dat.RxData.length, IPAddress, port);
+								serverSocket.send(sendPacketP);
+							}
+							try { if (rs != null) rs.close(); } catch (Exception e) {};
+						}
+						dat.RxData=null;
 					}
-					try { if (rs != null) rs.close(); } catch (Exception e) {};
-					dat.RxData=null;
-				}
-				catch ( Exception e )
-				{
-					System.err.println("DAT["+e.getClass().getName()+":"+e.getMessage()+"]");//System.err.println(".");
-					dat.RxData=null;
+					catch ( Exception e )
+					{
+						System.err.println("DAT["+e.getClass().getName()+":"+e.getMessage()+"]");//System.err.println(".");
+						dat.RxData=null;
+					}
 				}
 			}
 			//-----------------------------------------------------------------------------
