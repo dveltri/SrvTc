@@ -1,5 +1,13 @@
 # Información del proyecto srv dgv
 
+
+# Pasos para instalar docker en linux:
+
+# 1- Bajar el repo
+https://github.com/dveltri/SrvTc.git
+
+# 2- Chequear si hay una instalación previa de docker
+=======
 =================================================================================================
 
 # Pasos para instalar docker en linux:

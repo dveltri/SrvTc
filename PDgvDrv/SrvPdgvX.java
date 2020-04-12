@@ -8,8 +8,9 @@ import java.util.concurrent.LinkedBlockingQueue;
 public class SrvPdgvX
 {
 	private static final int quezise	=1000;
-	private static BlockingQueue<String[]> queueP = new LinkedBlockingQueue<>(quezise*10);
-	private static BlockingQueue<dat2proc> queuePd = new LinkedBlockingQueue<>(quezise);
+	private static BlockingQueue<String[]> queueSql = new LinkedBlockingQueue<>(quezise*10);
+	private static BlockingQueue<dat2proc> queuePdgvRx = new LinkedBlockingQueue<>(quezise);
+	private static BlockingQueue<dat2proc> queuePdgvTx = new LinkedBlockingQueue<>(quezise);
 	//---------------------------------------
 	private static final int pdgv_Ver		=0x01;
 	private static final int pdgv_TCP		=0x00;
@@ -35,8 +36,10 @@ public class SrvPdgvX
 	public static DatagramSocket serverSocket=null;
 	public static byte[] sendData = new byte[1024];
 	public static byte[] receiveData = new byte[1024];
+	public static byte[] receiveData2 = new byte[1024];
 	public static int SrvId=0;
 	public static String drv="";
+	public static dat2proc dat=null;
 	//---------------------------------------
 	public static String conection="jdbc:postgresql://localhost:5432/SrvDb";
 	private static DatagramPacket sendPacketP;
@@ -48,7 +51,7 @@ public class SrvPdgvX
 	{
 		try
 		{
-			queueP.put(new String[]{InsSql,UdtSql});
+			queueSql.put(new String[]{InsSql,UdtSql});
 		}
 		catch ( Exception e )
 		{
@@ -157,14 +160,46 @@ public class SrvPdgvX
 		receivePacketP=null;
 		receivePacketP=new DatagramPacket(receiveData, receiveData.length);
 		serverSocket.setSoTimeout(1000);
+		SubserverSocket.setSoTimeout(1000);
+		{
+			/*Thread thread = new Thread(){	//thread for RX subserver
+				public void run(){
+					DatagramPacket receivePacketS=null;
+					receivePacketS=null;
+					receivePacketS=new DatagramPacket(receiveData2, receiveData2.length);
+					while(true)
+					{
+						try
+						{
+							SubserverSocket.receive(receivePacketS);
+							try
+							{
+								queuePdgvRx.put(new dat2proc(receivePacketS.getData(),receivePacketS.getAddress(),receivePacketS.getPort()));
+							}
+							catch ( Exception e )
+							{
+								System.err.println("procDat["+e.getClass().getName()+":"+e.getMessage()+"]");
+								System.exit(0);
+							}
+						}
+						catch ( Exception e )
+						{
+							//Error recibing
+							System.err.println("SubserverSocket["+e.getClass().getName()+":"+e.getMessage()+"]");
+						}
+					}
+				}
+			};
+			thread.start();// */
+		}
 		for(countloop=0;countloop<THS;countloop++)
 		{
-			procsql=new Thread(new procSql(queueP));
+			procsql=new Thread(new procSql(queueSql));
 			procsql.start();
 		}
 		for(countloop=0;countloop<THD;countloop++)
 		{
-			procdat=new Thread(new procDat(drv,SrvId,queuePd,queueP,stmt1));
+			procdat=new Thread(new procDat(drv,SrvId,queuePdgvRx,queueSql,queuePdgvTx,stmt1));
 			//procdat.log=log;
 			procdat.start();
 		}
@@ -185,15 +220,37 @@ public class SrvPdgvX
 				serverSocket.receive(receivePacketP);
 				try
 				{
-					queuePd.put(new dat2proc(receivePacketP.getData(),receivePacketP.getAddress(),receivePacketP.getPort()));
+					queuePdgvRx.put(new dat2proc(receivePacketP.getData(),receivePacketP.getAddress(),receivePacketP.getPort()));
 					sendPacketP=null;
 					if(route!=0)
 					{
 						try
 						{
 							SubIPAddress = InetAddress.getByName("pdgvtc.ingavanzada.com.ar");
-							sendPacketP = new DatagramPacket(receivePacketP.getData(),receivePacketP.getLength(), SubIPAddress, port);
-							SubserverSocket.send(sendPacketP);
+							if(SubIPAddress!=null)
+							{
+								try
+								{
+									sendPacketP = new DatagramPacket(receivePacketP.getData(),receivePacketP.getLength(), SubIPAddress, port);
+									SubserverSocket.send(sendPacketP);
+								}
+								catch (SecurityException e)
+								{
+									System.err.println("\tErr[mn.x]:"+e.getClass().getName() + ":" + e.getMessage() );
+								}
+								catch (UnknownHostException e)
+								{
+									System.err.println("\tErr[mn.x]:"+e.getClass().getName() + ":" + e.getMessage() );
+								}
+								catch ( Exception e )
+								{
+									System.err.println("\tErr[mn.x]:"+e.getClass().getName() + ":" + e.getMessage() );
+								}
+							}
+							else
+							{
+								System.out.println("SubserverSocket[null]");
+							}
 						}
 						catch ( Exception e )
 						{
@@ -266,7 +323,7 @@ public class SrvPdgvX
 								if((log&1)!=0)System.out.println("SrvPdgv("+port+") !!!! /"+id+".TimeOut !!!!");
 								InsSql = "INSERT INTO alerts VALUES (LOCALTIMESTAMP,\'Viewed\',\'["+id+"] Lost Connection\',\'"+id+"\',\'Link\')";
 								dgvsql(InsSql,"");
-								UdtSql = "UPDATE pdgv SET (status,lstupd)=(\'Lost Connection\',LOCALTIMESTAMP) WHERE id=\'"+id+"\'";
+								UdtSql = "UPDATE pdgv SET (status,lstupd)=(\'Lost Connection\',LOCALTIMESTAMP) WHERE id=\'"+id+"\'AND status<>\'Lost Connection\'";
 								dgvsql("",UdtSql);
 								UdtSql = "UPDATE variables SET (lstchg,value) =	(LOCALTIMESTAMP,\'\') WHERE id LIKE \'/"+id+"/Phase%/Color\'";
 								dgvsql("",UdtSql);
@@ -336,18 +393,33 @@ public class SrvPdgvX
 				dt1 = new java.util.Date(dt0.getTime());
 			}
 			//-----------------------------------------------------------------------------
+			while(queuePdgvTx.size()!=0)
+			{
+				try
+				{
+					dat=null;
+					dat=queuePdgvTx.take();
+					System.out.println("data to tx");
+				}
+				catch ( Exception e )
+				{
+					System.err.println("DAT["+e.getClass().getName()+":"+e.getMessage()+"]");//System.err.println(".");
+					dat.RxData=null;
+				}
+			}
+			//-----------------------------------------------------------------------------
 			//System.out.print("\033[s");
 			//System.out.print("\033["+0+";"+0+"H");
 			//System.out.print("\033[37;101m");
 			temp=((24*60*60*1000)-(dt0.getTime() - proc_st.getTime()))/1000;
-			if(queueP.remainingCapacity()==(quezise*10))
+			if(queueSql.remainingCapacity()==(quezise*10))
 			{
-				System.out.print("\n\0337\033[37;44m("+temp+")SrvPdgv-"+drv+" SqlQ("+queueP.remainingCapacity()+") DatQ("+queuePd.remainingCapacity()+") THS("+THS+") THD("+THD+")\0338\n");
+				System.out.print("\n\0337\033[37;44m("+temp+")SrvPdgv-"+drv+" SqlQ("+queueSql.remainingCapacity()+") DatQ("+queuePdgvRx.remainingCapacity()+") THS("+THS+") THD("+THD+")\0338\n");
 			}
 			else
 			{
-				System.out.print("\n\0337\033[37;101m("+temp+")SrvPdgv-"+drv+" SqlQ("+queueP.remainingCapacity()+") DatQ("+queuePd.remainingCapacity()+") THS("+THS+") THD("+THD+")\0338\n");
-				if(queueP.remainingCapacity()<(quezise*4))
+				System.out.print("\n\0337\033[37;101m("+temp+")SrvPdgv-"+drv+" SqlQ("+queueSql.remainingCapacity()+") DatQ("+queuePdgvRx.remainingCapacity()+") THS("+THS+") THD("+THD+")\0338\n");
+				if(queueSql.remainingCapacity()<(quezise*4))
 				{
 					System.out.print("Restart Drv by queue size");
 					System.exit(0);

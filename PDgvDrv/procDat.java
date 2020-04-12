@@ -88,8 +88,9 @@ public class procDat implements Runnable
 	public static int SrvId=0;
 	public static String drv="";
 	//---------------------------------------
-	public final BlockingQueue<String[]> queueTH;
-	public final BlockingQueue<dat2proc> queueTHd;
+	public final BlockingQueue<String[]> queueSql;
+	public final BlockingQueue<dat2proc> queuePdgvRx;
+	public final BlockingQueue<dat2proc> queuePdgvTx;
 	public dat2proc dat=null;
 	public Statement stmtD=null;
 	//---------------------------------------
@@ -101,10 +102,11 @@ public class procDat implements Runnable
 	//private static String conection="jdbc:postgresql://localhost:5432/SrvDb";
 	//private final BlockingQueue<String[]> queueSQ;
 	//----------------------------------------------------------------------
-	public procDat(String drvo,int srvid,BlockingQueue<dat2proc> queued,BlockingQueue<String[]> queue,Statement stmt)
+	public procDat(String drvo,int srvid,BlockingQueue<dat2proc> queuepdgvrx,BlockingQueue<String[]> queuesql,BlockingQueue<dat2proc> queuepdgvtx,Statement stmt)
 	{
-		queueTH=queue;
-		queueTHd=queued;
+		queueSql=queuesql;
+		queuePdgvRx=queuepdgvrx;
+		queuePdgvTx=queuepdgvtx;
 		stmtD=stmt;
 		SrvId=srvid;
 		drv=drvo;
@@ -114,8 +116,8 @@ public class procDat implements Runnable
 	{
 		try
 		{
-			//System.out.println("<<dgvsqlTH>>["+queueTH.remainingCapacity()+"]");
-			queueTH.put(new String[]{InsSql,UdtSql});
+			//System.out.println("<<dgvsqlTH>>["+queueSql.remainingCapacity()+"]");
+			queueSql.put(new String[]{InsSql,UdtSql});
 		}
 		catch ( Exception e )
 		{
@@ -266,16 +268,18 @@ public class procDat implements Runnable
 		else
 		{
 			if((log&1)!=0)System.out.print("\tTH("+Thread.currentThread().getId()+")Pdgv_Osi3 Err Pk.CRC:"+ Long.toHexString(crc1)+ " Cal.CRC:"+Long.toHexString(crc2)+"\n");
-			return 0;
+			return 1;
 		}
 		if(pucBuffer1[CmpIdT]==(byte)SrvId)
 		{
-			return 1;
+			return 0;
 		}
 		else
 		{
+			if(pucBuffer1[CmpIdS]==(byte)SrvId)
+				return 2;
 			if((log&1)!=0)System.out.print("\tTH("+Thread.currentThread().getId()+")Pdgv_Osi3 Err ID:"+pucBuffer1[CmpIdT]+"!="+SrvId+"\n");
-			return 0;
+			return 1;
 		}
 	}
 	public int Pdgv_Osi4(byte[] pucBuffer1,int ulLen,long ori,InetAddress IPAddress, int port)
@@ -345,12 +349,12 @@ public class procDat implements Runnable
 				UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'pool\') WHERE id=\'/"+id+"/Drv_Status\'";
 				dgvsqlTH(InsSql,UdtSql);
 				InsSql = "INSERT INTO variables VALUES (\'/"+id+"/Lnk_Status\',\'ok\',LOCALTIMESTAMP)";
-				UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'ok\') WHERE id=\'/"+id+"/Lnk_Status\'";
+				UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'ok\') WHERE id=\'/"+id+"/Lnk_Status\' AND value<>\'ok\'";
 				dgvsqlTH(InsSql,UdtSql);
 				InsSql = "INSERT INTO variables VALUES (\'/"+id+"/address\',\'"+IPAddress+"\',LOCALTIMESTAMP)";
-				UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'"+IPAddress+"\') WHERE id=\'/"+id+"/address\'";
+				UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'"+IPAddress+"\') WHERE id=\'/"+id+"/address\' AND value<>\'"+IPAddress+"\'";
 				dgvsqlTH(InsSql,UdtSql);
-				UdtSql = "UPDATE pdgv SET (ip,status,lstupd)=(\'"+IPAddress+"\',\'ok\',LOCALTIMESTAMP) WHERE id=\'"+id+"\'";
+				UdtSql = "UPDATE pdgv SET (ip,status,lstupd)=(\'"+IPAddress+"\',\'ok\',LOCALTIMESTAMP) WHERE id=\'"+id+"\' AND ip<>\'"+IPAddress+"\'";
 				dgvsqlTH("",UdtSql);
 				//------------------------------------------------------------------------------------------
 				switch((int)pucBuffer1[CmpSkT])
@@ -398,7 +402,7 @@ public class procDat implements Runnable
 									tmpT=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(dt);
 									dt = null;
 									InsSql = "INSERT INTO variables VALUES (\'/"+id+"/RTC\',\' \',LOCALTIMESTAMP)";
-									UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'"+tmpT+"\') WHERE id=\'/"+id+"/RTC\'";
+									UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'"+tmpT+"\') WHERE id=\'/"+id+"/RTC\' AND value<>\'"+tmpT+"\'";
 									if((log&4)!=0)System.out.println("\tDate:"+tmpL+"("+tmpT+")");
 									tmpT = null;
 									dgvsqlTH(InsSql,UdtSql);
@@ -414,7 +418,7 @@ public class procDat implements Runnable
 									mem+=4;
 									tmpF=tmpL/100;
 									InsSql = "INSERT INTO variables VALUES (\'/"+id+"/Voltage\',\'"+tmpF+"\',LOCALTIMESTAMP)";
-									UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'"+tmpF+"\') WHERE id=\'/"+id+"/Voltage\'";
+									UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'"+tmpF+"\') WHERE id=\'/"+id+"/Voltage\' AND value<>\'"+tmpF+"\'";
 									if((log&4)!=0)System.out.println("\tVoltage:"+tmpF);
 									dgvsqlTH(InsSql,UdtSql);
 								}
@@ -435,7 +439,7 @@ public class procDat implements Runnable
 										//if((tmpI&0x00200000)!=0)tmpT+=",EV";
 										//if((tmpI&0x40000000)!=0)tmpT+=",Tmin";
 										InsSql = "INSERT INTO variables (id,lstchg,value) VALUES (\'/"+id+"/PLC"+(tmpL+1)+"/Status\',LOCALTIMESTAMP,\'"+modo[(tmpI&0x0F)]+tmpT+"\');";
-										UdtSql = "UPDATE variables SET (lstchg,value) =	(LOCALTIMESTAMP,\'"+modo[(tmpI&0x0F)]+tmpT+"\') WHERE id = \'/"+id+"/PLC"+(tmpL+1)+"/Status\' ";
+										UdtSql = "UPDATE variables SET (lstchg,value) =	(LOCALTIMESTAMP,\'"+modo[(tmpI&0x0F)]+tmpT+"\') WHERE id = \'/"+id+"/PLC"+(tmpL+1)+"/Status\' AND value<>\'"+modo[(tmpI&0x0F)]+tmpT+"\'";
 										if((log&4)!=0)System.out.println("\tMode:"+modo[(tmpI&0x0F)]+tmpT+"("+Integer.toHexString(tmpI)+")");
 										dgvsqlTH(InsSql,UdtSql);
 										InsSql = "INSERT INTO variables (id,lstchg,value) VALUES (\'/"+id+"/PLC"+(tmpL+1)+"/Nombre\',LOCALTIMESTAMP,\'Ctrl"+(tmpL+1)+"\');";
@@ -450,8 +454,8 @@ public class procDat implements Runnable
 										tmpI=0;
 										tmpI|=((pucBuffer1[mem  ]&0xFF)    );
 										mem+=1;
-										InsSql = "INSERT INTO variables (id,lstchg,value) VALUES (\'/"+id+"/PLC"+(tmpL+1)+"/Nplan\',LOCALTIMESTAMP,\'"+tmpI+"\');"; 
-										UdtSql = "UPDATE variables SET (lstchg,value) =	(LOCALTIMESTAMP,\'"+tmpI+"\') WHERE id = \'/"+id+"/PLC"+(tmpL+1)+"/Nplan\'";
+										InsSql = "INSERT INTO variables (id,lstchg,value) VALUES (\'/"+id+"/PLC"+(tmpL+1)+"/Nplan\',LOCALTIMESTAMP,\'"+tmpI+"\');";
+										UdtSql = "UPDATE variables SET (lstchg,value) =	(LOCALTIMESTAMP,\'"+tmpI+"\') WHERE id = \'/"+id+"/PLC"+(tmpL+1)+"/Nplan\' AND value<>\'"+tmpI+"\'";
 										if((log&4)!=0)System.out.println("\tNplan:"+Integer.toHexString(tmpI));
 										dgvsqlTH(InsSql,UdtSql);
 									}
@@ -463,7 +467,7 @@ public class procDat implements Runnable
 									cplc|=((pucBuffer1[mem  ]&0xFF)    );
 									mem+=1;
 									InsSql = "INSERT INTO variables VALUES (\'/"+id+"/PLC_Count\',\'"+cplc+"\',LOCALTIMESTAMP)";
-									UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'"+cplc+"\') WHERE id=\'/"+id+"/PLC_Count\'";
+									UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'"+cplc+"\') WHERE id=\'/"+id+"/PLC_Count\' AND value<>\'"+cplc+"\'";
 									if((log&4)!=0)System.out.println("\tcplc:"+cplc);
 									dgvsqlTH(InsSql,UdtSql);
 								}
@@ -474,7 +478,7 @@ public class procDat implements Runnable
 									cio|=((pucBuffer1[mem  ]&0xFF)    );
 									mem+=1;
 									InsSql = "INSERT INTO variables VALUES (\'/"+id+"/IO_Count\',\'"+cio+"\',LOCALTIMESTAMP)";
-									UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'"+cio+"\') WHERE id=\'/"+id+"/IO_Count\'";
+									UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'"+cio+"\') WHERE id=\'/"+id+"/IO_Count\' AND value<>\'"+cio+"\'";
 									if((log&4)!=0)System.out.println("\tCio:"+cio);
 									dgvsqlTH(InsSql,UdtSql);
 								}
@@ -485,7 +489,7 @@ public class procDat implements Runnable
 									cph|=((pucBuffer1[mem  ]&0xFF)    );
 									mem+=1;
 									InsSql = "INSERT INTO variables VALUES (\'/"+id+"/PhasesCount\',\'"+cph+"\',LOCALTIMESTAMP)";
-									UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'"+cph+"\') WHERE id=\'/"+id+"/PhasesCount\'";
+									UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'"+cph+"\') WHERE id=\'/"+id+"/PhasesCount\' AND value<>\'"+cph+"\'";
 									if((log&4)!=0)System.out.println("\tCphase:"+cph);
 									dgvsqlTH(InsSql,UdtSql);
 								}
@@ -496,8 +500,8 @@ public class procDat implements Runnable
 									{
 										tmpB=pucBuffer1[mem+tmpI];
 										tmpB&=127;
-										InsSql = "INSERT INTO variables (id,lstchg,value) VALUES (\'/"+id+"/Phase"+(tmpI+1)+"/Color\',LOCALTIMESTAMP,\'"+tmpB+"\');"; 
-										UdtSql = "UPDATE variables SET (lstchg,value) =	(LOCALTIMESTAMP,\'"+tmpB+"\') WHERE id = \'/"+id+"/Phase"+(tmpI+1)+"/Color\'";
+										InsSql = "INSERT INTO variables (id,lstchg,value) VALUES (\'/"+id+"/Phase"+(tmpI+1)+"/Color\',LOCALTIMESTAMP,\'"+tmpB+"\');";
+										UdtSql = "UPDATE variables SET (lstchg,value) =	(LOCALTIMESTAMP,\'"+tmpB+"\') WHERE id = \'/"+id+"/Phase"+(tmpI+1)+"/Color\' AND value<>\'"+tmpB+"\'";
 										if((log&4)!=0)System.out.print("\t\tPh["+tmpI+"].Color:");
 										if((log&4)!=0)System.out.printf("0x%02X \n",tmpB);
 										dgvsqlTH(InsSql,UdtSql);
@@ -511,8 +515,8 @@ public class procDat implements Runnable
 									{
 										tmpB=pucBuffer1[mem+tmpI];
 										tmpB&=127;
-										InsSql = "INSERT INTO variables (id,lstchg,value) VALUES (\'/"+id+"/Phase"+(tmpI+1)+"/Rcolor\',LOCALTIMESTAMP,\'"+tmpB+"\');"; 
-										UdtSql = "UPDATE variables SET (lstchg,value) =	(LOCALTIMESTAMP,\'"+tmpB+"\') WHERE id = \'/"+id+"/Phase"+(tmpI+1)+"/Rcolor\'";
+										InsSql = "INSERT INTO variables (id,lstchg,value) VALUES (\'/"+id+"/Phase"+(tmpI+1)+"/Rcolor\',LOCALTIMESTAMP,\'"+tmpB+"\');";
+										UdtSql = "UPDATE variables SET (lstchg,value) =	(LOCALTIMESTAMP,\'"+tmpB+"\') WHERE id = \'/"+id+"/Phase"+(tmpI+1)+"/Rcolor\' AND value<>\'"+tmpB+"\'";
 										if((log&4)!=0)System.out.print("\t\tPh["+tmpI+"].Rcolor:");
 										if((log&4)!=0)System.out.printf("0x%02X \n",tmpB);
 										dgvsqlTH(InsSql,UdtSql);
@@ -527,8 +531,8 @@ public class procDat implements Runnable
 										tmpB=pucBuffer1[mem+tmpI+1];
 										tmpB<<=8;
 										tmpB+=pucBuffer1[mem+tmpI];
-										InsSql = "INSERT INTO variables (id,lstchg,value) VALUES (\'/"+id+"/Phase"+((tmpI/2)+1)+"/Current\',LOCALTIMESTAMP,\'"+tmpB+"\');"; 
-										UdtSql = "UPDATE variables SET (lstchg,value) =	(LOCALTIMESTAMP,\'"+tmpB+"\') WHERE id = \'/"+id+"/Phase"+((tmpI/2)+1)+"/Current\'";
+										InsSql = "INSERT INTO variables (id,lstchg,value) VALUES (\'/"+id+"/Phase"+((tmpI/2)+1)+"/Current\',LOCALTIMESTAMP,\'"+tmpB+"\');";
+										UdtSql = "UPDATE variables SET (lstchg,value) =	(LOCALTIMESTAMP,\'"+tmpB+"\') WHERE id = \'/"+id+"/Phase"+((tmpI/2)+1)+"/Current\' AND value<>\'"+tmpB+"\'";
 										if((log&4)!=0)System.out.print("\t\tPh["+(tmpI/2)+"].Curr:");
 										if((log&4)!=0)System.out.printf("0x%04X \n",tmpB);
 										dgvsqlTH(InsSql,UdtSql);
@@ -596,8 +600,8 @@ public class procDat implements Runnable
 										if((log&4)!=0)System.out.print(tmpT+")\n");
 										if(tmpT!="")
 										{
-											InsSql = "INSERT INTO variables (id,lstchg,value) VALUES (\'/"+id+"/Phase"+((tmpI/4)+1)+"/Errors\',LOCALTIMESTAMP,\'"+tmpT+"\');"; 
-											UdtSql = "UPDATE variables SET (lstchg,value) =	(LOCALTIMESTAMP,\'"+tmpT+"\') WHERE id = \'/"+id+"/Phase"+((tmpI/4)+1)+"/Errors\'";
+											InsSql = "INSERT INTO variables (id,lstchg,value) VALUES (\'/"+id+"/Phase"+((tmpI/4)+1)+"/Errors\',LOCALTIMESTAMP,\'"+tmpT+"\');";
+											UdtSql = "UPDATE variables SET (lstchg,value) =	(LOCALTIMESTAMP,\'"+tmpT+"\') WHERE id = \'/"+id+"/Phase"+((tmpI/4)+1)+"/Errors\' AND value<>\'"+tmpT+"\'";
 											dgvsqlTH(InsSql,UdtSql);
 										}
 									}
@@ -645,25 +649,40 @@ public class procDat implements Runnable
 			try
 			{
 				dat=null;
-				dat=queueTHd.take();
+				dat=queuePdgvRx.take();
 				int rxret=0;
 				rxret=Pdgv_Osi2(dat.RxData,dat.RxData.length,1,dat.IPAddress,dat.port);
 				if(rxret!=0)
 				{
 					if((log&1)!=0)System.out.println("\n\tTH("+Thread.currentThread().getId()+")Pdgv_Osi2.ByteRx:"+dat.RxData.length+" From ip:"+dat.IPAddress+":"+dat.port+" "+new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new java.util.Date()));
 					rxret=Pdgv_Osi3(dat.RxData,dat.RxData.length,(byte)rxret,dat.IPAddress,dat.port);
-				}
-				if(rxret!=0)
-				{
-					System.out.print("p"+Thread.currentThread().getId());
-					rxret=Pdgv_Osi4(dat.RxData,dat.RxData.length,SrvId,dat.IPAddress,dat.port);
-					if(rxret!=0)
+					if(rxret==0)
 					{
-						if((log&1)!=0)System.out.println("\tack->");
-						serverSocket.send(sendPacket);
-						sendPacket = null;
+						System.out.print("p"+Thread.currentThread().getId());
+						rxret=Pdgv_Osi4(dat.RxData,dat.RxData.length,SrvId,dat.IPAddress,dat.port);
+						if(rxret!=0)
+						{
+							System.out.println("\tack->");
+							serverSocket.send(sendPacket);
+							sendPacket = null;
+						}
+						rxret=Pdgv_Osi5(dat.RxData,dat.RxData.length,SrvId,dat.IPAddress,dat.port);
 					}
-					rxret=Pdgv_Osi5(dat.RxData,dat.RxData.length,SrvId,dat.IPAddress,dat.port);
+					else
+					{
+						if(rxret==2)	// TODO: hay que verificar si esto vamos a hacer asi...
+						{
+							try
+							{
+								queuePdgvTx.put(dat);
+							}
+							catch ( Exception e )
+							{
+								System.err.println("procDatSub["+e.getClass().getName()+":"+e.getMessage()+"]");
+								System.exit(0);
+							}
+						}
+					}
 				}
 				dat.RxData=null;
 			}

@@ -26,7 +26,7 @@ function GetUrl(url,fnc)
 		return 1;
 	}
 	if ((enProceso+1000)<digital.getTime() && http)
-  {
+	{
 		enProceso = digital.getTime();
 		response=fnc;
 		var timtemp;
@@ -49,12 +49,12 @@ function GetUrl(url,fnc)
 		//http.onload = handleHttpResponse;
 		http.send(null);
 		return 0;
-  }
-  return 1;
+	}
+	return 1;
 }
 
 function handleHttpResponse()  
-{ 
+{
 	switch(http.readyState)
 	{
 		case 0:
@@ -85,6 +85,9 @@ function handleHttpResponse()
 				{
 					if(Log_En>1)LOG("http.status:"+http.readyState+","+http.status+"\n");
 					enProceso = 0;
+					var chklogout=http.responseText;
+					if(chklogout.indexOf("[*]")!=-1)
+						window.location.href = '../index.htm';
 					response(http);
 				}
 				else
@@ -101,28 +104,28 @@ function handleHttpResponse()
 		}
 		break;
 		default:
- 		{
+		{
 			if(Log_En)LOG("Error:"+http.readyState+","+http.status+":"+http.statusText+"\n");
- 		}
+		}
 		break;
 	}
 }
 
 function getHTTPObject() 
 {
- var xmlhttp;
- if (!xmlhttp && typeof XMLHttpRequest != 'undefined') 
- {
-  	try
+	var xmlhttp;
+	if (!xmlhttp && typeof XMLHttpRequest != 'undefined') 
 	{
-		xmlhttp = new XMLHttpRequest();
+		try
+		{
+			xmlhttp = new XMLHttpRequest();
+		}
+		catch (e) 
+		{
+			xmlhttp = false;
+		}
 	}
-  	catch (e) 
-	{
- 		xmlhttp = false;
- 	}
- }
- return xmlhttp;
+	return xmlhttp;
 }
 
 function HTMLEncode(str)
@@ -157,28 +160,28 @@ function HTMLEncode(str)
 
 function HexEncode(str)
 {
-    var r="";
-    var c=0;
-    var h;
-    while(c<str.length)
+	var r="";
+	var c=0;
+	var h;
+	while(c<str.length)
 	{
-        h=str.charCodeAt(c);
+		h=str.charCodeAt(c);
 		h=h.toString(16);
 		h=h.toUpperCase();
-        while(h.length<2) h="0"+h;
-        r+="0x"+h+" ";
+		while(h.length<2) h="0"+h;
+		r+="0x"+h+" ";
 		c++;
 		if((c%4)==0)r+="\n";
-    }
-    return r;
+	}
+	return r;
 }
 
 function HexDecode(str)
 {
-    var r="";
-    var ptr=0
+	var r="";
+	var ptr=0
 	var ptrM=0
-    while(ptr!=-1)
+	while(ptr!=-1)
 	{
 		ptr=str.substring(ptrM+ptr).indexOf("0x");
 		if(ptr!=-1)
@@ -188,6 +191,6 @@ function HexDecode(str)
 			r+=String.fromCharCode(str.substring(ptrM,ptrM+4));
 			ptrM++;
 		}
-    }
-    return r;
+	}
+	return r;
 }
