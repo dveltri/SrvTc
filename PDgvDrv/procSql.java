@@ -7,7 +7,6 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 public class procSql implements Runnable
 {
-	private static final int quezise	=1000;
 	private static String conection="jdbc:postgresql://localhost:5432/SrvDb";
 	private final BlockingQueue<String[]> queueSQ;
 	//-------------------------------------------------------
@@ -41,7 +40,8 @@ public class procSql implements Runnable
 			{
 				take=null;
 				take = queueSQ.take();
-				System.out.print(".");
+				System.out.print("s"+Thread.currentThread().getId());
+				//System.out.print(".");
 				//if(queueSQ.remainingCapacity()==(quezise*10))System.out.print("\n");
 					//System.out.println("SQL("+Thread.currentThread().getId()+")Send Sql");
 				//------------------------------
@@ -65,6 +65,7 @@ public class procSql implements Runnable
 						catch ( Exception e )
 						{
 							System.err.println("\n\tErrUdt1:"+e.getClass().getName() + ":" + e.getMessage());
+							System.exit(0);
 						}
 					}
 				}
@@ -81,6 +82,7 @@ public class procSql implements Runnable
 					catch ( Exception e )
 					{
 						System.err.println("\n\tErrUdt2:"+e.getClass().getName() + ":" + e.getMessage());
+						System.exit(0);
 					}
 				}
 				//------------------------------
@@ -90,15 +92,7 @@ public class procSql implements Runnable
 				System.err.println("SQL["+e.getClass().getName()+":"+e.getMessage()+"]");//System.err.println(".");
 			}
 		}
-		/*try
-		{
-			c.close();
-		}
-		catch ( Exception e )
-		{
-			System.err.println("SQL["+e.getClass().getName()+":"+e.getMessage()+"]");
-		}
-		//-----------------------------------------------------------------------------*/
+		//-----------------------------------------------------------------------------
 	}
 
 }
