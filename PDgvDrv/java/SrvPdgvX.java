@@ -215,8 +215,9 @@ public class SrvPdgvX
 		while(true)
 		{
 			countloop++;
-			if((dt0.getTime() - proc_st.getTime())>(24*60*60*1000))
+			if((dt0.getTime() - proc_st.getTime())>(12*60*60*1000))
 			{
+				System.out.println("\nAuto Restart");
 				System.exit(0);
 			}
 			//-----------------------------------------------------------------------------
@@ -225,7 +226,7 @@ public class SrvPdgvX
 				serverSocket.receive(receivePacketP);
 				try
 				{
-					System.out.print("\n\0337\033[37;32mm->"+receivePacketP.getAddress()+":"+receivePacketP.getPort()+"["+receivePacketP.getLength()+"]\0338");
+					System.out.print("\n\0337\033[92mm->"+receivePacketP.getAddress()+":"+receivePacketP.getPort()+"["+receivePacketP.getLength()+"]\0338");
 					queuePdgvRx.put(new dat2proc(receivePacketP.getData(),receivePacketP.getLength(),receivePacketP.getAddress(),receivePacketP.getPort()));
 					sendPacketP=null;
 					if(route!=0)
@@ -439,7 +440,7 @@ public class SrvPdgvX
 			//System.out.print("\033[s");
 			//System.out.print("\033["+0+";"+0+"H");
 			//System.out.print("\033[37;101m");
-			temp=((24*60*60*1000)-(dt0.getTime() - proc_st.getTime()))/1000;
+			temp=((12*60*60*1000)-(dt0.getTime() - proc_st.getTime()))/1000;
 			if(queueSql.remainingCapacity()==(quezise*10))
 			{
 				System.out.print("\n\0337\033[37;44m("+temp+")SrvPdgv-"+drv+" SqlQ("+queueSql.remainingCapacity()+") DatQ("+queuePdgvRx.remainingCapacity()+") THS("+THS+") THD("+THD+")\0338\n");
