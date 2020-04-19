@@ -3,22 +3,25 @@ var http = getHTTPObject();
 http.fnc = 0;
 http.time =0;
 
-function GetUrlB(url,fnc)
+function GetUrlB(Url,Fnc)
 {
-	URLs.push(url);
-	FNCs.push(fnc);
+	if(fnc)
+		OBJs.push({url:Url,fnc:Fnc});
+	else
+		OBJs.push({url:Url});
 }
 
 function fncnone(Data)
 {
 }
 
-function GetUrl(url,fnc)
+function GetUrl(obj)
 {
+	obj.urlx = obj.url;
 	var digital = new Date();
 	if (!http)
 		return 1;
-	if(typeof fnc != "function")
+	if(obj.fnc && typeof obj.fnc != "function")
 		return 2;
 	if(enProceso!=0)
 	{
@@ -32,18 +35,20 @@ function GetUrl(url,fnc)
 	//----------------------------
 	enProceso = digital.getTime();
 	http.time = digital.getTime();
-	http.fnc=fnc;
+	http.Obj=obj;
+	if(obj.fnc)
+		http.fnc=obj.fnc;
 	var hours = digital.getHours();
 	var minutes = digital.getMinutes();
 	var seconds = digital.getSeconds();
-	url=replaceAll(url,'//','/');
-	url=url.replace("http:/","http://");
-	if(url.indexOf("?")!=-1)
-		url=url.replace("?","?AJAX="+enProceso+"&");
+	obj.urlx=replaceAll(obj.urlx,'//','/');
+	obj.urlx=obj.urlx.replace("http:/","http://");
+	if(obj.urlx.indexOf("?")!=-1)
+		obj.urlx=obj.urlx.replace("?","?AJAX="+enProceso+"&");
 	else
-		url+="?AJAX="+enProceso;
-	http.urlx=url;
-	http.open("GET", url, true);//"POST"
+		obj.urlx+="?AJAX="+enProceso;
+	http.urlx=obj.urlx;
+	http.open("GET", obj.urlx, true);//"POST"
 	http.onreadystatechange = handleHttpResponse;
 	//http.onload = handleHttpResponse;
 	http.send(null);
@@ -89,7 +94,8 @@ function handleHttpResponse()
 				}
 				else
 				{
-					if(Log_En>1)LOG("Response invalid<br />");
+					if(Log_En>1)
+					if(Log_En)LOG("Error:"+http.readyState+","+http.status+":"+http.statusText+"\n");LOG("Response invalid<br />");
 				}
 			}
 			else

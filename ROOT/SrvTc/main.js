@@ -3,8 +3,7 @@ var language="ES";
 var Log_En=0;
 var PoolData=0;
 var Reqest =  new Array();
-var URLs= new Array();
-var FNCs= new Array();
+var OBJs= new Array();
 var FlyMnu;
 /*---------------------------------------------------------------------------*/
 function WebStart()
@@ -49,13 +48,12 @@ function fnc0()
 {
 	var digital = new Date();
 	var ms = digital.getTime();
-	if(URLs.length)
+	if(OBJs.length)
 	{
-		var rv=GetUrl(URLs[0],FNCs[0]);
+		var rv=GetUrl(OBJs[0]);
 		if(rv==0 || rv==3)
 		{
-			FNCs.splice(0,1);
-			URLs.splice(0,1);
+			OBJs.splice(0,1);
 		}
 	}
 	if(Reqest[PoolData].Status!=1)
@@ -65,7 +63,8 @@ function fnc0()
 			//LOG(Reqest[PoolData].LstRqst+" "+ms+" "+(ms-Reqest[PoolData].LstRqst)+"\n");
 			Reqest[PoolData].LstRqst=ms+(Reqest[PoolData].Refresh-5);
 			Reqest[PoolData].Status=1;
-			GetUrlB(Reqest[PoolData].Url,RcvMoni);
+			Reqest[PoolData].fnc=RcvMoni;
+			OBJs.push(Reqest[PoolData]);
 		}
 	}
 	PoolData++;
@@ -82,32 +81,26 @@ function RcvMoni(Datos)
 		{
 			result=Datos.status+" "+Datos.statusText;
 		}
-		for(var rsqt=0;rsqt<Reqest.length;rsqt++)
+		else
 		{
-			if(Datos.urlx.indexOf(Reqest[rsqt].Url)!=-1)
-			{
-				if(Datos.status==200)
-				{
-					result = Reqest[rsqt].Fnc(Datos);
-					break;
-				}
-			}
+			if(Datos.Obj.Fnc)
+				result = Datos.Obj.Fnc(Datos);
 		}
-		if(Reqest[rsqt].WinName)
+		if(Datos.Obj && Datos.Obj.WinName)
 		{
-			document.getElementById(Reqest[rsqt].WinName+"Title").innerHTML="";
-			document.getElementById(Reqest[rsqt].WinName+"Title").innerHTML+=Reqest[rsqt].Name;
-			document.getElementById(Reqest[rsqt].WinName+"Hora").innerHTML=hora.getHours()+":"+hora.getMinutes()+":"+hora.getSeconds()+" ";
-			document.getElementById(Reqest[rsqt].WinName+"Body").innerHTML=result;
+			document.getElementById(Datos.Obj.WinName+"Title").innerHTML="";
+			document.getElementById(Datos.Obj.WinName+"Title").innerHTML+=Datos.Obj.Name;
+			document.getElementById(Datos.Obj.WinName+"Hora").innerHTML=hora.getHours()+":"+hora.getMinutes()+":"+hora.getSeconds()+" ";
+			document.getElementById(Datos.Obj.WinName+"Body").innerHTML=result;
 		}
-		if(Reqest[rsqt].Dest)
+		if(Datos.Obj.Dest)
 		{
-			if(Reqest[rsqt].Dest.innerHTML)
-				Reqest[rsqt].Dest.innerHTML=result;
-			if(Reqest[rsqt].Dest.value)
-				Reqest[rsqt].Dest.value=result;
+			if(Datos.Obj.Dest.innerHTML)
+				Datos.Obj.Dest.innerHTML=result;
+			if(Datos.Obj.Dest.value)
+				Datos.Obj.Dest.value=result;
 		}
-		Reqest[rsqt].Status=0;
+		Datos.Obj.Status=0;
 		return;
 	}
 	else
