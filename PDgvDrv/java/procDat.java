@@ -656,7 +656,7 @@ public class procDat implements Runnable
 				{
 					if((log&1)!=0)System.out.println("\n\tTH("+Thread.currentThread().getId()+")Pdgv_Osi2.ByteRx:"+dat.RxData.length+" From ip:"+dat.IPAddress+":"+dat.port+" "+new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new java.util.Date()));
 					rxret=Pdgv_Osi3(dat.RxData,dat.RxData.length,(byte)rxret,dat.IPAddress,dat.port);
-					System.out.print("p"+Thread.currentThread().getId());
+					System.out.print(Thread.currentThread().getName());
 					if(rxret==0)
 					{
 						rxret=Pdgv_Osi4(dat.RxData,dat.RxData.length,SrvId,dat.IPAddress,dat.port);
