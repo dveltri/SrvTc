@@ -38,7 +38,7 @@ function WebStart()
 	IniMenu();
 	UL2Menu_ConvertMenu();
 	document.getElementById("LOADING").style.visibility = 'hidden';
-  FlyMnu = document.getElementById("divFlyMnu");
+	FlyMnu = document.getElementById("divFlyMnu");
 	FlyMnu.idx=0;
 	intval=setInterval("fnc0()",250);
 	GetUrlB('./getitems.jsp?sql=SELECT * FROM variables order by id',rcvList);
@@ -49,45 +49,27 @@ function fnc0()
 {
 	var digital = new Date();
 	var ms = digital.getTime();
-	if(URLs.length && (enProceso+1000)<digital.getTime())
+	if(URLs.length)
 	{
-		GetUrl(URLs[0],FNCs[0]);
-		FNCs.splice(0,1);
-		URLs.splice(0,1);
-		return;
-	}
-	else
-	{
-		if(Reqest[PoolData].Status!=0)
-			Reqest[PoolData].Status=0;
-	}
-	//else
-	{
-		if(Reqest[PoolData].Status==0)
+		var rv=GetUrl(URLs[0],FNCs[0]);
+		if(rv==0 || rv==3)
 		{
-			if(Reqest[PoolData].LstRqst<ms)
-			{
-				//LOG(Reqest[PoolData].LstRqst+" "+ms+" "+(ms-Reqest[PoolData].LstRqst)+"\n");
-				Reqest[PoolData].LstRqst=ms+(Reqest[PoolData].Refresh-5);
-				Reqest[PoolData].Status=1;
-				GetUrlB(Reqest[PoolData].Url,RcvMoni);
-			}
-			else
-			{
-				PoolData++;
-				PoolData%=Reqest.length;
-			}
-		}
-		else
-		{
-			LOG(Reqest[PoolData].Status+"\n");
-		}
-		if(Reqest[PoolData].Status==-1)
-		{
-			PoolData++;
-			PoolData%=Reqest.length;
+			FNCs.splice(0,1);
+			URLs.splice(0,1);
 		}
 	}
+	if(Reqest[PoolData].Status==0)
+	{
+		if(Reqest[PoolData].LstRqst<ms)
+		{
+			//LOG(Reqest[PoolData].LstRqst+" "+ms+" "+(ms-Reqest[PoolData].LstRqst)+"\n");
+			Reqest[PoolData].LstRqst=ms+(Reqest[PoolData].Refresh-5);
+			Reqest[PoolData].Status=1;
+			GetUrlB(Reqest[PoolData].Url,RcvMoni);
+		}
+	}
+	PoolData++;
+	PoolData%=Reqest.length;
 }
 
 function RcvMoni(Datos)
@@ -96,37 +78,44 @@ function RcvMoni(Datos)
 	var hora = new Date();
 	if(Datos)
 	{
-		if(Reqest[PoolData].Status==1)
+		if(Datos.status==200)
 		{
-			if(Datos.status==200)
+			for(var rsqt=0;rsqt<Reqest.length;rsqt++)
 			{
-				if(Reqest[PoolData].WinName)
+				if(Reqest[rsqt].Url.indexOf(Datos.urlx)!=-1)
 				{
-					document.getElementById(Reqest[PoolData].WinName+"Title").innerHTML="";
-					//document.getElementById(Reqest[PoolData].WinName+"Title").innerHTML+="<img src='./img/reload.png' onclick='chgsts("+PoolData+");' width='14' height='14' /> ";
-					document.getElementById(Reqest[PoolData].WinName+"Title").innerHTML+=Reqest[PoolData].Name;
-					document.getElementById(Reqest[PoolData].WinName+"Hora").innerHTML=hora.getHours()+":"+hora.getMinutes()+":"+hora.getSeconds()+" ";
-					document.getElementById(Reqest[PoolData].WinName+"Body").innerHTML=Reqest[PoolData].Fnc(Datos);
+					var result = Reqest[PoolData].Fnc(Datos);
+					if(Reqest[PoolData].WinName)
+					{
+						document.getElementById(Reqest[PoolData].WinName+"Title").innerHTML="";
+						document.getElementById(Reqest[PoolData].WinName+"Title").innerHTML+=Reqest[PoolData].Name;
+						document.getElementById(Reqest[PoolData].WinName+"Hora").innerHTML=hora.getHours()+":"+hora.getMinutes()+":"+hora.getSeconds()+" ";
+						document.getElementById(Reqest[PoolData].WinName+"Body").innerHTML=result;
+					}
+					if(Reqest[PoolData].Dest)
+					{
+						if(Reqest[PoolData].Dest.innerHTML)
+							Reqest[PoolData].Dest.innerHTML=result;
+						if(Reqest[PoolData].Dest.value)
+							Reqest[PoolData].Dest.value=result;
+					}
+					Reqest[rsqt].Status=0;
+					return;
 				}
-				else
-				{
-					Reqest[PoolData].Fnc(Datos);
-				}
-			}
-			else
-			{
-				if(Reqest[PoolData].WinName)
-					document.getElementById(Reqest[PoolData].WinName+"Body").innerHTML=Datos.status+" "+Datos.statusText;
 			}
 		}
-		PoolData++;
-		PoolData%=Reqest.length;
+		else
+		{
+			if(Reqest[PoolData].WinName)
+			{
+				document.getElementById(Reqest[PoolData].WinName+"Body").innerHTML=Datos.status+" "+Datos.statusText;
+			}
+		}
 	}
 	else
 	{
 		LOG("No data!"+Reqest[PoolData].LstRqst+" "+ms+" "+(ms-Reqest[PoolData].LstRqst)+"\n");
 	}
-	Reqest[PoolData].Status=0;
 }
 
 function CountItem(Aray,Item)
@@ -159,14 +148,6 @@ function roundNumber(num, dec)
 {
 	var result = Math.round(num*Math.pow(10,dec))/Math.pow(10,dec);
 	return result;
-}
-
-function chgsts(Data)
-{
-	if(Reqest[Data].Status==-1)
-		Reqest[Data].Status=0;
-	else
-		Reqest[Data].Status=-1;
 }
 
 function Resize()

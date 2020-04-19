@@ -6,7 +6,7 @@ function InitAlerts()
 	Reqest[idx]= new Object();
 	Reqest[idx].Url="./getitems.jsp";
 	Reqest[idx].Fnc=rcvAlert;
-	Reqest[idx].Status=1;
+	Reqest[idx].Status=0;
 	Reqest[idx].Refresh=1000;
 	Reqest[idx].LstRqst=0;
 	Reqest[idx].Dest=document.getElementById("sample2Body");

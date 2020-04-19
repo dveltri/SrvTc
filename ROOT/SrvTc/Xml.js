@@ -1,7 +1,7 @@
 var enProceso = 0;
 var http = getHTTPObject();
-var response;
-var fnc_error=0;
+http.fnc = 0;
+http.time =0;
 
 function GetUrlB(url,fnc)
 {
@@ -16,41 +16,38 @@ function fncnone(Data)
 function GetUrl(url,fnc)
 {
 	var digital = new Date();
-	if (typeof fnc == "function" && (enProceso+1000)<digital.getTime())
+	if (!http)
+		return 1;
+	if(typeof fnc != "function")
+		return 2;
+	if(enProceso!=0)
 	{
-		fnc_error=0;
-	}
-	else
-	{
-		fnc_error++;
+		if((digital.getTime()-enProceso)>=1000)
+		{
+			enProceso=0;
+			return 3;
+		}
 		return 1;
 	}
-	if ((enProceso+1000)<digital.getTime() && http)
-	{
-		enProceso = digital.getTime();
-		response=fnc;
-		var timtemp;
-		var hours = digital.getHours();
-		var minutes = digital.getMinutes();
-		var seconds = digital.getSeconds();
-		//timtemp =hours+":"+minutes+":"+seconds;
-		timtemp = digital.getTime();
-		var start=0;
-		url=replaceAll(url,'//','/');
-		url=url.replace("http:/","http://");
-		if(url.indexOf("?")!=-1)
-			url=url.replace("?","?AJAX="+timtemp+"&");
-		else
-			url+="?AJAX="+timtemp;
-		//if(Log_En) LOG(url);
-		http.urlx=url;
-		http.open("GET", url, true);//"POST"
-		http.onreadystatechange = handleHttpResponse;
-		//http.onload = handleHttpResponse;
-		http.send(null);
-		return 0;
-	}
-	return 1;
+	//----------------------------
+	enProceso = digital.getTime();
+	http.time = digital.getTime();
+	http.fnc=fnc;
+	var hours = digital.getHours();
+	var minutes = digital.getMinutes();
+	var seconds = digital.getSeconds();
+	url=replaceAll(url,'//','/');
+	url=url.replace("http:/","http://");
+	if(url.indexOf("?")!=-1)
+		url=url.replace("?","?AJAX="+enProceso+"&");
+	else
+		url+="?AJAX="+enProceso;
+	http.urlx=url;
+	http.open("GET", url, true);//"POST"
+	http.onreadystatechange = handleHttpResponse;
+	//http.onload = handleHttpResponse;
+	http.send(null);
+	return 0;
 }
 
 function handleHttpResponse()  
@@ -88,7 +85,7 @@ function handleHttpResponse()
 					var chklogout=http.responseText;
 					if(chklogout.indexOf("[*]")!=-1)
 						window.location.href = '../index.htm';
-					response(http);
+					http.fnc(http);
 				}
 				else
 				{
@@ -99,7 +96,7 @@ function handleHttpResponse()
 			{
 				if(Log_En)LOG("Error:"+http.readyState+","+http.status+":"+http.statusText+"\n");
 				enProceso = 0;
-				response(http);
+				http.fnc(http);
 			}
 		}
 		break;
