@@ -5,7 +5,7 @@ http.time =0;
 
 function GetUrlB(Url,Fnc)
 {
-	if(fnc)
+	if(Fnc)
 		OBJs.push({url:Url,fnc:Fnc});
 	else
 		OBJs.push({url:Url});
