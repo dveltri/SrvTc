@@ -421,17 +421,17 @@ function ShowFastSts()
 					out+=tout;
 					break;					
 				}// */
-				if(FastSts[a].Id.indexOf(PLCsfltr[i])!=-1)
+				if(FastSts[a].Id && FastSts[a].Id.indexOf(PLCsfltr[i])!=-1)
 				{
 					out+=tout;
 					break;					
 				}
-				if(FastSts[a].Nombre.indexOf(PLCsfltr[i])!=-1)
+				if(FastSts[a].Nombre && FastSts[a].Nombre.indexOf(PLCsfltr[i])!=-1)
 				{
 					out+=tout;
 					break;					
 				}
-				if(FastSts[a].Plcs[0].Status.indexOf(PLCsfltr[i])!=-1)
+				if(FastSts[a].Plcs && FastSts[a].Plcs[0] && FastSts[a].Plcs[0].Status && FastSts[a].Plcs[0].Status.indexOf(PLCsfltr[i])!=-1)
 				{
 					out+=tout;
 					break;					
