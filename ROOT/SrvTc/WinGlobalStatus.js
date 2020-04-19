@@ -18,8 +18,8 @@ function InitFastSts()
 	Reqest[idx].Refresh=1000;
 	Reqest[idx].LstRqst=0;
 	winAdd(Reqest[idx].WinName);
-	winList[Reqest[PoolData].WinName].SetW(340);
-	winList[Reqest[PoolData].WinName].SetX(655);
+	winList[Reqest[idx].WinName].SetW(340);
+	winList[Reqest[idx].WinName].SetX(655);
 	winUdate();
 }
 
@@ -211,10 +211,10 @@ function rcvFastSts(Datos)
 		}
 	}
 	//---------------------------------------------------------
-	if (winList[Reqest[PoolData].WinName])
+	if (winList[Datos.Obj.WinName])
 	{
-		winList[Reqest[PoolData].WinName].SetH((10+30+30+(TblSize*24))+"px"); //("300px");
-		winList[Reqest[PoolData].WinName].open();
+		winList[Datos.Obj.WinName].SetH((10+30+30+(TblSize*24))+"px"); //("300px");
+		winList[Datos.Obj.WinName].open();
 		winAutoPos();
 	}
 	//setTimeout("CollapsibleLists.apply()",1000);

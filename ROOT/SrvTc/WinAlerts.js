@@ -53,12 +53,12 @@ function rcvAlert(Datos)
 				return "";			//	*/
 		}
 	}
-	if (winList[Reqest[PoolData].WinName])
+	if (winList[Datos.Obj.WinName])
 	{
-		winList[Reqest[PoolData].WinName].SetH((10+25+25+(Datos.length*20))+"px"); //("100px");
-		winList[Reqest[PoolData].WinName].open();
+		winList[Datos.Obj.WinName].SetH((10+25+25+(Datos.length*20))+"px"); //("100px");
+		winList[Datos.Obj.WinName].open();
 		if(compare2objects(Alerts,Datos)!=true)
-			winList[Reqest[PoolData].WinName].makeActive();
+			winList[Datos.Obj.WinName].makeActive();
 		winAutoPos();
 	}
 	Alerts=owl.deepCopy(Datos)
