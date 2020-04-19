@@ -32,6 +32,7 @@ function rcvFastSts(Datos)
 	var ph=0;
 	var pos;
 	var TblSize=0;
+	var Obj=Datos.Obj;
 	Datos=rcvtbl(Datos);
 	VarTree=owl.deepCopy(Datos);
 	//---------------------------------------------------------
@@ -211,10 +212,10 @@ function rcvFastSts(Datos)
 		}
 	}
 	//---------------------------------------------------------
-	if (winList[Datos.Obj.WinName])
+	if (winList[Obj.WinName])
 	{
-		winList[Datos.Obj.WinName].SetH((10+30+30+(TblSize*24))+"px"); //("300px");
-		winList[Datos.Obj.WinName].open();
+		winList[Obj.WinName].SetH((10+30+30+(TblSize*24))+"px"); //("300px");
+		winList[Obj.WinName].open();
 		winAutoPos();
 	}
 	//setTimeout("CollapsibleLists.apply()",1000);
