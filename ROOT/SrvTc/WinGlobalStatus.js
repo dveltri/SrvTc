@@ -1,5 +1,6 @@
 var FastSts =  new Array();
 var VarTree =  new Array();
+var PLCsfltr=  new Array();
 var Stsrawcolor=[180,180,180];
 var PhCol=["#A0A0A0","#FF0000","#FFFF00","#FF8F00","#00FF00"];
 //=================================================
@@ -254,6 +255,12 @@ function ShowFastSts()
 	var rtc=0;
 	var rawcolor=Stsrawcolor;
 	var out="";
+	vat tout="";
+	out+="<input type=\"button\" class=\"INTEXT2\" value=\""+Str_Filtro+"\" onclick=\"PLCsfltr[PLCsfltr.length]=prompt('"+Str_Filtro+"','');\" /><br />\n";
+	for(var i=0;i<PLCsfltr.length;i++)
+	{
+		out+="<input type=\"button\" class=\"INTEXT2\" value=\"[X]["+PLCsfltr[i]+"]\" onclick=\"PLCsfltr.splice("+i+",1);\" />\n";
+	}
 	out+="<table border=\"0\" cellpadding=\"2\" cellspacing=\"0\" align=\"center\" background=\"\" width=\"100%\" style=\"border-collapse:collapse;border:1px solid rgba(0,0,0,1);\">\n";
 	{
 		//---------------------------------------------------------------------
@@ -299,89 +306,89 @@ function ShowFastSts()
 		}
 		bgcolor="#"+rawcolor[0].toString(16)+""+rawcolor[1].toString(16)+""+rawcolor[2].toString(16)+"";
 		//---------------------------------------------------------------------
-		out+="<tr bgcolor=\""+bgcolor+"\" align=\"center\" class=\"bottom top\">\n";
+		tout="<tr bgcolor=\""+bgcolor+"\" align=\"center\" class=\"bottom top\">\n";
 		//--------------------
-		out+="	<td align=\"center\" valign=\"middle\"";
+		tout+="	<td align=\"center\" valign=\"middle\"";
 		if(FastSts[a].Plcs.length>1)
-			out+=" rowspan=\""+FastSts[a].Plcs.length+"\"";
-		out+=">\n";
-		out+="		<font size=\"1\" face=\"Verdana\">\n";
+			tout+=" rowspan=\""+FastSts[a].Plcs.length+"\"";
+		tout+=">\n";
+		tout+="		<font size=\"1\" face=\"Verdana\">\n";
 		if(FastSts[a].Lnk)
 		{
 			//-------------------------------------------------
 			if(FastSts[a].Lnk.indexOf("ok")!=-1 && FastSts[a].ip)
 			{
-				//out+="<a href=\"#\" onclick=\"window.open('"+url+":8080/web/index.xhtml?remotehost="+FastSts[a].ip+"&srv','_blank');";
-				out+="<a href=\"#\" onclick=\"window.open('../lp3/web/index.xhtml?remotehost="+FastSts[a].ip+"&srv','_blank');";
+				//tout+="<a href=\"#\" onclick=\"window.open('"+url+":8080/web/index.xhtml?remotehost="+FastSts[a].ip+"&srv','_blank');";
+				tout+="<a href=\"#\" onclick=\"window.open('../lp3/web/index.xhtml?remotehost="+FastSts[a].ip+"&srv','_blank');";
 				if(FastSts[a].Lnk.indexOf("Paused")!=-1)
-					out+="GetUrlB('./setitems.jsp?sql=UPDATE variables SET (lstchg,value)%3D(LOCALTIMESTAMP,%27Runing%27)%20WHERE%20id%3D%27%2F"+FastSts[a].Id+"%2FLnk_Status%27',fncnone);";
+					tout+="GetUrlB('./setitems.jsp?sql=UPDATE variables SET (lstchg,value)%3D(LOCALTIMESTAMP,%27Runing%27)%20WHERE%20id%3D%27%2F"+FastSts[a].Id+"%2FLnk_Status%27',fncnone);";
 				else
-					out+="GetUrlB('./setitems.jsp?sql=UPDATE variables SET (lstchg,value)%3D(LOCALTIMESTAMP,%27Paused%27)%20WHERE%20id%3D%27%2F"+FastSts[a].Id+"%2FLnk_Status%27',fncnone);";
-				out+="\" >\n";
-				out+=FastSts[a].Id+"</a>\n";
+					tout+="GetUrlB('./setitems.jsp?sql=UPDATE variables SET (lstchg,value)%3D(LOCALTIMESTAMP,%27Paused%27)%20WHERE%20id%3D%27%2F"+FastSts[a].Id+"%2FLnk_Status%27',fncnone);";
+				tout+="\" >\n";
+				tout+=FastSts[a].Id+"</a>\n";
 			}
 			else
 			{
-				out+=FastSts[a].Id;
+				tout+=FastSts[a].Id;
 			}
 			//-------------------------------------------------
 			{
-				out+="<a href=\"#\" onclick=\"";
+				tout+="<a href=\"#\" onclick=\"";
 				if(FastSts[a].Lnk.indexOf("Paused")!=-1)
-					out+="GetUrlB('./setitems.jsp?sql=UPDATE variables SET (lstchg,value)%3D(LOCALTIMESTAMP,%27Runing%27)%20WHERE%20id%3D%27%2F"+FastSts[a].Id+"%2FLnk_Status%27',fncnone);";
+					tout+="GetUrlB('./setitems.jsp?sql=UPDATE variables SET (lstchg,value)%3D(LOCALTIMESTAMP,%27Runing%27)%20WHERE%20id%3D%27%2F"+FastSts[a].Id+"%2FLnk_Status%27',fncnone);";
 				else
-					out+="GetUrlB('./setitems.jsp?sql=UPDATE variables SET (lstchg,value)%3D(LOCALTIMESTAMP,%27Paused%27)%20WHERE%20id%3D%27%2F"+FastSts[a].Id+"%2FLnk_Status%27',fncnone);";
-				out+="\" >\n";
+					tout+="GetUrlB('./setitems.jsp?sql=UPDATE variables SET (lstchg,value)%3D(LOCALTIMESTAMP,%27Paused%27)%20WHERE%20id%3D%27%2F"+FastSts[a].Id+"%2FLnk_Status%27',fncnone);";
+				tout+="\" >\n";
 				if(FastSts[a].Lnk.indexOf("Paused")!=-1)
-					out+="<img src=\"../img/DisConnected.png\" width=\"18\" height=\"18\"  border=\"1\" />\n";
+					tout+="<img src=\"../img/DisConnected.png\" width=\"18\" height=\"18\"  border=\"1\" />\n";
 				else
-					out+="<img src=\"../img/Connected.png\"    width=\"18\" height=\"18\"  border=\"1\" />\n";
-				out+="</a>\n";
+					tout+="<img src=\"../img/Connected.png\"    width=\"18\" height=\"18\"  border=\"1\" />\n";
+				tout+="</a>\n";
 			}
 			//-------------------------------------------------
 		}
 		if(FastSts[a].Splan)
 		{
-			out+="Force:"+FastSts[a].Splan
+			tout+="Force:"+FastSts[a].Splan
 		}
-		out+="    </font>\n";
-		out+="	</td>\n";
+		tout+="    </font>\n";
+		tout+="	</td>\n";
 		//--------------------
 		for(var b=0;b<FastSts[a].Plcs.length;b++)
 		{
 			if(FastSts[a].Plcs[b])
 			{
 				if(b>0)
-					out+="<tr bgcolor=\""+bgcolor+"\" align=\"center\" class=\"bottom top\">\n";
-				out+="	<td align=\"center\">\n";
+					tout+="<tr bgcolor=\""+bgcolor+"\" align=\"center\" class=\"bottom top\">\n";
+				tout+="	<td align=\"center\">\n";
 				if(FastSts[a].Plcs[b].Location)
-				out+="		<a href=\"\" onclick=\"MapPos("+FastSts[a].Plcs[b].Location+");return false;\">";
-				out+="		<font size=\"1\" face=\"Verdana\">";
+				tout+="		<a href=\"\" onclick=\"MapPos("+FastSts[a].Plcs[b].Location+");return false;\">";
+				tout+="		<font size=\"1\" face=\"Verdana\">";
 				if(FastSts[a].Nombre)
-					out+=FastSts[a].Nombre+" ";
+					tout+=FastSts[a].Nombre+" ";
 				else
-					out+=FastSts[a].Plcs[b].Nombre+" ";
-				out+="		</font>\n";
+					tout+=FastSts[a].Plcs[b].Nombre+" ";
+				tout+="		</font>\n";
 				if(FastSts[a].Plcs[b].Location)
-				out+="		</a>\n";
-				out+="	</td>\n";
-				out+="	<td align=\"center\">\n";
-				out+="		<font size=\"1\" face=\"Verdana\">";
-				out+=FastSts[a].Plcs[b].Status;
+				tout+="		</a>\n";
+				tout+="	</td>\n";
+				tout+="	<td align=\"center\">\n";
+				tout+="		<font size=\"1\" face=\"Verdana\">";
+				tout+=FastSts[a].Plcs[b].Status;
 				if(FastSts[a].Plcs[b].Error && FastSts[a].Plcs[b].Error[0]!="0")
-					out+=" "+FastSts[a].Plcs[b].Error[1];
+					tout+=" "+FastSts[a].Plcs[b].Error[1];
 				if(FastSts[a].Plcs[b].Cplan && FastSts[a].Plcs[b].Cplan.indexOf("97")!=-1)
-					out+=",LampOff";
+					tout+=",LampOff";
 				if(FastSts[a].Plcs[b].Cplan && FastSts[a].Plcs[b].Cplan.indexOf("99")!=-1)
-					out+=",Piscante";
-				out+="		</font>\n";
-				out+="	</td>\n";
-				out+="	<td align=\"center\">\n";
-				out+="		<a href=\"\" onclick=\"GetUrlB('./cruces/"+FastSts[a].Id+"_"+FastSts[a].Plcs[b].Nombre+".svg',rcvPlcSts);return false;\" >\n"; //IdPlcSts='"+FastSts[a].Id+"';
-				out+="			<img src=\"../img/plcs.png\" width=\"18\" height=\"18\" border=\"0\" />\n";
-				out+="		</a><br />\n";
-				out+="	</td>\n";
-				out+="</tr>\n";
+					tout+=",Piscante";
+				tout+="		</font>\n";
+				tout+="	</td>\n";
+				tout+="	<td align=\"center\">\n";
+				tout+="		<a href=\"\" onclick=\"GetUrlB('./cruces/"+FastSts[a].Id+"_"+FastSts[a].Plcs[b].Nombre+".svg',rcvPlcSts);return false;\" >\n"; //IdPlcSts='"+FastSts[a].Id+"';
+				tout+="			<img src=\"../img/plcs.png\" width=\"18\" height=\"18\" border=\"0\" />\n";
+				tout+="		</a><br />\n";
+				tout+="	</td>\n";
+				tout+="</tr>\n";
 				//---------------------------------------------------------
 				if(winList[FastSts[a].Id+"_"+FastSts[a].Plcs[b].Nombre])// && winList[FastSts[a].Id+"_"+FastSts[a].Plcs[b].Nombre].isOpen==true)
 				{
@@ -393,13 +400,43 @@ function ShowFastSts()
 		}
 		if(b==0)
 		{
-				out+="	<td align=\"center\">\n";
-				out+="	</td>\n";
-				out+="	<td align=\"center\">\n";
-				out+="	</td>\n";
-				out+="	<td align=\"center\">\n";
-				out+="	</td>\n";
-				out+="</tr>\n";
+				tout+="	<td align=\"center\">\n";
+				tout+="	</td>\n";
+				tout+="	<td align=\"center\">\n";
+				tout+="	</td>\n";
+				tout+="	<td align=\"center\">\n";
+				tout+="	</td>\n";
+				tout+="</tr>\n";
+		}
+		if(PLCsfltr.length==0)
+		{
+			out+=tout;
+		}
+		else
+		{
+			for(var i=0;i<PLCsfltr.length;i++)
+			{
+				/*if(tout.indexOf(PLCsfltr[i])!=-1)
+				{
+					out+=tout;
+					break;					
+				}// */
+				if(FastSts[a].Id.indexOf(PLCsfltr[i])!=-1)
+				{
+					out+=tout;
+					break;					
+				}
+				if(FastSts[a].Nombre.indexOf(PLCsfltr[i])!=-1)
+				{
+					out+=tout;
+					break;					
+				}
+				if(FastSts[a].Plcs[0].Status.indexOf(PLCsfltr[i])!=-1)
+				{
+					out+=tout;
+					break;					
+				}
+			}
 		}
 	}
 	out+="</table>\n";
