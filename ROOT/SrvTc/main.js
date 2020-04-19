@@ -76,7 +76,7 @@ function RcvMoni(Datos)
 {
 	var result="";
 	var hora = new Date();
-	if(Datos)
+	if(Datos && Datos.Obj)
 	{
 		if(Datos.status!=200)
 		{
@@ -87,7 +87,7 @@ function RcvMoni(Datos)
 			if(Datos.Obj.Fnc)
 				result = Datos.Obj.Fnc(Datos);
 		}
-		if(Datos.Obj && Datos.Obj.WinName)
+		if(Datos.Obj.WinName)
 		{
 			document.getElementById(Datos.Obj.WinName+"Title").innerHTML="";
 			document.getElementById(Datos.Obj.WinName+"Title").innerHTML+=Datos.Obj.Name;
