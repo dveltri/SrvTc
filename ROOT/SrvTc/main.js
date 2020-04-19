@@ -63,6 +63,7 @@ function fnc0()
 			//LOG(Reqest[PoolData].LstRqst+" "+ms+" "+(ms-Reqest[PoolData].LstRqst)+"\n");
 			Reqest[PoolData].LstRqst=ms+(Reqest[PoolData].Refresh-5);
 			Reqest[PoolData].Status=1;
+			Reqest[PoolData].url=Reqest[PoolData].Url;
 			Reqest[PoolData].fnc=RcvMoni;
 			OBJs.push(Reqest[PoolData]);
 		}
