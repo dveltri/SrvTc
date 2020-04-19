@@ -255,7 +255,7 @@ function ShowFastSts()
 	var rtc=0;
 	var rawcolor=Stsrawcolor;
 	var out="";
-	vat tout="";
+	var tout="";
 	out+="<input type=\"button\" class=\"INTEXT2\" value=\""+Str_Filtro+"\" onclick=\"PLCsfltr[PLCsfltr.length]=prompt('"+Str_Filtro+"','');\" /><br />\n";
 	for(var i=0;i<PLCsfltr.length;i++)
 	{
