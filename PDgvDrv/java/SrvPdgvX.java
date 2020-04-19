@@ -284,8 +284,8 @@ public class SrvPdgvX
 			dt0 =new java.util.Date();
 			if( (dt1.getTime()+1000) < (dt0.getTime())) // proc cada 1 seg
 			{
-				System.gc();
-				System.out.print("x");
+				//System.gc();
+				//System.out.print("x");
 				try
 				{
 					sql="SELECT * FROM pdgv where drv LIKE '"+drv+"'";
