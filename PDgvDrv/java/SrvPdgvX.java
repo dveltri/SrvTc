@@ -170,11 +170,12 @@ public class SrvPdgvX
 					DatagramPacket receivePacketS=null;
 					receivePacketS=null;
 					receivePacketS=new DatagramPacket(receiveData2, receiveData2.length);
+					Thread.currentThread().setName("@"+Thread.currentThread().getId());
 					while(true)
 					{
 						try
 						{
-							System.out.print("@"+Thread.currentThread().getId());
+							System.out.print(Thread.currentThread().getName());
 							SubserverSocket.receive(receivePacketS);
 							try
 							{
@@ -198,11 +199,13 @@ public class SrvPdgvX
 		for(countloop=0;countloop<THS;countloop++)
 		{
 			procsql=new Thread(new procSql(queueSql));
+			procsql.setName("s"+countloop+".");
 			procsql.start();
 		}
 		for(countloop=0;countloop<THD;countloop++)
 		{
 			procdat=new Thread(new procDat(drv,SrvId,queuePdgvRx,queueSql,queuePdgvTx,stmt1));
+			procdat.setName("p"+countloop+".");
 			//procdat.log=log;
 			procdat.start();
 		}
@@ -212,6 +215,7 @@ public class SrvPdgvX
 		System.out.println("freeMemory:"+ManagementFactory.getRuntimeMXBean().getName().split("@")[0]);
 		System.out.println("-----------------------------------------------------------------------------");
 		countloop=0;
+		Thread.currentThread().setName("main");
 		while(true)
 		{
 			countloop++;
