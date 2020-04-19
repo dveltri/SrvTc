@@ -58,7 +58,7 @@ function fnc0()
 			URLs.splice(0,1);
 		}
 	}
-	if(Reqest[PoolData].Status==0)
+	if(Reqest[PoolData].Status!=1)
 	{
 		if(Reqest[PoolData].LstRqst<ms)
 		{
@@ -74,47 +74,45 @@ function fnc0()
 
 function RcvMoni(Datos)
 {
-	var out="";
+	var result="";
 	var hora = new Date();
 	if(Datos)
 	{
-		if(Datos.status==200)
+		if(Datos.status!=200)
 		{
-			for(var rsqt=0;rsqt<Reqest.length;rsqt++)
+			result=Datos.status+" "+Datos.statusText;
+		}
+		for(var rsqt=0;rsqt<Reqest.length;rsqt++)
+		{
+			if(Datos.urlx.indexOf(Reqest[rsqt].Url)!=-1)
 			{
-				if(Reqest[rsqt].Url.indexOf(Datos.urlx)!=-1)
+				if(Datos.status==200)
 				{
-					var result = Reqest[PoolData].Fnc(Datos);
-					if(Reqest[PoolData].WinName)
-					{
-						document.getElementById(Reqest[PoolData].WinName+"Title").innerHTML="";
-						document.getElementById(Reqest[PoolData].WinName+"Title").innerHTML+=Reqest[PoolData].Name;
-						document.getElementById(Reqest[PoolData].WinName+"Hora").innerHTML=hora.getHours()+":"+hora.getMinutes()+":"+hora.getSeconds()+" ";
-						document.getElementById(Reqest[PoolData].WinName+"Body").innerHTML=result;
-					}
-					if(Reqest[PoolData].Dest)
-					{
-						if(Reqest[PoolData].Dest.innerHTML)
-							Reqest[PoolData].Dest.innerHTML=result;
-						if(Reqest[PoolData].Dest.value)
-							Reqest[PoolData].Dest.value=result;
-					}
-					Reqest[rsqt].Status=0;
-					return;
+					result = Reqest[rsqt].Fnc(Datos);
+					break;
 				}
 			}
 		}
-		else
+		if(Reqest[rsqt].WinName)
 		{
-			if(Reqest[PoolData].WinName)
-			{
-				document.getElementById(Reqest[PoolData].WinName+"Body").innerHTML=Datos.status+" "+Datos.statusText;
-			}
+			document.getElementById(Reqest[rsqt].WinName+"Title").innerHTML="";
+			document.getElementById(Reqest[rsqt].WinName+"Title").innerHTML+=Reqest[rsqt].Name;
+			document.getElementById(Reqest[rsqt].WinName+"Hora").innerHTML=hora.getHours()+":"+hora.getMinutes()+":"+hora.getSeconds()+" ";
+			document.getElementById(Reqest[rsqt].WinName+"Body").innerHTML=result;
 		}
+		if(Reqest[rsqt].Dest)
+		{
+			if(Reqest[rsqt].Dest.innerHTML)
+				Reqest[rsqt].Dest.innerHTML=result;
+			if(Reqest[rsqt].Dest.value)
+				Reqest[rsqt].Dest.value=result;
+		}
+		Reqest[rsqt].Status=0;
+		return;
 	}
 	else
 	{
-		LOG("No data!"+Reqest[PoolData].LstRqst+" "+ms+" "+(ms-Reqest[PoolData].LstRqst)+"\n");
+		LOG("No data!\n");
 	}
 }
 
