@@ -53,6 +53,7 @@ function fnc0()
 		var rv=GetUrl(OBJs[0]);
 		if(rv==0 || rv==3)
 		{
+			OBJs[0].Status=0;
 			OBJs.splice(0,1);
 		}
 	}

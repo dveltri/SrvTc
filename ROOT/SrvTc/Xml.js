@@ -28,14 +28,15 @@ function GetUrl(obj)
 		if((digital.getTime()-enProceso)>=1000)
 		{
 			enProceso=0;
-			return 3;
+			return 3;	// timeout
 		}
-		return 1;
+		return 1; // busy
 	}
 	//----------------------------
 	enProceso = digital.getTime();
 	http.time = digital.getTime();
 	http.Obj=obj;
+	http.fnc=0;
 	if(obj.fnc)
 		http.fnc=obj.fnc;
 	var hours = digital.getHours();
@@ -90,7 +91,8 @@ function handleHttpResponse()
 					var chklogout=http.responseText;
 					if(chklogout.indexOf("[*]")!=-1)
 						window.location.href = '../index.htm';
-					http.fnc(http);
+					if(http.fnc)
+						http.fnc(http);
 				}
 				else
 				{
@@ -102,7 +104,8 @@ function handleHttpResponse()
 			{
 				if(Log_En)LOG("Error:"+http.readyState+","+http.status+":"+http.statusText+"\n");
 				enProceso = 0;
-				http.fnc(http);
+				if(http.fnc)
+					http.fnc(http);
 			}
 		}
 		break;
