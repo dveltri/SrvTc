@@ -201,7 +201,7 @@ public class procDat implements Runnable
 				{
 					output_low(LedRx);
 					RxSts=Osi2;
-					System.out.println("TH("+Thread.currentThread().getId()+")Err.Ctrl");
+					System.out.println("Err.Ctrl");
 					return 0;
 				}
 				RxSts=Osi2_IdS;
@@ -233,7 +233,7 @@ public class procDat implements Runnable
 					 {
 						output_low(LedRx);
 						RxSts=Osi2;
-						System.out.println("TH("+Thread.currentThread().getId()+")Err.MAX");
+						System.out.println("Err.MAX");
 						return 0;
 					 }
 					 RxSts=Osi2_Datos;
@@ -252,7 +252,7 @@ public class procDat implements Runnable
 			  break;
 			}
 		}
-		System.out.println("TH("+Thread.currentThread().getId()+")Err.out");
+		System.out.println("Err.out");
 		return 0;
 	}
 	public int Pdgv_Osi3(byte[] pucBuffer1,int ulLen,byte crc1,InetAddress IPAddress, int port)
@@ -263,11 +263,11 @@ public class procDat implements Runnable
 		if(crc1==crc2)
 		{
 			pucBuffer1[CmpLen]-=1;
-			if((log&1)!=0)System.out.print("\tTH("+Thread.currentThread().getId()+")Pdgv_Osi3 ok\n");
+			if((log&1)!=0)System.out.print("\tPdgv_Osi3 ok\n");
 		}
 		else
 		{
-			if((log&1)!=0)System.out.print("\tTH("+Thread.currentThread().getId()+")Pdgv_Osi3 Err Pk.CRC:"+ Long.toHexString(crc1)+ " Cal.CRC:"+Long.toHexString(crc2)+"\n");
+			if((log&1)!=0)System.out.print("\tPdgv_Osi3 Err Pk.CRC:"+ Long.toHexString(crc1)+ " Cal.CRC:"+Long.toHexString(crc2)+"\n");
 			return 1;
 		}
 		if(pucBuffer1[CmpIdT]==(byte)SrvId)
@@ -278,7 +278,7 @@ public class procDat implements Runnable
 		{
 			if(pucBuffer1[CmpIdS]==(byte)SrvId)
 				return 2;
-			System.out.print("\tTH("+Thread.currentThread().getId()+")Pdgv_Osi3 Err ID:"+pucBuffer1[CmpIdT]+"!="+SrvId+"\n");
+			System.out.print("\tPdgv_Osi3 Err ID:"+pucBuffer1[CmpIdT]+"!="+SrvId+"\n");
 			return 1;
 		}
 	}
@@ -320,7 +320,7 @@ public class procDat implements Runnable
 		int cplc=1;
 		//----------------------------------------------
 		ResultSet rs;
-		if((log&1)!=0)System.out.print("\tTH("+Thread.currentThread().getId()+")Osi5:\n");
+		if((log&1)!=0)System.out.print("\tOsi5:\n");
 		//-----------------------------------------------------
 		//dt = new java.util.Date();
 		//UdtSql="SELECT * FROM pdgv where drv LIKE '"+drv+"%' AND action NOT LIKE '%Sended%' AND lstchg < to_timestamp("+(dt.getTime()/1000)+")" ;
@@ -331,22 +331,22 @@ public class procDat implements Runnable
 			rs = stmtD.executeQuery(UdtSql);
 			if(rs.next())
 			{
-				if((log&2)!=0)System.out.print("\t\tTH("+Thread.currentThread().getId()+")GetCmps:"+drv+" dgvp.id:"+((int)pucBuffer1[CmpIdS]&0xFF)+" Found!\n");
+				if((log&2)!=0)System.out.print("\t\tGetCmps:"+drv+" dgvp.id:"+((int)pucBuffer1[CmpIdS]&0xFF)+" Found!\n");
 				id = rs.getString("id");
 				cmp = rs.getString("cmps");
 				model = rs.getString("model");
 				try { if (rs != null) rs.close(); } catch (Exception e) {};
-				if((log&2)!=0)System.out.println("\t\tTH("+Thread.currentThread().getId()+")ID:"+id);
+				if((log&2)!=0)System.out.println("\t\tID:"+id);
 				//if((log&1)!=0)System.out.println("\t\tCmps:\n\t["+cmp+"]");
-				if((log&2)!=0)System.out.println("\t\tTH("+Thread.currentThread().getId()+")Model:"+model);
+				if((log&2)!=0)System.out.println("\t\tModel:"+model);
 				if((log&2)!=0)
 				{
-					System.out.print  ("\t\tTH("+Thread.currentThread().getId()+")Flg:"+((int)pucBuffer1[CmpCtr]&0xFF)+" IDS:"+((int)pucBuffer1[CmpIdS]&0xFF)+" IDT:"+((int)pucBuffer1[CmpIdT]&0xFF)+" SckS:"+((int)pucBuffer1[CmpSkS]&0xFF)+" SckT:"+((int)pucBuffer1[CmpSkT]&0xFF)+" Len:"+((int)pucBuffer1[CmpLen]&0xFF));
+					System.out.print  ("\t\tFlg:"+((int)pucBuffer1[CmpCtr]&0xFF)+" IDS:"+((int)pucBuffer1[CmpIdS]&0xFF)+" IDT:"+((int)pucBuffer1[CmpIdT]&0xFF)+" SckS:"+((int)pucBuffer1[CmpSkS]&0xFF)+" SckT:"+((int)pucBuffer1[CmpSkT]&0xFF)+" Len:"+((int)pucBuffer1[CmpLen]&0xFF));
 					System.out.println("Dat:");
 				}
 				cmps=cmp.split(",");
 				InsSql = "INSERT INTO variables VALUES (\'/"+id+"/Drv_Status\',\'pool\',LOCALTIMESTAMP)";
-				UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'pool\') WHERE id=\'/"+id+"/Drv_Status\'";
+				UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'pool\') WHERE id=\'/"+id+"/Drv_Status\' AND value<>\'pool\'";
 				dgvsqlTH(InsSql,UdtSql);
 				InsSql = "INSERT INTO variables VALUES (\'/"+id+"/Lnk_Status\',\'ok\',LOCALTIMESTAMP)";
 				UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'ok\') WHERE id=\'/"+id+"/Lnk_Status\' AND value<>\'ok\'";
@@ -354,19 +354,19 @@ public class procDat implements Runnable
 				InsSql = "INSERT INTO variables VALUES (\'/"+id+"/address\',\'"+IPAddress+"\',LOCALTIMESTAMP)";
 				UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'"+IPAddress+"\') WHERE id=\'/"+id+"/address\' AND value<>\'"+IPAddress+"\'";
 				dgvsqlTH(InsSql,UdtSql);
-				UdtSql = "UPDATE pdgv SET (ip,status,lstupd)=(\'"+IPAddress+"\',\'ok\',LOCALTIMESTAMP) WHERE id=\'"+id+"\' AND ip<>\'"+IPAddress+"\'";
+				UdtSql = "UPDATE pdgv SET (ip,status,lstupd)=(\'"+IPAddress+"\',\'ok\',LOCALTIMESTAMP) WHERE id=\'"+id+"\'";
 				dgvsqlTH("",UdtSql);
 				//------------------------------------------------------------------------------------------
 				switch((int)pucBuffer1[CmpSkT])
 				{
 					case CMD_PING:
 					{
-						if((log&2)!=0)System.out.println("\t\tTH("+Thread.currentThread().getId()+")CMD_PING:");
+						if((log&2)!=0)System.out.println("\t\tCMD_PING..");
 					}
 					break;
 					case CMD_Msg:
 					{
-						if((log&2)!=0)System.out.println("\t\tTH("+Thread.currentThread().getId()+")CMD_Msg:");
+						if((log&2)!=0)System.out.println("\t\tCMD_Msg:");
 						InsSql = "INSERT INTO alerts VALUES (LOCALTIMESTAMP,\'Viewed\',\'["+id+"] "+new String(Arrays.copyOfRange(pucBuffer1, CmpDat,pucBuffer1[CmpLen]))+"\',\'"+id+"\',\'Link\')";
 						dgvsqlTH(InsSql,"");
 						InsSql = "";
@@ -374,17 +374,17 @@ public class procDat implements Runnable
 					break;
 					case CMD_CONFIRM_TCP:
 					{
-						if((log&2)!=0)System.out.println("\t\tTH("+Thread.currentThread().getId()+")CMD_CONFIRM_TCP");
+						if((log&2)!=0)System.out.println("\t\tCMD_CONFIRM_TCP");
 					}
 					break;
 					case CMD_Err_Trg_Fnc:
 					{
-						if((log&2)!=0)System.out.println("\t\tTH("+Thread.currentThread().getId()+")CMD_Err_Trg_Fnc");
+						if((log&2)!=0)System.out.println("\t\tCMD_Err_Trg_Fnc");
 					}
 					break;
 					case CMD_RUN_PkTSKs:
 					{
-						if((log&2)!=0)System.out.println("\t\tTH("+Thread.currentThread().getId()+")CMD_RUN_PkTSKs["+cmps.length+"] ");
+						if((log&2)!=0)System.out.println("\t\tCMD_RUN_PkTSKs["+cmps.length+"] ");
 						for (int i = 0; i < cmps.length; i++)
 						{
 							switch(cmps[i])
@@ -616,12 +616,12 @@ public class procDat implements Runnable
 					break;
 					case CMD_RUN_RgTSK:
 					{
-						if((log&2)!=0)System.out.println("TH("+Thread.currentThread().getId()+")CMD_RUN_RgTSK");
+						if((log&2)!=0)System.out.println("\t\tCMD_RUN_RgTSK");
 					}
 					break;
 					case CMD_RUN_2TSK:
 					{
-						if((log&2)!=0)System.out.println("TH("+Thread.currentThread().getId()+")CMD_RUN_2TSK");
+						if((log&2)!=0)System.out.println("\t\tCMD_RUN_2TSK");
 					}
 					break;
 				}
@@ -629,7 +629,7 @@ public class procDat implements Runnable
 			}
 			else
 			{
-				if((log&2)!=0)System.out.print("\t\tTH("+Thread.currentThread().getId()+")GetCmps:"+drv+" dgvp.id:"+((int)pucBuffer1[CmpIdS]&0xFF)+" no result\n");
+				if((log&2)!=0)System.out.print("\t\tGetCmps:"+drv+" dgvp.id:"+((int)pucBuffer1[CmpIdS]&0xFF)+" no result\n");
 			}
 			try { if (rs != null) rs.close(); } catch (Exception e) {};
 			//stmtD.close();
@@ -654,9 +654,8 @@ public class procDat implements Runnable
 				rxret=Pdgv_Osi2(dat.RxData,dat.RxData.length,1,dat.IPAddress,dat.port);
 				if(rxret!=0)
 				{
-					if((log&1)!=0)System.out.println("\n\tTH("+Thread.currentThread().getId()+")Pdgv_Osi2.ByteRx:"+dat.RxData.length+" From ip:"+dat.IPAddress+":"+dat.port+" "+new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new java.util.Date()));
-					rxret=Pdgv_Osi3(dat.RxData,dat.RxData.length,(byte)rxret,dat.IPAddress,dat.port);
 					System.out.print(Thread.currentThread().getName());
+					rxret=Pdgv_Osi3(dat.RxData,dat.RxData.length,(byte)rxret,dat.IPAddress,dat.port);
 					if(rxret==0)
 					{
 						rxret=Pdgv_Osi4(dat.RxData,dat.RxData.length,SrvId,dat.IPAddress,dat.port);
