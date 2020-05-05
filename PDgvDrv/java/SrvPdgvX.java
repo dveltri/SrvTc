@@ -124,6 +124,7 @@ public class SrvPdgvX
 		System.out.println("Drv Name:"+drv);
 		System.out.println("Pdgv ID:"+SrvId);
 		System.out.println("UDP port:"+port);
+		System.out.println("Log flags:"+log);
 		System.out.println("Route:"+route);
 		//getmac();
 		//-----------------------------------------------------
@@ -215,7 +216,7 @@ public class SrvPdgvX
 		System.out.println("freeMemory:"+ManagementFactory.getRuntimeMXBean().getName().split("@")[0]);
 		System.out.println("-----------------------------------------------------------------------------");
 		countloop=0;
-		Thread.currentThread().setName("main");
+		Thread.currentThread().setName("Pdgv Main");
 		while(true)
 		{
 			countloop++;
@@ -303,6 +304,7 @@ public class SrvPdgvX
 						dt3 		= rs.getTimestamp("lstupd");
 						sts			= ""+rs.getString("status");
 						model 		= rs.getString("model");
+						//if((log&1)!=0)System.out.println("ID:"+id+" Sts:"+sts+" IP:"+IPAddress+":"+port+" TO:"+timeout+" Lst:"+dt3);
 						//-------------------------------------
 						if(	drv.indexOf("Rtc")!=-1 && (	(dt2.getTime()+(timeout*1000)) <= dt0.getTime() ) ) // send RTC
 						{
@@ -331,7 +333,7 @@ public class SrvPdgvX
 						{
 							if(	(dt3.getTime()+(timeout*1000))	<=	dt0.getTime()	)
 							{
-								if((log&1)!=0)System.out.println("SrvPdgv("+port+") !!!! /"+id+".TimeOut !!!!");
+								if((log&1)!=0)System.out.println("\0337[31mID:"+id+" Sts:"+sts+" IP:"+IPAddress+":"+port+".TimeOut!!!!\0338");
 								InsSql = "INSERT INTO alerts VALUES (LOCALTIMESTAMP,\'Viewed\',\'["+id+"] Lost Connection\',\'"+id+"\',\'Link\')";
 								dgvsql(InsSql,"");
 								UdtSql = "UPDATE pdgv SET (status,lstupd)=(\'Lost Connection\',LOCALTIMESTAMP) WHERE id=\'"+id+"\'AND status<>\'Lost Connection\'";
@@ -346,7 +348,7 @@ public class SrvPdgvX
 								temp=( ((dt3.getTime()/1000)+timeout) - (dt0.getTime()/1000) );
 								if( temp < (timeout/10) )
 								{
-									if((log&1)!=0)System.out.println("SrvPdgv("+port+")/"+id+".TimeOut->"+temp);
+									if((log&1)!=0)System.out.println("\0337[31mID:"+id+" Sts:"+sts+" IP:"+IPAddress+":"+port+".TimeOut->"+temp+"\0338");
 								}
 							}
 						}

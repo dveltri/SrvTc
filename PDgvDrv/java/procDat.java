@@ -201,7 +201,7 @@ public class procDat implements Runnable
 				{
 					output_low(LedRx);
 					RxSts=Osi2;
-					System.out.println("TH("+Thread.currentThread().getId()+")Err.Ctrl");
+					System.out.println("Err.Ctrl");
 					return 0;
 				}
 				RxSts=Osi2_IdS;
@@ -233,7 +233,7 @@ public class procDat implements Runnable
 					 {
 						output_low(LedRx);
 						RxSts=Osi2;
-						System.out.println("TH("+Thread.currentThread().getId()+")Err.MAX");
+						System.out.println("Err.MAX");
 						return 0;
 					 }
 					 RxSts=Osi2_Datos;
@@ -252,7 +252,7 @@ public class procDat implements Runnable
 			  break;
 			}
 		}
-		System.out.println("TH("+Thread.currentThread().getId()+")Err.out");
+		System.out.println("Err.out");
 		return 0;
 	}
 	public int Pdgv_Osi3(byte[] pucBuffer1,int ulLen,byte crc1,InetAddress IPAddress, int port)
@@ -263,11 +263,11 @@ public class procDat implements Runnable
 		if(crc1==crc2)
 		{
 			pucBuffer1[CmpLen]-=1;
-			if((log&1)!=0)System.out.print("\tTH("+Thread.currentThread().getId()+")Pdgv_Osi3 ok\n");
+			if((log&1)!=0)System.out.print("\tPdgv_Osi3 ok\n");
 		}
 		else
 		{
-			if((log&1)!=0)System.out.print("\tTH("+Thread.currentThread().getId()+")Pdgv_Osi3 Err Pk.CRC:"+ Long.toHexString(crc1)+ " Cal.CRC:"+Long.toHexString(crc2)+"\n");
+			if((log&1)!=0)System.out.print("\tPdgv_Osi3 Err Pk.CRC:"+ Long.toHexString(crc1)+ " Cal.CRC:"+Long.toHexString(crc2)+"\n");
 			return 1;
 		}
 		if(pucBuffer1[CmpIdT]==(byte)SrvId)
@@ -278,7 +278,7 @@ public class procDat implements Runnable
 		{
 			if(pucBuffer1[CmpIdS]==(byte)SrvId)
 				return 2;
-			System.out.print("\tTH("+Thread.currentThread().getId()+")Pdgv_Osi3 Err ID:"+pucBuffer1[CmpIdT]+"!="+SrvId+"\n");
+			System.out.print("\tPdgv_Osi3 Err ID:"+pucBuffer1[CmpIdT]+"!="+SrvId+"\n");
 			return 1;
 		}
 	}
@@ -320,7 +320,7 @@ public class procDat implements Runnable
 		int cplc=1;
 		//----------------------------------------------
 		ResultSet rs;
-		if((log&1)!=0)System.out.print("\tTH("+Thread.currentThread().getId()+")Osi5:\n");
+		if((log&1)!=0)System.out.print("\tOsi5:\n");
 		//-----------------------------------------------------
 		//dt = new java.util.Date();
 		//UdtSql="SELECT * FROM pdgv where drv LIKE '"+drv+"%' AND action NOT LIKE '%Sended%' AND lstchg < to_timestamp("+(dt.getTime()/1000)+")" ;
@@ -331,42 +331,56 @@ public class procDat implements Runnable
 			rs = stmtD.executeQuery(UdtSql);
 			if(rs.next())
 			{
-				if((log&2)!=0)System.out.print("\t\tTH("+Thread.currentThread().getId()+")GetCmps:"+drv+" dgvp.id:"+((int)pucBuffer1[CmpIdS]&0xFF)+" Found!\n");
+				if((log&2)!=0)System.out.print("\t\tGetCmps:"+drv+" dgvp.id:"+((int)pucBuffer1[CmpIdS]&0xFF)+" Found!\n");
 				id = rs.getString("id");
 				cmp = rs.getString("cmps");
 				model = rs.getString("model");
-				try { if (rs != null) rs.close(); } catch (Exception e) {};
-				if((log&2)!=0)System.out.println("\t\tTH("+Thread.currentThread().getId()+")ID:"+id);
-				//if((log&1)!=0)System.out.println("\t\tCmps:\n\t["+cmp+"]");
-				if((log&2)!=0)System.out.println("\t\tTH("+Thread.currentThread().getId()+")Model:"+model);
-				if((log&2)!=0)
+				try
 				{
-					System.out.print  ("\t\tTH("+Thread.currentThread().getId()+")Flg:"+((int)pucBuffer1[CmpCtr]&0xFF)+" IDS:"+((int)pucBuffer1[CmpIdS]&0xFF)+" IDT:"+((int)pucBuffer1[CmpIdT]&0xFF)+" SckS:"+((int)pucBuffer1[CmpSkS]&0xFF)+" SckT:"+((int)pucBuffer1[CmpSkT]&0xFF)+" Len:"+((int)pucBuffer1[CmpLen]&0xFF));
-					System.out.println("Dat:");
+					try { if (rs != null) rs.close(); } catch (Exception e) {};
+					if((log&2)!=0)System.out.println("\t\tID:"+id);
+					//if((log&1)!=0)System.out.println("\t\tCmps:\n\t["+cmp+"]");
+					if((log&2)!=0)System.out.println("\t\tModel:"+model);
+					if((log&2)!=0)
+					{
+						System.out.print  ("\t\tFlg:"+((int)pucBuffer1[CmpCtr]&0xFF)+" IDS:"+((int)pucBuffer1[CmpIdS]&0xFF)+" IDT:"+((int)pucBuffer1[CmpIdT]&0xFF)+" SckS:"+((int)pucBuffer1[CmpSkS]&0xFF)+" SckT:"+((int)pucBuffer1[CmpSkT]&0xFF)+" Len:"+((int)pucBuffer1[CmpLen]&0xFF));
+						System.out.println("Dat:");
+					}
+				}
+				catch ( Exception e )
+				{
+					System.err.println("\tErr[osi5.1.log]:"+e.getClass().getName() + ":" + e.getMessage() );
 				}
 				cmps=cmp.split(",");
-				InsSql = "INSERT INTO variables VALUES (\'/"+id+"/Drv_Status\',\'pool\',LOCALTIMESTAMP)";
-				UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'pool\') WHERE id=\'/"+id+"/Drv_Status\'";
-				dgvsqlTH(InsSql,UdtSql);
-				InsSql = "INSERT INTO variables VALUES (\'/"+id+"/Lnk_Status\',\'ok\',LOCALTIMESTAMP)";
-				UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'ok\') WHERE id=\'/"+id+"/Lnk_Status\' AND value<>\'ok\'";
-				dgvsqlTH(InsSql,UdtSql);
-				InsSql = "INSERT INTO variables VALUES (\'/"+id+"/address\',\'"+IPAddress+"\',LOCALTIMESTAMP)";
-				UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'"+IPAddress+"\') WHERE id=\'/"+id+"/address\' AND value<>\'"+IPAddress+"\'";
-				dgvsqlTH(InsSql,UdtSql);
-				UdtSql = "UPDATE pdgv SET (ip,status,lstupd)=(\'"+IPAddress+"\',\'ok\',LOCALTIMESTAMP) WHERE id=\'"+id+"\' AND ip<>\'"+IPAddress+"\'";
-				dgvsqlTH("",UdtSql);
+				try
+				{
+					InsSql = "INSERT INTO variables VALUES (\'/"+id+"/Drv_Status\',\'pool\',LOCALTIMESTAMP)";
+					UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'pool\') WHERE id=\'/"+id+"/Drv_Status\' AND value<>\'pool\'";
+					dgvsqlTH(InsSql,UdtSql);
+					InsSql = "INSERT INTO variables VALUES (\'/"+id+"/Lnk_Status\',\'ok\',LOCALTIMESTAMP)";
+					UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'ok\') WHERE id=\'/"+id+"/Lnk_Status\' AND value<>\'ok\'";
+					dgvsqlTH(InsSql,UdtSql);
+					InsSql = "INSERT INTO variables VALUES (\'/"+id+"/address\',\'"+IPAddress+"\',LOCALTIMESTAMP)";
+					UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'"+IPAddress+"\') WHERE id=\'/"+id+"/address\' AND value<>\'"+IPAddress+"\'";
+					dgvsqlTH(InsSql,UdtSql);
+					UdtSql = "UPDATE pdgv SET (ip,status,lstupd)=(\'"+IPAddress+"\',\'ok\',LOCALTIMESTAMP) WHERE id=\'"+id+"\'";
+					dgvsqlTH("",UdtSql);
+				}
+				catch ( Exception e )
+				{
+					System.err.println("\tErr[osi5.2.ok]:"+e.getClass().getName() + ":" + e.getMessage() );
+				}
 				//------------------------------------------------------------------------------------------
 				switch((int)pucBuffer1[CmpSkT])
 				{
 					case CMD_PING:
 					{
-						if((log&2)!=0)System.out.println("\t\tTH("+Thread.currentThread().getId()+")CMD_PING:");
+						if((log&2)!=0)System.out.println("\t\tCMD_PING..");
 					}
 					break;
 					case CMD_Msg:
 					{
-						if((log&2)!=0)System.out.println("\t\tTH("+Thread.currentThread().getId()+")CMD_Msg:");
+						if((log&2)!=0)System.out.println("\t\tCMD_Msg:");
 						InsSql = "INSERT INTO alerts VALUES (LOCALTIMESTAMP,\'Viewed\',\'["+id+"] "+new String(Arrays.copyOfRange(pucBuffer1, CmpDat,pucBuffer1[CmpLen]))+"\',\'"+id+"\',\'Link\')";
 						dgvsqlTH(InsSql,"");
 						InsSql = "";
@@ -374,254 +388,289 @@ public class procDat implements Runnable
 					break;
 					case CMD_CONFIRM_TCP:
 					{
-						if((log&2)!=0)System.out.println("\t\tTH("+Thread.currentThread().getId()+")CMD_CONFIRM_TCP");
+						if((log&2)!=0)System.out.println("\t\tCMD_CONFIRM_TCP");
 					}
 					break;
 					case CMD_Err_Trg_Fnc:
 					{
-						if((log&2)!=0)System.out.println("\t\tTH("+Thread.currentThread().getId()+")CMD_Err_Trg_Fnc");
+						if((log&2)!=0)System.out.println("\t\tCMD_Err_Trg_Fnc");
 					}
 					break;
 					case CMD_RUN_PkTSKs:
 					{
-						if((log&2)!=0)System.out.println("\t\tTH("+Thread.currentThread().getId()+")CMD_RUN_PkTSKs["+cmps.length+"] ");
-						for (int i = 0; i < cmps.length; i++)
+						if((log&2)!=0)System.out.println("\t\tCMD_RUN_PkTSKs["+cmps.length+"] ");
+						try
 						{
-							switch(cmps[i])
+							for (int i = 0; i < cmps.length; i++)
 							{
-								case "RTC":
+								switch(cmps[i])
 								{
-									tmpL=0;
-									tmpL|=((pucBuffer1[mem  ]&0xFF)    );
-									tmpL|=((pucBuffer1[mem+1]&0xFF)<< 8);
-									tmpL|=((pucBuffer1[mem+2]&0xFF)<<16);
-									tmpL|=((pucBuffer1[mem+3]&0xFF)<<24);
-									mem+=4;
-									tmpL*=1000;
-									dt = new java.util.Date(tmpL);
-									tmpT=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(dt);
-									dt = null;
-									InsSql = "INSERT INTO variables VALUES (\'/"+id+"/RTC\',\' \',LOCALTIMESTAMP)";
-									UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'"+tmpT+"\') WHERE id=\'/"+id+"/RTC\' AND value<>\'"+tmpT+"\'";
-									if((log&4)!=0)System.out.println("\tDate:"+tmpL+"("+tmpT+")");
-									tmpT = null;
-									dgvsqlTH(InsSql,UdtSql);
-								}
-								break;
-								case "Voltage":
-								{
-									tmpL=0;
-									tmpL|=((pucBuffer1[mem  ]&0xFF)    );
-									tmpL|=((pucBuffer1[mem+1]&0xFF)<< 8);
-									tmpL|=((pucBuffer1[mem+2]&0xFF)<<16);
-									tmpL|=((pucBuffer1[mem+3]&0xFF)<<24);
-									mem+=4;
-									tmpF=tmpL/100;
-									InsSql = "INSERT INTO variables VALUES (\'/"+id+"/Voltage\',\'"+tmpF+"\',LOCALTIMESTAMP)";
-									UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'"+tmpF+"\') WHERE id=\'/"+id+"/Voltage\' AND value<>\'"+tmpF+"\'";
-									if((log&4)!=0)System.out.println("\tVoltage:"+tmpF);
-									dgvsqlTH(InsSql,UdtSql);
-								}
-								break;
-								case "PlcMode":
-								{
-									for(tmpL=0;tmpL<cplc;tmpL++)
+									case "RTC":
 									{
-										tmpI=0;
-										tmpI|=((pucBuffer1[mem  ]&0xFF)    );
-										tmpI|=((pucBuffer1[mem+1]&0xFF)<< 8);
-										mem+=2;
-										//ReIntento=(tmpI>>12)&0x07;
-										//Estado=(tmpI>>16)&0x1F;
-										tmpT="";
-										if((tmpI&0x00000040)!=0)tmpT+=",LampOff";
-										//if((tmpI&0x00000080)!=0)tmpT+=",Test";
-										//if((tmpI&0x00200000)!=0)tmpT+=",EV";
-										//if((tmpI&0x40000000)!=0)tmpT+=",Tmin";
-										InsSql = "INSERT INTO variables (id,lstchg,value) VALUES (\'/"+id+"/PLC"+(tmpL+1)+"/Status\',LOCALTIMESTAMP,\'"+modo[(tmpI&0x0F)]+tmpT+"\');";
-										UdtSql = "UPDATE variables SET (lstchg,value) =	(LOCALTIMESTAMP,\'"+modo[(tmpI&0x0F)]+tmpT+"\') WHERE id = \'/"+id+"/PLC"+(tmpL+1)+"/Status\' AND value<>\'"+modo[(tmpI&0x0F)]+tmpT+"\'";
-										if((log&4)!=0)System.out.println("\tMode:"+modo[(tmpI&0x0F)]+tmpT+"("+Integer.toHexString(tmpI)+")");
-										dgvsqlTH(InsSql,UdtSql);
-										InsSql = "INSERT INTO variables (id,lstchg,value) VALUES (\'/"+id+"/PLC"+(tmpL+1)+"/Nombre\',LOCALTIMESTAMP,\'Ctrl"+(tmpL+1)+"\');";
-										dgvsqlTH(InsSql,"");
-									}
-								}
-								break;
-								case "Nplan":
-								{
-									for(tmpL=0;tmpL<cplc;tmpL++)
-									{
-										tmpI=0;
-										tmpI|=((pucBuffer1[mem  ]&0xFF)    );
-										mem+=1;
-										InsSql = "INSERT INTO variables (id,lstchg,value) VALUES (\'/"+id+"/PLC"+(tmpL+1)+"/Nplan\',LOCALTIMESTAMP,\'"+tmpI+"\');";
-										UdtSql = "UPDATE variables SET (lstchg,value) =	(LOCALTIMESTAMP,\'"+tmpI+"\') WHERE id = \'/"+id+"/PLC"+(tmpL+1)+"/Nplan\' AND value<>\'"+tmpI+"\'";
-										if((log&4)!=0)System.out.println("\tNplan:"+Integer.toHexString(tmpI));
+										tmpL=0;
+										tmpL|=((pucBuffer1[mem  ]&0xFF)    );
+										tmpL|=((pucBuffer1[mem+1]&0xFF)<< 8);
+										tmpL|=((pucBuffer1[mem+2]&0xFF)<<16);
+										tmpL|=((pucBuffer1[mem+3]&0xFF)<<24);
+										mem+=4;
+										tmpL*=1000;
+										dt = new java.util.Date(tmpL);
+										tmpT=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(dt);
+										dt = null;
+										InsSql = "INSERT INTO variables VALUES (\'/"+id+"/RTC\',\' \',LOCALTIMESTAMP)";
+										UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'"+tmpT+"\') WHERE id=\'/"+id+"/RTC\' AND value<>\'"+tmpT+"\'";
+										if((log&4)!=0)System.out.println("\tDate:"+tmpL+"("+tmpT+")");
+										tmpT = null;
 										dgvsqlTH(InsSql,UdtSql);
 									}
-								}
-								break;
-								case "Cplc":
-								{
-									cplc=0;
-									cplc|=((pucBuffer1[mem  ]&0xFF)    );
-									mem+=1;
-									InsSql = "INSERT INTO variables VALUES (\'/"+id+"/PLC_Count\',\'"+cplc+"\',LOCALTIMESTAMP)";
-									UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'"+cplc+"\') WHERE id=\'/"+id+"/PLC_Count\' AND value<>\'"+cplc+"\'";
-									if((log&4)!=0)System.out.println("\tcplc:"+cplc);
-									dgvsqlTH(InsSql,UdtSql);
-								}
-								break;
-								case "Cio":
-								{
-									cio=0;
-									cio|=((pucBuffer1[mem  ]&0xFF)    );
-									mem+=1;
-									InsSql = "INSERT INTO variables VALUES (\'/"+id+"/IO_Count\',\'"+cio+"\',LOCALTIMESTAMP)";
-									UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'"+cio+"\') WHERE id=\'/"+id+"/IO_Count\' AND value<>\'"+cio+"\'";
-									if((log&4)!=0)System.out.println("\tCio:"+cio);
-									dgvsqlTH(InsSql,UdtSql);
-								}
-								break;
-								case "Cph":
-								{
-									cph=0;
-									cph|=((pucBuffer1[mem  ]&0xFF)    );
-									mem+=1;
-									InsSql = "INSERT INTO variables VALUES (\'/"+id+"/PhasesCount\',\'"+cph+"\',LOCALTIMESTAMP)";
-									UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'"+cph+"\') WHERE id=\'/"+id+"/PhasesCount\' AND value<>\'"+cph+"\'";
-									if((log&4)!=0)System.out.println("\tCphase:"+cph);
-									dgvsqlTH(InsSql,UdtSql);
-								}
-								break;
-								case "PhColor":
-								{
-									for(tmpI=0;tmpI<cph;tmpI++)
+									break;
+									case "Voltage":
 									{
-										tmpB=pucBuffer1[mem+tmpI];
-										tmpB&=127;
-										InsSql = "INSERT INTO variables (id,lstchg,value) VALUES (\'/"+id+"/Phase"+(tmpI+1)+"/Color\',LOCALTIMESTAMP,\'"+tmpB+"\');";
-										UdtSql = "UPDATE variables SET (lstchg,value) =	(LOCALTIMESTAMP,\'"+tmpB+"\') WHERE id = \'/"+id+"/Phase"+(tmpI+1)+"/Color\' AND value<>\'"+tmpB+"\'";
-										if((log&4)!=0)System.out.print("\t\tPh["+tmpI+"].Color:");
-										if((log&4)!=0)System.out.printf("0x%02X \n",tmpB);
+										tmpL=0;
+										tmpL|=((pucBuffer1[mem  ]&0xFF)    );
+										tmpL|=((pucBuffer1[mem+1]&0xFF)<< 8);
+										tmpL|=((pucBuffer1[mem+2]&0xFF)<<16);
+										tmpL|=((pucBuffer1[mem+3]&0xFF)<<24);
+										mem+=4;
+										tmpF=tmpL/100;
+										InsSql = "INSERT INTO variables VALUES (\'/"+id+"/Voltage\',\'"+tmpF+"\',LOCALTIMESTAMP)";
+										UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'"+tmpF+"\') WHERE id=\'/"+id+"/Voltage\' AND value<>\'"+tmpF+"\'";
+										if((log&4)!=0)System.out.println("\tVoltage:"+tmpF);
 										dgvsqlTH(InsSql,UdtSql);
 									}
-									mem+=cph;
-								}
-								break;
-								case "PhRColor":
-								{
-									for(tmpI=0;tmpI<cph;tmpI++)
+									break;
+									case "PlcMode":
 									{
-										tmpB=pucBuffer1[mem+tmpI];
-										tmpB&=127;
-										InsSql = "INSERT INTO variables (id,lstchg,value) VALUES (\'/"+id+"/Phase"+(tmpI+1)+"/Rcolor\',LOCALTIMESTAMP,\'"+tmpB+"\');";
-										UdtSql = "UPDATE variables SET (lstchg,value) =	(LOCALTIMESTAMP,\'"+tmpB+"\') WHERE id = \'/"+id+"/Phase"+(tmpI+1)+"/Rcolor\' AND value<>\'"+tmpB+"\'";
-										if((log&4)!=0)System.out.print("\t\tPh["+tmpI+"].Rcolor:");
-										if((log&4)!=0)System.out.printf("0x%02X \n",tmpB);
-										dgvsqlTH(InsSql,UdtSql);
-									}
-									mem+=cph;
-								}
-								break;
-								case "PhCurrent":
-								{
-									for(tmpI=0;tmpI<(cph*2);tmpI+=2)
-									{
-										tmpB=pucBuffer1[mem+tmpI+1];
-										tmpB<<=8;
-										tmpB+=pucBuffer1[mem+tmpI];
-										InsSql = "INSERT INTO variables (id,lstchg,value) VALUES (\'/"+id+"/Phase"+((tmpI/2)+1)+"/Current\',LOCALTIMESTAMP,\'"+tmpB+"\');";
-										UdtSql = "UPDATE variables SET (lstchg,value) =	(LOCALTIMESTAMP,\'"+tmpB+"\') WHERE id = \'/"+id+"/Phase"+((tmpI/2)+1)+"/Current\' AND value<>\'"+tmpB+"\'";
-										if((log&4)!=0)System.out.print("\t\tPh["+(tmpI/2)+"].Curr:");
-										if((log&4)!=0)System.out.printf("0x%04X \n",tmpB);
-										dgvsqlTH(InsSql,UdtSql);
-									}
-									mem+=(cph*2);
-								}
-								break;
-								case "PhError":
-								{
-									for(tmpI=0;tmpI<(cph*4);tmpI+=4)
-									{
-										tmpB =pucBuffer1[mem+tmpI+3];
-										tmpB<<=24;
-										tmpB+=pucBuffer1[mem+tmpI+2];
-										tmpB<<=16;
-										tmpB+=pucBuffer1[mem+tmpI+1];
-										tmpB<<=8;
-										tmpB+=pucBuffer1[ mem+tmpI ];
-										tmpT="";
-										//--------------------------------------------
-										if(model.indexOf("M3")!=-1)
+										for(tmpL=0;tmpL<cplc;tmpL++)
 										{
-											if((tmpB&0x00000001)!=0)tmpT+="Falta de Rojo,";
-											if((tmpB&0x00000002)!=0)tmpT+="Falta de Amarillo,";
-											if((tmpB&0x00000004)!=0)tmpT+="Falta de Verde,";
-											if((tmpB&0x00000008)!=0)tmpT+="Tiempo minimo,";
-											if((tmpB&0x00000010)!=0)tmpT+="Falta parcial de Rojo,";
-											if((tmpB&0x00000020)!=0)tmpT+="Falta parcial de Amarillo,";
-											if((tmpB&0x00000040)!=0)tmpT+="Falta parcial de Verde,";
-											if((tmpB&0x00000080)!=0)tmpT+="Tiempo maximo,";
-											if((tmpB&0x00000100)!=0)tmpT+="Err Electrico rojo,";
-											if((tmpB&0x00000200)!=0)tmpT+="Err Electrico amarillo,";
-											if((tmpB&0x00000400)!=0)tmpT+="Err Electrico verde,";
-											if((tmpB&0x00000800)!=0)tmpT+="Err comunicacion,";
+											tmpI=0;
+											tmpI|=((pucBuffer1[mem  ]&0xFF)    );
+											tmpI|=((pucBuffer1[mem+1]&0xFF)<< 8);
+											mem+=2;
+											//ReIntento=(tmpI>>12)&0x07;
+											//Estado=(tmpI>>16)&0x1F;
+											tmpT="";
+											if((tmpI&0x00000040)!=0)tmpT+=",LampOff";
+											//if((tmpI&0x00000080)!=0)tmpT+=",Test";
+											//if((tmpI&0x00200000)!=0)tmpT+=",EV";
+											//if((tmpI&0x40000000)!=0)tmpT+=",Tmin";
+											InsSql = "INSERT INTO variables (id,lstchg,value) VALUES (\'/"+id+"/PLC"+(tmpL+1)+"/Status\',LOCALTIMESTAMP,\'"+modo[(tmpI&0x0F)]+tmpT+"\');";
+											UdtSql = "UPDATE variables SET (lstchg,value) =	(LOCALTIMESTAMP,\'"+modo[(tmpI&0x0F)]+tmpT+"\') WHERE id = \'/"+id+"/PLC"+(tmpL+1)+"/Status\' AND value<>\'"+modo[(tmpI&0x0F)]+tmpT+"\'";
+											if((log&4)!=0)System.out.println("\tMode:"+modo[(tmpI&0x0F)]+tmpT+"("+Integer.toHexString(tmpI)+")");
+											dgvsqlTH(InsSql,UdtSql);
+											InsSql = "INSERT INTO variables (id,lstchg,value) VALUES (\'/"+id+"/PLC"+(tmpL+1)+"/Nombre\',LOCALTIMESTAMP,\'Ctrl"+(tmpL+1)+"\');";
+											dgvsqlTH(InsSql,"");
 										}
-										//--------------------------------------------
-										if(model.indexOf("M4")!=-1)
+									}
+									break;
+									case "Nplan":
+									{
+										for(tmpL=0;tmpL<cplc;tmpL++)
 										{
-											if((tmpB&0x00000001)!=0)tmpT+="Er Electrico rojo,";
-											if((tmpB&0x00000002)!=0)tmpT+="Er Electrico ROJO,";
-											if((tmpB&0x00000004)!=0)tmpT+="Er Consumo rojo,";
-											if((tmpB&0x00000008)!=0)tmpT+="Er Consumo ROJO,";
-											if((tmpB&0x00000010)!=0)tmpT+="Er Electrico amarillo,";
-											if((tmpB&0x00000020)!=0)tmpT+="Er Electrico AMARILLO,";
-											if((tmpB&0x00000040)!=0)tmpT+="Er Consumo amarillo,";
-											if((tmpB&0x00000080)!=0)tmpT+="Er Consumo AMARILLO,";
-											if((tmpB&0x00000100)!=0)tmpT+="Er Electrico verde,";
-											if((tmpB&0x00000200)!=0)tmpT+="Er Electrico VERDE,";
-											if((tmpB&0x00000400)!=0)tmpT+="Er Consumo verde,";
-											if((tmpB&0x00000800)!=0)tmpT+="Er Consumo VERDE,";
-											if((tmpB&0x00001000)!=0)tmpT+="Er Min Tim R,";
-											if((tmpB&0x00002000)!=0)tmpT+="Er Max Tim R,";
-											if((tmpB&0x00004000)!=0)tmpT+="Er Min Tim Y,";
-											if((tmpB&0x00008000)!=0)tmpT+="Er Max Tim Y,";
-											if((tmpB&0x00010000)!=0)tmpT+="Er Min Tim G,";
-											if((tmpB&0x00020000)!=0)tmpT+="Er Max Tim G,";
-											//- - - - - - - - - - - - - - - - - - - - - -
-											if((tmpB&0x01000000)!=0)tmpT+="Er Falta Total r,";
-											if((tmpB&0x02000000)!=0)tmpT+="Er Falta Total y,";
-											if((tmpB&0x04000000)!=0)tmpT+="Er Falta Total g,";
-											if((tmpB&0x80000000)!=0)tmpT+="Er Link,";
-										}
-										//--------------------------------------------
-										if((log&4)!=0)System.out.print("\t\tPh["+(tmpI/4)+"].Err=(");
-										if((log&4)!=0)System.out.print(tmpT+")\n");
-										if(tmpT!="")
-										{
-											InsSql = "INSERT INTO variables (id,lstchg,value) VALUES (\'/"+id+"/Phase"+((tmpI/4)+1)+"/Errors\',LOCALTIMESTAMP,\'"+tmpT+"\');";
-											UdtSql = "UPDATE variables SET (lstchg,value) =	(LOCALTIMESTAMP,\'"+tmpT+"\') WHERE id = \'/"+id+"/Phase"+((tmpI/4)+1)+"/Errors\' AND value<>\'"+tmpT+"\'";
+											tmpI=0;
+											tmpI|=((pucBuffer1[mem  ]&0xFF)    );
+											mem+=1;
+											InsSql = "INSERT INTO variables (id,lstchg,value) VALUES (\'/"+id+"/PLC"+(tmpL+1)+"/Nplan\',LOCALTIMESTAMP,\'"+tmpI+"\');";
+											UdtSql = "UPDATE variables SET (lstchg,value) =	(LOCALTIMESTAMP,\'"+tmpI+"\') WHERE id = \'/"+id+"/PLC"+(tmpL+1)+"/Nplan\' AND value<>\'"+tmpI+"\'";
+											if((log&4)!=0)System.out.println("\tNplan:"+Integer.toHexString(tmpI));
 											dgvsqlTH(InsSql,UdtSql);
 										}
 									}
-									mem+=(cph*4);
+									break;
+									case "Cplc":
+									{
+										cplc=0;
+										cplc|=((pucBuffer1[mem  ]&0xFF)    );
+										mem+=1;
+										InsSql = "INSERT INTO variables VALUES (\'/"+id+"/PLC_Count\',\'"+cplc+"\',LOCALTIMESTAMP)";
+										UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'"+cplc+"\') WHERE id=\'/"+id+"/PLC_Count\' AND value<>\'"+cplc+"\'";
+										if((log&4)!=0)System.out.println("\tcplc:"+cplc);
+										dgvsqlTH(InsSql,UdtSql);
+									}
+									break;
+									case "Cio":
+									{
+										cio=0;
+										cio|=((pucBuffer1[mem  ]&0xFF)    );
+										mem+=1;
+										InsSql = "INSERT INTO variables VALUES (\'/"+id+"/IO_Count\',\'"+cio+"\',LOCALTIMESTAMP)";
+										UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'"+cio+"\') WHERE id=\'/"+id+"/IO_Count\' AND value<>\'"+cio+"\'";
+										if((log&4)!=0)System.out.println("\tCio:"+cio);
+										dgvsqlTH(InsSql,UdtSql);
+									}
+									break;
+									case "Cph":
+									{
+										cph=0;
+										cph|=((pucBuffer1[mem  ]&0xFF)    );
+										mem+=1;
+										InsSql = "INSERT INTO variables VALUES (\'/"+id+"/PhasesCount\',\'"+cph+"\',LOCALTIMESTAMP)";
+										UdtSql = "UPDATE variables SET (lstchg,value)=(LOCALTIMESTAMP,\'"+cph+"\') WHERE id=\'/"+id+"/PhasesCount\' AND value<>\'"+cph+"\'";
+										if((log&4)!=0)System.out.println("\tCphase:"+cph);
+										dgvsqlTH(InsSql,UdtSql);
+									}
+									break;
+									case "PhColor":
+									{
+										try
+										{
+											for(tmpI=0;tmpI<cph;tmpI++)
+											{
+												tmpB=pucBuffer1[mem+tmpI];
+												tmpB&=127;
+												InsSql = "INSERT INTO variables (id,lstchg,value) VALUES (\'/"+id+"/Phase"+(tmpI+1)+"/Color\',LOCALTIMESTAMP,\'"+tmpB+"\');";
+												UdtSql = "UPDATE variables SET (lstchg,value) =	(LOCALTIMESTAMP,\'"+tmpB+"\') WHERE id = \'/"+id+"/Phase"+(tmpI+1)+"/Color\' AND value<>\'"+tmpB+"\'";
+												if((log&4)!=0)System.out.print("\t\tPh["+tmpI+"].Color:");
+												if((log&4)!=0)System.out.printf("0x%02X \n",tmpB);
+												dgvsqlTH(InsSql,UdtSql);
+											}
+										}
+										catch ( Exception e )
+										{
+											System.err.println("\tErr[osi5.cmps.phcolor]:"+e.getClass().getName() + ":" + e.getMessage() );
+										}
+										mem+=cph;
+									}
+									break;
+									case "PhRColor":
+									{
+										try
+										{
+											for(tmpI=0;tmpI<cph;tmpI++)
+											{
+												tmpB=pucBuffer1[mem+tmpI];
+												tmpB&=127;
+												InsSql = "INSERT INTO variables (id,lstchg,value) VALUES (\'/"+id+"/Phase"+(tmpI+1)+"/Rcolor\',LOCALTIMESTAMP,\'"+tmpB+"\');";
+												UdtSql = "UPDATE variables SET (lstchg,value) =	(LOCALTIMESTAMP,\'"+tmpB+"\') WHERE id = \'/"+id+"/Phase"+(tmpI+1)+"/Rcolor\' AND value<>\'"+tmpB+"\'";
+												if((log&4)!=0)System.out.print("\t\tPh["+tmpI+"].Rcolor:");
+												if((log&4)!=0)System.out.printf("0x%02X \n",tmpB);
+												dgvsqlTH(InsSql,UdtSql);
+											}
+										}
+										catch ( Exception e )
+										{
+											System.err.println("\tErr[osi5.cmps.phRcolor]:"+e.getClass().getName() + ":" + e.getMessage() );
+										}
+										mem+=cph;
+									}
+									break;
+									case "PhCurrent":
+									{
+										try
+										{
+											for(tmpI=0;tmpI<(cph*2);tmpI+=2)
+											{
+												tmpB=pucBuffer1[mem+tmpI+1];
+												tmpB<<=8;
+												tmpB+=pucBuffer1[mem+tmpI];
+												InsSql = "INSERT INTO variables (id,lstchg,value) VALUES (\'/"+id+"/Phase"+((tmpI/2)+1)+"/Current\',LOCALTIMESTAMP,\'"+tmpB+"\');";
+												UdtSql = "UPDATE variables SET (lstchg,value) =	(LOCALTIMESTAMP,\'"+tmpB+"\') WHERE id = \'/"+id+"/Phase"+((tmpI/2)+1)+"/Current\' AND value<>\'"+tmpB+"\'";
+												if((log&4)!=0)System.out.print("\t\tPh["+(tmpI/2)+"].Curr:");
+												if((log&4)!=0)System.out.printf("0x%04X \n",tmpB);
+												dgvsqlTH(InsSql,UdtSql);
+											}
+										}
+										catch ( Exception e )
+										{
+											System.err.println("\tErr[osi5.cmps.phcurrent]:"+e.getClass().getName() + ":" + e.getMessage() );
+										}
+										mem+=(cph*2);
+									}
+									break;
+									case "PhError":
+									{
+										try
+										{
+											for(tmpI=0;tmpI<(cph*4);tmpI+=4)
+											{
+												tmpB =pucBuffer1[mem+tmpI+3];
+												tmpB<<=24;
+												tmpB+=pucBuffer1[mem+tmpI+2];
+												tmpB<<=16;
+												tmpB+=pucBuffer1[mem+tmpI+1];
+												tmpB<<=8;
+												tmpB+=pucBuffer1[ mem+tmpI ];
+												tmpT="";
+												//--------------------------------------------
+												if(model.indexOf("M3")!=-1)
+												{
+													if((tmpB&0x00000001)!=0)tmpT+="Falta de Rojo,";
+													if((tmpB&0x00000002)!=0)tmpT+="Falta de Amarillo,";
+													if((tmpB&0x00000004)!=0)tmpT+="Falta de Verde,";
+													if((tmpB&0x00000008)!=0)tmpT+="Tiempo minimo,";
+													if((tmpB&0x00000010)!=0)tmpT+="Falta parcial de Rojo,";
+													if((tmpB&0x00000020)!=0)tmpT+="Falta parcial de Amarillo,";
+													if((tmpB&0x00000040)!=0)tmpT+="Falta parcial de Verde,";
+													if((tmpB&0x00000080)!=0)tmpT+="Tiempo maximo,";
+													if((tmpB&0x00000100)!=0)tmpT+="Err Electrico rojo,";
+													if((tmpB&0x00000200)!=0)tmpT+="Err Electrico amarillo,";
+													if((tmpB&0x00000400)!=0)tmpT+="Err Electrico verde,";
+													if((tmpB&0x00000800)!=0)tmpT+="Err comunicacion,";
+												}
+												//--------------------------------------------
+												if(model.indexOf("M4")!=-1)
+												{
+													if((tmpB&0x00000001)!=0)tmpT+="Er Electrico rojo,";
+													if((tmpB&0x00000002)!=0)tmpT+="Er Electrico ROJO,";
+													if((tmpB&0x00000004)!=0)tmpT+="Er Consumo rojo,";
+													if((tmpB&0x00000008)!=0)tmpT+="Er Consumo ROJO,";
+													if((tmpB&0x00000010)!=0)tmpT+="Er Electrico amarillo,";
+													if((tmpB&0x00000020)!=0)tmpT+="Er Electrico AMARILLO,";
+													if((tmpB&0x00000040)!=0)tmpT+="Er Consumo amarillo,";
+													if((tmpB&0x00000080)!=0)tmpT+="Er Consumo AMARILLO,";
+													if((tmpB&0x00000100)!=0)tmpT+="Er Electrico verde,";
+													if((tmpB&0x00000200)!=0)tmpT+="Er Electrico VERDE,";
+													if((tmpB&0x00000400)!=0)tmpT+="Er Consumo verde,";
+													if((tmpB&0x00000800)!=0)tmpT+="Er Consumo VERDE,";
+													if((tmpB&0x00001000)!=0)tmpT+="Er Min Tim R,";
+													if((tmpB&0x00002000)!=0)tmpT+="Er Max Tim R,";
+													if((tmpB&0x00004000)!=0)tmpT+="Er Min Tim Y,";
+													if((tmpB&0x00008000)!=0)tmpT+="Er Max Tim Y,";
+													if((tmpB&0x00010000)!=0)tmpT+="Er Min Tim G,";
+													if((tmpB&0x00020000)!=0)tmpT+="Er Max Tim G,";
+													//- - - - - - - - - - - - - - - - - - - - - -
+													if((tmpB&0x01000000)!=0)tmpT+="Er Falta Total r,";
+													if((tmpB&0x02000000)!=0)tmpT+="Er Falta Total y,";
+													if((tmpB&0x04000000)!=0)tmpT+="Er Falta Total g,";
+													if((tmpB&0x80000000)!=0)tmpT+="Er Link,";
+												}
+												//--------------------------------------------
+												if((log&4)!=0)System.out.print("\t\tPh["+(tmpI/4)+"].Err=(");
+												if((log&4)!=0)System.out.print(tmpT+")\n");
+												if(tmpT!="")
+												{
+													InsSql = "INSERT INTO variables (id,lstchg,value) VALUES (\'/"+id+"/Phase"+((tmpI/4)+1)+"/Errors\',LOCALTIMESTAMP,\'"+tmpT+"\');";
+													UdtSql = "UPDATE variables SET (lstchg,value) =	(LOCALTIMESTAMP,\'"+tmpT+"\') WHERE id = \'/"+id+"/Phase"+((tmpI/4)+1)+"/Errors\' AND value<>\'"+tmpT+"\'";
+													dgvsqlTH(InsSql,UdtSql);
+												}
+											}
+										}
+										catch ( Exception e )
+										{
+											System.err.println("\tErr[osi5.cmps.phError]:"+e.getClass().getName() + ":" + e.getMessage() );
+										}
+										mem+=(cph*4);
+									}
+									break;
 								}
-								break;
+								if((log&4)!=0)System.out.print("\n");
 							}
-							if((log&4)!=0)System.out.print("\n");
+						}
+						catch ( Exception e )
+						{
+							System.err.println("\tErr[osi5.cmps.any]:"+e.getClass().getName() + ":" + e.getMessage() );
 						}
 						if((log&2)!=0)System.out.print("\n");
 					}
 					break;
 					case CMD_RUN_RgTSK:
 					{
-						if((log&2)!=0)System.out.println("TH("+Thread.currentThread().getId()+")CMD_RUN_RgTSK");
+						if((log&2)!=0)System.out.println("\t\tCMD_RUN_RgTSK");
 					}
 					break;
 					case CMD_RUN_2TSK:
 					{
-						if((log&2)!=0)System.out.println("TH("+Thread.currentThread().getId()+")CMD_RUN_2TSK");
+						if((log&2)!=0)System.out.println("\t\tCMD_RUN_2TSK");
 					}
 					break;
 				}
@@ -629,7 +678,7 @@ public class procDat implements Runnable
 			}
 			else
 			{
-				if((log&2)!=0)System.out.print("\t\tTH("+Thread.currentThread().getId()+")GetCmps:"+drv+" dgvp.id:"+((int)pucBuffer1[CmpIdS]&0xFF)+" no result\n");
+				if((log&2)!=0)System.out.print("\t\tGetCmps:"+drv+" dgvp.id:"+((int)pucBuffer1[CmpIdS]&0xFF)+" no result\n");
 			}
 			try { if (rs != null) rs.close(); } catch (Exception e) {};
 			//stmtD.close();
@@ -654,9 +703,8 @@ public class procDat implements Runnable
 				rxret=Pdgv_Osi2(dat.RxData,dat.RxData.length,1,dat.IPAddress,dat.port);
 				if(rxret!=0)
 				{
-					if((log&1)!=0)System.out.println("\n\tTH("+Thread.currentThread().getId()+")Pdgv_Osi2.ByteRx:"+dat.RxData.length+" From ip:"+dat.IPAddress+":"+dat.port+" "+new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new java.util.Date()));
-					rxret=Pdgv_Osi3(dat.RxData,dat.RxData.length,(byte)rxret,dat.IPAddress,dat.port);
 					System.out.print(Thread.currentThread().getName());
+					rxret=Pdgv_Osi3(dat.RxData,dat.RxData.length,(byte)rxret,dat.IPAddress,dat.port);
 					if(rxret==0)
 					{
 						rxret=Pdgv_Osi4(dat.RxData,dat.RxData.length,SrvId,dat.IPAddress,dat.port);
