@@ -1,3 +1,7 @@
+
+## Install docker debian
+sudo apt -y install apt-transport-https ca-certificates curl gnupg2 software-properties-common
+
 # Información del proyecto SRS
 
 Fork de [SRS](https://github.com/ossrs/srs) versión 2.0.263
