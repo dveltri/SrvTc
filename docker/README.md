@@ -1,24 +1,22 @@
 
 ## Install docker debian
+https://computingforgeeks.com/install-docker-and-docker-compose-on-debian-10-buster/
+
 sudo apt -y install apt-transport-https ca-certificates curl gnupg2 software-properties-common
 
-# Información del proyecto SRS
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
 
-Fork de [SRS](https://github.com/ossrs/srs) versión 2.0.263
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/debian \
+   $(lsb_release -cs) \
+   stable"
 
-Se agregaron las siguientes cosas:
+sudo apt update
 
-- DVR en formatos .ts y .mp4
-- DVR plan "advanced" (corta los segmentos por tiempo y por inicio/fin de sesión)
-- VOD server
-- API recording status
-- DVR cleaner, automático y manual
-- Soporte para AWS S3
-- callback on_http_resource
-- soporte rtmps y https
-- otros detalles (ver lista de commits)
+sudo apt -y install docker-ce docker-ce-cli containerd.io
 
-Más [info](https://drive.google.com/file/d/1RRuVZ10x6HTUFUoXLzfp5GCjxSEFHw8w/view?usp=sharing)
+sudo usermod -aG docker $USER
+newgrp docker
 
 =====================================================================================================
 
