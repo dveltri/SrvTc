@@ -12,6 +12,8 @@ IPADD=$(ifconfig | grep -Eo 'inet 172(addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '17
 ./initdb
 echo "host      all     all     $IPADD/8        trust"  >> /var/lib/postgresql/data/pgdata/pg_hba.conf
 ./postgres &
+ps aux
+sleep 10
 /usr/lib/postgresql/12/bin/./createdb "SrvDb"
 # /usr/lib/postgresql/12/bin/./psql -U postgres -d SrvDb -1 -f /var/lib/postgresql/data/SrvDb_sql.backup
 # /usr/lib/postgresql/12/bin/./pg_dumpall -U postgres -w -l "SrvDb" -v -f /tmp/dbase.dump -h localhost
