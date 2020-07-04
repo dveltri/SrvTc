@@ -29,8 +29,10 @@ function InitFastSts()
 }
 function GlobalStatusUrl()
 {
-	var d = new Date.UTC(Reqest[Reqest_idx].LstRqst-(Reqest[Reqest_idx].Refresh+5));
-	timestamp_fltr=d.getFullYear() +"-"+(d.getMonth()+1)+"-"+d.getDate()+" "+d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
+	var d = new Date()
+	var z = d.getTimezoneOffset()*60000
+	d = new Date(Reqest[Reqest_idx].LstRqst-(Reqest[Reqest_idx].Refresh+5)+z);
+	timestamp_fltr=d.getFullYear() +"-"+d.getMonth()+"-"+d.getDate()+" "+d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
 	d=null;
 	base = "./getitems.jsp?sql=SELECT * FROM variables WHERE lstchg > \'"+timestamp_fltr+"\' order by id"
 	base+="&"+timestamp_fltr;
