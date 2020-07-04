@@ -32,7 +32,18 @@ function GlobalStatusUrl()
 	var d = new Date()
 	var z = d.getTimezoneOffset()*60000
 	d = new Date(Reqest[Reqest_idx].LstRqst-(Reqest[Reqest_idx].Refresh+5)+z);
-	timestamp_fltr=d.getFullYear() +"-"+d.getMonth()+"-"+d.getDate()+" "+d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
+	temp=d.getFullYear();
+	timestamp_fltr=temp+"-";
+	temp=d.getMonth()
+	timestamp_fltr+=temp.pad()+"-";
+	temp=d.getDate()
+	timestamp_fltr+=temp.pad()+" ";
+	temp=d.getHours()
+	timestamp_fltr+=temp.pad()+":";
+	temp=d.getMinutes()
+	timestamp_fltr+=temp.pad()+":";
+	temp=d.getSeconds()
+	timestamp_fltr+=temp.pad();
 	d=null;
 	base = "./getitems.jsp?sql=SELECT * FROM variables WHERE lstchg > \'"+timestamp_fltr+"\' order by id"
 	base+="&"+timestamp_fltr;
