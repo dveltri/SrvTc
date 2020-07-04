@@ -104,7 +104,7 @@ function handleHttpResponse()
 			}
 			else
 			{
-				if(Log_En)LOG("Error:"+http.readyState+","+http.status+":"+http.statusText+"\n");
+				LOG("Error:"+http.readyState+","+http.status+":"+http.statusText+"\n");
 				enProceso = 0;
 				if(http.fnc)
 					http.fnc(http);
@@ -113,7 +113,7 @@ function handleHttpResponse()
 		break;
 		default:
 		{
-			if(Log_En)LOG("Error:"+http.readyState+","+http.status+":"+http.statusText+"\n");
+			LOG("Error:"+http.readyState+","+http.status+":"+http.statusText+"\n");
 			if(http.fnc)
 				http.fnc(http);
 			enProceso = 0;

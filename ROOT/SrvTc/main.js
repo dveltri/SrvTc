@@ -9,12 +9,16 @@ var FlyMnu;
 function WebStart()
 {
 	url=document.location.href;
+	if(url.indexOf("Log=0")!=-1)
+		Log_En=0;
 	if(url.indexOf("Log_En")!=-1)
 		Log_En=1;
 	if(url.indexOf("Log=1")!=-1)
 		Log_En=1;
-	if(url.indexOf("Log=0")!=-1)
-		Log_En=0;
+	if(url.indexOf("Log=2")!=-1)
+		Log_En=2;
+	if(url.indexOf("Log=3")!=-1)
+		Log_En=2;
 	url=url.substring(0,url.indexOf("/main."));
 	//alert(url);
 	if(language=='PO')

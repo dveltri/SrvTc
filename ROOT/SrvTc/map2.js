@@ -491,24 +491,29 @@ function UpDateMap()
 			Color2 = "rgba(150,150,150,1) rgba(100,100,100,0.8)";
 			valor=GetIdVal(MapItemList[i][1]);
 			Location=GetIdVal(MapItemList[i][6]);
-			if(parseInt('0'+MapItemList[i][7])==0)	//controllers
+			switch(parseInt('0'+MapItemList[i][7]))	//select layer
 			{
-				color=MapItemList[i][5].split("/");
-				RemoveUnusedItem(color);
-				for(var a=0;a<color.length;a+=2)
+				case 0:	//controllers
 				{
-					if(valor.indexOf(color[a])!=-1)
+					color=MapItemList[i][5].split("/");
+					RemoveUnusedItem(color);
+					for(var a=0;a<color.length;a+=2)
 					{
-						col=color[a+1].split(",");
-						Color2="rgba("+col[0]+","+col[1]+","+col[2]+",1) rgba("+col[0]+","+col[1]+","+col[2]+",0.8)"
+						if(valor.indexOf(color[a])!=-1)
+						{
+							col=color[a+1].split(",");
+							Color2="rgba("+col[0]+","+col[1]+","+col[2]+",1) rgba("+col[0]+","+col[1]+","+col[2]+",0.8)"
+						}
 					}
+					UpDtMapItm(MapItemList[i][1],MapItemList[i][2],Location,Color2);
 				}
-				UpDtMapItm(MapItemList[i][1],MapItemList[i][2],Location,Color2);
+				break;
+				case 1:	//Cameras
+				{
+					UpDtMapMrk(MapItemList[i][1],MapItemList[i][2],Location,Color2);
+				}
+				break;
 			}
-			if(parseInt('0'+MapItemList[i][7])==1)	//Cameras
-			{
-				UpDtMapMrk(MapItemList[i][1],MapItemList[i][2],Location,Color2);
-			}			
 		}
 		else
 		{
@@ -793,7 +798,7 @@ function InitWinOL()
 	Reqest[idx].Url="./getlist.jsp?cmps=*&tbl=mapitems&ord=variable";
 	Reqest[idx].Fnc=rcvMapListBK;
 	Reqest[idx].Status=0;
-	Reqest[idx].Refresh=10000;
+	Reqest[idx].Refresh=5000;
 	Reqest[idx].LstRqst=0;
 	GetUrlB("./getlist.jsp?cmps=*&tbl=mapitems&ord=variable",rcvMapListBK);
 }

@@ -32,7 +32,7 @@ function GlobalStatusUrl()
 	{
 		var d = Reqest[Reqest_idx].timestamp;
 		d.setMinutes(d.getMinutes()+d.getTimezoneOffset())
-		d.setSeconds(d.getSeconds()-1)
+		d.setMilliseconds(d.getMilliseconds()-Reqest[Reqest_idx].Refresh)
 		temp=d.getFullYear();
 		var timestamp_fltr=temp+"-";
 		temp=d.getMonth()+1;
@@ -44,7 +44,7 @@ function GlobalStatusUrl()
 		temp=d.getMinutes();
 		timestamp_fltr+=temp.pad()+":";
 		temp=d.getSeconds();
-		timestamp_fltr+=temp.pad()+".0";
+		timestamp_fltr+=temp.pad()+".00";
 		base = "./getitems.jsp?sql=SELECT * FROM variables WHERE lstchg >= \'"+timestamp_fltr+"\' order by id";
 	}
 	else
