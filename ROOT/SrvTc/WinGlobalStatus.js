@@ -29,10 +29,10 @@ function InitFastSts()
 }
 function GlobalStatusUrl()
 {
-	base = "./getitems.jsp?sql=SELECT * FROM variables order by id"
 	var d = new Date(Reqest[Reqest_idx].LstRqst-(Reqest[Reqest_idx].Refresh+5));
 	timestamp_fltr=d.getFullYear() +"-"+(d.getMonth()+1)+"-"+d.getDate()+" "+d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
 	d=null;
+	base = "./getitems.jsp?sql=SELECT * FROM variables WHERE lstchg > \'"+timestamp_fltr+"\' order by id"
 	base+="&"+timestamp_fltr;
 	return base;
 }
