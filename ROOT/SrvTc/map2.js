@@ -945,9 +945,9 @@ function MapPos(lat,lon,zoom)
 function rcvMapListBK(Datos)
 {
 	Datos=rcvtbl(Datos);
-	MapItemListBk=Null;
+	MapItemListBk=null;
 	MapItemListBk=owl.deepCopy(MapItemList);
-	MapItemList=Null;
+	MapItemList=null;
 	MapItemList=owl.deepCopy(Datos);
 	UpDateMap();
 }

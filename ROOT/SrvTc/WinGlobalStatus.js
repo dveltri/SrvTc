@@ -256,7 +256,7 @@ function ShowFastSts()
 	var rawcolor=Stsrawcolor;
 	var out="";
 	var tout="";
-	out+="<input type=\"button\" class=\"INTEXT2\" value=\""+Str_Filtro+"\" onclick=\"newflt=prompt('"+Str_Filtro+"','');if(newflt!=Null){PLCsfltr[PLCsfltr.length]=newflt;}return 0;\" /><br />\n";
+	out+="<input type=\"button\" class=\"INTEXT2\" value=\""+Str_Filtro+"\" onclick=\"newflt=prompt('"+Str_Filtro+"','');if(newflt!=null){PLCsfltr[PLCsfltr.length]=newflt;}return 0;\" /><br />\n";
 	for(var i=0;i<PLCsfltr.length;i++)
 	{
 		out+="<input type=\"button\" class=\"INTEXT2\" value=\"[X]["+PLCsfltr[i]+"]\" onclick=\"PLCsfltr.splice("+i+",1);\" />\n";
