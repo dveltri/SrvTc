@@ -32,6 +32,7 @@ function GlobalStatusUrl()
 	{
 		var d = Reqest[Reqest_idx].timestamp;
 		d.setMinutes(d.getMinutes()+d.getTimezoneOffset())
+		d.setSeconds(d.getSeconds()-1)
 		temp=d.getFullYear();
 		var timestamp_fltr=temp+"-";
 		temp=d.getMonth()+1;
