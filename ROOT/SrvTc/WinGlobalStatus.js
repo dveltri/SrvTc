@@ -256,7 +256,7 @@ function ShowFastSts()
 	var rawcolor=Stsrawcolor;
 	var out="";
 	var tout="";
-	out+="<input type=\"button\" class=\"INTEXT2\" value=\""+Str_Filtro+"\" onclick=\"PLCsfltr[PLCsfltr.length]=prompt('"+Str_Filtro+"','');\" /><br />\n";
+	out+="<input type=\"button\" class=\"INTEXT2\" value=\""+Str_Filtro+"\" onclick=\"newflt=prompt('"+Str_Filtro+"','');if(newflt!=Null){PLCsfltr[PLCsfltr.length]=newflt;}return 0;\" /><br />\n";
 	for(var i=0;i<PLCsfltr.length;i++)
 	{
 		out+="<input type=\"button\" class=\"INTEXT2\" value=\"[X]["+PLCsfltr[i]+"]\" onclick=\"PLCsfltr.splice("+i+",1);\" />\n";
@@ -362,7 +362,7 @@ function ShowFastSts()
 					tout+="<tr bgcolor=\""+bgcolor+"\" align=\"center\" class=\"bottom top\">\n";
 				tout+="	<td align=\"center\">\n";
 				if(FastSts[a].Plcs[b].Location)
-				tout+="		<a href=\"\" onclick=\"MapPos("+FastSts[a].Plcs[b].Location+");return false;\">";
+					tout+="		<a href=\"\" onclick=\"MapPos("+FastSts[a].Plcs[b].Location+");return false;\">";
 				tout+="		<font size=\"1\" face=\"Verdana\">";
 				if(FastSts[a].Nombre)
 					tout+=FastSts[a].Nombre+" ";
@@ -370,7 +370,7 @@ function ShowFastSts()
 					tout+=FastSts[a].Plcs[b].Nombre+" ";
 				tout+="		</font>\n";
 				if(FastSts[a].Plcs[b].Location)
-				tout+="		</a>\n";
+					tout+="		</a>\n";
 				tout+="	</td>\n";
 				tout+="	<td align=\"center\">\n";
 				tout+="		<font size=\"1\" face=\"Verdana\">";

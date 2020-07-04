@@ -578,12 +578,18 @@ function GetBuble(IdPlcSts)
 		{
 			if(parseInt('0'+MapItemList[i][7])==0)
 			{
-				out+="<img src=\"../img/efile.png\" width=\"18\" height=\"18\" border=\"0\" onclick=\"rcvMapFncList("+i+");\" />"+IdPlcSts;
-				out+="<br />\n";
 				campos=MapItemList[i][4];
 				campos=replaceAll(campos,"undefined","");
 				campos=campos.split(",");
 				RemoveUnusedItem(campos);
+				id=IdPlcSts.split('/');
+				RemoveUnusedItem(id);
+				out+="<a href=\"\" onclick=\"GetUrlB('./cruces/"+id[0]+"_Ctrl1.svg',rcvPlcSts);return false;\" >\n";
+				out+="	<img src=\"../img/plcs.png\" width=\"18\" height=\"18\" border=\"0\" />\n";
+				out+="</a>";
+				out+=IdPlcSts;
+				out+="<img src=\"../img/efile.png\" width=\"18\" height=\"18\" border=\"0\" onclick=\"rcvMapFncList("+i+");\" />";
+				out+="<br />\n";
 				for(var b=0;b<campos.length;b++)
 				{
 					out+=campos[b].substring(campos[b].lastIndexOf("/")+1);
@@ -939,7 +945,9 @@ function MapPos(lat,lon,zoom)
 function rcvMapListBK(Datos)
 {
 	Datos=rcvtbl(Datos);
+	MapItemListBk=Null;
 	MapItemListBk=owl.deepCopy(MapItemList);
+	MapItemList=Null;
 	MapItemList=owl.deepCopy(Datos);
 	UpDateMap();
 }
