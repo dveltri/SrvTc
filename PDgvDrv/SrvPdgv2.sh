@@ -1,5 +1,5 @@
 #!/bin/bash
-export CLASSPATH=$CLASSPATH:/usr/share/java/postgresql-42.2.5.jar
+export CLASSPATH=$CLASSPATH:$PWD/postgresql-42.2.5.jar
 while [ 1==1 ]
 do
 fecha=$(date +%Y%m%d%H%M%S)
