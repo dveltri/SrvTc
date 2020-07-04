@@ -62,8 +62,8 @@ function rcvFastSts(Datos)
 	timestamp_fltr+=temp.pad()+":";
 	temp=d.getSeconds();
 	timestamp_fltr+=temp.pad()+".0";
-	//LOGdirect(headers);
 	Datos=rcvtbl(Datos);
+	LOGdirect("new vars updates:"+Datos.length);
 	VarTree=owl.deepCopy(Datos);
 	//---------------------------------------------------------
 	UpDateMap();
