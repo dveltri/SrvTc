@@ -59,7 +59,7 @@ function fnc0()
 	{
 		var digital = new Date();
 		var ms = digital.getTime();
-		if(Reqest[PoolData].LstRqst<ms)
+		if((Reqest[PoolData].LstRqst+Reqest[PoolData].Refresh-5)<ms)
 		{
 			//LOG(Reqest[PoolData].LstRqst+" "+ms+" "+(ms-Reqest[PoolData].LstRqst)+"\n");
 			Reqest[PoolData].Status=1;
@@ -67,7 +67,7 @@ function fnc0()
 			if(Reqest[PoolData].FncUrl)
 				Reqest[PoolData].url=Reqest[PoolData].FncUrl();
 			Reqest[PoolData].fnc=RcvMoni;
-			Reqest[PoolData].LstRqst=ms+(Reqest[PoolData].Refresh-5);
+			Reqest[PoolData].LstRqst=ms;
 			OBJs.push(Reqest[PoolData]);
 		}
 	}
@@ -81,6 +81,9 @@ function RcvMoni(Datos)
 	var hora = new Date();
 	if(Datos && Datos.Obj)
 	{
+		Datos.Obj.enlapse=(hora.getTime()-Datos.Obj.LstRqst);
+		if(Datos.Obj.enlapse>Datos.Obj.Refresh)
+			LOG("tardo de mas("+Datos.Obj.enlapse+")");
 		if(Datos.status!=200)
 		{
 			result=Datos.status+" "+Datos.statusText;

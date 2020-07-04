@@ -26,7 +26,7 @@ function GetUrl(obj)
 	if(enProceso!=0)
 	{
 		var diff = (digital.getTime()-enProceso);
-		if(diff>=1000)
+		if(diff>=10000)
 		{
 			enProceso=0;
 			return 3;	// timeout
@@ -88,7 +88,6 @@ function handleHttpResponse()
 				if (http.responseText.indexOf('invalid') == -1)
 				{
 					if(Log_En>1)LOG("http.status:"+http.readyState+","+http.status+"\n");
-					enProceso = 0;
 					var chklogout=http.responseText;
 					if(chklogout.indexOf("[*]")!=-1)
 						window.location.href = '../index.htm';
@@ -97,9 +96,11 @@ function handleHttpResponse()
 				}
 				else
 				{
-					if(Log_En>1)
-					if(Log_En)LOG("Error:"+http.readyState+","+http.status+":"+http.statusText+"\n");LOG("Response invalid<br />");
+					if(Log_En>1)LOG("Error:"+http.readyState+","+http.status+":"+http.statusText+"\n");LOG("Response invalid<br />");
+					if(http.fnc)
+						http.fnc(http);
 				}
+				enProceso = 0;
 			}
 			else
 			{
@@ -113,6 +114,9 @@ function handleHttpResponse()
 		default:
 		{
 			if(Log_En)LOG("Error:"+http.readyState+","+http.status+":"+http.statusText+"\n");
+			if(http.fnc)
+				http.fnc(http);
+			enProceso = 0;
 		}
 		break;
 	}
