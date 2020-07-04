@@ -46,8 +46,6 @@ function WebStart()
 
 function fnc0()
 {
-	var digital = new Date();
-	var ms = digital.getTime();
 	if(OBJs.length)
 	{
 		var rv=GetUrl(OBJs[0]);
@@ -59,6 +57,8 @@ function fnc0()
 	}
 	if(Reqest[PoolData].Status!=1)
 	{
+		var digital = new Date();
+		var ms = digital.getTime();
 		if(Reqest[PoolData].LstRqst<ms)
 		{
 			//LOG(Reqest[PoolData].LstRqst+" "+ms+" "+(ms-Reqest[PoolData].LstRqst)+"\n");

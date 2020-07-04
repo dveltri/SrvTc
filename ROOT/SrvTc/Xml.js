@@ -25,7 +25,8 @@ function GetUrl(obj)
 		return 2;
 	if(enProceso!=0)
 	{
-		if((digital.getTime()-enProceso)>=1000)
+		var diff = (digital.getTime()-enProceso);
+		if(diff>=1000)
 		{
 			enProceso=0;
 			return 3;	// timeout
