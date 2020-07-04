@@ -316,7 +316,7 @@ function ShowFastSts()
 		if(FastSts[a].Lnk)
 		{
 			//-------------------------------------------------
-			if(FastSts[a].Lnk.indexOf("ok")!=-1 && FastSts[a].ip)
+			/*if(FastSts[a].Lnk.indexOf("ok")!=-1 && FastSts[a].ip)
 			{
 				//tout+="<a href=\"#\" onclick=\"window.open('"+url+":8080/web/index.xhtml?remotehost="+FastSts[a].ip+"&srv','_blank');";
 				tout+="<a href=\"#\" onclick=\"window.open('../lp3/web/index.xhtml?remotehost="+FastSts[a].ip+"&srv','_blank');";
@@ -327,11 +327,11 @@ function ShowFastSts()
 				tout+="\" >\n";
 				tout+=FastSts[a].Id+"</a>\n";
 			}
-			else
+			else // */
 			{
 				tout+=FastSts[a].Id;
 			}
-			//-------------------------------------------------
+			/*//-------------------------------------------------
 			{
 				tout+="<a href=\"#\" onclick=\"";
 				if(FastSts[a].Lnk.indexOf("Paused")!=-1)
@@ -345,7 +345,7 @@ function ShowFastSts()
 					tout+="<img src=\"../img/Connected.png\"    width=\"18\" height=\"18\"  border=\"1\" />\n";
 				tout+="</a>\n";
 			}
-			//-------------------------------------------------
+			//-------------------------------------------------*/
 		}
 		if(FastSts[a].Splan)
 		{
