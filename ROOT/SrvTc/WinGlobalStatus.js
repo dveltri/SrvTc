@@ -29,24 +29,10 @@ function InitFastSts()
 }
 function GlobalStatusUrl()
 {
-	var d = new Date()
-	var z = d.getTimezoneOffset()*60000
-	d = new Date(Reqest[Reqest_idx].LstRqst-(Reqest[Reqest_idx].Refresh+5)+z);
-	temp=d.getFullYear();
-	timestamp_fltr=temp+"-";
-	temp=d.getMonth()+1;
-	timestamp_fltr+=temp.pad()+"-";
-	temp=d.getDate();
-	timestamp_fltr+=temp.pad()+" ";
-	temp=d.getHours();
-	timestamp_fltr+=temp.pad()+":";
-	temp=d.getMinutes();
-	timestamp_fltr+=temp.pad()+":";
-	temp=d.getSeconds();
-	timestamp_fltr+=temp.pad()+".0";
-	d=null;
-	base = "./getitems.jsp?sql=SELECT * FROM variables WHERE lstchg >= \'"+timestamp_fltr+"\' order by id"
-	base+="&"+timestamp_fltr;
+	if (timestamp_fltr!="")
+		base = "./getitems.jsp?sql=SELECT * FROM variables WHERE lstchg >= \'"+timestamp_fltr+"\' order by id"
+	else
+		base = "./getitems.jsp?sql=SELECT * FROM variables order by id"	
 	return base;
 }
 
@@ -76,7 +62,7 @@ function rcvFastSts(Datos)
 	timestamp_fltr+=temp.pad()+":";
 	temp=d.getSeconds();
 	timestamp_fltr+=temp.pad()+".0";
-	LOGdirect(timestamp_fltr+"<br>::::"+header);
+	//LOGdirect(headers);
 	Datos=rcvtbl(Datos);
 	VarTree=owl.deepCopy(Datos);
 	//---------------------------------------------------------
