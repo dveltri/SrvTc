@@ -265,7 +265,7 @@ function ShowFastSts()
 	{
 		//---------------------------------------------------------------------
 		out+="<tr align=\"center\" bgcolor=\"#EEEEEE\">\n";
-		out+="	<td align=\"center\" rowspan=\"4\">\n";
+		out+="	<td align=\"center\" colspan=\"4\">\n";
 		out+="		<font size=\"1\" face=\"Verdana\">";
 		out+="Total:"+FastSts.length;
 		var ok=0
