@@ -60,6 +60,8 @@ function rcvFastSts(Datos)
 	var pos;
 	var TblSize=0;
 	var Obj=Datos.Obj;
+	var header=Datos.getResponseHeader("Content-Type");
+	LOGdirect(header);
 	Datos=rcvtbl(Datos);
 	VarTree=owl.deepCopy(Datos);
 	//---------------------------------------------------------
