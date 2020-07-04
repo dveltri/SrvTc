@@ -8,30 +8,29 @@ var PhCol=["#A0A0A0","#FF0000","#FFFF00","#FF8F00","#00FF00"];
 //=================================================
 function InitFastSts()
 {
-	var idx=Reqest.length;
-	Reqest_idx=idx;
+	Reqest_idx=Reqest.length;
 	//-------------------------------------------
-	Reqest[idx]= new Object();
-	Reqest[idx].Name=Str_Status;
-	Reqest[idx].WinName=Str_Status;
-	Reqest[idx].Url=null;
-	Reqest[idx].FncUrl=GlobalStatusUrl;
-	//Reqest[idx].Url="./getitems.jsp?sql=SELECT * FROM variables WHERE id LIKE %27%2FID%25%27 order by id";
+	Reqest[Reqest_idx]= new Object();
+	Reqest[Reqest_idx].Name=Str_Status;
+	Reqest[Reqest_idx].WinName=Str_Status;
+	Reqest[Reqest_idx].Url=null;
+	Reqest[Reqest_idx].FncUrl=GlobalStatusUrl;
+	//Reqest[Reqest_idx].Url="./getitems.jsp?sql=SELECT * FROM variables WHERE id LIKE %27%2FID%25%27 order by id";
 	//select CONCAT(var1.value,'/',var3.id),var2.value from variables AS var1 JOIN variables AS var2 ON var2.id = var1.value JOIN variables AS var3 ON var3.id LIKE CONCAT(var2.value,'%') WHERE var1.id LIKE 'Group' AND var3.id LIKE '%Status%'
-	Reqest[idx].Fnc=rcvFastSts;
-	Reqest[idx].Status=0;
-	Reqest[idx].Refresh=1000;
-	Reqest[idx].LstRqst=0;
-	winAdd(Reqest[idx].WinName);
-	winList[Reqest[idx].WinName].SetW(340);
-	winList[Reqest[idx].WinName].SetX(655);
+	Reqest[Reqest_idx].Fnc=rcvFastSts;
+	Reqest[Reqest_idx].Status=0;
+	Reqest[Reqest_idx].Refresh=1000;
+	Reqest[Reqest_idx].LstRqst=0;
+	winAdd(Reqest[Reqest_idx].WinName);
+	winList[Reqest[Reqest_idx].WinName].SetW(340);
+	winList[Reqest[Reqest_idx].WinName].SetX(655);
 	winUdate();
 }
 function GlobalStatusUrl()
 {
 	if (Reqest[Reqest_idx].timestamp)
 	{
-		var d = Reqest[idx].timestamp;
+		var d = Reqest[Reqest_idx].timestamp;
 		d.setMinutes(d.getMinutes()+d.getTimezoneOffset())
 		temp=d.getFullYear();
 		var timestamp_fltr=temp+"-";
