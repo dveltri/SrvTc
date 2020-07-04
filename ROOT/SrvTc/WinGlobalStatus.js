@@ -276,12 +276,10 @@ function ShowFastSts()
 			{
 				if(FastSts[a].Lnk.indexOf("ok")!=-1)
 					ok++;
-				if(FastSts[a].Lnk.indexOf("Timeout")!=-1)
-					to++;
 			}
 		}
 		out+=" online:"+ok;
-		out+=" offline:"+to;
+		out+=" offline:"+(FastSts.length-ok);
 		out+="		</font>\n";
 		out+="	</td>\n";
 		out+="</tr>\n";
