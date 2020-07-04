@@ -87,6 +87,8 @@ function RcvMoni(Datos)
 		}
 		else
 		{
+			var header=Datos.getResponseHeader("Date");
+			Datos.Obj.timestamp = new Date(header)
 			if(Datos.Obj.Fnc)
 				result = Datos.Obj.Fnc(Datos);
 		}
