@@ -280,8 +280,8 @@ function ShowFastSts()
 					to++;
 			}
 		}
-		out+=" ok:"+ok;
-		out+=" time out:"+ok;
+		out+=" online:"+ok;
+		out+=" offline:"+to;
 		out+="		</font>\n";
 		out+="	</td>\n";
 		out+="</tr>\n";
