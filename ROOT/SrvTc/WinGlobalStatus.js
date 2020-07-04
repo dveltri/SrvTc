@@ -63,6 +63,7 @@ function rcvFastSts(Datos)
 	var headers=Datos.getAllResponseHeaders();
 	var header=Datos.getResponseHeader("Date");
 	var d = new Date(header)
+	d.setMinutes(d.getMinutes()+d.getTimezoneOffset())
 	temp=d.getFullYear();
 	timestamp_fltr=temp+"-";
 	temp=d.getMonth()+1;
