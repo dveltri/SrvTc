@@ -272,10 +272,13 @@ function ShowFastSts()
 		var to=0;
 		for(var a=0;a<FastSts.length;a++)
 		{
-			if(FastSts[a].Lnk.indexOf("ok")!=-1)
-				ok++;
-			if(FastSts[a].Lnk.indexOf("Timeout")!=-1)
-				to++;
+			if(FastSts[a].Lnk)
+			{
+				if(FastSts[a].Lnk.indexOf("ok")!=-1)
+					ok++;
+				if(FastSts[a].Lnk.indexOf("Timeout")!=-1)
+					to++;
+			}
 		}
 		out+=" ok:"+ok;
 		out+=" time out:"+ok;
