@@ -1,17 +1,21 @@
 var FastSts =  new Array();
 var VarTree =  new Array();
 var PLCsfltr=  new Array();
+var timestamp_fltr=0;
+var Reqest_idx=0;
 var Stsrawcolor=[180,180,180];
 var PhCol=["#A0A0A0","#FF0000","#FFFF00","#FF8F00","#00FF00"];
 //=================================================
 function InitFastSts()
 {
 	var idx=Reqest.length;
+	Reqest_idx=idx;
 	//-------------------------------------------
 	Reqest[idx]= new Object();
 	Reqest[idx].Name=Str_Status;
 	Reqest[idx].WinName=Str_Status;
-	Reqest[idx].Url="./getitems.jsp?sql=SELECT * FROM variables order by id";
+	Reqest[idx].Url=null;
+	Reqest[idx].FncUrl=GlobalStatusUrl;
 	//Reqest[idx].Url="./getitems.jsp?sql=SELECT * FROM variables WHERE id LIKE %27%2FID%25%27 order by id";
 	//select CONCAT(var1.value,'/',var3.id),var2.value from variables AS var1 JOIN variables AS var2 ON var2.id = var1.value JOIN variables AS var3 ON var3.id LIKE CONCAT(var2.value,'%') WHERE var1.id LIKE 'Group' AND var3.id LIKE '%Status%'
 	Reqest[idx].Fnc=rcvFastSts;
@@ -22,6 +26,15 @@ function InitFastSts()
 	winList[Reqest[idx].WinName].SetW(340);
 	winList[Reqest[idx].WinName].SetX(655);
 	winUdate();
+}
+function GlobalStatusUrl()
+{
+	base = "./getitems.jsp?sql=SELECT * FROM variables order by id"
+	var d = new Date(Reqest[Reqest_idx].LstRqst-(Reqest[Reqest_idx].Refresh+5));
+	timestamp_fltr=d.getFullYear() +"-"+(d.getMonth()+1)+"-"+d.getDate()+" "+d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
+	d=null;
+	base+="&"+timestamp_fltr;
+	return base;
 }
 
 function rcvFastSts(Datos)

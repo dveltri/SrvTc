@@ -62,10 +62,12 @@ function fnc0()
 		if(Reqest[PoolData].LstRqst<ms)
 		{
 			//LOG(Reqest[PoolData].LstRqst+" "+ms+" "+(ms-Reqest[PoolData].LstRqst)+"\n");
-			Reqest[PoolData].LstRqst=ms+(Reqest[PoolData].Refresh-5);
 			Reqest[PoolData].Status=1;
 			Reqest[PoolData].url=Reqest[PoolData].Url;
+			if(Reqest[PoolData].FncUrl)
+				Reqest[PoolData].url=Reqest[PoolData].FncUrl;
 			Reqest[PoolData].fnc=RcvMoni;
+			Reqest[PoolData].LstRqst=ms+(Reqest[PoolData].Refresh-5);
 			OBJs.push(Reqest[PoolData]);
 		}
 	}
