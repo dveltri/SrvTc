@@ -62,7 +62,20 @@ function rcvFastSts(Datos)
 	var Obj=Datos.Obj;
 	var headers=Datos.getAllResponseHeaders();
 	var header=Datos.getResponseHeader("Date");
-	LOGdirect(header+"<br>::::"+headers);
+	var d = new Date(header)
+	temp=d.getFullYear();
+	timestamp_fltr=temp+"-";
+	temp=d.getMonth()+1;
+	timestamp_fltr+=temp.pad()+"-";
+	temp=d.getDate();
+	timestamp_fltr+=temp.pad()+" ";
+	temp=d.getHours();
+	timestamp_fltr+=temp.pad()+":";
+	temp=d.getMinutes();
+	timestamp_fltr+=temp.pad()+":";
+	temp=d.getSeconds();
+	timestamp_fltr+=temp.pad()+".0";
+	LOGdirect(timestamp_fltr+"<br>::::"+header);
 	Datos=rcvtbl(Datos);
 	VarTree=owl.deepCopy(Datos);
 	//---------------------------------------------------------
