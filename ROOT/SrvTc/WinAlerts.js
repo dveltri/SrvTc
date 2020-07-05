@@ -6,36 +6,56 @@ var Alerts;
 //=================================================
 function InitAlerts()
 {
-	var i=Reqest.length;
+	ReqestIdx=Reqest.length;
 	//-------------------------------------------
-	Reqest[i]= new Object();
-	Reqest[i].Name=Str_Alerts;
-	Reqest[i].WinName=Str_Alerts;
-	ReqestIdx=i;
-	UpDateUrl();
-	Reqest[i].Fnc=rcvAlert;
-	Reqest[i].Status=0;
-	Reqest[i].Refresh=1000;
-	Reqest[i].LstRqst=0;
-	winAdd(Reqest[i].WinName);
+	Reqest[ReqestIdx]= new Object();
+	Reqest[ReqestIdx].Name=Str_Alerts;
+	Reqest[ReqestIdx].WinName=Str_Alerts;
+	Reqest[ReqestIdx].FncUrl=UpDateUrl;
+	Reqest[ReqestIdx].Fnc=rcvAlert;
+	Reqest[ReqestIdx].Status=0;
+	Reqest[ReqestIdx].Refresh=1000;
+	Reqest[ReqestIdx].LstRqst=0;
+	winAdd(Reqest[ReqestIdx].WinName);
 	winUdate();
-	winList[Reqest[i].WinName].SetY(710);//parseInt("0"+winList["WinAllMap"].frame.style.width)+70
+	winList[Reqest[ReqestIdx].WinName].SetY(710);//parseInt("0"+winList["WinAllMap"].frame.style.width)+70
 }
+
 function UpDateUrl()
 {
-	Reqest[ReqestIdx].Url="./getAlerts.jsp?sql=SELECT%20*%20FROM%20alerts";
+	var base="./getAlerts.jsp?sql=SELECT%20*%20FROM%20alerts";
 	if(Altrafltr.length>=1)
 	{
-		Reqest[ReqestIdx].Url+="%20WHERE";
-		for(var i=0;i<Altrafltr.length;i++)
+		base+="%20WHERE%20description LIKE %27%25"+Altrafltr[0]+"%25%27"
+		for(var i=1;i<Altrafltr.length;i++)
 		{
-			if(i==0)
-				Reqest[ReqestIdx].Url+="%20description LIKE %27%25"+Altrafltr[i]+"%25%27"
-			else
-				Reqest[ReqestIdx].Url+="%20OR description LIKE %27%25"+Altrafltr[i]+"%25%27"
+			base+="%20OR description LIKE %27%25"+Altrafltr[i]+"%25%27"
 		}
 	}
-	Reqest[ReqestIdx].Url+="%20order%20by%20time%20DESC";
+	if (Reqest[ReqestIdx].timestamp)
+	{
+		var d = Reqest[ReqestIdx].timestamp;
+		d.setMinutes(d.getMinutes()+d.getTimezoneOffset())
+		d.setMilliseconds(d.getMilliseconds()-Reqest[ReqestIdx].Refresh)
+		temp=d.getFullYear();
+		var timestamp_fltr=temp+"-";
+		temp=d.getMonth()+1;
+		timestamp_fltr+=temp.pad()+"-";
+		temp=d.getDate();
+		timestamp_fltr+=temp.pad()+" ";
+		temp=d.getHours();
+		timestamp_fltr+=temp.pad()+":";
+		temp=d.getMinutes();
+		timestamp_fltr+=temp.pad()+":";
+		temp=d.getSeconds();
+		timestamp_fltr+=temp.pad()+".00";
+		if(base.indexOf("WHERE")!=-1)
+			base+="AND time >= \'"+timestamp_fltr+"\'";
+		else
+			base+="WHERE time >= \'"+timestamp_fltr+"\'";
+	}
+	base+="%20order%20by%20time%20DESC";
+	return base
 }
 //=================================================
 function rcvAlert(Datos)
@@ -50,8 +70,6 @@ function rcvAlert(Datos)
 		for(var a=0;a<Datos.length;a++)
 		{
 			Datos[a]=Datos[a].split("\t");
-			/*if(Datos[a].length<3)
-				return "";			//	*/
 		}
 	}
 	if (winList[Obj.WinName])
