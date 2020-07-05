@@ -62,25 +62,15 @@ function rcvAlert(Datos)
 {
 	var tmp="";
 	var Obj=Datos.Obj;
-	Datos=Datos.responseText;
-	Datos=Datos.split("\n");
-	RemoveUnusedItem(Datos);
-	if(Datos.length!=0)
-	{
-		for(var a=0;a<Datos.length;a++)
-		{
-			Datos[a]=Datos[a].split("\t");
-		}
-	}
+	Datos=rcvtbl(Datos);
 	if (winList[Obj.WinName])
 	{
 		winList[Obj.WinName].SetH((10+25+25+(Datos.length*20))+"px"); //("100px");
 		winList[Obj.WinName].open();
-		if(compare2objects(Alerts,Datos)!=true)
-			winList[Obj.WinName].makeActive();
+		winList[Obj.WinName].makeActive();
 		winAutoPos();
 	}
-	Alerts=owl.deepCopy(Datos)
+	Alerts=Alerts.concat(Datos)
 	//----------------------------
 	return ShowAlerts();
 }
@@ -228,6 +218,9 @@ function alertDelFlt()
 		}
 	}
 	GetUrlB(Url,fncnone);
+	Reqest[ReqestIdx].timestamp=0;
+	Reqest[ReqestIdx].LstRqst=0
+	Alerts.length=0;
 }
 
 function ShowAlerts()
