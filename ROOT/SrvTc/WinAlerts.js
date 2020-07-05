@@ -52,7 +52,7 @@ function UpDateUrl()
 		if(base.indexOf("WHERE")!=-1)
 			base+="AND time >= \'"+timestamp_fltr+"\'";
 		else
-			base+="WHERE time >= \'"+timestamp_fltr+"\'";
+			base+="%20WHERE time >= \'"+timestamp_fltr+"\'";
 	}
 	base+="%20order%20by%20time%20DESC";
 	return base
