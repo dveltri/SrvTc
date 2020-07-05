@@ -16,6 +16,7 @@ function InitAlerts()
 	Reqest[ReqestIdx].Status=0;
 	Reqest[ReqestIdx].Refresh=1000;
 	Reqest[ReqestIdx].LstRqst=0;
+	Reqest[ReqestIdx].full_rqst=60;
 	winAdd(Reqest[ReqestIdx].WinName);
 	winUdate();
 	winList[Reqest[ReqestIdx].WinName].SetY(710);//parseInt("0"+winList["WinAllMap"].frame.style.width)+70
@@ -32,8 +33,9 @@ function UpDateUrl()
 			base+="%20OR description LIKE %27%25"+Altrafltr[i]+"%25%27"
 		}
 	}
-	if (Reqest[ReqestIdx].timestamp)
+	if (Reqest[ReqestIdx].timestamp && Reqest[ReqestIdx].full_rqst>=0)
 	{
+		Reqest[ReqestIdx].full_rqst--;
 		var d = Reqest[ReqestIdx].timestamp;
 		d.setMinutes(d.getMinutes()+d.getTimezoneOffset())
 		d.setMilliseconds(d.getMilliseconds()-Reqest[ReqestIdx].Refresh)
@@ -62,6 +64,12 @@ function rcvAlert(Datos)
 {
 	var tmp="";
 	var Obj=Datos.Obj;
+	if(Datos.urlx.indexOf("time >= ")==-1)
+	{
+		Reqest[ReqestIdx].full_rqst=60;
+		Alerts=null;
+		Alerts=new Array();
+	}
 	Datos=rcvtbl(Datos);
 	if (winList[Obj.WinName])
 	{
@@ -218,6 +226,7 @@ function alertDelFlt()
 		}
 	}
 	GetUrlB(Url,fncnone);
+	Reqest[ReqestIdx].full_rqst=0;
 	Reqest[ReqestIdx].timestamp=0;
 	Reqest[ReqestIdx].LstRqst=0
 	Alerts.length=0;
@@ -341,6 +350,7 @@ function ShowItemMap(id)
 
 function ChgSltSts(Key,Status)
 {
+	Reqest[ReqestIdx].full_rqst=0;
 	if(Status=="New")
 		GetUrlB("./setitems.jsp?sql=UPDATE alerts SET status=%27Viewed%27 WHERE key="+Key+"",fncnone);
 	if(Status=="Viewed")
