@@ -319,7 +319,7 @@ function ShowDgvpList(Datos)
 		else
 			bgcolor="#A0A0A0";
 		out+="<tr align=\"center\" bgcolor=\""+bgcolor+"\" >\n";
-		out+="	<td align=\"center\" valign=\"middle\" onclick=\"GetTcDgvpConf('"+Datos[y][0]+"');winList['List'].close();\">\n";
+		out+="	<td align=\"center\" valign=\"middle\" onclick=\"GetTcDgvpConf('"+Datos[y][0]+"');\">\n";
 		out+="		<img src=\"../img/efile.png\" width=\"18\" height=\"18\" border=\"0\" />";
 		out+="	</td>\n";
 		x=0;
