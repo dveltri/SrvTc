@@ -1,1 +1,285 @@
-var _0x33f3=["\x2E\x2F\x67\x65\x74\x69\x74\x65\x6D\x73\x2E\x6A\x73\x70\x3F\x73\x71\x6C\x3D\x53\x45\x4C\x45\x43\x54\x20\x69\x64\x2C\x69\x64\x20\x46\x52\x4F\x4D\x20\x76\x61\x72\x67\x72\x6F\x75\x70\x20\x47\x52\x4F\x55\x50\x20\x62\x79\x20\x69\x64\x20\x6F\x72\x64\x65\x72\x20\x62\x79\x20\x69\x64\x20\x64\x65\x73\x63","","\x2E\x2F\x67\x65\x74\x69\x74\x65\x6D\x73\x2E\x6A\x73\x70\x3F\x73\x71\x6C\x3D\x53\x45\x4C\x45\x43\x54\x20\x2A\x20\x46\x52\x4F\x4D\x20\x76\x61\x72\x67\x72\x6F\x75\x70\x20","\x57\x48\x45\x52\x45\x20\x69\x64\x20\x4C\x49\x4B\x45\x20\x27","\x27\x20","\x6F\x72\x64\x65\x72\x20\x62\x79\x20\x69\x64\x20\x64\x65\x73\x63","\x4C\x69\x73\x74","\x6F\x70\x65\x6E","\x6C\x65\x6E\x67\x74\x68","\x70\x78","\x35\x30\x30\x70\x78","\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C","\x4C\x69\x73\x74\x54\x69\x74\x6C\x65","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x4C\x69\x73\x74\x42\x6F\x64\x79","\x3C\x69\x6E\x70\x75\x74\x20\x63\x6C\x61\x73\x73\x3D\x22\x49\x4E\x54\x45\x58\x54\x22\x20\x69\x64\x3D\x22\x47\x72\x70\x49\x64\x22\x20\x73\x69\x7A\x65\x3D\x22\x31\x35\x22\x20\x6D\x61\x78\x6C\x65\x6E\x67\x74\x68\x3D\x22\x38\x30\x22\x20\x20\x76\x61\x6C\x75\x65\x3D\x22\x22\x20\x2F\x3E\x0A","\x3C\x73\x65\x6C\x65\x63\x74\x20\x63\x6C\x61\x73\x73\x3D\x22\x49\x4E\x54\x45\x58\x54\x22\x20\x69\x64\x3D\x22\x49\x64\x56\x61\x72\x22\x20\x3E\x0A","\x3C\x6F\x70\x74\x69\x6F\x6E\x20\x76\x61\x6C\x75\x65\x3D\x22\x22\x20\x3E\x3C\x2F\x6F\x70\x74\x69\x6F\x6E\x3E\x0A","\x77","\x69\x6E\x64\x65\x78\x4F\x66","\x57","\x3C\x6F\x70\x74\x69\x6F\x6E\x20\x76\x61\x6C\x75\x65\x3D\x22","\x22","\x3E","\x3C\x2F\x6F\x70\x74\x69\x6F\x6E\x3E\x0A","\x3C\x2F\x73\x65\x6C\x65\x63\x74\x3E\x3C\x62\x72\x2F\x3E\x0A","\x3C\x69\x6E\x70\x75\x74\x20\x74\x79\x70\x65\x3D\x22\x62\x75\x74\x74\x6F\x6E\x22\x20\x63\x6C\x61\x73\x73\x3D\x22\x49\x4E\x54\x45\x58\x54\x32\x22\x20\x76\x61\x6C\x75\x65\x3D\x22","\x22\x20\x6F\x6E\x63\x6C\x69\x63\x6B\x3D\x22\x41\x64\x64\x56\x47\x28\x29\x3B\x72\x65\x74\x75\x72\x6E\x20\x66\x61\x6C\x73\x65\x3B\x22\x20\x2F\x3E\x0A","\x22\x20\x6F\x6E\x63\x6C\x69\x63\x6B\x3D\x22\x77\x69\x6E\x4C\x69\x73\x74\x5B\x27\x4C\x69\x73\x74\x27\x5D\x2E\x63\x6C\x6F\x73\x65\x28\x29\x3B\x72\x65\x74\x75\x72\x6E\x20\x66\x61\x6C\x73\x65\x3B\x22\x20\x2F\x3E\x0A","\x3C\x74\x61\x62\x6C\x65\x20\x62\x6F\x72\x64\x65\x72\x3D\x22\x31\x22\x20\x63\x65\x6C\x6C\x70\x61\x64\x64\x69\x6E\x67\x3D\x22\x32\x22\x20\x63\x65\x6C\x6C\x73\x70\x61\x63\x69\x6E\x67\x3D\x22\x30\x22\x20\x61\x6C\x69\x67\x6E\x3D\x22\x63\x65\x6E\x74\x65\x72\x22\x20\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64\x3D\x22\x22\x20\x77\x69\x64\x74\x68\x3D\x22\x31\x30\x30\x25\x22\x20\x73\x74\x79\x6C\x65\x3D\x22\x62\x6F\x72\x64\x65\x72\x2D\x63\x6F\x6C\x6C\x61\x70\x73\x65\x3A\x63\x6F\x6C\x6C\x61\x70\x73\x65\x3B\x62\x6F\x72\x64\x65\x72\x3A\x32\x70\x78\x20\x73\x6F\x6C\x69\x64\x20\x23\x30\x30\x30\x30\x30\x30\x3B\x22\x3E\x0A","\x3C\x74\x72\x20\x61\x6C\x69\x67\x6E\x3D\x22\x63\x65\x6E\x74\x65\x72\x22\x20\x62\x67\x63\x6F\x6C\x6F\x72\x3D\x22\x23\x43\x30\x43\x30\x43\x30\x22\x20\x3E\x0A","\x09\x3C\x74\x64\x20\x61\x6C\x69\x67\x6E\x3D\x22\x63\x65\x6E\x74\x65\x72\x22\x20\x76\x61\x6C\x69\x67\x6E\x3D\x22\x6D\x69\x64\x64\x6C\x65\x22\x3E\x0A","\x09\x3C\x2F\x74\x64\x3E\x0A","\x09\x3C\x74\x64\x20\x61\x6C\x69\x67\x6E\x3D\x22\x63\x65\x6E\x74\x65\x72\x22\x3E\x0A","\x09\x09\x3C\x66\x6F\x6E\x74\x20\x73\x69\x7A\x65\x3D\x22\x31\x22\x20\x66\x61\x63\x65\x3D\x22\x56\x65\x72\x64\x61\x6E\x61\x22\x3E","\x3C\x2F\x66\x6F\x6E\x74\x3E\x0A","\x3C\x2F\x74\x72\x3E\x0A","\x23\x38\x30\x38\x30\x38\x30","\x23\x41\x30\x41\x30\x41\x30","\x3C\x74\x72\x20\x61\x6C\x69\x67\x6E\x3D\x22\x63\x65\x6E\x74\x65\x72\x22\x20\x62\x67\x63\x6F\x6C\x6F\x72\x3D\x22","\x22\x20\x3E\x0A","\x09\x3C\x74\x64\x20\x61\x6C\x69\x67\x6E\x3D\x22\x63\x65\x6E\x74\x65\x72\x22\x20\x76\x61\x6C\x69\x67\x6E\x3D\x22\x6D\x69\x64\x64\x6C\x65\x22\x20\x6F\x6E\x63\x6C\x69\x63\x6B\x3D\x22\x45\x6E\x64\x44\x61\x74\x65\x3D\x27","\x27\x3B\x53\x74\x61\x72\x74\x44\x61\x74\x65\x3D\x27","\x27\x3B\x47\x65\x74\x49\x4F\x73\x28\x27","\x27\x29\x3B\x72\x65\x74\x75\x72\x6E\x20\x66\x61\x6C\x73\x65\x3B\x22\x3E\x0A","\x09\x09\x3C\x69\x6D\x67\x20\x73\x72\x63\x3D\x22\x2E\x2E\x2F\x69\x6D\x67\x2F\x47\x72\x61\x66\x69\x63\x6F\x73\x2E\x6A\x70\x67\x22\x20\x77\x69\x64\x74\x68\x3D\x22\x31\x38\x22\x20\x68\x65\x69\x67\x68\x74\x3D\x22\x31\x38\x22\x20\x62\x6F\x72\x64\x65\x72\x3D\x22\x30\x22\x20\x2F\x3E","\x09\x3C\x74\x64\x20\x61\x6C\x69\x67\x6E\x3D\x22\x63\x65\x6E\x74\x65\x72\x22\x20\x76\x61\x6C\x69\x67\x6E\x3D\x22\x6D\x69\x64\x64\x6C\x65\x22\x20\x6F\x6E\x63\x6C\x69\x63\x6B\x3D\x22\x47\x65\x74\x55\x72\x6C\x42\x28\x27\x2E\x2F\x73\x65\x74\x69\x74\x65\x6D\x73\x2E\x6A\x73\x70\x3F\x73\x71\x6C\x3D\x44\x45\x4C\x45\x54\x45\x20\x46\x52\x4F\x4D\x20\x76\x61\x72\x67\x72\x6F\x75\x70\x20\x57\x48\x45\x52\x45\x20\x69\x64\x20\x4C\x49\x4B\x45\x20\x25\x32\x37","\x25\x32\x37\x27\x2C\x66\x6E\x63\x6E\x6F\x6E\x65\x29\x3B\x47\x65\x74\x49\x4F\x73\x4C\x69\x73\x74\x28\x29\x3B\x22\x3E\x0A","\x09\x09\x3C\x69\x6D\x67\x20\x73\x72\x63\x3D\x22\x2E\x2E\x2F\x69\x6D\x67\x2F\x64\x65\x66\x69\x6C\x65\x2E\x70\x6E\x67\x22\x20\x77\x69\x64\x74\x68\x3D\x22\x31\x38\x22\x20\x68\x65\x69\x67\x68\x74\x3D\x22\x31\x38\x22\x20\x62\x6F\x72\x64\x65\x72\x3D\x22\x30\x22\x20\x2F\x3E","\x3C\x2F\x74\x61\x62\x6C\x65\x3E\x0A","\x2E\x2F\x73\x65\x74\x69\x74\x65\x6D\x73\x2E\x6A\x73\x70\x3F\x73\x71\x6C\x3D\x44\x45\x4C\x45\x54\x45\x20\x46\x52\x4F\x4D\x20\x76\x61\x72\x67\x72\x6F\x75\x70\x20\x57\x48\x45\x52\x45\x20\x6B\x65\x79\x25\x33\x44","\x76\x61\x6C\x75\x65","\x47\x72\x70\x49\x64","\x49\x64\x56\x61\x72","\x2E\x2F\x73\x65\x74\x69\x74\x65\x6D\x73\x2E\x6A\x73\x70\x3F\x73\x71\x6C\x3D\x49\x4E\x53\x45\x52\x54\x20\x49\x4E\x54\x4F\x20\x76\x61\x72\x67\x72\x6F\x75\x70\x20\x28\x69\x64\x2C\x76\x61\x72\x29\x20\x56\x41\x4C\x55\x45\x53\x20\x28\x25\x32\x37","\x25\x32\x37\x2C\x25\x32\x37","\x25\x32\x37\x29","\x74\x6F\x4C\x6F\x63\x61\x6C\x65\x54\x69\x6D\x65\x53\x74\x72\x69\x6E\x67","\x3A","\x73\x70\x6C\x69\x74","\x20\x73\x65\x6C\x65\x63\x74\x65\x64\x3D\x22\x73\x65\x6C\x65\x63\x74\x65\x64\x22\x20","\x20\x3E","\x73\x6C\x69\x63\x65","\x30","\x3A\x30\x30","\x20\x2B\x31\x44","\x67\x65\x74\x46\x75\x6C\x6C\x59\x65\x61\x72","\x2F","\x67\x65\x74\x4D\x6F\x6E\x74\x68","\x67\x65\x74\x44\x61\x74\x65","\x20","\x2D","\x2E\x2F\x67\x65\x74\x6C\x69\x73\x74\x2E\x6A\x73\x70\x3F\x63\x6D\x70\x73\x3D\x69\x64\x26\x74\x62\x6C\x3D\x73\x63\x68\x65\x64\x75\x6C\x65\x72\x66\x6E\x63\x26\x67\x72\x70\x3D\x69\x64\x26\x6F\x72\x64\x3D\x69\x64","\x72\x65\x73\x70\x6F\x6E\x73\x65\x54\x65\x78\x74","\x0A","\x09","\x3C\x74\x64\x20\x61\x6C\x69\x67\x6E\x3D\x22\x63\x65\x6E\x74\x65\x72\x22\x20\x76\x61\x6C\x69\x67\x6E\x3D\x22\x6D\x69\x64\x64\x6C\x65\x22\x3E\x0A","\x3C\x2F\x74\x64\x3E\x0A","\x3C\x74\x64\x20\x61\x6C\x69\x67\x6E\x3D\x22\x63\x65\x6E\x74\x65\x72\x22\x20\x76\x61\x6C\x69\x67\x6E\x3D\x22\x6D\x69\x64\x64\x6C\x65\x22\x20\x72\x6F\x77\x73\x70\x61\x6E\x3D\x22\x31\x22\x3E\x0A","\x3C\x73\x65\x6C\x65\x63\x74\x20\x63\x6C\x61\x73\x73\x3D\x22\x49\x4E\x54\x45\x58\x54\x22\x20\x69\x64\x3D\x22\x46\x72\x63\x49\x64\x56\x61\x72\x22\x20\x3E\x0A","\x22\x3E","\x3C\x73\x65\x6C\x65\x63\x74\x20\x63\x6C\x61\x73\x73\x3D\x22\x49\x4E\x54\x45\x58\x54\x22\x20\x69\x64\x3D\x22\x46\x72\x63\x50\x6C\x61\x6E\x22\x20\x3E\x0A","\x3C\x73\x65\x6C\x65\x63\x74\x20\x63\x6C\x61\x73\x73\x3D\x22\x49\x4E\x54\x45\x58\x54\x22\x20\x69\x64\x3D\x22\x46\x72\x63\x54\x69\x6D\x65\x22\x20\x3E\x0A","\x22\x20\x6F\x6E\x63\x6C\x69\x63\x6B\x3D\x22\x46\x72\x63\x50\x6C\x61\x6E\x43\x6D\x64\x28\x29\x3B\x72\x65\x74\x75\x72\x6E\x20\x66\x61\x6C\x73\x65\x3B\x22\x20\x2F\x3E\x0A","\x22\x20\x20\x6F\x6E\x63\x6C\x69\x63\x6B\x3D\x22\x64\x6F\x63\x75\x6D\x65\x6E\x74\x2E\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64\x28\x27\x46\x72\x63\x50\x6C\x61\x6E\x27\x29\x2E\x76\x61\x6C\x75\x65\x3D\x30\x3B\x77\x69\x6E\x4C\x69\x73\x74\x5B\x27\x4C\x69\x73\x74\x27\x5D\x2E\x63\x6C\x6F\x73\x65\x28\x29\x3B\x72\x65\x74\x75\x72\x6E\x20\x66\x61\x6C\x73\x65\x3B\x22\x20\x2F\x3E\x0A","\x46\x72\x63\x50\x6C\x61\x6E","\x46\x72\x63\x49\x64\x56\x61\x72","\x2E\x2F\x46\x6F\x72\x63\x65\x44\x72\x76\x2E\x6A\x73\x70\x3F\x76\x61\x72\x3D","\x26\x76\x61\x6C\x3D","\x26\x74\x69\x6D\x65\x3D","\x46\x72\x63\x54\x69\x6D\x65"];var VGsOpt;var VGsDt;var VGsWinTyp=0;function GetVGsConf(){VGsWinTyp= 1;VGsOpt= 0;GetUrlB(_0x33f3[0],rcvVGsConf)}function rcvVGsConf(_0xf89bx6){VGsOpt= rcvtbl(_0xf89bx6);GetVGsList(0)}function GetVGsList(_0xf89bx8){var _0xf89bx9=_0x33f3[1];_0xf89bx9+= _0x33f3[2];if(_0xf89bx8!= 0){_0xf89bx9+= _0x33f3[3]+ _0xf89bx8+ _0x33f3[4]};_0xf89bx9+= _0x33f3[5];GetUrlB(_0xf89bx9,rcvVGsLstShw)}function rcvVGsLstShw(_0xf89bx6){VGsDt= rcvtbl(_0xf89bx6);if(winList[_0x33f3[6]]){winList[_0x33f3[6]][_0x33f3[7]]();if(!VGsDt[_0x33f3[8]]){VGsDt=  new Array()};winList[_0x33f3[6]].SetH((70+ (VGsDt[_0x33f3[8]]* 40))+ _0x33f3[9]);winList[_0x33f3[6]].SetW(_0x33f3[10])};document[_0x33f3[13]](_0x33f3[12])[_0x33f3[11]]= Str_VarGroups;document[_0x33f3[13]](_0x33f3[14])[_0x33f3[11]]= ShowVGsLstShw(0)}function ShowVGsLstShw(_0xf89bxc){var _0xf89bxd=0;var _0xf89bxe=0;var _0xf89bxf=_0x33f3[1];var _0xf89bx10=_0x33f3[1];if(VGsWinTyp== 1){_0xf89bx10+= _0x33f3[15];_0xf89bx10+= _0x33f3[16];_0xf89bx10+= _0x33f3[17];for(var _0xf89bx11=0;_0xf89bx11< VarTree[_0x33f3[8]];_0xf89bx11++){if(VarTree[_0xf89bx11][3][_0x33f3[19]](_0x33f3[18])!=  -1|| VarTree[_0xf89bx11][3][_0x33f3[19]](_0x33f3[20])!=  -1){_0xf89bx10+= _0x33f3[21]+ VarTree[_0xf89bx11][0]+ _0x33f3[22];_0xf89bx10+= _0x33f3[23]+ VarTree[_0xf89bx11][0]+ _0x33f3[24]}};_0xf89bx10+= _0x33f3[25];_0xf89bx10+= _0x33f3[26]+ Str_Add+ _0x33f3[27];_0xf89bx10+= _0x33f3[26]+ Str_Close+ _0x33f3[28]};_0xf89bx10+= _0x33f3[29];{_0xf89bx10+= _0x33f3[30];_0xf89bx10+= _0x33f3[31];_0xf89bx10+= _0x33f3[32];_0xf89bx10+= _0x33f3[33];_0xf89bx10+= _0x33f3[34]+ Str_Ident+ _0x33f3[35];_0xf89bx10+= _0x33f3[32];_0xf89bx10+= _0x33f3[31];_0xf89bx10+= _0x33f3[34]+ Str_ListVariables+ _0x33f3[35];_0xf89bx10+= _0x33f3[32];_0xf89bx10+= _0x33f3[31];_0xf89bx10+= _0x33f3[32];_0xf89bx10+= _0x33f3[36]}_0xf89bxe= 0;while(_0xf89bxe< VGsDt[_0x33f3[8]]){if((_0xf89bxe% 2)== 0){_0xf89bxf= _0x33f3[37]}else {_0xf89bxf= _0x33f3[38]};_0xf89bx10+= _0x33f3[39]+ _0xf89bxf+ _0x33f3[40];_0xf89bx10+= _0x33f3[41]+ VGsDt[_0xf89bxe][3]+ _0x33f3[42]+ VGsDt[_0xf89bxe][2]+ _0x33f3[43]+ VGsDt[_0xf89bxe][0]+ _0x33f3[44];_0xf89bx10+= _0x33f3[45];_0xf89bx10+= _0x33f3[32];{_0xf89bx10+= _0x33f3[31];_0xf89bx10+= _0x33f3[34]+ VGsDt[_0xf89bxe][0]+ _0x33f3[35];_0xf89bx10+= _0x33f3[32];_0xf89bx10+= _0x33f3[31];_0xf89bx10+= _0x33f3[34]+ VGsDt[_0xf89bxe][1]+ _0x33f3[35];_0xf89bx10+= _0x33f3[32]}_0xf89bx10+= _0x33f3[46]+ VGsDt[_0xf89bxe][3]+ _0x33f3[47];_0xf89bx10+= _0x33f3[48];_0xf89bx10+= _0x33f3[32];_0xf89bx10+= _0x33f3[36];_0xf89bxe++};_0xf89bx10+= _0x33f3[49];if(document[_0x33f3[13]](_0x33f3[14])){document[_0x33f3[13]](_0x33f3[14])[_0x33f3[11]]= _0xf89bx10};return _0xf89bx10}function DelVG(_0xf89bxc){GetUrlB(_0x33f3[50]+ _0xf89bxc+ _0x33f3[1],fncnone);GetVGsConf()}function AddVG(){if(document[_0x33f3[13]](_0x33f3[52])[_0x33f3[51]]== _0x33f3[1]){return};if(document[_0x33f3[13]](_0x33f3[53])[_0x33f3[51]]== _0x33f3[1]){return};GetUrlB(_0x33f3[54]+ document[_0x33f3[13]](_0x33f3[52])[_0x33f3[51]]+ _0x33f3[55]+ document[_0x33f3[13]](_0x33f3[53])[_0x33f3[51]]+ _0x33f3[56],fncnone);GetVGsConf()}function OptTime(){var _0xf89bx10=_0x33f3[1];var _0xf89bx15=(24* 60);var _0xf89bx16= new Date();_0xf89bx16= _0xf89bx16[_0x33f3[57]]();_0xf89bx16= _0xf89bx16[_0x33f3[59]](_0x33f3[58]);_0xf89bx16[0]= parseInt(_0xf89bx16[0]);_0xf89bx16[1]= parseInt(_0xf89bx16[1])+ 7;_0xf89bx16[1]-= (_0xf89bx16[1]% 5);if(_0xf89bx16[1]>= 60){_0xf89bx16[1]-= 60;_0xf89bx16[0]++;_0xf89bx16[0]%= 24};for(var _0xf89bx17=0;_0xf89bx17< 24;_0xf89bx17++){for(var _0xf89bx18=0;_0xf89bx18< 60;_0xf89bx18+= 5){if(((_0xf89bx17* 60)+ _0xf89bx18)>= ((_0xf89bx16[0]* 60)+ _0xf89bx16[1])){_0xf89bx15= 0};_0xf89bx10+= _0x33f3[21]+ (_0xf89bx15+ (_0xf89bx17* 60)+ _0xf89bx18)+ _0x33f3[22];if(_0xf89bx17== _0xf89bx16[0]&& _0xf89bx18== _0xf89bx16[1]){_0xf89bx10+= _0x33f3[60]};_0xf89bx10+= _0x33f3[61]+ (_0x33f3[63]+ _0xf89bx17)[_0x33f3[62]](-2)+ _0x33f3[58]+ (_0x33f3[63]+ _0xf89bx18)[_0x33f3[62]](-2)+ _0x33f3[64];if(_0xf89bx15){_0xf89bx10+= _0x33f3[65]};_0xf89bx10+= _0x33f3[24]}};return _0xf89bx10}function OptTime2(){var _0xf89bx10=_0x33f3[1];var _0xf89bx15=1;var _0xf89bx1a= new Date();var _0xf89bx16;var _0xf89bx1b;_0xf89bx16= _0xf89bx1a[_0x33f3[57]]();_0xf89bx16= _0xf89bx16[_0x33f3[59]](_0x33f3[58]);_0xf89bx16[0]= parseInt(_0xf89bx16[0]);_0xf89bx16[1]= parseInt(_0xf89bx16[1])+ 7;_0xf89bx16[1]-= (_0xf89bx16[1]% 5);if(_0xf89bx16[1]>= 60){_0xf89bx16[1]-= 60;_0xf89bx16[0]++;_0xf89bx16[0]%= 24};for(var _0xf89bx17=0;_0xf89bx17< 24;_0xf89bx17++){for(var _0xf89bx18=0;_0xf89bx18< 60;_0xf89bx18+= 5){if(((_0xf89bx17* 60)+ _0xf89bx18)>= ((_0xf89bx16[0]* 60)+ _0xf89bx16[1])){_0xf89bx15= 0};_0xf89bx1b=  new Date(_0xf89bx1a[_0x33f3[66]]()+ _0x33f3[67]+ (_0xf89bx1a[_0x33f3[68]]()+ 1)+ _0x33f3[67]+ (_0xf89bx1a[_0x33f3[69]]()+ _0xf89bx15)+ _0x33f3[70]+ (_0x33f3[63]+ _0xf89bx17)[_0x33f3[62]](-2)+ _0x33f3[58]+ (_0x33f3[63]+ _0xf89bx18)[_0x33f3[62]](-2)+ _0x33f3[64]);_0xf89bx10+= _0x33f3[21]+ _0xf89bx1b[_0x33f3[66]]()+ _0x33f3[71]+ (_0xf89bx1b[_0x33f3[68]]()+ 1)+ _0x33f3[71]+ _0xf89bx1b[_0x33f3[69]]()+ _0x33f3[70]+ (_0x33f3[63]+ _0xf89bx17)[_0x33f3[62]](-2)+ _0x33f3[58]+ (_0x33f3[63]+ _0xf89bx18)[_0x33f3[62]](-2)+ _0x33f3[64]+ _0x33f3[22];if(_0xf89bx17== _0xf89bx16[0]&& _0xf89bx18== _0xf89bx16[1]){_0xf89bx10+= _0x33f3[60]};_0xf89bx10+= _0x33f3[61]+ (_0x33f3[63]+ _0xf89bx17)[_0x33f3[62]](-2)+ _0x33f3[58]+ (_0x33f3[63]+ _0xf89bx18)[_0x33f3[62]](-2)+ _0x33f3[64];if(_0xf89bx15){_0xf89bx10+= _0x33f3[65]};_0xf89bx10+= _0x33f3[24]}};return _0xf89bx10}function FrcPlnShow(){GetUrlB(_0x33f3[72],FrcPlnShow2)}function FrcPlnShow2(_0xf89bx6){_0xf89bx6= _0xf89bx6[_0x33f3[73]];_0xf89bx6= replaceAll(_0xf89bx6,_0x33f3[74],_0x33f3[75]);_0xf89bx6= _0xf89bx6[_0x33f3[59]](_0x33f3[75]);RemoveUnusedItem(_0xf89bx6);OptGrp= _0xf89bx6;if(winList[_0x33f3[6]]){winList[_0x33f3[6]][_0x33f3[7]]();winList[_0x33f3[6]].SetH(50+ _0x33f3[9]);winList[_0x33f3[6]].SetW(_0x33f3[10])};document[_0x33f3[13]](_0x33f3[12])[_0x33f3[11]]= Str_Force_Plan;document[_0x33f3[13]](_0x33f3[14])[_0x33f3[11]]= FrcPlnCode()}function FrcPlnCode(){var _0xf89bxd=0;var _0xf89bxe=0;var _0xf89bxf=_0x33f3[1];var _0xf89bx10=_0x33f3[1];{_0xf89bx10+= _0x33f3[29];_0xf89bx10+= _0x33f3[30];_0xf89bx10+= _0x33f3[76];_0xf89bx10+= Str_VarGroupsList;_0xf89bx10+= _0x33f3[77];_0xf89bx10+= _0x33f3[78];_0xf89bx10+= Str_Plan;_0xf89bx10+= _0x33f3[77];_0xf89bx10+= _0x33f3[78];_0xf89bx10+= Str_GP_Time_Force;_0xf89bx10+= _0x33f3[77];_0xf89bx10+= _0x33f3[78];_0xf89bx10+= _0x33f3[77];_0xf89bx10+= _0x33f3[36];_0xf89bx10+= _0x33f3[30];_0xf89bx10+= _0x33f3[76];_0xf89bx10+= _0x33f3[79];_0xf89bx10+= _0x33f3[17];for(var _0xf89bx11=0;_0xf89bx11< OptGrp[_0x33f3[8]];_0xf89bx11++){_0xf89bx10+= _0x33f3[21]+ OptGrp[_0xf89bx11]+ _0x33f3[80]+ OptGrp[_0xf89bx11]+ _0x33f3[24]};_0xf89bx10+= _0x33f3[25];_0xf89bx10+= _0x33f3[77];_0xf89bx10+= _0x33f3[78];_0xf89bx10+= _0x33f3[81];_0xf89bx10+= GenOptionsV(OptFrcPln,0);_0xf89bx10+= _0x33f3[17];_0xf89bx10+= _0x33f3[25];_0xf89bx10+= _0x33f3[77];_0xf89bx10+= _0x33f3[76];_0xf89bx10+= _0x33f3[82];_0xf89bx10+= OptTime2();_0xf89bx10+= _0x33f3[25];_0xf89bx10+= _0x33f3[77];_0xf89bx10+= _0x33f3[78];_0xf89bx10+= _0x33f3[26]+ Str_Force_Plan+ _0x33f3[83];_0xf89bx10+= _0x33f3[77];_0xf89bx10+= _0x33f3[36];_0xf89bx10+= _0x33f3[49]}_0xf89bx10+= _0x33f3[26]+ Str_Close+ _0x33f3[84];return _0xf89bx10}function FrcPlanCmd(){var _0xf89bx20=parseInt(document[_0x33f3[13]](_0x33f3[85])[_0x33f3[51]]);document[_0x33f3[13]](_0x33f3[85])[_0x33f3[51]]= _0xf89bx20;if(document[_0x33f3[13]](_0x33f3[86])[_0x33f3[51]]== _0x33f3[1]){return};GetUrlB(_0x33f3[87]+ document[_0x33f3[13]](_0x33f3[86])[_0x33f3[51]]+ _0x33f3[88]+ _0xf89bx20+ _0x33f3[89]+ document[_0x33f3[13]](_0x33f3[90])[_0x33f3[51]]+ _0x33f3[1],fncnone)}
+var VGsOpt;
+var VGsDt;
+var VGsWinTyp=0;
+//---------------------------------------------------------------
+function GetVGsConf()
+{
+	VGsWinTyp=1;
+	VGsOpt=0;
+	GetUrlB("./getitems.jsp?sql=SELECT id,id FROM vargroup GROUP by id order by id desc",rcvVGsConf);
+}
+function rcvVGsConf(Datos)
+{
+	VGsOpt=rcvtbl(Datos);
+	GetVGsList(0);
+}
+function GetVGsList(id)
+{
+	var sql="";
+	sql+="./getitems.jsp?sql=SELECT * FROM vargroup ";
+	if(id!=0)
+		sql+="WHERE id LIKE '"+id+"' ";
+	sql+="order by id desc";
+	GetUrlB(sql,rcvVGsLstShw);
+}
+function rcvVGsLstShw(Datos)
+{
+	VGsDt=rcvtbl(Datos);
+	if (winList["List"])
+	{
+		winList["List"].open();
+		if(!VGsDt.length)
+			VGsDt= new Array();
+		winList["List"].SetH((70+(VGsDt.length*40))+"px");
+		winList["List"].SetW("500px");
+	}
+	document.getElementById("ListTitle").innerHTML=Str_VarGroups;
+	document.getElementById("ListBody").innerHTML=ShowVGsLstShw(0);
+}
+function ShowVGsLstShw(key)
+{
+	var x=0;
+	var y=0;
+	var bgcolor="";
+	var out="";
+	if(VGsWinTyp==1)
+	{
+		out+="<input class=\"INTEXT\" id=\"GrpId\" size=\"15\" maxlength=\"80\"  value=\"\" />\n";
+		out+="<select class=\"INTEXT\" id=\"IdVar\" >\n";
+		out+="<option value=\"\" ></option>\n";
+		for(var i=0;i<VarTree.length;i++)
+		{
+			if(VarTree[i][3].indexOf("w")!=-1 || VarTree[i][3].indexOf("W")!=-1)
+			{
+				out+="<option value=\""+VarTree[i][0]+"\"";
+				//if(key>=0)if(VarTree[i][0]==VGsDt[key][1])out+=" selected=\"selected\"";
+				out+=">"+VarTree[i][0]+"</option>\n";
+			}
+		}
+		out+="</select><br/>\n";
+		out+="<input type=\"button\" class=\"INTEXT2\" value=\""+Str_Add+"\" onclick=\"AddVG();return false;\" />\n";
+		out+="<input type=\"button\" class=\"INTEXT2\" value=\""+Str_Close+"\" onclick=\"winList['List'].close();return false;\" />\n";
+	}
+	out+="<table border=\"1\" cellpadding=\"2\" cellspacing=\"0\" align=\"center\" background=\"\" width=\"100%\" style=\"border-collapse:collapse;border:2px solid #000000;\">\n";
+	//---------------------------------------------------------------------
+	{
+		out+="<tr align=\"center\" bgcolor=\"#C0C0C0\" >\n";
+		out+="	<td align=\"center\" valign=\"middle\">\n";
+		out+="	</td>\n";
+		out+="	<td align=\"center\">\n";
+		out+="		<font size=\"1\" face=\"Verdana\">"+Str_Ident+"</font>\n";
+		out+="	</td>\n";
+		out+="	<td align=\"center\" valign=\"middle\">\n";
+		out+="		<font size=\"1\" face=\"Verdana\">"+Str_ListVariables+"</font>\n";
+		out+="	</td>\n";
+		out+="	<td align=\"center\" valign=\"middle\">\n";
+		out+="	</td>\n";
+		out+="</tr>\n";
+	}
+	//---------------------------------------------------------------------
+	y=0;
+	while(y<VGsDt.length)
+	{
+		if((y%2)==0)
+			bgcolor="#808080";
+		else
+			bgcolor="#A0A0A0";
+		out+="<tr align=\"center\" bgcolor=\""+bgcolor+"\" >\n";
+		out+="	<td align=\"center\" valign=\"middle\" onclick=\"EndDate='"+VGsDt[y][3]+"';StartDate='"+VGsDt[y][2]+"';GetIOs('"+VGsDt[y][0]+"');return false;\">\n";
+		out+="		<img src=\"../img/Graficos.jpg\" width=\"18\" height=\"18\" border=\"0\" />";
+		out+="	</td>\n";
+		{
+			out+="	<td align=\"center\" valign=\"middle\">\n";
+			out+="		<font size=\"1\" face=\"Verdana\">"+VGsDt[y][0]+"</font>\n";
+			out+="	</td>\n";
+			out+="	<td align=\"center\" valign=\"middle\">\n";
+			out+="		<font size=\"1\" face=\"Verdana\">"+VGsDt[y][1]+"</font>\n";
+			out+="	</td>\n";
+		}
+		out+="	<td align=\"center\" valign=\"middle\" onclick=\"GetUrlB('./setitems.jsp?sql=DELETE FROM vargroup WHERE id LIKE %27"+VGsDt[y][3]+"%27',fncnone);GetIOsList();\">\n";
+		out+="		<img src=\"../img/defile.png\" width=\"18\" height=\"18\" border=\"0\" />";
+		out+="	</td>\n";
+		out+="</tr>\n";
+		y++;
+	}
+	out+="</table>\n";
+	if(document.getElementById("ListBody"))
+		document.getElementById("ListBody").innerHTML=out;
+	return out;
+}
+function DelVG(key)
+{
+	GetUrlB("./setitems.jsp?sql=DELETE FROM vargroup WHERE key%3D"+key+"",fncnone);
+	GetVGsConf();
+}
+function AddVG()
+{
+	if(document.getElementById("GrpId").value=="")
+		return;
+	if(document.getElementById("IdVar").value=="")
+		return;
+	GetUrlB("./setitems.jsp?sql=INSERT INTO vargroup (id,var) VALUES (%27"+document.getElementById("GrpId").value+"%27,%27"+document.getElementById("IdVar").value+"%27)",fncnone);
+	GetVGsConf();
+}
+//---------------------------------------------------------------------------------------
+function OptTime()
+{
+		var out="";
+		var d1=(24*60);
+    var n = new Date();
+    n = n.toLocaleTimeString();
+    n=n.split(':');
+    n[0]=parseInt(n[0]);
+    n[1]=parseInt(n[1])+7;
+    n[1]-=(n[1]%5);
+		if(n[1]>=60)
+		{
+			n[1]-=60;
+			n[0]++;
+			n[0]%=24;
+		}
+  	for(var h=0;h<24;h++)
+    {
+      for(var m=0;m<60;m+=5)
+      {
+      	if(((h*60)+m)>=((n[0]*60)+n[1]))
+					d1=0;
+				out+="<option value=\""+(d1+(h*60)+m)+"\"";
+      	if(h==n[0] && m==n[1])
+					out+= " selected=\"selected\" ";
+				out+=" >"+("0"+h).slice(-2)+":"+("0"+m).slice(-2)+":00";
+				if(d1)
+					out+=" +1D";
+				out+="</option>\n";
+			}
+		}
+    return out;
+}
+
+function OptTime2()
+{
+		var out="";
+		var d1=1;
+    var d = new Date();
+		var n;
+		var t;
+    n = d.toLocaleTimeString();
+    n=n.split(':');
+    n[0]=parseInt(n[0]);
+    n[1]=parseInt(n[1])+7;
+    n[1]-=(n[1]%5);
+		if(n[1]>=60)
+		{
+			n[1]-=60;
+			n[0]++;
+			n[0]%=24;
+		}
+  	for(var h=0;h<24;h++)
+    {
+      for(var m=0;m<60;m+=5)
+      {
+      	if(((h*60)+m)>=((n[0]*60)+n[1]))
+					d1=0;
+				t=new Date(d.getFullYear()+"/"+(d.getMonth()+1)+"/"+(d.getDate()+d1)+" "+("0"+h).slice(-2)+":"+("0"+m).slice(-2)+":00");
+				out+="<option value=\""+t.getFullYear()+"-"+(t.getMonth()+1)+"-"+t.getDate()+" "+("0"+h).slice(-2)+":"+("0"+m).slice(-2)+":00"+"\"";
+      	if(h==n[0] && m==n[1])
+					out+= " selected=\"selected\" ";
+				out+=" >"+("0"+h).slice(-2)+":"+("0"+m).slice(-2)+":00";
+				if(d1)
+					out+=" +1D";
+				out+="</option>\n";
+			}
+		}
+    return out;
+}
+//---------------------------------------------------------------------------------------
+function FrcPlnShow()
+{
+	GetUrlB("./getlist.jsp?cmps=id&tbl=schedulerfnc&grp=id&ord=id",FrcPlnShow2);
+}
+function FrcPlnShow2(Datos)
+{
+	Datos=Datos.responseText;
+	Datos=replaceAll(Datos,"\n","\t");
+	Datos=Datos.split("\t");
+	RemoveUnusedItem(Datos);
+	OptGrp=Datos;
+	if (winList["List"])
+	{
+		winList["List"].open();
+		winList["List"].SetH(50+"px");
+		winList["List"].SetW("500px");
+	}
+	document.getElementById("ListTitle").innerHTML=Str_Force_Plan;
+	document.getElementById("ListBody").innerHTML=FrcPlnCode();
+}
+function FrcPlnCode()
+{
+	var x=0;
+	var y=0;
+	var bgcolor="";
+	var out="";
+	{
+		out+="<table border=\"1\" cellpadding=\"2\" cellspacing=\"0\" align=\"center\" background=\"\" width=\"100%\" style=\"border-collapse:collapse;border:2px solid #000000;\">\n";
+		//--------------------------
+		out+="<tr align=\"center\" bgcolor=\"#C0C0C0\" >\n";
+		out+="<td align=\"center\" valign=\"middle\">\n";
+		out+=Str_VarGroupsList;
+		out+="</td>\n";
+		out+="<td align=\"center\" valign=\"middle\" rowspan=\"1\">\n";
+		out+=Str_Plan;
+		out+="</td>\n";
+		out+="<td align=\"center\" valign=\"middle\" rowspan=\"1\">\n";
+		out+=Str_GP_Time_Force;
+		out+="</td>\n";
+		out+="<td align=\"center\" valign=\"middle\" rowspan=\"1\">\n";
+		out+="</td>\n";
+		out+="</tr>\n";
+		//--------------------------
+		out+="<tr align=\"center\" bgcolor=\"#C0C0C0\" >\n";
+		out+="<td align=\"center\" valign=\"middle\">\n";
+		out+="<select class=\"INTEXT\" id=\"FrcIdVar\" >\n";
+		out+="<option value=\"\" ></option>\n";
+		for(var i=0;i<OptGrp.length;i++)
+		{
+			out+="<option value=\""+OptGrp[i]+"\">"+OptGrp[i]+"</option>\n";
+		}
+		/*for(var i=0;i<VarTree.length;i++)
+		{
+			if(VarTree[i][3].indexOf("w")!=-1 || VarTree[i][3].indexOf("W")!=-1)
+			{
+				out+="<option value=\""+VarTree[i][0]+"\">"+VarTree[i][0]+"</option>\n";
+			}
+		}*/
+		out+="</select><br/>\n";
+		out+="</td>\n";
+		out+="<td align=\"center\" valign=\"middle\" rowspan=\"1\">\n";
+		//out+="<input class=\"INTEXT\" id=\"FrcPlan\" size=\"15\" maxlength=\"15\"  value=\"\" />\n";
+		out+="<select class=\"INTEXT\" id=\"FrcPlan\" >\n";
+		out+=GenOptionsV(OptFrcPln,0);
+		out+="<option value=\"\" ></option>\n";
+		out+="</select><br/>\n";
+		out+="</td>\n";
+		out+="<td align=\"center\" valign=\"middle\">\n";
+		out+="<select class=\"INTEXT\" id=\"FrcTime\" >\n";
+		out+=OptTime2();
+		out+="</select><br/>\n";
+		out+="</td>\n";
+		out+="<td align=\"center\" valign=\"middle\" rowspan=\"1\">\n";
+		out+="<input type=\"button\" class=\"INTEXT2\" value=\""+Str_Force_Plan+"\" onclick=\"FrcPlanCmd();return false;\" />\n";
+		out+="</td>\n";
+		out+="</tr>\n";
+		//--------------------------
+		out+="</table>\n";
+	}
+	out+="<input type=\"button\" class=\"INTEXT2\" value=\""+Str_Close+"\"  onclick=\"document.getElementById('FrcPlan').value=0;winList['List'].close();return false;\" />\n"; //FrcPlanCmd();
+	return out;
+}
+function FrcPlanCmd()
+{
+	var frcplan=parseInt(document.getElementById("FrcPlan").value);
+	document.getElementById("FrcPlan").value=frcplan;
+	if(document.getElementById("FrcIdVar").value=="")
+		return;
+	GetUrlB("./ForceDrv.jsp?var="+document.getElementById("FrcIdVar").value+"&val="+frcplan+"&time="+document.getElementById("FrcTime").value+"",fncnone);
+}

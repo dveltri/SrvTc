@@ -1,1 +1,281 @@
-var _0x50a8=["\x6D\x61\x78\x7A\x49\x6E\x64\x65\x78","\x72\x65\x73\x69\x7A\x65\x43\x6F\x72\x6E\x65\x72\x53\x69\x7A\x65","\x6D\x69\x6E\x69\x6D\x69\x7A\x65\x64\x54\x65\x78\x74\x57\x69\x64\x74\x68","\x69\x6E\x61\x63\x74\x69\x76\x65\x46\x72\x61\x6D\x65\x42\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64\x43\x6F\x6C\x6F\x72","\x69\x6E\x61\x63\x74\x69\x76\x65\x46\x72\x61\x6D\x65\x42\x6F\x72\x64\x65\x72\x43\x6F\x6C\x6F\x72","\x69\x6E\x61\x63\x74\x69\x76\x65\x54\x69\x74\x6C\x65\x42\x61\x72\x43\x6F\x6C\x6F\x72","\x69\x6E\x61\x63\x74\x69\x76\x65\x54\x69\x74\x6C\x65\x54\x65\x78\x74\x43\x6F\x6C\x6F\x72","\x69\x6E\x61\x63\x74\x69\x76\x65\x43\x6C\x69\x65\x6E\x74\x41\x72\x65\x61\x42\x6F\x72\x64\x65\x72\x43\x6F\x6C\x6F\x72","\x69\x6E\x61\x63\x74\x69\x76\x65\x43\x6C\x69\x65\x6E\x74\x41\x72\x65\x61\x53\x63\x72\x6F\x6C\x6C\x62\x61\x72\x43\x6F\x6C\x6F\x72","\x69\x6E\x61\x63\x74\x69\x76\x65\x42\x75\x74\x74\x6F\x6E\x73\x49\x6D\x61\x67\x65","\x61\x63\x74\x69\x76\x65\x46\x72\x61\x6D\x65\x42\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64\x43\x6F\x6C\x6F\x72","\x61\x63\x74\x69\x76\x65\x46\x72\x61\x6D\x65\x42\x6F\x72\x64\x65\x72\x43\x6F\x6C\x6F\x72","\x61\x63\x74\x69\x76\x65\x54\x69\x74\x6C\x65\x42\x61\x72\x43\x6F\x6C\x6F\x72","\x61\x63\x74\x69\x76\x65\x54\x69\x74\x6C\x65\x54\x65\x78\x74\x43\x6F\x6C\x6F\x72","\x61\x63\x74\x69\x76\x65\x43\x6C\x69\x65\x6E\x74\x41\x72\x65\x61\x42\x6F\x72\x64\x65\x72\x43\x6F\x6C\x6F\x72","\x61\x63\x74\x69\x76\x65\x43\x6C\x69\x65\x6E\x74\x41\x72\x65\x61\x53\x63\x72\x6F\x6C\x6C\x62\x61\x72\x43\x6F\x6C\x6F\x72","\x69\x6E\x4D\x6F\x76\x65\x44\x72\x61\x67","\x69\x6E\x52\x65\x73\x69\x7A\x65\x44\x72\x61\x67","\x64\x69\x76","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x73\x42\x79\x54\x61\x67\x4E\x61\x6D\x65","\x6C\x65\x6E\x67\x74\x68","\x63\x6C\x61\x73\x73\x4E\x61\x6D\x65","\x77\x69\x6E\x64\x6F\x77","\x69\x64","\x6C\x65\x66\x74","\x73\x74\x79\x6C\x65","\x66\x72\x61\x6D\x65","\x68\x65\x69\x67\x68\x74","\x63\x6C\x69\x65\x6E\x74\x41\x72\x65\x61","\x69\x73\x49\x45","\x69\x73\x4E\x53","\x76\x65\x72\x73\x69\x6F\x6E","\x75\x73\x65\x72\x41\x67\x65\x6E\x74","\x4D\x53\x49\x45","\x69\x6E\x64\x65\x78\x4F\x66","\x73\x75\x62\x73\x74\x72","\x4E\x65\x74\x73\x63\x61\x70\x65\x36\x2F","\x47\x65\x63\x6B\x6F","\x41\x6C\x6C\x57\x69\x6E\x64\x6F\x77\x73","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x0A\x3C\x64\x69\x76\x20\x69\x64\x3D\x22","\x22\x20\x63\x6C\x61\x73\x73\x3D\x22\x77\x69\x6E\x64\x6F\x77\x22\x20\x46\x69\x78\x65\x64\x53\x69\x7A\x65\x3D\x22\x30\x22\x20\x73\x74\x79\x6C\x65\x3D\x22\x7A\x2D\x69\x6E\x64\x65\x78\x3A\x20\x31\x3B\x20\x6C\x65\x66\x74\x3A\x30\x70\x78\x3B\x20\x74\x6F\x70\x3A","\x70\x78\x3B\x20\x77\x69\x64\x74\x68\x3A\x20\x36\x34\x30\x70\x78\x3B\x22\x3E\x0A\x09\x3C\x64\x69\x76\x20\x63\x6C\x61\x73\x73\x3D\x22\x74\x69\x74\x6C\x65\x42\x61\x72\x22\x3E\x0A\x09\x09\x3C\x73\x70\x61\x6E\x20\x69\x64\x3D\x22","\x54\x69\x74\x6C\x65\x22\x20\x63\x6C\x61\x73\x73\x3D\x22\x74\x69\x74\x6C\x65\x42\x61\x72\x54\x65\x78\x74\x22\x3E\x2E\x2E\x2E\x3C\x2F\x73\x70\x61\x6E\x3E\x0A\x09\x09\x3C\x73\x70\x61\x6E\x20\x69\x64\x3D\x22","\x48\x6F\x72\x61\x22\x20\x63\x6C\x61\x73\x73\x3D\x22\x74\x69\x74\x6C\x65\x42\x61\x72\x48\x6F\x72\x61\x22\x3E\x3A\x3A\x3C\x2F\x73\x70\x61\x6E\x3E\x0A\x09\x3C\x2F\x64\x69\x76\x3E\x0A\x09\x3C\x64\x69\x76\x20\x63\x6C\x61\x73\x73\x3D\x22\x63\x6C\x69\x65\x6E\x74\x41\x72\x65\x61\x22\x20\x69\x64\x3D\x22","\x42\x6F\x64\x79\x22\x20\x73\x74\x79\x6C\x65\x3D\x22\x68\x65\x69\x67\x68\x74\x3A\x20\x38\x30\x70\x78\x3B\x22\x3E\x0A\x09\x3C\x2F\x64\x69\x76\x3E\x0A\x3C\x2F\x64\x69\x76\x3E\x0A","\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C","\x63\x6C\x6F\x73\x65","\x72\x65\x6D\x6F\x76\x65\x43\x68\x69\x6C\x64","\x74\x69\x74\x6C\x65\x42\x61\x72","\x74\x69\x74\x6C\x65\x42\x61\x72\x54\x65\x78\x74","\x74\x69\x74\x6C\x65\x42\x61\x72\x42\x75\x74\x74\x6F\x6E\x73","\x75\x73\x65\x4D\x61\x70","\x6D\x61\x70","\x6E\x61\x6D\x65","\x74\x69\x74\x6C\x65\x42\x61\x72\x4D\x61\x70","\x61\x63\x74\x69\x76\x65\x42\x75\x74\x74\x6F\x6E\x73\x49\x6D\x61\x67\x65","\x73\x72\x63","\x6C\x6F\x6E\x67\x44\x65\x73\x63","\x69\x73\x4F\x70\x65\x6E","\x69\x73\x4D\x69\x6E\x69\x6D\x69\x7A\x65\x64","\x46\x69\x78\x65\x64\x50\x6F\x73","\x46\x69\x78\x65\x64\x53\x69\x7A\x65","\x6F\x70\x65\x6E","\x6D\x69\x6E\x69\x6D\x69\x7A\x65","\x72\x65\x73\x74\x6F\x72\x65","\x6D\x61\x6B\x65\x41\x63\x74\x69\x76\x65","\x53\x65\x74\x58","\x53\x65\x74\x59","\x53\x65\x74\x48","\x53\x65\x74\x57","\x46\x69\x78\x53\x69\x7A\x65","\x46\x69\x78\x50\x6F\x73","\x70\x61\x72\x65\x6E\x74\x57\x69\x6E\x64\x6F\x77","\x6F\x6E\x6D\x6F\x75\x73\x65\x6D\x6F\x76\x65","\x6F\x6E\x6D\x6F\x75\x73\x65\x6F\x75\x74","\x6F\x6E\x6D\x6F\x75\x73\x65\x64\x6F\x77\x6E","\x6F\x6E\x63\x6C\x69\x63\x6B","\x63\x68\x69\x6C\x64\x4E\x6F\x64\x65\x73","\x74\x61\x67\x4E\x61\x6D\x65","\x61\x72\x65\x61","\x77\x69\x64\x74\x68","\x6F\x66\x66\x73\x65\x74\x57\x69\x64\x74\x68","\x70\x78","\x64\x69\x73\x70\x6C\x61\x79","\x6E\x6F\x6E\x65","\x77\x69\x64\x74\x68\x44\x69\x66\x66","","\x6D\x69\x6E\x69\x6D\x75\x6D\x57\x69\x64\x74\x68","\x63\x6C\x69\x70\x54\x65\x78\x74\x4D\x69\x6E\x69\x6D\x75\x6D\x57\x69\x64\x74\x68","\x6D\x69\x6E\x69\x6D\x75\x6D\x48\x65\x69\x67\x68\x74","\x6D\x61\x78","\x76\x69\x73\x69\x62\x69\x6C\x69\x74\x79","\x76\x69\x73\x69\x62\x6C\x65","\x68\x69\x64\x64\x65\x6E","\x72\x65\x73\x74\x6F\x72\x65\x46\x72\x61\x6D\x65\x57\x69\x64\x74\x68","\x72\x65\x73\x74\x6F\x72\x65\x54\x65\x78\x74\x57\x69\x64\x74\x68","\x61\x63\x74\x69\x76\x65","\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64\x43\x6F\x6C\x6F\x72","\x62\x6F\x72\x64\x65\x72\x43\x6F\x6C\x6F\x72","\x63\x6F\x6C\x6F\x72","\x73\x63\x72\x6F\x6C\x6C\x62\x61\x72\x42\x61\x73\x65\x43\x6F\x6C\x6F\x72","\x6F\x76\x65\x72\x66\x6C\x6F\x77","\x61\x75\x74\x6F","\x7A\x49\x6E\x64\x65\x78","\x6D\x65\x6E\x75","\x77\x69\x6E\x43\x74\x72\x6C\x2E\x6D\x61\x78\x7A\x49\x6E\x64\x65\x78\x3A","\x6D\x65\x6E\x75\x2E\x49\x6E\x64\x65\x78\x3A","\x30","\x74\x6F\x70","\x73\x72\x63\x45\x6C\x65\x6D\x65\x6E\x74","\x65\x76\x65\x6E\x74","\x74\x61\x72\x67\x65\x74","\x78","\x79","\x70\x61\x67\x65\x58","\x70\x61\x67\x65\x59","\x78\x4F\x66\x66\x73\x65\x74","\x6F\x66\x66\x73\x65\x74\x4C\x65\x66\x74","\x79\x4F\x66\x66\x73\x65\x74","\x6F\x66\x66\x73\x65\x74\x54\x6F\x70","\x6F\x6E\x6D\x6F\x75\x73\x65\x75\x70","\x6D\x6F\x75\x73\x65\x6D\x6F\x76\x65","\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72","\x6D\x6F\x75\x73\x65\x75\x70","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x63\x61\x6E\x63\x65\x6C\x42\x75\x62\x62\x6C\x65","\x72\x65\x74\x75\x72\x6E\x56\x61\x6C\x75\x65","\x30\x70\x78","\x72\x65\x6D\x6F\x76\x65\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72","\x6F\x66\x66\x73\x65\x74\x58","\x6F\x66\x66\x73\x65\x74\x59","\x6C\x61\x79\x65\x72\x58","\x6C\x61\x79\x65\x72\x59","\x72\x65\x73\x69\x7A\x65\x44\x69\x72\x65\x63\x74\x69\x6F\x6E","\x6E","\x6F\x66\x66\x73\x65\x74\x48\x65\x69\x67\x68\x74","\x73","\x77","\x65","\x63\x75\x72\x73\x6F\x72","\x62\x6F\x64\x79","\x2D\x72\x65\x73\x69\x7A\x65","\x78\x50\x6F\x73\x69\x74\x69\x6F\x6E","\x79\x50\x6F\x73\x69\x74\x69\x6F\x6E","\x6F\x6C\x64\x4C\x65\x66\x74","\x6F\x6C\x64\x54\x6F\x70","\x6F\x6C\x64\x57\x69\x64\x74\x68","\x6F\x6C\x64\x48\x65\x69\x67\x68\x74","\x63\x68\x61\x72\x41\x74","\x52\x65\x73\x69\x7A\x65\x46\x6E\x63"];var MaxTop=24;var WinCount=3;var winList= new Array();var winCtrl= new Object();var browser= new Browser();var LstTop=[0,0,0];var Row2Left=0;var EnWinAutoPos=0;function winInit(){winCtrl[_0x50a8[0]]= 0;winCtrl[_0x50a8[1]]= 18;winCtrl[_0x50a8[2]]= 100;winCtrl[_0x50a8[3]]= winactFrameBackgroundColor;winCtrl[_0x50a8[4]]= winactFrameBorderColor;winCtrl[_0x50a8[5]]= winactTitleBarColor;winCtrl[_0x50a8[6]]= winactTitleTextColor;winCtrl[_0x50a8[7]]= winactClientAreaBorderColor;winCtrl[_0x50a8[8]]= winactClientAreaScrollbarColor;winCtrl[_0x50a8[9]]= winactButtonsImage;winCtrl[_0x50a8[10]]= wactFrameBackgroundColor;winCtrl[_0x50a8[11]]= wactFrameBorderColor;winCtrl[_0x50a8[12]]= wactTitleBarColor;winCtrl[_0x50a8[13]]= wactTitleTextColor;winCtrl[_0x50a8[14]]= wactClientAreaBorderColor;winCtrl[_0x50a8[15]]= wactClientAreaScrollbarColor;winCtrl[_0x50a8[16]]= false;winCtrl[_0x50a8[17]]= false}function winUdate(){winAutoPos();var _0x9806xb=document[_0x50a8[19]](_0x50a8[18]);for(var _0x9806xc=0;_0x9806xc< _0x9806xb[_0x50a8[20]];_0x9806xc++){if(_0x9806xb[_0x9806xc][_0x50a8[21]]== _0x50a8[22]){winList[_0x9806xb[_0x9806xc][_0x50a8[23]]]=  new Window(_0x9806xb[_0x9806xc])}}}function winAutoPosX(){}function winAutoPos(){if(EnWinAutoPos== 0){return};var _0x9806xb=document[_0x50a8[19]](_0x50a8[18]);LstTop[0]= 0;LstTop[1]= 0;for(var _0x9806xc=0;_0x9806xc< _0x9806xb[_0x50a8[20]];_0x9806xc++){if(_0x9806xb[_0x9806xc][_0x50a8[21]]== _0x50a8[22]){{if(LstTop[0]<= LstTop[1]){winList[_0x9806xb[_0x9806xc][_0x50a8[23]]].SetX(0);winList[_0x9806xb[_0x9806xc][_0x50a8[23]]].SetY(LstTop[0])}else {winList[_0x9806xb[_0x9806xc][_0x50a8[23]]].SetX((Row2Left+ 18));winList[_0x9806xb[_0x9806xc][_0x50a8[23]]].SetY(LstTop[1])};if(0== parseInt(winList[_0x9806xb[_0x9806xc][_0x50a8[23]]][_0x50a8[26]][_0x50a8[25]][_0x50a8[24]])){LstTop[0]+= parseInt(winList[_0x9806xb[_0x9806xc][_0x50a8[23]]][_0x50a8[28]][_0x50a8[25]][_0x50a8[27]])+ 48}else {LstTop[1]+= parseInt(winList[_0x9806xb[_0x9806xc][_0x50a8[23]]][_0x50a8[28]][_0x50a8[25]][_0x50a8[27]])+ 48}}}}}function Browser(){var _0x9806x10,_0x9806x11,_0x9806xc;this[_0x50a8[29]]= false;this[_0x50a8[30]]= false;this[_0x50a8[31]]= null;_0x9806x10= navigator[_0x50a8[32]];_0x9806x11= _0x50a8[33];if((_0x9806xc= _0x9806x10[_0x50a8[34]](_0x9806x11))>= 0){this[_0x50a8[29]]= true;this[_0x50a8[31]]= parseFloat(_0x9806x10[_0x50a8[35]](_0x9806xc+ _0x9806x11[_0x50a8[20]]));return};_0x9806x11= _0x50a8[36];if((_0x9806xc= _0x9806x10[_0x50a8[34]](_0x9806x11))>= 0){this[_0x50a8[30]]= true;this[_0x50a8[31]]= parseFloat(_0x9806x10[_0x50a8[35]](_0x9806xc+ _0x9806x11[_0x50a8[20]]));return};_0x9806x11= _0x50a8[37];if((_0x9806xc= _0x9806x10[_0x50a8[34]](_0x9806x11))>= 0){this[_0x50a8[30]]= true;this[_0x50a8[31]]= 6.1;return}}function winAdd(_0x9806x13){var _0x9806x14=document[_0x50a8[39]](_0x50a8[38]);if(document[_0x50a8[39]](_0x9806x13)){return 0};if(winList[_0x9806x13]){return 0};var _0x9806x15=_0x50a8[40]+ _0x9806x13+ _0x50a8[41]+ MaxTop+ _0x50a8[42]+ _0x9806x13+ _0x50a8[43]+ _0x9806x13+ _0x50a8[44]+ _0x9806x13+ _0x50a8[45];_0x9806x14[_0x50a8[46]]+= _0x9806x15;var _0x9806xb=document[_0x50a8[39]](_0x9806x13);winList[_0x9806xb[_0x50a8[23]]]=  new Window(_0x9806xb);return 1}function GetWinByName(_0x9806x13){for(var _0x9806xc=0;_0x9806xc< winList[_0x50a8[20]];_0x9806xc++){if(winList[_0x9806xc][_0x50a8[26]][_0x50a8[23]]== _0x9806x13){return winList[_0x9806xc]}}}function winRemove(_0x9806x13){winList[_0x9806x13][_0x50a8[47]]();var _0x9806x14=document[_0x50a8[39]](_0x50a8[38]);delete winList[_0x9806x13];var _0x9806x18=document[_0x50a8[39]](_0x9806x13);_0x9806x14[_0x50a8[48]](_0x9806x18)}function Window(_0x9806x1a){var _0x9806x1b,_0x9806x1c,_0x9806x1d,_0x9806x1e;var _0x9806xc,_0x9806x1f,_0x9806x20;this[_0x50a8[26]]= _0x9806x1a;this[_0x50a8[49]]= winFindByClassName(_0x9806x1a,_0x50a8[49]);this[_0x50a8[50]]= winFindByClassName(_0x9806x1a,_0x50a8[50]);this[_0x50a8[51]]= winFindByClassName(_0x9806x1a,_0x50a8[51]);this[_0x50a8[28]]= winFindByClassName(_0x9806x1a,_0x50a8[28]);if(this[_0x50a8[51]]){_0x9806x20= this[_0x50a8[51]][_0x50a8[52]][_0x50a8[35]](1);_0x9806x1f= document[_0x50a8[19]](_0x50a8[53]);for(_0x9806xc= 0;_0x9806xc< _0x9806x1f[_0x50a8[20]];_0x9806xc++){if(_0x9806x1f[_0x9806xc][_0x50a8[54]]== _0x9806x20){this[_0x50a8[55]]= _0x9806x1f[_0x9806xc]}}};if(this[_0x50a8[51]]){this[_0x50a8[56]]= this[_0x50a8[51]][_0x50a8[57]];this[_0x50a8[9]]= this[_0x50a8[51]][_0x50a8[58]]};this[_0x50a8[59]]= false;this[_0x50a8[60]]= false;this[_0x50a8[61]]= false;this[_0x50a8[62]]= 3;this[_0x50a8[63]]= winOpen;this[_0x50a8[47]]= winClose;this[_0x50a8[64]]= winMinimize;this[_0x50a8[65]]= winRestore;this[_0x50a8[66]]= winMakeActive;this[_0x50a8[67]]= winSetX;this[_0x50a8[68]]= winSetY;this[_0x50a8[69]]= winSetH;this[_0x50a8[70]]= winSetW;this[_0x50a8[71]]= winFixSize;this[_0x50a8[72]]= winFixPos;this[_0x50a8[26]][_0x50a8[73]]= this;this[_0x50a8[26]][_0x50a8[74]]= winResizeCursorSet;this[_0x50a8[26]][_0x50a8[75]]= winResizeCursorRestore;this[_0x50a8[26]][_0x50a8[76]]= winResizeDragStart;this[_0x50a8[49]][_0x50a8[73]]= this;this[_0x50a8[49]][_0x50a8[76]]= winMoveDragStart;this[_0x50a8[28]][_0x50a8[73]]= this;this[_0x50a8[28]][_0x50a8[77]]= winClientAreaClick;if(this[_0x50a8[51]]){for(_0x9806xc= 0;_0x9806xc< this[_0x50a8[55]][_0x50a8[78]][_0x50a8[20]];_0x9806xc++){if(this[_0x50a8[55]][_0x50a8[78]][_0x9806xc][_0x50a8[79]]== _0x50a8[80]){this[_0x50a8[55]][_0x50a8[78]][_0x9806xc][_0x50a8[73]]= this}}};_0x9806x1b= this[_0x50a8[26]][_0x50a8[25]][_0x50a8[24]];_0x9806x1c= parseInt(this[_0x50a8[26]][_0x50a8[25]][_0x50a8[81]]);this[_0x50a8[26]][_0x50a8[25]][_0x50a8[24]]= -this[_0x50a8[50]][_0x50a8[82]]+ _0x50a8[83];if(browser[_0x50a8[29]]){this[_0x50a8[50]][_0x50a8[25]][_0x50a8[84]]= _0x50a8[85];_0x9806x1d= this[_0x50a8[28]][_0x50a8[82]];this[_0x50a8[86]]= this[_0x50a8[26]][_0x50a8[82]]- _0x9806x1d;this[_0x50a8[28]][_0x50a8[25]][_0x50a8[81]]= _0x9806x1d+ _0x50a8[83];_0x9806x1e= this[_0x50a8[28]][_0x50a8[82]]- _0x9806x1d;_0x9806x1d-= _0x9806x1e;this[_0x50a8[86]]+= _0x9806x1e;this[_0x50a8[50]][_0x50a8[25]][_0x50a8[84]]= _0x50a8[87]};_0x9806x1d= this[_0x50a8[26]][_0x50a8[82]];this[_0x50a8[26]][_0x50a8[25]][_0x50a8[81]]= _0x9806x1d+ _0x50a8[83];_0x9806x1e= this[_0x50a8[26]][_0x50a8[82]]- _0x9806x1d;_0x9806x1d-= _0x9806x1e;this[_0x50a8[26]][_0x50a8[25]][_0x50a8[81]]= _0x9806x1d+ _0x50a8[83];if(browser[_0x50a8[29]]){this[_0x50a8[86]]-= _0x9806x1e};this[_0x50a8[59]]= true;this[_0x50a8[64]]();if(browser[_0x50a8[30]]&& browser[_0x50a8[31]]>= 1.2){this[_0x50a8[88]]= this[_0x50a8[26]][_0x50a8[82]]}else {this[_0x50a8[88]]= this[_0x50a8[26]][_0x50a8[82]]- _0x9806x1e};this[_0x50a8[50]][_0x50a8[25]][_0x50a8[81]]= _0x50a8[87];this[_0x50a8[89]]= this[_0x50a8[26]][_0x50a8[82]]- _0x9806x1e;this[_0x50a8[90]]= 1;this[_0x50a8[65]]();this[_0x50a8[59]]= false;_0x9806x1c= Math[_0x50a8[91]](_0x9806x1c,this[_0x50a8[88]]);this[_0x50a8[26]][_0x50a8[25]][_0x50a8[81]]= _0x9806x1c+ _0x50a8[83];if(browser[_0x50a8[29]]){this[_0x50a8[28]][_0x50a8[25]][_0x50a8[81]]= (_0x9806x1c- this[_0x50a8[86]])+ _0x50a8[83]};if(this[_0x50a8[89]]>= this[_0x50a8[88]]){this[_0x50a8[50]][_0x50a8[25]][_0x50a8[81]]= (winCtrl[_0x50a8[2]]+ _0x9806x1c- this[_0x50a8[88]])+ _0x50a8[83]};this[_0x50a8[26]][_0x50a8[25]][_0x50a8[24]]= _0x9806x1b}function winOpen(){if(this[_0x50a8[59]]){return};this[_0x50a8[66]]();this[_0x50a8[59]]= true;if(this[_0x50a8[60]]){this[_0x50a8[65]]()};this[_0x50a8[26]][_0x50a8[25]][_0x50a8[92]]= _0x50a8[93]}function winClose(){this[_0x50a8[26]][_0x50a8[25]][_0x50a8[92]]= _0x50a8[94];this[_0x50a8[59]]= false}function winMinimize(){if(!this[_0x50a8[59]]|| this[_0x50a8[60]]){return};this[_0x50a8[66]]();this[_0x50a8[95]]= this[_0x50a8[26]][_0x50a8[25]][_0x50a8[81]];this[_0x50a8[96]]= this[_0x50a8[50]][_0x50a8[25]][_0x50a8[81]];this[_0x50a8[28]][_0x50a8[25]][_0x50a8[84]]= _0x50a8[85];if(this[_0x50a8[88]]){this[_0x50a8[26]][_0x50a8[25]][_0x50a8[81]]= this[_0x50a8[88]]+ _0x50a8[83]}else {this[_0x50a8[26]][_0x50a8[25]][_0x50a8[81]]= _0x50a8[87]};this[_0x50a8[50]][_0x50a8[25]][_0x50a8[81]]= winCtrl[_0x50a8[2]]+ _0x50a8[83];this[_0x50a8[60]]= true}function winRestore(){if(!this[_0x50a8[59]]||  !this[_0x50a8[60]]){return};this[_0x50a8[66]]();this[_0x50a8[28]][_0x50a8[25]][_0x50a8[84]]= _0x50a8[87];this[_0x50a8[26]][_0x50a8[25]][_0x50a8[81]]= this[_0x50a8[95]];this[_0x50a8[50]][_0x50a8[25]][_0x50a8[81]]= this[_0x50a8[96]];this[_0x50a8[60]]= false}function winMakeActive(){if(winCtrl[_0x50a8[97]]== this){return};if(winCtrl[_0x50a8[97]]){winCtrl[_0x50a8[97]][_0x50a8[26]][_0x50a8[25]][_0x50a8[98]]= winCtrl[_0x50a8[3]];winCtrl[_0x50a8[97]][_0x50a8[26]][_0x50a8[25]][_0x50a8[99]]= winCtrl[_0x50a8[4]];winCtrl[_0x50a8[97]][_0x50a8[49]][_0x50a8[25]][_0x50a8[98]]= winCtrl[_0x50a8[5]];winCtrl[_0x50a8[97]][_0x50a8[49]][_0x50a8[25]][_0x50a8[100]]= winCtrl[_0x50a8[6]];winCtrl[_0x50a8[97]][_0x50a8[28]][_0x50a8[25]][_0x50a8[99]]= winCtrl[_0x50a8[7]];if(browser[_0x50a8[29]]){winCtrl[_0x50a8[97]][_0x50a8[28]][_0x50a8[25]][_0x50a8[101]]= winCtrl[_0x50a8[8]]};if(browser[_0x50a8[30]]&& browser[_0x50a8[31]]< 6.1){winCtrl[_0x50a8[97]][_0x50a8[28]][_0x50a8[25]][_0x50a8[102]]= _0x50a8[94]};if(winCtrl[_0x50a8[97]][_0x50a8[9]]){winCtrl[_0x50a8[97]][_0x50a8[51]][_0x50a8[57]]= winCtrl[_0x50a8[97]][_0x50a8[9]]}};{this[_0x50a8[26]][_0x50a8[25]][_0x50a8[98]]= winCtrl[_0x50a8[10]];this[_0x50a8[26]][_0x50a8[25]][_0x50a8[99]]= winCtrl[_0x50a8[11]];this[_0x50a8[49]][_0x50a8[25]][_0x50a8[98]]= winCtrl[_0x50a8[12]];this[_0x50a8[49]][_0x50a8[25]][_0x50a8[100]]= winCtrl[_0x50a8[13]];this[_0x50a8[28]][_0x50a8[25]][_0x50a8[99]]= winCtrl[_0x50a8[14]];if(browser[_0x50a8[29]]){this[_0x50a8[28]][_0x50a8[25]][_0x50a8[101]]= winCtrl[_0x50a8[15]]};if(browser[_0x50a8[30]]&& browser[_0x50a8[31]]< 6.1){this[_0x50a8[28]][_0x50a8[25]][_0x50a8[102]]= _0x50a8[103]};if(this[_0x50a8[9]]){this[_0x50a8[51]][_0x50a8[57]]= winCtrl[_0x50a8[56]]};this[_0x50a8[26]][_0x50a8[25]][_0x50a8[104]]=  ++winCtrl[_0x50a8[0]];var _0x9806x26=document[_0x50a8[39]](_0x50a8[105]);if(_0x9806x26){_0x9806x26[_0x50a8[25]][_0x50a8[104]]= winCtrl[_0x50a8[0]]+ 1;LOG(_0x50a8[106]+ winCtrl[_0x50a8[0]]);LOG(_0x50a8[107]+ _0x9806x26[_0x50a8[25]][_0x50a8[104]])};winCtrl[_0x50a8[97]]= this}}function winClientAreaClick(_0x9806x28){this[_0x50a8[73]][_0x50a8[66]]()}function winSetX(_0x9806x2a){_0x9806x2a= parseInt(_0x50a8[108]+ _0x9806x2a);this[_0x50a8[26]][_0x50a8[25]][_0x50a8[24]]= _0x9806x2a+ _0x50a8[83]}function winSetY(_0x9806x2c){_0x9806x2c= parseInt(_0x50a8[108]+ _0x9806x2c);if(_0x9806x2c< MaxTop){_0x9806x2c= MaxTop};this[_0x50a8[26]][_0x50a8[25]][_0x50a8[109]]= _0x9806x2c+ _0x50a8[83]}function winFixSize(_0x9806x11){this[_0x50a8[62]]= _0x9806x11}function winFixPos(_0x9806x11){this[_0x50a8[61]]= _0x9806x11}function winMoveDragStart(_0x9806x28){var _0x9806x30;var _0x9806x31,_0x9806x32;if(browser[_0x50a8[29]]){_0x9806x30= window[_0x50a8[111]][_0x50a8[110]][_0x50a8[79]]};if(browser[_0x50a8[30]]){_0x9806x30= _0x9806x28[_0x50a8[112]][_0x50a8[79]]};if(_0x9806x30== _0x50a8[80]|| this[_0x50a8[73]][_0x50a8[61]]){return};this[_0x50a8[73]][_0x50a8[66]]();if(browser[_0x50a8[29]]){_0x9806x31= window[_0x50a8[111]][_0x50a8[113]];_0x9806x32= window[_0x50a8[111]][_0x50a8[114]]};if(browser[_0x50a8[30]]){_0x9806x31= _0x9806x28[_0x50a8[115]];_0x9806x32= _0x9806x28[_0x50a8[116]]};winCtrl[_0x50a8[117]]= winCtrl[_0x50a8[97]][_0x50a8[26]][_0x50a8[118]]- _0x9806x31;winCtrl[_0x50a8[119]]= winCtrl[_0x50a8[97]][_0x50a8[26]][_0x50a8[120]]- _0x9806x32;if(browser[_0x50a8[29]]){document[_0x50a8[74]]= winMoveDragGo;document[_0x50a8[121]]= winMoveDragStop};if(browser[_0x50a8[30]]){document[_0x50a8[123]](_0x50a8[122],winMoveDragGo,true);document[_0x50a8[123]](_0x50a8[124],winMoveDragStop,true);_0x9806x28[_0x50a8[125]]()};winCtrl[_0x50a8[16]]= true}function winMoveDragGo(_0x9806x28){var _0x9806x31,_0x9806x32;if(!winCtrl[_0x50a8[16]]){return};if(browser[_0x50a8[29]]){_0x9806x31= window[_0x50a8[111]][_0x50a8[113]];_0x9806x32= window[_0x50a8[111]][_0x50a8[114]];window[_0x50a8[111]][_0x50a8[126]]= true;window[_0x50a8[111]][_0x50a8[127]]= false};if(browser[_0x50a8[30]]){_0x9806x31= _0x9806x28[_0x50a8[115]];_0x9806x32= _0x9806x28[_0x50a8[116]];_0x9806x28[_0x50a8[125]]()};if((_0x9806x31+ winCtrl[_0x50a8[117]])> 0){winCtrl[_0x50a8[97]][_0x50a8[26]][_0x50a8[25]][_0x50a8[24]]= (_0x9806x31+ winCtrl[_0x50a8[117]])+ _0x50a8[83]}else {winCtrl[_0x50a8[97]][_0x50a8[26]][_0x50a8[25]][_0x50a8[24]]= _0x50a8[128]};if((_0x9806x32+ winCtrl[_0x50a8[119]])> MaxTop){winCtrl[_0x50a8[97]][_0x50a8[26]][_0x50a8[25]][_0x50a8[109]]= (_0x9806x32+ winCtrl[_0x50a8[119]])+ _0x50a8[83]}else {winCtrl[_0x50a8[97]][_0x50a8[26]][_0x50a8[25]][_0x50a8[109]]= MaxTop+ _0x50a8[83]}}function winMoveDragStop(_0x9806x28){winCtrl[_0x50a8[16]]= false;if(browser[_0x50a8[29]]){document[_0x50a8[74]]= null;document[_0x50a8[121]]= null};if(browser[_0x50a8[30]]){document[_0x50a8[129]](_0x50a8[122],winMoveDragGo,true);document[_0x50a8[129]](_0x50a8[124],winMoveDragStop,true)}}function winSetH(_0x9806x36){_0x9806x36= parseInt(_0x50a8[108]+ _0x9806x36);this[_0x50a8[28]][_0x50a8[25]][_0x50a8[27]]= _0x9806x36+ _0x50a8[83]}function winSetW(_0x9806x38){_0x9806x38= parseInt(_0x50a8[108]+ _0x9806x38);this[_0x50a8[26]][_0x50a8[25]][_0x50a8[81]]= _0x9806x38+ _0x50a8[83];if(this[_0x50a8[26]][_0x50a8[25]][_0x50a8[24]]== _0x50a8[128]&& Row2Left< parseInt(_0x50a8[108]+ this[_0x50a8[26]][_0x50a8[25]][_0x50a8[81]])){Row2Left= parseInt(_0x50a8[108]+ this[_0x50a8[26]][_0x50a8[25]][_0x50a8[81]])}}function winResizeCursorSet(_0x9806x28){var _0x9806x30;var _0x9806x3a,_0x9806x3b;if(this[_0x50a8[73]][_0x50a8[60]]|| winCtrl[_0x50a8[17]]){return};if(browser[_0x50a8[29]]){_0x9806x30= window[_0x50a8[111]][_0x50a8[110]]};if(browser[_0x50a8[30]]){_0x9806x30= _0x9806x28[_0x50a8[112]]};if(_0x9806x30!= this[_0x50a8[73]][_0x50a8[26]]){return};if(browser[_0x50a8[29]]){_0x9806x3a= window[_0x50a8[111]][_0x50a8[130]];_0x9806x3b= window[_0x50a8[111]][_0x50a8[131]]};if(browser[_0x50a8[30]]){_0x9806x3a= _0x9806x28[_0x50a8[132]];_0x9806x3b= _0x9806x28[_0x50a8[133]]};winCtrl[_0x50a8[134]]= _0x50a8[87];if(_0x9806x3b<= winCtrl[_0x50a8[1]]){winCtrl[_0x50a8[134]]+= _0x50a8[135]}else {if(_0x9806x3b>= this[_0x50a8[73]][_0x50a8[26]][_0x50a8[136]]- winCtrl[_0x50a8[1]]){winCtrl[_0x50a8[134]]+= _0x50a8[137]}};if(_0x9806x3a<= winCtrl[_0x50a8[1]]){winCtrl[_0x50a8[134]]+= _0x50a8[138]}else {if(_0x9806x3a>= this[_0x50a8[73]][_0x50a8[26]][_0x50a8[82]]- winCtrl[_0x50a8[1]]){winCtrl[_0x50a8[134]]+= _0x50a8[139]}};if(winCtrl[_0x50a8[134]]== _0x50a8[87]){this[_0x50a8[75]](_0x9806x28);return};if(browser[_0x50a8[29]]){document[_0x50a8[141]][_0x50a8[25]][_0x50a8[140]]= winCtrl[_0x50a8[134]]+ _0x50a8[142]};if(browser[_0x50a8[30]]){this[_0x50a8[73]][_0x50a8[26]][_0x50a8[25]][_0x50a8[140]]= winCtrl[_0x50a8[134]]+ _0x50a8[142]}}function winResizeCursorRestore(_0x9806x28){if(winCtrl[_0x50a8[17]]){return};if(browser[_0x50a8[29]]){document[_0x50a8[141]][_0x50a8[25]][_0x50a8[140]]= _0x50a8[87]};if(browser[_0x50a8[30]]){this[_0x50a8[73]][_0x50a8[26]][_0x50a8[25]][_0x50a8[140]]= _0x50a8[87]}}function winResizeDragStart(_0x9806x28){var _0x9806x30;if(browser[_0x50a8[29]]){_0x9806x30= window[_0x50a8[111]][_0x50a8[110]]};if(browser[_0x50a8[30]]){_0x9806x30= _0x9806x28[_0x50a8[112]]};if((_0x9806x30!= this[_0x50a8[73]][_0x50a8[26]])|| this[_0x50a8[73]][_0x50a8[62]]== 0){return};this[_0x50a8[73]][_0x50a8[66]]();if(this[_0x50a8[73]][_0x50a8[60]]){return};if(browser[_0x50a8[29]]){winCtrl[_0x50a8[143]]= window[_0x50a8[111]][_0x50a8[113]];winCtrl[_0x50a8[144]]= window[_0x50a8[111]][_0x50a8[114]]};if(browser[_0x50a8[30]]){winCtrl[_0x50a8[143]]= _0x9806x28[_0x50a8[115]];winCtrl[_0x50a8[144]]= _0x9806x28[_0x50a8[116]]};winCtrl[_0x50a8[145]]= parseInt(this[_0x50a8[73]][_0x50a8[26]][_0x50a8[25]][_0x50a8[24]],10);winCtrl[_0x50a8[146]]= parseInt(this[_0x50a8[73]][_0x50a8[26]][_0x50a8[25]][_0x50a8[109]],10);winCtrl[_0x50a8[147]]= parseInt(this[_0x50a8[73]][_0x50a8[26]][_0x50a8[25]][_0x50a8[81]],10);winCtrl[_0x50a8[148]]= parseInt(this[_0x50a8[73]][_0x50a8[28]][_0x50a8[25]][_0x50a8[27]],10);if(browser[_0x50a8[29]]){document[_0x50a8[74]]= winResizeDragGo;document[_0x50a8[121]]= winResizeDragStop};if(browser[_0x50a8[30]]){document[_0x50a8[123]](_0x50a8[122],winResizeDragGo,true);document[_0x50a8[123]](_0x50a8[124],winResizeDragStop,true);_0x9806x28[_0x50a8[125]]()};winCtrl[_0x50a8[17]]= true}function winResizeDragGo(_0x9806x28){var _0x9806x3f,_0x9806x40,_0x9806x41,_0x9806x42;var _0x9806x43,_0x9806x44;var _0x9806x1d,_0x9806x45;if(!winCtrl[_0x50a8[17]]){return};_0x9806x3f= false;_0x9806x40= false;_0x9806x41= false;_0x9806x42= false;if(winCtrl[_0x50a8[134]][_0x50a8[149]](0)== _0x50a8[135]){_0x9806x3f= true};if(winCtrl[_0x50a8[134]][_0x50a8[149]](0)== _0x50a8[137]){_0x9806x40= true};if(winCtrl[_0x50a8[134]][_0x50a8[149]](0)== _0x50a8[139]|| winCtrl[_0x50a8[134]][_0x50a8[149]](1)== _0x50a8[139]){_0x9806x41= true};if(winCtrl[_0x50a8[134]][_0x50a8[149]](0)== _0x50a8[138]|| winCtrl[_0x50a8[134]][_0x50a8[149]](1)== _0x50a8[138]){_0x9806x42= true};if(browser[_0x50a8[29]]){_0x9806x43= window[_0x50a8[111]][_0x50a8[113]]- winCtrl[_0x50a8[143]];_0x9806x44= window[_0x50a8[111]][_0x50a8[114]]- winCtrl[_0x50a8[144]]};if(browser[_0x50a8[30]]){_0x9806x43= _0x9806x28[_0x50a8[115]]- winCtrl[_0x50a8[143]];_0x9806x44= _0x9806x28[_0x50a8[116]]- winCtrl[_0x50a8[144]]};if(_0x9806x42){_0x9806x43=  -_0x9806x43};if(_0x9806x3f){_0x9806x44=  -_0x9806x44};if((winCtrl[_0x50a8[97]][_0x50a8[62]]& 4)!= 0&& winCtrl[_0x50a8[134]][_0x50a8[20]]== 2){_0x9806x44= _0x9806x43;_0x9806x1d= winCtrl[_0x50a8[147]]+ _0x9806x43;_0x9806x45= winCtrl[_0x50a8[148]]+ _0x9806x44}else {if((winCtrl[_0x50a8[97]][_0x50a8[62]]& 1)!= 0){_0x9806x1d= winCtrl[_0x50a8[147]]+ _0x9806x43}else {_0x9806x1d= winCtrl[_0x50a8[147]]};if((winCtrl[_0x50a8[97]][_0x50a8[62]]& 2)!= 0){_0x9806x45= winCtrl[_0x50a8[148]]+ _0x9806x44}else {_0x9806x45= winCtrl[_0x50a8[148]]}};if(_0x9806x1d<= winCtrl[_0x50a8[97]][_0x50a8[88]]){_0x9806x1d= winCtrl[_0x50a8[97]][_0x50a8[88]];_0x9806x43= _0x9806x1d- winCtrl[_0x50a8[147]]};if(_0x9806x45<= winCtrl[_0x50a8[97]][_0x50a8[90]]){_0x9806x45= winCtrl[_0x50a8[97]][_0x50a8[90]];_0x9806x44= _0x9806x45- winCtrl[_0x50a8[148]]};if(_0x9806x41|| _0x9806x42){winCtrl[_0x50a8[97]][_0x50a8[26]][_0x50a8[25]][_0x50a8[81]]= _0x9806x1d+ _0x50a8[83];if(browser[_0x50a8[29]]){winCtrl[_0x50a8[97]][_0x50a8[28]][_0x50a8[25]][_0x50a8[81]]= (_0x9806x1d- winCtrl[_0x50a8[97]][_0x50a8[86]])+ _0x50a8[83]}};if(_0x9806x3f|| _0x9806x40){winCtrl[_0x50a8[97]][_0x50a8[28]][_0x50a8[25]][_0x50a8[27]]= _0x9806x45+ _0x50a8[83]};if(_0x9806x41|| _0x9806x42){if(_0x9806x1d< winCtrl[_0x50a8[97]][_0x50a8[89]]){winCtrl[_0x50a8[97]][_0x50a8[50]][_0x50a8[25]][_0x50a8[81]]= (winCtrl[_0x50a8[2]]+ _0x9806x1d- winCtrl[_0x50a8[97]][_0x50a8[88]])+ _0x50a8[83]}else {winCtrl[_0x50a8[97]][_0x50a8[50]][_0x50a8[25]][_0x50a8[81]]= _0x50a8[87]}};if(_0x9806x42){if((winCtrl[_0x50a8[145]]- _0x9806x43)> 0){winCtrl[_0x50a8[97]][_0x50a8[26]][_0x50a8[25]][_0x50a8[24]]= (winCtrl[_0x50a8[145]]- _0x9806x43)+ _0x50a8[83]}else {winCtrl[_0x50a8[97]][_0x50a8[26]][_0x50a8[25]][_0x50a8[24]]= _0x50a8[128]}};if(_0x9806x3f){if((winCtrl[_0x50a8[146]]- _0x9806x44)> MaxTop){winCtrl[_0x50a8[97]][_0x50a8[26]][_0x50a8[25]][_0x50a8[109]]= (winCtrl[_0x50a8[146]]- _0x9806x44)+ _0x50a8[83]}else {winCtrl[_0x50a8[97]][_0x50a8[26]][_0x50a8[25]][_0x50a8[109]]= MaxTop+ _0x50a8[83]}};if(browser[_0x50a8[29]]){window[_0x50a8[111]][_0x50a8[126]]= true;window[_0x50a8[111]][_0x50a8[127]]= false};if(browser[_0x50a8[30]]){_0x9806x28[_0x50a8[125]]()}}function winResizeDragStop(_0x9806x28){winCtrl[_0x50a8[17]]= false;if(browser[_0x50a8[29]]){document[_0x50a8[74]]= null;document[_0x50a8[121]]= null};if(browser[_0x50a8[30]]){document[_0x50a8[129]](_0x50a8[122],winResizeDragGo,true);document[_0x50a8[129]](_0x50a8[124],winResizeDragStop,true)};if(winCtrl[_0x50a8[97]][_0x50a8[150]]){winCtrl[_0x50a8[97]].ResizeFnc()}}function winFindByClassName(_0x9806x1a,_0x9806x48){var _0x9806xc,_0x9806x49;if(_0x9806x1a[_0x50a8[21]]== _0x9806x48){return _0x9806x1a};for(_0x9806xc= 0;_0x9806xc< _0x9806x1a[_0x50a8[78]][_0x50a8[20]];_0x9806xc++){_0x9806x49= winFindByClassName(_0x9806x1a[_0x50a8[78]][_0x9806xc],_0x9806x48);if(_0x9806x49!= null){return _0x9806x49}};return null}
+//AttachEvent(window,'load',UL2Menu_ConvertMenu,true);
+var MenuElement;
+
+function IniMenu(mnuElement)
+{
+	MenuElement
+	out="<ul id=\"menu\" class=\"horizontal\" border=\"0\">\n";
+	//=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=
+	out+="<li>";
+	out+="<img src=\"../img/conf.jpg\" width=\"18\" height=\"18\" border=\"0\" />"+Str_MN_Config;
+	out+="<ul>\n";
+		//-----------------------
+		out+="<li><a href=\"\" onclick=\"ShowtUsers();return false\">";
+		out+="<img src=\"../img/usergroup.png\" width=\"18\" height=\"18\" border=\"0\" /> "+Str_AdminUsers;
+		out+="</a></li>\n";
+		//-----------------------
+		out+="<li>";
+		out+="<img src=\"../img/sts.jpg\" width=\"18\" height=\"18\" border=\"0\" />\n"+Str_Statistic;
+		out+="<ul>";
+			//- - - - - - - - - - -
+			out+="<li><a href=\"\" onclick=\"GetIOsListConf();return false\">";
+			out+="<img src=\"../img/sts.jpg\" width=\"18\" height=\"18\" border=\"0\" />\n"+Str_MN_Config;
+			out+="</li>\n";
+			//- - - - - - - - - - -
+			out+="<li><a href=\"\" onclick=\"GetIOsList();return false\">";
+			out+="<img src=\"../img/sts.jpg\" width=\"18\" height=\"18\" border=\"0\" />\n"+Str_StatisticList;
+			out+="</li>\n";
+			//- - - - - - - - - - -
+		out+="</ul></li>\n";
+		//-----------------------
+		out+="<li>";
+		out+="<img src=\"../img/sch.jpg\" width=\"18\" height=\"18\" border=\"0\" /> "+Str_Scheduler;
+		out+="<ul>";
+			//- - - - - - - - - - -
+			out+="<li><a href=\"\" onclick=\"GetSch('');return false\">";
+			out+="<img src=\"../img/sch.jpg\" width=\"18\" height=\"18\" border=\"0\" /> "+Str_AdminScheduler;
+			out+="</a></li>\n";
+			//- - - - - - - - - - -
+			out+="<li><a href=\"\" onclick=\"GetSchActList();return false\">";
+			out+="<img src=\"../img/sch.jpg\" width=\"18\" height=\"18\" border=\"0\" /> "+Str_SchedulersFnc;
+			out+="</a></li>\n";
+			//- - - - - - - - - - -
+		out+="</ul></li>\n";
+		//-----------------------
+		out+="<li>";
+		out+="<img src=\"../img/TC3.png\" width=\"18\" height=\"18\" border=\"0\" /> "+Str_AdminDevice;
+		out+="<ul>";
+			//- - - - - - - - - - -
+			out+="<li><a href=\"\" onclick=\"GetListHttp();return false\">";
+			out+="<img src=\"../img/plc0.png\" width=\"18\" height=\"18\" border=\"0\" /> "+Str_ListDevice;
+			out+="</a></li>\n";
+			//- - - - - - - - - - -
+			out+="<li><a href=\"\" onclick=\"AddtTcHttpConf();return false\">";
+			out+="<img src=\"../img/plc0.png\" width=\"18\" height=\"18\" border=\"0\" /> "+Str_AddDeviceHttp;
+			out+="</a></li>\n";
+			//- - - - - - - - - - -
+		out+="</ul></li>\n";
+		//-----------------------
+		out+="<li>";
+		out+="<img src=\"../img/BolaDelMundo.png\" width=\"18\" height=\"18\" border=\"0\" />\n"+Str_Map;
+		out+="<ul>";
+			//- - - - - - - - - - -
+			out+="<li><a href=\"\" onclick=\"AddtTcHttpConf();RefreshMapItem();return false;\">";
+			out+="<img src=\"../img/BolaDelMundo.png\" width=\"18\" height=\"18\" border=\"0\" />\n"+Str_MapItem;
+			out+="</a></li>\n";
+			//- - - - - - - - - - -
+			out+="<li><a href=\"\" onclick=\"GetUrlB('./getlist.jsp?cmps=*&tbl=mapitems&ord=variable',rcvMapList);return false;\">";
+			out+="<img src=\"../img/BolaDelMundo.png\" width=\"18\" height=\"18\" border=\"0\" />\n"+Str_MapList;
+			out+="</a></li>\n";
+			//- - - - - - - - - - -
+		out+="</ul></li>\n";
+		//-----------------------
+	out+="</ul></li>";
+	//=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=
+	out+="<li>";
+	out+="<img src=\"../img/Graficos.jpg\" width=\"16\" height=\"16\" border=\"0\" />"+Str_MN_Info;
+	out+="<ul>"
+		//-----------------------
+		out+="<li><a href=\"\" onclick=\"MapPos("+GlobView+");return false;\">";
+		out+="<img src=\"../img/BolaDelMundo.png\" width=\"18\" height=\"18\" border=\"0\" />\n"+Str_Map;
+		out+="</a></li>\n";
+		//-----------------------
+		out+="<li><a href=\"\" onclick=\"GetUrlB('./getitems.jsp?sql=SELECT * FROM variables order by id',rcvList);return false;\">\n";
+		out+="<img src=\"../img/io.jpg\" width=\"18\" height=\"18\" border=\"0\" />\n"+Str_ListVariables;
+		out+="</a></li>\n";		
+		//-----------------------
+		out+="<li><a href=\"\" onclick=\"alert("+Str_About_Msg+");return false;\">\n";
+		out+="<img src=\"../img/file.png\" width=\"18\" height=\"18\" border=\"0\" />\n"+Str_About;
+		out+="</a></li>\n";		
+		//-----------------------
+	out+="</ul></li>";
+	//=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=
+	out+="</ul>\n";
+	//-------------------------------------------------------------- */
+	document.getElementById("divMenu").innerHTML=out;
+}
+
+function MenuSts(MnuX,MnuY,MnuOri)
+{
+	var DivMenu1 = document.getElementById('DivMenu');
+	if (MnuX!=null)
+	 DivMenu1.style.left =MnuX;
+	if (MnuY!=null)
+	 DivMenu1.style.top =MnuY;
+	if (MnuOri=='v')
+	 ChangeOrientation();
+	DivMenu1.style.visibility='visible';
+}
+
+function UL2Menu_ConvertMenu()
+{
+	var menu=document.getElementById('menu');
+	if (!menu) return;
+	var menuIsHorizontal=HasClass(menu,'horizontal');
+	var lis = menu.getElementsByTagName('li');
+	for (var i=0,len=lis.length;i<len;i++)
+	{
+		var li=lis[i];
+		var uls = li.getElementsByTagName('ul');
+		if (!uls || uls.length==0) continue;
+		var ul=uls[0];
+		li.sub=ul;
+		li.onmouseover=UL2Menu_ShowHead;
+		li.onmouseout=UL2Menu_HideHead;
+		li.isTop = li.parentNode==menu;
+		li.isHorizontal = (menuIsHorizontal && li.isTop);
+		if (li.addedArrow || li.isTop) continue;
+		//var arrow=document.createElement('span');
+		//arrow.innerHTML='&nbsp;&rArr;';
+		//var a = li.getElementsByTagName('a');
+		//if (a && a.length>0 && a[0].parentNode==li) a[0].innerHTML+='&nbsp;&rArr;';
+		//else li.insertBefore(arrow,li.childNodes[1]);
+		//li.addedArrow=true;
+	}
+}
+
+function UL2Menu_ShowHead()
+{
+	var li=this;
+	var x1;
+	var y1;
+	AddClass(li,'active');
+	var xy=FindXYWH(li);
+	if (li.isTop)
+	{
+		x1=(xy.x+(!li.isHorizontal?xy.w:0))+'px';
+		li.sub.style.left=x1;
+		y1=(xy.y+(li.isHorizontal?xy.h:0)-(li.isTop?0:1))+'px';
+		li.sub.style.top=y1;
+	}
+	else 
+	{
+		li.sub.style.left=(li.offsetWidth-5)+'px';
+		li.sub.style.top=li.offsetTop+'px';
+	}
+	li.sub.style.zIndex=winCtrl.maxzIndex+1
+	li.sub.style.visibility='visible';
+	LOG(x1 + " "+ y1+" " +li.sub.style.zIndex);	
+}
+
+function UL2Menu_HideHead()
+{
+	var li=this;
+	li.sub.style.visibility='hidden';
+	KillClass(li,'active');
+	LOG("kil head" + this );
+}
+
+function FindXY(obj)
+{
+	var x=0,y=0;
+	while (obj)
+	{
+		x+=obj.offsetLeft - (obj.scrollLeft || 0);
+		y+=obj.offsetTop - (obj.scrollTop || 0);
+		obj=null;
+	}
+	return {x:x,y:y};
+}
+
+function FindXYWH(obj)
+{
+	if (!obj) return { x:0, y:0, w:0, h:0 };
+	var objXY = FindXY(obj);
+	return { x:objXY.x, y:objXY.y, w:obj.offsetWidth||0, h:obj.offsetHeight||0 };
+}
+
+function AttachEvent(obj,evt,fnc,useCapture)
+{
+	if (obj.addEventListener)
+	{
+		obj.addEventListener(evt,fnc,useCapture);
+		return true;
+	}
+	else
+	{
+		if (obj.attachEvent)
+		{
+			return obj.attachEvent("on"+evt,fnc);
+		}
+		else
+		{
+			obj['on'+evt]=fnc;
+		}
+	}
+	return true;
+}
+
+function HasClass(obj,cName)
+{ 
+	return (!obj || !obj.className)?false:(new RegExp("\\b"+cName+"\\b")).test(obj.className) 
+}
+
+function AddClass(obj,cName)
+{
+
+	if (!obj) return;
+	if (obj.className==null) obj.className='';
+	obj.className+=(obj.className.length>0?' ':'')+cName;
+	obj.style.zIndex= winCtrl.maxzIndex;
+//	LOG("ZI:"+obj.style.zIndex);//= winCtrl.maxzIndex+1;
+	return;
+}
+
+function KillClass(obj,cName)
+{
+	if (!obj) return;
+	return obj.className=obj.className.replace(RegExp("^"+cName+"\\b\\s*|\\s*\\b"+cName+"\\b",'g'),'');
+}
+
+function KillCSS()
+{
+	var css=document.styleSheets[0];
+	css.disabled=!css.disabled;
+}
+
+function ChangeOrientation()
+{
+	var menu = document.getElementById('menu');
+	//menu.className=(menu.className=='vertical')?'horizontal':'vertical';
+	if (menu.className=='vertical')
+	{
+		menu.className='horizontal'
+		WCookie('MnuOri','h');
+	}
+	else
+	{
+		menu.className='vertical';
+		WCookie('MnuOri','v');
+	}
+	UL2Menu_ConvertMenu(); //fix cached calculations
+}
+
+function checkS(event)
+{
+	// capture the mouse position
+	if (event.button==4)
+	{
+		var posx = 0;
+		var posy = 0;
+		var e = window.event;
+		if (e.pageX || e.pageY)
+		{
+			posx = e.pageX;
+			posy = e.pageY;
+		}
+		else if (e.clientX || e.clientY)
+		{
+			posx = e.clientX;
+			posy = e.clientY;
+		}
+		//document.getElementById('DivMenu').innerHTML = 'Mouse position is: X='+posx+' Y='+posy;
+		document.getElementById('DivMenu').style.left = posx;
+		WCookie("MnuX",posx);
+		document.getElementById('DivMenu').style.top = posy;
+		WCookie("MnuY",posy);
+		//document.oncontextmenu=new Function("return false") 
+	}	
+}
+
+document.onmousedown=checkS;
