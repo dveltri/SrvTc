@@ -1,1 +1,381 @@
-var _0xdc4e=["\x50\x6C\x63\x73","\x4C\x6F\x6F\x70\x73","\x49\x6E\x70\x75\x74\x73","\x70\x68\x61\x73\x65\x73","\x76\x6F\x6C\x74\x61\x67\x65","\x72\x74\x63","\x76\x65\x72\x73\x69\x6F\x6E","\x4D\x6F\x64\x65","\x52\x65\x49\x6E\x74\x65\x6E\x74\x6F","\x50\x6C\x61\x6E","\x46\x6C\x61\x67\x73","\x73\x61\x6D\x70\x6C\x65\x73","\x61\x63\x74","\x63\x6F\x75\x6E\x74","\x53\x74\x61\x74\x65","\x63\x75\x72\x72\x65\x6E\x74","\x70\x6F\x74\x52","\x70\x6F\x74\x59","\x70\x6F\x74\x47","\x45\x72\x72\x6F\x72\x46\x6C\x67\x73","\x6E\x6F\x6E\x65","\x44\x69\x73\x61\x62\x6C\x65","\x64\x72\x76\x31","\x44\x72\x69\x76\x65\x72\x20\x31","\x64\x72\x76\x32","\x44\x72\x69\x76\x65\x72\x20\x32","\x44\x72\x76\x52\x74\x63","\x44\x72\x69\x76\x65\x72\x20\x52\x54\x43","\x52\x54\x43","\x56\x6F\x6C\x74\x61\x67\x65","\x50\x6C\x63\x4D\x6F\x64\x65","\x4E\x70\x6C\x61\x6E","\x43\x70\x68","\x43\x69\x6F","\x50\x68\x43\x6F\x6C\x6F\x72","\x50\x68\x52\x43\x6F\x6C\x6F\x72","\x50\x68\x43\x75\x72\x72\x65\x6E\x74","\x50\x68\x45\x72\x72\x6F\x72","\x49\x4F\x73\x74\x73","\x6F\x6B","\x54\x63\x48\x74\x74\x70\x43\x6F\x6E\x66","\x6F\x70\x65\x6E","\x32\x39\x30\x70\x78","\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C","\x54\x63\x48\x74\x74\x70\x43\x6F\x6E\x66\x54\x69\x74\x6C\x65","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x54\x63\x48\x74\x74\x70\x43\x6F\x6E\x66\x42\x6F\x64\x79","\x64\x72\x76","\x73\x72\x76\x69\x64","\x70\x64\x67\x76\x69\x64","\x69\x64","\x31","\x69\x70\x70\x6F\x72\x74","\x63\x6D\x70\x73","\x4B\x65\x79","\x54\x69\x6D\x65\x4F\x75\x74","\x53\x74\x61\x74\x75\x73","","\x72\x65\x73\x70\x6F\x6E\x73\x65\x54\x65\x78\x74","\x0A","\x73\x70\x6C\x69\x74","\x6C\x65\x6E\x67\x74\x68","\x55\x52\x4C","\x09","\x74\x6F\x75\x74\x2E","\x72\x65\x70\x6C\x61\x63\x65","\x49\x44","\x2C","\x4C\x73\x74\x55\x70\x64","\x4D\x6F\x64\x65\x6C","\x73\x70\x6C\x69\x63\x65","\x3C\x74\x61\x62\x6C\x65\x20\x62\x6F\x72\x64\x65\x72\x3D\x22\x31\x22\x20\x63\x65\x6C\x6C\x70\x61\x64\x64\x69\x6E\x67\x3D\x22\x32\x22\x20\x63\x65\x6C\x6C\x73\x70\x61\x63\x69\x6E\x67\x3D\x22\x30\x22\x20\x61\x6C\x69\x67\x6E\x3D\x22\x63\x65\x6E\x74\x65\x72\x22\x20\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64\x3D\x22\x22\x20\x77\x69\x64\x74\x68\x3D\x22\x31\x30\x30\x25\x22\x20\x73\x74\x79\x6C\x65\x3D\x22\x62\x6F\x72\x64\x65\x72\x2D\x63\x6F\x6C\x6C\x61\x70\x73\x65\x3A\x63\x6F\x6C\x6C\x61\x70\x73\x65\x3B\x62\x6F\x72\x64\x65\x72\x3A\x32\x70\x78\x20\x73\x6F\x6C\x69\x64\x20\x23\x30\x30\x30\x30\x30\x30\x3B\x22\x3E\x0A","\x3C\x74\x72\x20\x61\x6C\x69\x67\x6E\x3D\x22\x63\x65\x6E\x74\x65\x72\x22\x20\x62\x67\x63\x6F\x6C\x6F\x72\x3D\x22\x23\x43\x30\x43\x30\x43\x30\x22\x3E\x0A","\x09\x3C\x74\x64\x20\x61\x6C\x69\x67\x6E\x3D\x22\x63\x65\x6E\x74\x65\x72\x22\x3E\x0A","\x09\x09\x3C\x66\x6F\x6E\x74\x20\x73\x69\x7A\x65\x3D\x22\x31\x22\x20\x66\x61\x63\x65\x3D\x22\x56\x65\x72\x64\x61\x6E\x61\x22\x3E","\x3C\x2F\x66\x6F\x6E\x74\x3E\x0A","\x09\x3C\x2F\x74\x64\x3E\x0A","\x09\x3C\x74\x64\x20\x61\x6C\x69\x67\x6E\x3D\x22\x63\x65\x6E\x74\x65\x72\x22\x20\x76\x61\x6C\x69\x67\x6E\x3D\x22\x6D\x69\x64\x64\x6C\x65\x22\x3E\x0A","\x3C\x2F\x74\x72\x3E\x0A","\x09\x09\x49\x44\x3C\x69\x6E\x70\x75\x74\x20\x63\x6C\x61\x73\x73\x3D\x22\x49\x4E\x54\x45\x58\x54\x22\x20\x69\x64\x3D\x22\x70\x64\x67\x76\x69\x64\x22\x20\x73\x69\x7A\x65\x3D\x22\x35\x22\x20\x6D\x61\x78\x6C\x65\x6E\x67\x74\x68\x3D\x22\x35\x22\x20\x20\x76\x61\x6C\x75\x65\x3D\x22","\x22\x20\x6F\x6E\x6B\x65\x79\x75\x70\x3D\x22\x43\x6F\x6E\x66\x69\x67\x75\x72\x65\x54\x63\x44\x67\x76\x70\x2E\x69\x64\x3D\x74\x68\x69\x73\x2E\x76\x61\x6C\x75\x65\x3B\x22\x20\x2F\x3E\x0A","\x3C\x73\x65\x6C\x65\x63\x74\x20\x63\x6C\x61\x73\x73\x3D\x22\x49\x4E\x54\x45\x58\x54\x22\x20\x6F\x6E\x63\x68\x61\x6E\x67\x65\x3D\x22\x43\x6F\x6E\x66\x69\x67\x75\x72\x65\x54\x63\x44\x67\x76\x70\x2E\x4D\x6F\x64\x65\x6C\x3D\x74\x68\x69\x73\x2E\x76\x61\x6C\x75\x65\x3B\x22\x20\x3E\x0A","\x3C\x2F\x73\x65\x6C\x65\x63\x74\x3E\x0A","\x09\x09\x3C\x69\x6E\x70\x75\x74\x20\x63\x6C\x61\x73\x73\x3D\x22\x49\x4E\x54\x45\x58\x54\x22\x20\x69\x64\x3D\x22\x70\x64\x67\x76\x69\x70\x70\x6F\x72\x74\x22\x20\x73\x69\x7A\x65\x3D\x22\x35\x22\x20\x6D\x61\x78\x6C\x65\x6E\x67\x74\x68\x3D\x22\x35\x22\x20\x20\x76\x61\x6C\x75\x65\x3D\x22","\x22\x20\x6F\x6E\x6B\x65\x79\x75\x70\x3D\x22\x43\x6F\x6E\x66\x69\x67\x75\x72\x65\x54\x63\x44\x67\x76\x70\x2E\x69\x70\x70\x6F\x72\x74\x3D\x74\x68\x69\x73\x2E\x76\x61\x6C\x75\x65\x3B\x22\x20\x2F\x3E\x0A","\x09\x09\x3C\x69\x6E\x70\x75\x74\x20\x63\x6C\x61\x73\x73\x3D\x22\x49\x4E\x54\x45\x58\x54\x22\x20\x69\x64\x3D\x22\x70\x64\x67\x76\x54\x69\x6D\x65\x4F\x75\x74\x22\x20\x73\x69\x7A\x65\x3D\x22\x35\x22\x20\x6D\x61\x78\x6C\x65\x6E\x67\x74\x68\x3D\x22\x35\x22\x20\x20\x76\x61\x6C\x75\x65\x3D\x22","\x22\x20\x6F\x6E\x6B\x65\x79\x75\x70\x3D\x22\x43\x6F\x6E\x66\x69\x67\x75\x72\x65\x54\x63\x44\x67\x76\x70\x2E\x54\x69\x6D\x65\x4F\x75\x74\x3D\x74\x68\x69\x73\x2E\x76\x61\x6C\x75\x65\x3B\x22\x20\x2F\x3E\x0A","\x09\x09\x3C\x69\x6E\x70\x75\x74\x20\x63\x6C\x61\x73\x73\x3D\x22\x49\x4E\x54\x45\x58\x54\x22\x20\x69\x64\x3D\x22\x70\x64\x67\x76\x73\x72\x76\x69\x64\x22\x20\x73\x69\x7A\x65\x3D\x22\x35\x22\x20\x6D\x61\x78\x6C\x65\x6E\x67\x74\x68\x3D\x22\x35\x22\x20\x20\x76\x61\x6C\x75\x65\x3D\x22","\x22\x20\x6F\x6E\x6B\x65\x79\x75\x70\x3D\x22\x43\x6F\x6E\x66\x69\x67\x75\x72\x65\x54\x63\x44\x67\x76\x70\x2E\x73\x72\x76\x69\x64\x3D\x74\x68\x69\x73\x2E\x76\x61\x6C\x75\x65\x3B\x22\x20\x2F\x3E\x0A","\x09\x09\x3C\x69\x6E\x70\x75\x74\x20\x63\x6C\x61\x73\x73\x3D\x22\x49\x4E\x54\x45\x58\x54\x22\x20\x69\x64\x3D\x22\x70\x64\x67\x76\x70\x64\x67\x76\x69\x64\x22\x20\x73\x69\x7A\x65\x3D\x22\x35\x22\x20\x6D\x61\x78\x6C\x65\x6E\x67\x74\x68\x3D\x22\x35\x22\x20\x20\x76\x61\x6C\x75\x65\x3D\x22","\x22\x20\x6F\x6E\x6B\x65\x79\x75\x70\x3D\x22\x43\x6F\x6E\x66\x69\x67\x75\x72\x65\x54\x63\x44\x67\x76\x70\x2E\x70\x64\x67\x76\x69\x64\x3D\x74\x68\x69\x73\x2E\x76\x61\x6C\x75\x65\x3B\x22\x20\x2F\x3E\x0A","\x09\x3C\x74\x64\x20\x61\x6C\x69\x67\x6E\x3D\x22\x6C\x65\x66\x74\x22\x20\x76\x61\x6C\x69\x67\x6E\x3D\x22\x6D\x69\x64\x64\x6C\x65\x22\x3E\x0A","\x69\x6E\x64\x65\x78\x4F\x66","\x3C\x69\x6E\x70\x75\x74\x20\x74\x79\x70\x65\x3D\x22\x62\x75\x74\x74\x6F\x6E\x22\x20\x63\x6C\x61\x73\x73\x3D\x22\x49\x4E\x54\x45\x58\x54\x32\x22\x20\x76\x61\x6C\x75\x65\x3D\x22","\x3A","\x22\x20\x6F\x6E\x63\x6C\x69\x63\x6B\x3D\x22\x43\x6F\x6E\x66\x69\x67\x75\x72\x65\x54\x63\x44\x67\x76\x70\x2E\x63\x6D\x70\x73\x2E\x73\x70\x6C\x69\x63\x65\x28","\x2C\x31\x29\x3B\x52\x65\x66\x72\x65\x73\x68\x44\x67\x76\x70\x43\x6F\x6E\x66\x28\x29\x3B\x72\x65\x74\x75\x72\x6E\x20\x66\x61\x6C\x73\x65\x3B\x22\x20\x2F\x3E\x3C\x62\x72\x20\x2F\x3E\x0A","\x3C\x62\x72\x20\x2F\x3E\x5B","\x3A\x3C\x73\x65\x6C\x65\x63\x74\x20\x63\x6C\x61\x73\x73\x3D\x22\x49\x4E\x54\x45\x58\x54\x22\x20\x6F\x6E\x63\x68\x61\x6E\x67\x65\x3D\x22\x69\x66\x28\x74\x68\x69\x73\x2E\x73\x65\x6C\x65\x63\x74\x65\x64\x49\x6E\x64\x65\x78\x3E\x30\x29\x7B\x43\x6F\x6E\x66\x69\x67\x75\x72\x65\x54\x63\x44\x67\x76\x70\x2E\x63\x6D\x70\x73\x5B\x43\x6F\x6E\x66\x69\x67\x75\x72\x65\x54\x63\x44\x67\x76\x70\x2E\x63\x6D\x70\x73\x2E\x6C\x65\x6E\x67\x74\x68\x5D\x3D\x4C\x73\x43\x6D\x70\x73\x5B\x74\x68\x69\x73\x2E\x73\x65\x6C\x65\x63\x74\x65\x64\x49\x6E\x64\x65\x78\x2D\x31\x5D\x3B\x7D\x52\x65\x66\x72\x65\x73\x68\x44\x67\x76\x70\x43\x6F\x6E\x66\x28\x29\x3B\x22\x20\x3E\x0A","\x3C\x6F\x70\x74\x69\x6F\x6E\x3E\x3C\x2F\x6F\x70\x74\x69\x6F\x6E\x3E\x0A","\x3C\x2F\x73\x65\x6C\x65\x63\x74\x3E\x5D\x0A","\x3C\x73\x65\x6C\x65\x63\x74\x20\x63\x6C\x61\x73\x73\x3D\x22\x49\x4E\x54\x45\x58\x54\x22\x20\x69\x64\x3D\x22\x70\x64\x67\x76\x44\x72\x76\x22\x20\x6F\x6E\x63\x68\x61\x6E\x67\x65\x3D\x22\x43\x6F\x6E\x66\x69\x67\x75\x72\x65\x54\x63\x44\x67\x76\x70\x2E\x64\x72\x76\x3D\x74\x68\x69\x73\x2E\x76\x61\x6C\x75\x65\x3B\x22\x20\x3E\x0A","\x3C\x2F\x74\x61\x62\x6C\x65\x3E\x0A","\x22\x20\x6F\x6E\x63\x6C\x69\x63\x6B\x3D\x22\x55\x70\x44\x74\x54\x63\x44\x67\x76\x70\x43\x6F\x6E\x66\x28\x29\x3B\x72\x65\x74\x75\x72\x6E\x20\x66\x61\x6C\x73\x65\x3B\x22\x20\x2F\x3E\x0A","\x22\x20\x6F\x6E\x63\x6C\x69\x63\x6B\x3D\x22\x77\x69\x6E\x4C\x69\x73\x74\x5B\x27\x54\x63\x48\x74\x74\x70\x43\x6F\x6E\x66\x27\x5D\x2E\x63\x6C\x6F\x73\x65\x28\x29\x3B\x72\x65\x74\x75\x72\x6E\x20\x66\x61\x6C\x73\x65\x3B\x22\x20\x2F\x3E\x0A","\x2E\x2F\x67\x65\x74\x69\x74\x65\x6D\x73\x2E\x6A\x73\x70\x3F\x73\x71\x6C\x3D\x53\x45\x4C\x45\x43\x54\x20\x2A\x20\x46\x52\x4F\x4D\x20\x70\x64\x67\x76\x20\x57\x48\x45\x52\x45\x20\x69\x64\x20\x4C\x49\x4B\x45\x20\x25\x32\x37","\x25\x32\x37\x20\x6F\x72\x64\x65\x72\x20\x62\x79\x20\x69\x64","\x2E\x2F\x73\x65\x74\x69\x74\x65\x6D\x73\x2E\x6A\x73\x70\x3F\x73\x71\x6C\x3D\x44\x45\x4C\x45\x54\x45\x20\x46\x52\x4F\x4D\x20\x70\x64\x67\x76\x20\x57\x48\x45\x52\x45\x20\x69\x64\x20\x4C\x49\x4B\x45\x20\x25\x32\x37\x25\x32\x35","\x25\x32\x35\x25\x32\x37","\x2E\x2F\x73\x65\x74\x69\x74\x65\x6D\x73\x2E\x6A\x73\x70\x3F\x73\x71\x6C\x3D\x44\x45\x4C\x45\x54\x45\x20\x46\x52\x4F\x4D\x20\x76\x61\x72\x69\x61\x62\x6C\x65\x73\x20\x57\x48\x45\x52\x45\x20\x69\x64\x20\x4C\x49\x4B\x45\x20\x25\x32\x37\x25\x32\x35","\x25\x32\x46\x25\x32\x35\x25\x32\x37","\x2E\x2F\x73\x65\x74\x69\x74\x65\x6D\x73\x2E\x6A\x73\x70\x3F\x73\x71\x6C\x3D\x44\x45\x4C\x45\x54\x45\x20\x46\x52\x4F\x4D\x20\x68\x69\x73\x76\x61\x72\x73\x20\x57\x48\x45\x52\x45\x20\x69\x64\x20\x4C\x49\x4B\x45\x20\x25\x32\x37\x25\x32\x35","\x3C\x74\x72\x20\x61\x6C\x69\x67\x6E\x3D\x22\x63\x65\x6E\x74\x65\x72\x22\x20\x62\x67\x63\x6F\x6C\x6F\x72\x3D\x22\x23\x43\x30\x43\x30\x43\x30\x22\x20\x3E\x0A","\x23\x38\x30\x38\x30\x38\x30","\x23\x41\x30\x41\x30\x41\x30","\x3C\x74\x72\x20\x61\x6C\x69\x67\x6E\x3D\x22\x63\x65\x6E\x74\x65\x72\x22\x20\x62\x67\x63\x6F\x6C\x6F\x72\x3D\x22","\x22\x20\x3E\x0A","\x09\x3C\x74\x64\x20\x61\x6C\x69\x67\x6E\x3D\x22\x63\x65\x6E\x74\x65\x72\x22\x20\x76\x61\x6C\x69\x67\x6E\x3D\x22\x6D\x69\x64\x64\x6C\x65\x22\x20\x6F\x6E\x63\x6C\x69\x63\x6B\x3D\x22\x47\x65\x74\x54\x63\x44\x67\x76\x70\x43\x6F\x6E\x66\x28\x27","\x27\x29\x3B\x77\x69\x6E\x4C\x69\x73\x74\x5B\x27\x4C\x69\x73\x74\x27\x5D\x2E\x63\x6C\x6F\x73\x65\x28\x29\x3B\x22\x3E\x0A","\x09\x09\x3C\x69\x6D\x67\x20\x73\x72\x63\x3D\x22\x2E\x2E\x2F\x69\x6D\x67\x2F\x65\x66\x69\x6C\x65\x2E\x70\x6E\x67\x22\x20\x77\x69\x64\x74\x68\x3D\x22\x31\x38\x22\x20\x68\x65\x69\x67\x68\x74\x3D\x22\x31\x38\x22\x20\x62\x6F\x72\x64\x65\x72\x3D\x22\x30\x22\x20\x2F\x3E","\x09\x3C\x74\x64\x20\x61\x6C\x69\x67\x6E\x3D\x22\x63\x65\x6E\x74\x65\x72\x22\x20\x76\x61\x6C\x69\x67\x6E\x3D\x22\x6D\x69\x64\x64\x6C\x65\x22\x20\x6F\x6E\x63\x6C\x69\x63\x6B\x3D\x22\x44\x65\x6C\x54\x63\x44\x67\x76\x70\x43\x6F\x6E\x66\x28\x27","\x27\x29\x3B\x47\x65\x74\x4C\x69\x73\x74\x64\x67\x76\x70\x28\x29\x3B\x22\x3E\x0A","\x09\x09\x3C\x69\x6D\x67\x20\x73\x72\x63\x3D\x22\x2E\x2E\x2F\x69\x6D\x67\x2F\x64\x65\x66\x69\x6C\x65\x2E\x70\x6E\x67\x22\x20\x77\x69\x64\x74\x68\x3D\x22\x31\x38\x22\x20\x68\x65\x69\x67\x68\x74\x3D\x22\x31\x38\x22\x20\x62\x6F\x72\x64\x65\x72\x3D\x22\x30\x22\x20\x2F\x3E","\x2E\x2F\x67\x65\x74\x69\x74\x65\x6D\x73\x2E\x6A\x73\x70\x3F\x73\x71\x6C\x3D\x53\x45\x4C\x45\x43\x54\x20\x69\x64\x2C\x64\x72\x76\x2C\x73\x72\x76\x69\x64\x2C\x70\x64\x67\x76\x69\x64\x2C\x69\x70\x70\x6F\x72\x74\x2C\x63\x6D\x70\x73\x20\x46\x52\x4F\x4D\x20\x70\x64\x67\x76\x20\x6F\x72\x64\x65\x72\x20\x62\x79\x20\x69\x64","\x4C\x69\x73\x74","\x70\x78","\x4C\x69\x73\x74\x54\x69\x74\x6C\x65","\x4C\x69\x73\x74\x42\x6F\x64\x79","\x76\x61\x6C\x75\x65","\x70\x64\x67\x76\x44\x72\x76","\x70\x64\x67\x76\x73\x72\x76\x69\x64","\x70\x64\x67\x76\x70\x64\x67\x76\x69\x64","\x70\x64\x67\x76\x69\x70\x70\x6F\x72\x74","\x70\x64\x67\x76\x54\x69\x6D\x65\x4F\x75\x74","\x2E\x2F\x73\x65\x74\x69\x74\x65\x6D\x73\x2E\x6A\x73\x70\x3F\x73\x71\x6C\x3D\x49\x4E\x53\x45\x52\x54\x20\x49\x4E\x54\x4F\x20\x70\x64\x67\x76\x20\x28\x64\x72\x76\x2C\x73\x72\x76\x69\x64\x2C\x70\x64\x67\x76\x69\x64\x2C\x69\x64\x2C\x69\x70\x2C\x69\x70\x70\x6F\x72\x74\x2C\x63\x6D\x70\x73\x2C\x74\x69\x6D\x65\x6F\x75\x74\x2C\x73\x74\x61\x74\x75\x73\x2C\x6C\x73\x74\x75\x70\x64\x2C\x6D\x6F\x64\x65\x6C\x29\x20\x56\x41\x4C\x55\x45\x53\x20\x28\x25\x32\x37","\x25\x32\x37\x2C","\x2C\x25\x32\x37\x49\x44","\x25\x32\x37\x2C\x25\x32\x37","\x2C\x25\x32\x37","\x2C\x25\x32\x37\x6F\x6B\x25\x32\x37\x2C\x4C\x4F\x43\x41\x4C\x54\x49\x4D\x45\x53\x54\x41\x4D\x50\x2C\x25\x32\x37","\x25\x32\x37\x29","\x2E\x2F\x73\x65\x74\x69\x74\x65\x6D\x73\x2E\x6A\x73\x70\x3F\x73\x71\x6C\x3D\x55\x50\x44\x41\x54\x45\x20\x70\x64\x67\x76\x20\x53\x45\x54\x20\x28\x64\x72\x76\x2C\x73\x72\x76\x69\x64\x2C\x70\x64\x67\x76\x69\x64\x2C\x69\x64\x2C\x69\x70\x2C\x69\x70\x70\x6F\x72\x74\x2C\x63\x6D\x70\x73\x2C\x74\x69\x6D\x65\x6F\x75\x74\x2C\x73\x74\x61\x74\x75\x73\x2C\x6C\x73\x74\x75\x70\x64\x2C\x6D\x6F\x64\x65\x6C\x29\x25\x33\x44\x28\x25\x32\x37","\x25\x32\x37\x29\x20\x57\x48\x45\x52\x45\x20\x6B\x65\x79\x3D","\x63\x6C\x6F\x73\x65"];var PdgvGp=[32,_0xdc4e[0],33,_0xdc4e[1],34,_0xdc4e[2],37,_0xdc4e[3]];var PdgvGv=[12,_0xdc4e[4],16,_0xdc4e[5],20,_0xdc4e[6]];var PdgvPLC=[0,_0xdc4e[7],1,_0xdc4e[8],148,_0xdc4e[9]];var PdgvIOs=[0,_0xdc4e[10],8,_0xdc4e[11],12,_0xdc4e[12],16,_0xdc4e[13]];var PdgvPHs=[0,_0xdc4e[14],16,_0xdc4e[15],18,_0xdc4e[16],20,_0xdc4e[17],22,_0xdc4e[18],24,_0xdc4e[19]];var OptDrvDgvp=[_0xdc4e[20],_0xdc4e[21],_0xdc4e[22],_0xdc4e[23],_0xdc4e[24],_0xdc4e[25],_0xdc4e[26],_0xdc4e[27]];var LsCmps=[_0xdc4e[28],_0xdc4e[29],_0xdc4e[30],_0xdc4e[31],_0xdc4e[32],_0xdc4e[33],_0xdc4e[34],_0xdc4e[35],_0xdc4e[36],_0xdc4e[37],_0xdc4e[38]];var LsCmpsTxt=[Str_DgvP_Date,Str_DgvP_Voltage,Str_DgvP_Mode,Str_DgvP_Plan,Str_DgvP_Cph,Str_DgvP_Cio,Str_DgvP_PhSts,Str_DgvP_PhStsR,Str_DgvP_PhCurr,Str_DgvP_PhErrors,Str_DgvP_IOsts];var ConfigureTcDgvp={drv:0,srvid:0,pdgvid:0,id:0,ipport:0,TimeOut:60,Status:_0xdc4e[39],cmps:[]};function RefreshDgvpConf(){if(winList[_0xdc4e[40]]){winList[_0xdc4e[40]][_0xdc4e[41]]()};winList[_0xdc4e[40]].SetH(_0xdc4e[42]);document[_0xdc4e[45]](_0xdc4e[44])[_0xdc4e[43]]= Str_Config;document[_0xdc4e[45]](_0xdc4e[46])[_0xdc4e[43]]= ShowDgvpConf()}function AddtTcDgvpConf(){ConfigureTcDgvp[_0xdc4e[47]]= _0xdc4e[22];ConfigureTcDgvp[_0xdc4e[48]]= 254;ConfigureTcDgvp[_0xdc4e[49]]= 1;ConfigureTcDgvp[_0xdc4e[50]]= _0xdc4e[51];ConfigureTcDgvp[_0xdc4e[52]]= 1055;ConfigureTcDgvp[_0xdc4e[53]]= [];ConfigureTcDgvp[_0xdc4e[54]]= 0;ConfigureTcDgvp[_0xdc4e[55]]= 60;ConfigureTcDgvp[_0xdc4e[56]]= _0xdc4e[39]}function dgvpAdd(){AddtTcDgvpConf();RefreshDgvpConf()}function rcvTcDgvpConf(_0x6d6cxe){var _0x6d6cxf=0;var _0x6d6cx10=_0xdc4e[57];var _0x6d6cx11=0;_0x6d6cxe= _0x6d6cxe[_0xdc4e[58]];_0x6d6cxe= _0x6d6cxe[_0xdc4e[60]](_0xdc4e[59]);RemoveUnusedItem(_0x6d6cxe);if(_0x6d6cxe[_0xdc4e[61]]== 0){return _0xdc4e[57]};ConfigureTcDgvp[_0xdc4e[54]]= 0;ConfigureTcDgvp[_0xdc4e[47]]= 0;ConfigureTcDgvp[_0xdc4e[48]]= 0;ConfigureTcDgvp[_0xdc4e[49]]= 0;ConfigureTcDgvp[_0xdc4e[50]]= 0;ConfigureTcDgvp[_0xdc4e[62]]= _0xdc4e[57];ConfigureTcDgvp[_0xdc4e[52]]= 0;ConfigureTcDgvp[_0xdc4e[55]]= 60;ConfigureTcDgvp[_0xdc4e[53]]= [];ConfigureTcDgvp[_0xdc4e[56]]= _0xdc4e[39];for(var _0x6d6cx12=0;_0x6d6cx12< _0x6d6cxe[_0xdc4e[61]];_0x6d6cx12++){_0x6d6cxe[_0x6d6cx12]= _0x6d6cxe[_0x6d6cx12][_0xdc4e[60]](_0xdc4e[63]);if(_0x6d6cxe[_0x6d6cx12][_0xdc4e[61]]>= 7){ConfigureTcDgvp[_0xdc4e[47]]= _0x6d6cxe[_0x6d6cx12][0];ConfigureTcDgvp[_0xdc4e[47]]= ConfigureTcDgvp[_0xdc4e[47]][_0xdc4e[65]](_0xdc4e[64],_0xdc4e[57]);ConfigureTcDgvp[_0xdc4e[48]]= parseInt(_0x6d6cxe[_0x6d6cx12][1]);ConfigureTcDgvp[_0xdc4e[49]]= parseInt(_0x6d6cxe[_0x6d6cx12][2]);ConfigureTcDgvp[_0xdc4e[50]]= _0x6d6cxe[_0x6d6cx12][3];ConfigureTcDgvp[_0xdc4e[50]]= ConfigureTcDgvp[_0xdc4e[50]][_0xdc4e[65]](_0xdc4e[66],_0xdc4e[57]);ConfigureTcDgvp[_0xdc4e[52]]= parseInt(_0x6d6cxe[_0x6d6cx12][4]);ConfigureTcDgvp[_0xdc4e[53]]= _0x6d6cxe[_0x6d6cx12][5][_0xdc4e[60]](_0xdc4e[67]);;;ConfigureTcDgvp[_0xdc4e[54]]= parseInt(_0x6d6cxe[_0x6d6cx12][6]);ConfigureTcDgvp[_0xdc4e[62]]= _0x6d6cxe[_0x6d6cx12][7];ConfigureTcDgvp[_0xdc4e[68]]= _0x6d6cxe[_0x6d6cx12][8];ConfigureTcDgvp[_0xdc4e[55]]= parseInt(_0x6d6cxe[_0x6d6cx12][9]);ConfigureTcDgvp[_0xdc4e[56]]= _0x6d6cxe[_0x6d6cx12][10];ConfigureTcDgvp[_0xdc4e[69]]= _0x6d6cxe[_0x6d6cx12][11]}else {_0x6d6cxe[_0xdc4e[70]](_0x6d6cx12,1)}};RefreshDgvpConf()}function ShowDgvpConf(){var _0x6d6cx14=0;var _0x6d6cx15=0;var _0x6d6cx16=_0xdc4e[57];_0x6d6cx16+= _0xdc4e[71];{_0x6d6cx16+= _0xdc4e[72];_0x6d6cx16+= _0xdc4e[73];_0x6d6cx16+= _0xdc4e[74]+ Str_Parameter+ _0xdc4e[75];_0x6d6cx16+= _0xdc4e[76];_0x6d6cx16+= _0xdc4e[77];_0x6d6cx16+= _0xdc4e[74]+ Str_Config+ _0xdc4e[75];_0x6d6cx16+= _0xdc4e[76];_0x6d6cx16+= _0xdc4e[78]}{_0x6d6cx16+= _0xdc4e[72];_0x6d6cx16+= _0xdc4e[73];_0x6d6cx16+= _0xdc4e[74]+ Str_Dgvp_ID+ _0xdc4e[75];_0x6d6cx16+= _0xdc4e[76];_0x6d6cx16+= _0xdc4e[77];_0x6d6cx16+= _0xdc4e[79]+ ConfigureTcDgvp[_0xdc4e[50]]+ _0xdc4e[80];_0x6d6cx16+= _0xdc4e[76];_0x6d6cx16+= _0xdc4e[78]}{_0x6d6cx16+= _0xdc4e[72];_0x6d6cx16+= _0xdc4e[73];_0x6d6cx16+= _0xdc4e[74]+ Str_Model+ _0xdc4e[75];_0x6d6cx16+= _0xdc4e[76];_0x6d6cx16+= _0xdc4e[77];_0x6d6cx16+= _0xdc4e[81];_0x6d6cx16+= GenOptionsVi(Models,ConfigureTcDgvp.Model);_0x6d6cx16+= _0xdc4e[82];_0x6d6cx16+= _0xdc4e[76];_0x6d6cx16+= _0xdc4e[78]}{_0x6d6cx16+= _0xdc4e[72];_0x6d6cx16+= _0xdc4e[73];_0x6d6cx16+= _0xdc4e[74]+ Str_Dgvp_ipport+ _0xdc4e[75];_0x6d6cx16+= _0xdc4e[76];_0x6d6cx16+= _0xdc4e[77];_0x6d6cx16+= _0xdc4e[83]+ ConfigureTcDgvp[_0xdc4e[52]]+ _0xdc4e[84];_0x6d6cx16+= _0xdc4e[76];_0x6d6cx16+= _0xdc4e[78]}{_0x6d6cx16+= _0xdc4e[72];_0x6d6cx16+= _0xdc4e[73];_0x6d6cx16+= _0xdc4e[74]+ Str_Time_Out+ _0xdc4e[75];_0x6d6cx16+= _0xdc4e[76];_0x6d6cx16+= _0xdc4e[77];_0x6d6cx16+= _0xdc4e[85]+ ConfigureTcDgvp[_0xdc4e[55]]+ _0xdc4e[86];_0x6d6cx16+= _0xdc4e[76];_0x6d6cx16+= _0xdc4e[78]}{_0x6d6cx16+= _0xdc4e[72];_0x6d6cx16+= _0xdc4e[73];_0x6d6cx16+= _0xdc4e[74]+ Str_Dgvp_srvid+ _0xdc4e[75];_0x6d6cx16+= _0xdc4e[76];_0x6d6cx16+= _0xdc4e[77];_0x6d6cx16+= _0xdc4e[87]+ ConfigureTcDgvp[_0xdc4e[48]]+ _0xdc4e[88];_0x6d6cx16+= _0xdc4e[76];_0x6d6cx16+= _0xdc4e[78]}{_0x6d6cx16+= _0xdc4e[72];_0x6d6cx16+= _0xdc4e[73];_0x6d6cx16+= _0xdc4e[74]+ Str_Dgvp_pdgvid+ _0xdc4e[75];_0x6d6cx16+= _0xdc4e[76];_0x6d6cx16+= _0xdc4e[77];_0x6d6cx16+= _0xdc4e[89]+ ConfigureTcDgvp[_0xdc4e[49]]+ _0xdc4e[90];_0x6d6cx16+= _0xdc4e[76];_0x6d6cx16+= _0xdc4e[78]}{_0x6d6cx16+= _0xdc4e[72];_0x6d6cx16+= _0xdc4e[73];_0x6d6cx16+= _0xdc4e[74]+ Str_Dgvp_cmps+ _0xdc4e[75];_0x6d6cx16+= _0xdc4e[76];_0x6d6cx16+= _0xdc4e[91];for(var _0x6d6cx17=0;_0x6d6cx17< ConfigureTcDgvp[_0xdc4e[53]][_0xdc4e[61]];_0x6d6cx17++){_0x6d6cx15= LsCmps[_0xdc4e[92]](ConfigureTcDgvp[_0xdc4e[53]][_0x6d6cx17]);_0x6d6cx16+= _0xdc4e[93]+ Str_Del+ _0xdc4e[94];if(_0x6d6cx15!=  -1){_0x6d6cx16+= LsCmpsTxt[_0x6d6cx15]}else {_0x6d6cx16+= ConfigureTcDgvp[_0xdc4e[53]][_0x6d6cx17]};_0x6d6cx16+= _0xdc4e[95]+ _0x6d6cx17+ _0xdc4e[96]};_0x6d6cx16+= _0xdc4e[97]+ Str_Add+ _0xdc4e[98];_0x6d6cx16+= _0xdc4e[99];_0x6d6cx16+= GenOptionsVi(LsCmpsTxt,null);_0x6d6cx16+= _0xdc4e[100];_0x6d6cx16+= _0xdc4e[76];_0x6d6cx16+= _0xdc4e[78]}{_0x6d6cx16+= _0xdc4e[72];_0x6d6cx16+= _0xdc4e[73];_0x6d6cx16+= _0xdc4e[74]+ Str_Dgvp_drv+ _0xdc4e[75];_0x6d6cx16+= _0xdc4e[76];_0x6d6cx16+= _0xdc4e[77];_0x6d6cx16+= _0xdc4e[101];_0x6d6cx16+= GenOptionsV(OptDrvDgvp,ConfigureTcDgvp[_0xdc4e[47]]);_0x6d6cx16+= _0xdc4e[82];_0x6d6cx16+= _0xdc4e[76];_0x6d6cx16+= _0xdc4e[78]}_0x6d6cx16+= _0xdc4e[102];if(ConfigureTcDgvp[_0xdc4e[54]]== 0){_0x6d6cx16+= _0xdc4e[93]+ Str_Add+ _0xdc4e[103]}else {_0x6d6cx16+= _0xdc4e[93]+ Str_save+ _0xdc4e[103]};_0x6d6cx16+= _0xdc4e[93]+ Str_Cancel+ _0xdc4e[104];return _0x6d6cx16}function GetTcDgvpConf(_0x6d6cx11){GetUrlB(_0xdc4e[105]+ _0x6d6cx11+ _0xdc4e[106],rcvTcDgvpConf)}function DelTcDgvpConf(_0x6d6cx11){GetUrlB(_0xdc4e[107]+ _0x6d6cx11+ _0xdc4e[108],fncnone);GetUrlB(_0xdc4e[109]+ _0x6d6cx11+ _0xdc4e[110],fncnone);GetUrlB(_0xdc4e[111]+ _0x6d6cx11+ _0xdc4e[110],fncnone)}function ShowDgvpList(_0x6d6cxe){var _0x6d6cx1b=0;var _0x6d6cx1c=0;var _0x6d6cx1d=_0xdc4e[57];var _0x6d6cx16=_0xdc4e[57];_0x6d6cx16+= _0xdc4e[71];{_0x6d6cx16+= _0xdc4e[112];_0x6d6cx16+= _0xdc4e[73];_0x6d6cx16+= _0xdc4e[76];_0x6d6cx16+= _0xdc4e[77];_0x6d6cx16+= _0xdc4e[74]+ Str_Dgvp_ID+ _0xdc4e[75];_0x6d6cx16+= _0xdc4e[76];_0x6d6cx16+= _0xdc4e[73];_0x6d6cx16+= _0xdc4e[74]+ Str_Dgvp_drv+ _0xdc4e[75];_0x6d6cx16+= _0xdc4e[76];_0x6d6cx16+= _0xdc4e[77];_0x6d6cx16+= _0xdc4e[74]+ Str_Dgvp_srvid+ _0xdc4e[75];_0x6d6cx16+= _0xdc4e[76];_0x6d6cx16+= _0xdc4e[77];_0x6d6cx16+= _0xdc4e[74]+ Str_Dgvp_pdgvid+ _0xdc4e[75];_0x6d6cx16+= _0xdc4e[76];_0x6d6cx16+= _0xdc4e[77];_0x6d6cx16+= _0xdc4e[74]+ Str_Dgvp_ipport+ _0xdc4e[75];_0x6d6cx16+= _0xdc4e[76];_0x6d6cx16+= _0xdc4e[77];_0x6d6cx16+= _0xdc4e[74]+ Str_Dgvp_cmps+ _0xdc4e[75];_0x6d6cx16+= _0xdc4e[76];_0x6d6cx16+= _0xdc4e[73];_0x6d6cx16+= _0xdc4e[76];_0x6d6cx16+= _0xdc4e[78]}_0x6d6cx1c= 0;while(_0x6d6cx1c< _0x6d6cxe[_0xdc4e[61]]){if((_0x6d6cx1c% 2)== 0){_0x6d6cx1d= _0xdc4e[113]}else {_0x6d6cx1d= _0xdc4e[114]};_0x6d6cx16+= _0xdc4e[115]+ _0x6d6cx1d+ _0xdc4e[116];_0x6d6cx16+= _0xdc4e[117]+ _0x6d6cxe[_0x6d6cx1c][0]+ _0xdc4e[118];_0x6d6cx16+= _0xdc4e[119];_0x6d6cx16+= _0xdc4e[76];_0x6d6cx1b= 0;while(_0x6d6cx1b< _0x6d6cxe[_0x6d6cx1c][_0xdc4e[61]]){_0x6d6cx16+= _0xdc4e[77];_0x6d6cx16+= _0xdc4e[74]+ _0x6d6cxe[_0x6d6cx1c][_0x6d6cx1b]+ _0xdc4e[75];_0x6d6cx16+= _0xdc4e[76];_0x6d6cx1b++};_0x6d6cx16+= _0xdc4e[120]+ _0x6d6cxe[_0x6d6cx1c][0]+ _0xdc4e[121];_0x6d6cx16+= _0xdc4e[122];_0x6d6cx16+= _0xdc4e[76];_0x6d6cx16+= _0xdc4e[78];_0x6d6cx1c++};_0x6d6cx16+= _0xdc4e[102];return _0x6d6cx16}function GetListdgvp(){GetUrlB(_0xdc4e[123],rcvTcDgvpList)}function rcvTcDgvpList(_0x6d6cxe){_0x6d6cxe= rcvtbl(_0x6d6cxe);if(winList[_0xdc4e[124]]){winList[_0xdc4e[124]][_0xdc4e[41]]();winList[_0xdc4e[124]].SetH((4+ 15+ (_0x6d6cxe[_0xdc4e[61]]* 25))+ _0xdc4e[125]);winList[_0xdc4e[124]].SetW(450+ _0xdc4e[125])};document[_0xdc4e[45]](_0xdc4e[126])[_0xdc4e[43]]= Str_ListDevice;document[_0xdc4e[45]](_0xdc4e[127])[_0xdc4e[43]]= ShowDgvpList(_0x6d6cxe)}function UpDtTcDgvpConf(){ConfigureTcDgvp[_0xdc4e[47]]= document[_0xdc4e[45]](_0xdc4e[129])[_0xdc4e[128]];ConfigureTcDgvp[_0xdc4e[48]]= parseInt(document[_0xdc4e[45]](_0xdc4e[130])[_0xdc4e[128]]);ConfigureTcDgvp[_0xdc4e[49]]= parseInt(document[_0xdc4e[45]](_0xdc4e[131])[_0xdc4e[128]]);ConfigureTcDgvp[_0xdc4e[50]]= document[_0xdc4e[45]](_0xdc4e[49])[_0xdc4e[128]];ConfigureTcDgvp[_0xdc4e[52]]= parseInt(document[_0xdc4e[45]](_0xdc4e[132])[_0xdc4e[128]]);ConfigureTcDgvp[_0xdc4e[55]]= parseInt(document[_0xdc4e[45]](_0xdc4e[133])[_0xdc4e[128]]);if(ConfigureTcDgvp[_0xdc4e[54]]== 0){GetUrlB(_0xdc4e[134]+ ConfigureTcDgvp[_0xdc4e[47]]+ _0xdc4e[135]+ ConfigureTcDgvp[_0xdc4e[48]]+ _0xdc4e[67]+ ConfigureTcDgvp[_0xdc4e[49]]+ _0xdc4e[136]+ ConfigureTcDgvp[_0xdc4e[50]]+ _0xdc4e[137]+ ConfigureTcDgvp[_0xdc4e[62]]+ _0xdc4e[135]+ ConfigureTcDgvp[_0xdc4e[52]]+ _0xdc4e[138]+ ConfigureTcDgvp[_0xdc4e[53]]+ _0xdc4e[135]+ ConfigureTcDgvp[_0xdc4e[55]]+ _0xdc4e[139]+ ConfigureTcDgvp[_0xdc4e[69]]+ _0xdc4e[140],fncnone)}else {GetUrlB(_0xdc4e[141]+ ConfigureTcDgvp[_0xdc4e[47]]+ _0xdc4e[135]+ ConfigureTcDgvp[_0xdc4e[48]]+ _0xdc4e[67]+ ConfigureTcDgvp[_0xdc4e[49]]+ _0xdc4e[136]+ ConfigureTcDgvp[_0xdc4e[50]]+ _0xdc4e[137]+ ConfigureTcDgvp[_0xdc4e[62]]+ _0xdc4e[135]+ ConfigureTcDgvp[_0xdc4e[52]]+ _0xdc4e[138]+ ConfigureTcDgvp[_0xdc4e[53]]+ _0xdc4e[135]+ ConfigureTcDgvp[_0xdc4e[55]]+ _0xdc4e[139]+ ConfigureTcDgvp[_0xdc4e[69]]+ _0xdc4e[142]+ ConfigureTcDgvp[_0xdc4e[54]]+ _0xdc4e[57],fncnone)};winList[_0xdc4e[40]][_0xdc4e[143]]()}
+var PdgvGp=	[32,"Plcs",33,"Loops",34,"Inputs",37,"phases"];
+var PdgvGv=	[12,"voltage",16,"rtc",20,"version"];
+var PdgvPLC=[0,"Mode",1,"ReIntento",148,"Plan"];
+var PdgvIOs=[0,"Flags",8,"samples",12,"act",16,"count"];
+var PdgvPHs=[0,"State",16,"current",18,"potR",20,"potY",22,"potG",24,"ErrorFlgs"];
+var OptDrvDgvp=	["none","Disable","drv1","Driver 1","drv2","Driver 2","drv3","Driver 3","DrvRtc","Driver RTC"];
+
+var LsCmps=			[	"RTC",
+						"Voltage",
+						"PlcMode",
+						"Nplan",
+						"Cph",
+						"Cio",
+						"PhColor",
+						"PhRColor",
+						"PhCurrent",
+						"PhError",
+						"IOsts"];
+var LsCmpsTxt=		[	Str_DgvP_Date,
+						Str_DgvP_Voltage,
+						Str_DgvP_Mode,
+						Str_DgvP_Plan,
+						Str_DgvP_Cph,
+						Str_DgvP_Cio,
+						Str_DgvP_PhSts,
+						Str_DgvP_PhStsR,
+						Str_DgvP_PhCurr,
+						Str_DgvP_PhErrors,
+						Str_DgvP_IOsts];
+
+var ConfigureTcDgvp={
+drv:0,
+srvid:0,
+pdgvid:0,
+id:0,
+ipport:0,
+TimeOut:60,
+Status:"ok",
+cmps:[]
+}; 
+
+//=================================================
+function RefreshDgvpConf()
+{
+	if (winList['TcHttpConf'])
+	{
+		winList['TcHttpConf'].open();
+	}
+  winList["TcHttpConf"].SetH("290px");
+	document.getElementById("TcHttpConfTitle").innerHTML=Str_Config;
+	document.getElementById("TcHttpConfBody").innerHTML=ShowDgvpConf();
+}
+function AddtTcDgvpConf()
+{
+	ConfigureTcDgvp.drv="drv1";
+	ConfigureTcDgvp.srvid=254;
+	ConfigureTcDgvp.pdgvid=1;
+	ConfigureTcDgvp.id="1";
+	ConfigureTcDgvp.ipport=1055;
+	ConfigureTcDgvp.cmps=[];
+	ConfigureTcDgvp.Key=0;
+	ConfigureTcDgvp.TimeOut=60;
+	ConfigureTcDgvp.Status="ok";
+}
+function dgvpAdd()
+{
+	AddtTcDgvpConf();
+	RefreshDgvpConf();
+}
+function rcvTcDgvpConf(Datos)
+{
+	var Refresh=0;
+	var Resource="";
+	var id=0;
+	Datos=Datos.responseText;
+	Datos=Datos.split("\n");
+	RemoveUnusedItem(Datos);
+	if(Datos.length==0)
+		return "";
+	ConfigureTcDgvp.Key=0;
+	ConfigureTcDgvp.drv=0;
+	ConfigureTcDgvp.srvid=0;
+	ConfigureTcDgvp.pdgvid=0;
+	ConfigureTcDgvp.id=0;
+	ConfigureTcDgvp.URL="";
+	ConfigureTcDgvp.ipport=0;
+	ConfigureTcDgvp.TimeOut=60;
+	ConfigureTcDgvp.cmps=[];
+	ConfigureTcDgvp.Status="ok";
+	for(var a=0;a<Datos.length;a++)
+	{
+		Datos[a]=Datos[a].split("\t");
+		if(Datos[a].length>=7)
+		{
+			ConfigureTcDgvp.drv=Datos[a][0];
+			ConfigureTcDgvp.drv=ConfigureTcDgvp.drv.replace("tout.","");
+			ConfigureTcDgvp.srvid=parseInt(Datos[a][1]);
+			ConfigureTcDgvp.pdgvid=parseInt(Datos[a][2]);
+			ConfigureTcDgvp.id=Datos[a][3];
+			ConfigureTcDgvp.id=ConfigureTcDgvp.id.replace("ID","");
+			ConfigureTcDgvp.ipport=parseInt(Datos[a][4]);
+			ConfigureTcDgvp.cmps=Datos[a][5].split(",");;
+			ConfigureTcDgvp.Key=parseInt(Datos[a][6]);
+			ConfigureTcDgvp.URL=Datos[a][7];
+			ConfigureTcDgvp.LstUpd=Datos[a][8];
+			ConfigureTcDgvp.TimeOut=parseInt(Datos[a][9]);
+			ConfigureTcDgvp.Status=Datos[a][10];
+			ConfigureTcDgvp.Model=Datos[a][11];
+		}
+		else
+			Datos.splice(a,1);
+	}
+	RefreshDgvpConf();
+}
+function ShowDgvpConf()
+{
+	var idx=0;
+	var tmp=0;
+	var out="";
+	out+="<table border=\"1\" cellpadding=\"2\" cellspacing=\"0\" align=\"center\" background=\"\" width=\"100%\" style=\"border-collapse:collapse;border:2px solid #000000;\">\n";
+	//---------------------------------------------------------------------
+	{
+		out+="<tr align=\"center\" bgcolor=\"#C0C0C0\">\n";
+		out+="	<td align=\"center\">\n";
+		out+="		<font size=\"1\" face=\"Verdana\">"+Str_Parameter+"</font>\n";
+		out+="	</td>\n";
+		out+="	<td align=\"center\" valign=\"middle\">\n";
+		out+="		<font size=\"1\" face=\"Verdana\">"+Str_Config+"</font>\n";
+		out+="	</td>\n";
+		out+="</tr>\n";
+	}
+	//---------------------------------------------------------------------
+	{
+		out+="<tr align=\"center\" bgcolor=\"#C0C0C0\">\n";
+		out+="	<td align=\"center\">\n";
+		out+="		<font size=\"1\" face=\"Verdana\">"+Str_Dgvp_ID+"</font>\n";
+		out+="	</td>\n";
+		out+="	<td align=\"center\" valign=\"middle\">\n";
+		out+="		ID<input class=\"INTEXT\" id=\"pdgvid\" size=\"5\" maxlength=\"5\"  value=\""+ConfigureTcDgvp.id+"\" onkeyup=\"ConfigureTcDgvp.id=this.value;\" />\n";
+		out+="	</td>\n";
+		out+="</tr>\n";
+	}
+	//---------------------------------------------------------------------
+	{
+		out+="<tr align=\"center\" bgcolor=\"#C0C0C0\">\n";
+		out+="	<td align=\"center\">\n";
+		out+="		<font size=\"1\" face=\"Verdana\">"+Str_Model+"</font>\n";
+		out+="	</td>\n";
+		out+="	<td align=\"center\" valign=\"middle\">\n";
+		out+="<select class=\"INTEXT\" onchange=\"ConfigureTcDgvp.Model=this.value;\" >\n";
+		out+=GenOptionsVi(Models,ConfigureTcDgvp.Model);
+		out+="</select>\n"
+		out+="	</td>\n";
+		out+="</tr>\n";
+	}
+	//---------------------------------------------------------------------*/
+	/*{
+		out+="<tr align=\"center\" bgcolor=\"#C0C0C0\">\n";
+		out+="	<td align=\"center\">\n";
+		out+="		<font size=\"1\" face=\"Verdana\">"+Str_GP_ETH_Address+"</font>\n";
+		out+="	</td>\n";
+		out+="	<td align=\"center\" valign=\"middle\">\n";
+		out+="		<input class=\"INTEXT\" id=\"pdgvurl\" size=\"15\" maxlength=\"80\"  value=\""+ConfigureTcDgvp.URL+"\" onkeyup=\"ConfigureTcDgvp.URL=this.value;\" />\n";
+		out+="	</td>\n";
+		out+="</tr>\n";
+	}
+	//---------------------------------------------------------------------*/
+	{
+		out+="<tr align=\"center\" bgcolor=\"#C0C0C0\">\n";
+		out+="	<td align=\"center\">\n";
+		out+="		<font size=\"1\" face=\"Verdana\">"+Str_Dgvp_ipport+"</font>\n";
+		out+="	</td>\n";
+		out+="	<td align=\"center\" valign=\"middle\">\n";
+		out+="		<input class=\"INTEXT\" id=\"pdgvipport\" size=\"5\" maxlength=\"5\"  value=\""+ConfigureTcDgvp.ipport+"\" onkeyup=\"ConfigureTcDgvp.ipport=this.value;\" />\n";
+		out+="	</td>\n";
+		out+="</tr>\n";
+	}
+	//---------------------------------------------------------------------*/
+	{
+		out+="<tr align=\"center\" bgcolor=\"#C0C0C0\">\n";
+		out+="	<td align=\"center\">\n";
+		out+="		<font size=\"1\" face=\"Verdana\">"+Str_Time_Out+"</font>\n";
+		out+="	</td>\n";
+		out+="	<td align=\"center\" valign=\"middle\">\n";
+		out+="		<input class=\"INTEXT\" id=\"pdgvTimeOut\" size=\"5\" maxlength=\"5\"  value=\""+ConfigureTcDgvp.TimeOut+"\" onkeyup=\"ConfigureTcDgvp.TimeOut=this.value;\" />\n";
+		out+="	</td>\n";
+		out+="</tr>\n";
+	}
+	//---------------------------------------------------------------------
+	{
+		out+="<tr align=\"center\" bgcolor=\"#C0C0C0\">\n";
+		out+="	<td align=\"center\">\n";
+		out+="		<font size=\"1\" face=\"Verdana\">"+Str_Dgvp_srvid+"</font>\n";
+		out+="	</td>\n";
+		out+="	<td align=\"center\" valign=\"middle\">\n";
+		out+="		<input class=\"INTEXT\" id=\"pdgvsrvid\" size=\"5\" maxlength=\"5\"  value=\""+ConfigureTcDgvp.srvid+"\" onkeyup=\"ConfigureTcDgvp.srvid=this.value;\" />\n";
+		out+="	</td>\n";
+		out+="</tr>\n";
+	}
+	//---------------------------------------------------------------------
+	{
+		out+="<tr align=\"center\" bgcolor=\"#C0C0C0\">\n";
+		out+="	<td align=\"center\">\n";
+		out+="		<font size=\"1\" face=\"Verdana\">"+Str_Dgvp_pdgvid+"</font>\n";
+		out+="	</td>\n";
+		out+="	<td align=\"center\" valign=\"middle\">\n";
+		out+="		<input class=\"INTEXT\" id=\"pdgvpdgvid\" size=\"5\" maxlength=\"5\"  value=\""+ConfigureTcDgvp.pdgvid+"\" onkeyup=\"ConfigureTcDgvp.pdgvid=this.value;\" />\n";
+		out+="	</td>\n";
+		out+="</tr>\n";
+	}
+	//---------------------------------------------------------------------
+	{
+		out+="<tr align=\"center\" bgcolor=\"#C0C0C0\">\n";
+		out+="	<td align=\"center\">\n";
+		out+="		<font size=\"1\" face=\"Verdana\">"+Str_Dgvp_cmps+"</font>\n";
+		out+="	</td>\n";
+		out+="	<td align=\"left\" valign=\"middle\">\n";
+		for(var i=0;i<ConfigureTcDgvp.cmps.length;i++)
+		{
+			tmp=LsCmps.indexOf(ConfigureTcDgvp.cmps[i]);
+			out+="<input type=\"button\" class=\"INTEXT2\" value=\""+Str_Del+":";
+			if(tmp!=-1)
+			{
+				out+=LsCmpsTxt[tmp];
+			}
+			else
+			{
+				out+=ConfigureTcDgvp.cmps[i]
+			}
+			out+="\" onclick=\"ConfigureTcDgvp.cmps.splice("+i+",1);RefreshDgvpConf();return false;\" /><br />\n";
+		}
+		out+="<br />["+Str_Add+":<select class=\"INTEXT\" onchange=\"if(this.selectedIndex>0){ConfigureTcDgvp.cmps[ConfigureTcDgvp.cmps.length]=LsCmps[this.selectedIndex-1];}RefreshDgvpConf();\" >\n";
+		out+="<option></option>\n";
+		out+=GenOptionsVi(LsCmpsTxt,null);
+		out+="</select>]\n"
+		//out+="		<input class=\"INTEXT\" id=\"pdgvcmps\" size=\"45\" maxlength=\"45\"  value=\""+ConfigureTcDgvp.cmps+"\" onkeyup=\"ConfigureTcDgvp.cmps=this.value;\" />\n";
+		out+="	</td>\n";
+		out+="</tr>\n";
+	}
+	//---------------------------------------------------------------------
+	{
+		out+="<tr align=\"center\" bgcolor=\"#C0C0C0\">\n";
+		out+="	<td align=\"center\">\n";
+		out+="		<font size=\"1\" face=\"Verdana\">"+Str_Dgvp_drv+"</font>\n";
+		out+="	</td>\n";
+		out+="	<td align=\"center\" valign=\"middle\">\n";
+		out+="<select class=\"INTEXT\" id=\"pdgvDrv\" onchange=\"ConfigureTcDgvp.drv=this.value;\" >\n";
+		out+=GenOptionsV(OptDrvDgvp,ConfigureTcDgvp.drv);
+		out+="</select>\n"
+		out+="	</td>\n";
+		out+="</tr>\n";
+	}
+	//---------------------------------------------------------------------
+	out+="</table>\n";
+	if(ConfigureTcDgvp.Key==0)
+	{
+		out+="<input type=\"button\" class=\"INTEXT2\" value=\""+Str_Add+"\" onclick=\"UpDtTcDgvpConf();return false;\" />\n";
+	}
+	else
+	{
+		out+="<input type=\"button\" class=\"INTEXT2\" value=\""+Str_save+"\" onclick=\"UpDtTcDgvpConf();return false;\" />\n";
+		//out+="<input type=\"button\" class=\"INTEXT2\" value=\""+Str_Delet+"\" onclick=\"DelTcDgvpConf('"+ConfigureTcDgvp.id+"');return false;\" />\n";
+	}
+	out+="<input type=\"button\" class=\"INTEXT2\" value=\""+Str_Cancel+"\" onclick=\"winList['TcHttpConf'].close();return false;\" />\n";
+	return out;
+}
+//=================================================
+function GetTcDgvpConf(id)
+{
+	GetUrlB("./getitems.jsp?sql=SELECT * FROM pdgv WHERE id LIKE %27"+id+"%27 order by id",rcvTcDgvpConf);
+}
+function DelTcDgvpConf(id)
+{
+	GetUrlB("./setitems.jsp?sql=DELETE FROM pdgv WHERE id LIKE %27%25"+id+"%25%27",fncnone);
+	GetUrlB("./setitems.jsp?sql=DELETE FROM variables WHERE id LIKE %27%25"+id+"%2F%25%27",fncnone);
+	GetUrlB("./setitems.jsp?sql=DELETE FROM hisvars WHERE id LIKE %27%25"+id+"%2F%25%27",fncnone);
+}
+
+function ShowDgvpList(Datos)
+{
+	var x=0;
+	var y=0;
+	var bgcolor="";
+	var out="";
+	out+="<table border=\"1\" cellpadding=\"2\" cellspacing=\"0\" align=\"center\" background=\"\" width=\"100%\" style=\"border-collapse:collapse;border:2px solid #000000;\">\n";
+	//---------------------------------------------------------------------
+	{
+		out+="<tr align=\"center\" bgcolor=\"#C0C0C0\" >\n";
+		out+="	<td align=\"center\">\n";
+		out+="	</td>\n";
+		out+="	<td align=\"center\" valign=\"middle\">\n";
+		out+="		<font size=\"1\" face=\"Verdana\">"+Str_Dgvp_ID+"</font>\n";
+		out+="	</td>\n";
+		out+="	<td align=\"center\">\n";
+		out+="		<font size=\"1\" face=\"Verdana\">"+Str_Dgvp_drv+"</font>\n";
+		out+="	</td>\n";
+		out+="	<td align=\"center\" valign=\"middle\">\n";
+		out+="		<font size=\"1\" face=\"Verdana\">"+Str_Dgvp_srvid+"</font>\n";
+		out+="	</td>\n";
+		out+="	<td align=\"center\" valign=\"middle\">\n";
+		out+="		<font size=\"1\" face=\"Verdana\">"+Str_Dgvp_pdgvid+"</font>\n";
+		out+="	</td>\n";
+		out+="	<td align=\"center\" valign=\"middle\">\n";
+		out+="		<font size=\"1\" face=\"Verdana\">"+Str_Dgvp_ipport+"</font>\n";
+		out+="	</td>\n";
+		out+="	<td align=\"center\" valign=\"middle\">\n";
+		out+="		<font size=\"1\" face=\"Verdana\">"+Str_Dgvp_cmps+"</font>\n";
+		out+="	</td>\n";
+		out+="	<td align=\"center\">\n";
+		out+="	</td>\n";
+		out+="</tr>\n";
+	}
+	//---------------------------------------------------------------------
+	y=0;
+	while(y<Datos.length)
+	{
+		if((y%2)==0)
+			bgcolor="#808080";
+		else
+			bgcolor="#A0A0A0";
+		out+="<tr align=\"center\" bgcolor=\""+bgcolor+"\" >\n";
+		out+="	<td align=\"center\" valign=\"middle\" onclick=\"GetTcDgvpConf('"+Datos[y][0]+"');\">\n";
+		out+="		<img src=\"../img/efile.png\" width=\"18\" height=\"18\" border=\"0\" />";
+		out+="	</td>\n";
+		x=0;
+		while(x<Datos[y].length)
+		{
+			out+="	<td align=\"center\" valign=\"middle\">\n";
+			out+="		<font size=\"1\" face=\"Verdana\">"+Datos[y][x]+"</font>\n";
+			out+="	</td>\n";
+			x++;
+		}
+		out+="	<td align=\"center\" valign=\"middle\" onclick=\"DelTcDgvpConf('"+Datos[y][0]+"');GetListdgvp();\">\n";
+		out+="		<img src=\"../img/defile.png\" width=\"18\" height=\"18\" border=\"0\" />";
+		out+="	</td>\n";
+		out+="</tr>\n";
+		y++;
+	}
+	//---------------------------------------------------------------------
+	out+="</table>\n";
+	return out;
+}
+function GetListdgvp()
+{
+	GetUrlB("./getitems.jsp?sql=SELECT id,drv,srvid,pdgvid,ipport,cmps FROM pdgv order by id",rcvTcDgvpList);
+}
+function rcvTcDgvpList(Datos)
+{
+	Datos=rcvtbl(Datos);
+	if (winList["List"])
+	{
+		winList["List"].open();
+		winList["List"].SetH((4+15+(Datos.length*25))+"px");
+		winList["List"].SetW(450+"px");
+	}
+	//document.getElementById("ListHora").innerHTML="";
+	document.getElementById("ListTitle").innerHTML=Str_ListDevice;
+	document.getElementById("ListBody").innerHTML=ShowDgvpList(Datos);
+}
+//=================================================
+function UpDtTcDgvpConf()
+{
+	ConfigureTcDgvp.drv=document.getElementById("pdgvDrv").value;
+	ConfigureTcDgvp.srvid=parseInt(document.getElementById("pdgvsrvid").value);
+	ConfigureTcDgvp.pdgvid=parseInt(document.getElementById("pdgvpdgvid").value);
+	ConfigureTcDgvp.id=document.getElementById("pdgvid").value;
+	//ConfigureTcDgvp.URL=document.getElementById("pdgvurl").value;
+	ConfigureTcDgvp.ipport=parseInt(document.getElementById("pdgvipport").value);
+	ConfigureTcDgvp.TimeOut=parseInt(document.getElementById("pdgvTimeOut").value);
+	//ConfigureTcDgvp.cmps=document.getElementById("pdgvcmps").value;
+	if(ConfigureTcDgvp.Key==0)
+	{
+		GetUrlB("./setitems.jsp?sql=INSERT INTO pdgv (drv,srvid,pdgvid,id,ip,ipport,cmps,timeout,status,lstupd,model) VALUES (%27"+ConfigureTcDgvp.drv+"%27,"+ConfigureTcDgvp.srvid+","+ConfigureTcDgvp.pdgvid+",%27ID"+ConfigureTcDgvp.id+"%27,%27"+ConfigureTcDgvp.URL+"%27,"+ConfigureTcDgvp.ipport+",%27"+ConfigureTcDgvp.cmps+"%27,"+ConfigureTcDgvp.TimeOut+",%27ok%27,LOCALTIMESTAMP,%27"+ConfigureTcDgvp.Model+"%27)",fncnone);
+	}
+	else
+	{
+		GetUrlB("./setitems.jsp?sql=UPDATE pdgv SET (drv,srvid,pdgvid,id,ip,ipport,cmps,timeout,status,lstupd,model)%3D(%27"+ConfigureTcDgvp.drv+"%27,"+ConfigureTcDgvp.srvid+","+ConfigureTcDgvp.pdgvid+",%27ID"+ConfigureTcDgvp.id+"%27,%27"+ConfigureTcDgvp.URL+"%27,"+ConfigureTcDgvp.ipport+",%27"+ConfigureTcDgvp.cmps+"%27,"+ConfigureTcDgvp.TimeOut+",%27ok%27,LOCALTIMESTAMP,%27"+ConfigureTcDgvp.Model+"%27) WHERE key="+ConfigureTcDgvp.Key+"",fncnone);
+	}
+	//----------------------------------------------------------------------------------------------------------------------------------------------------------------
+	winList['TcHttpConf'].close();
+}

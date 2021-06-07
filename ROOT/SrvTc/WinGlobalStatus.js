@@ -212,10 +212,10 @@ function rcvFastSts(Datos)
 		}
 	}
 	//---------------------------------------------------------
-	if (winList[Reqest[PoolData].WinName])
+	if (winList[Datos.Obj.WinName])
 	{
-		winList[Reqest[PoolData].WinName].SetH((10+30+30+(TblSize*24))+"px"); //("300px");
-		winList[Reqest[PoolData].WinName].open();
+		winList[Datos.Obj.WinName].SetH((10+30+30+(TblSize*24))+"px"); //("300px");
+		winList[Datos.Obj.WinName].open();
 		winAutoPos();
 	}
 	//setTimeout("CollapsibleLists.apply()",1000);
