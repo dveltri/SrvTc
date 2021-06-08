@@ -1,281 +1,750 @@
-//AttachEvent(window,'load',UL2Menu_ConvertMenu,true);
-var MenuElement;
-
-function IniMenu(mnuElement)
+var MaxTop =24;	//24;
+var WinCount = 3;
+var winList = new Array();
+var winCtrl = new Object();
+var browser = new Browser();
+var LstTop=[0,0,0];
+var Row2Left=0;
+var EnWinAutoPos=0;
+//=============================================================================
+// Initialization code.
+//=============================================================================
+function winInit() 
 {
-	MenuElement
-	out="<ul id=\"menu\" class=\"horizontal\" border=\"0\">\n";
-	//=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=
-	out+="<li>";
-	out+="<img src=\"../img/conf.jpg\" width=\"18\" height=\"18\" border=\"0\" />"+Str_MN_Config;
-	out+="<ul>\n";
-		//-----------------------
-		out+="<li><a href=\"\" onclick=\"ShowtUsers();return false\">";
-		out+="<img src=\"../img/usergroup.png\" width=\"18\" height=\"18\" border=\"0\" /> "+Str_AdminUsers;
-		out+="</a></li>\n";
-		//-----------------------
-		out+="<li>";
-		out+="<img src=\"../img/sts.jpg\" width=\"18\" height=\"18\" border=\"0\" />\n"+Str_Statistic;
-		out+="<ul>";
-			//- - - - - - - - - - -
-			out+="<li><a href=\"\" onclick=\"GetIOsListConf();return false\">";
-			out+="<img src=\"../img/sts.jpg\" width=\"18\" height=\"18\" border=\"0\" />\n"+Str_MN_Config;
-			out+="</li>\n";
-			//- - - - - - - - - - -
-			out+="<li><a href=\"\" onclick=\"GetIOsList();return false\">";
-			out+="<img src=\"../img/sts.jpg\" width=\"18\" height=\"18\" border=\"0\" />\n"+Str_StatisticList;
-			out+="</li>\n";
-			//- - - - - - - - - - -
-		out+="</ul></li>\n";
-		//-----------------------
-		out+="<li>";
-		out+="<img src=\"../img/sch.jpg\" width=\"18\" height=\"18\" border=\"0\" /> "+Str_Scheduler;
-		out+="<ul>";
-			//- - - - - - - - - - -
-			out+="<li><a href=\"\" onclick=\"GetSch('');return false\">";
-			out+="<img src=\"../img/sch.jpg\" width=\"18\" height=\"18\" border=\"0\" /> "+Str_AdminScheduler;
-			out+="</a></li>\n";
-			//- - - - - - - - - - -
-			out+="<li><a href=\"\" onclick=\"GetSchActList();return false\">";
-			out+="<img src=\"../img/sch.jpg\" width=\"18\" height=\"18\" border=\"0\" /> "+Str_SchedulersFnc;
-			out+="</a></li>\n";
-			//- - - - - - - - - - -
-		out+="</ul></li>\n";
-		//-----------------------
-		out+="<li>";
-		out+="<img src=\"../img/TC3.png\" width=\"18\" height=\"18\" border=\"0\" /> "+Str_AdminDevice;
-		out+="<ul>";
-			//- - - - - - - - - - -
-			out+="<li><a href=\"\" onclick=\"GetListHttp();return false\">";
-			out+="<img src=\"../img/plc0.png\" width=\"18\" height=\"18\" border=\"0\" /> "+Str_ListDevice;
-			out+="</a></li>\n";
-			//- - - - - - - - - - -
-			out+="<li><a href=\"\" onclick=\"AddtTcHttpConf();return false\">";
-			out+="<img src=\"../img/plc0.png\" width=\"18\" height=\"18\" border=\"0\" /> "+Str_AddDeviceHttp;
-			out+="</a></li>\n";
-			//- - - - - - - - - - -
-		out+="</ul></li>\n";
-		//-----------------------
-		out+="<li>";
-		out+="<img src=\"../img/BolaDelMundo.png\" width=\"18\" height=\"18\" border=\"0\" />\n"+Str_Map;
-		out+="<ul>";
-			//- - - - - - - - - - -
-			out+="<li><a href=\"\" onclick=\"AddtTcHttpConf();RefreshMapItem();return false;\">";
-			out+="<img src=\"../img/BolaDelMundo.png\" width=\"18\" height=\"18\" border=\"0\" />\n"+Str_MapItem;
-			out+="</a></li>\n";
-			//- - - - - - - - - - -
-			out+="<li><a href=\"\" onclick=\"GetUrlB('./getlist.jsp?cmps=*&tbl=mapitems&ord=variable',rcvMapList);return false;\">";
-			out+="<img src=\"../img/BolaDelMundo.png\" width=\"18\" height=\"18\" border=\"0\" />\n"+Str_MapList;
-			out+="</a></li>\n";
-			//- - - - - - - - - - -
-		out+="</ul></li>\n";
-		//-----------------------
-	out+="</ul></li>";
-	//=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=
-	out+="<li>";
-	out+="<img src=\"../img/Graficos.jpg\" width=\"16\" height=\"16\" border=\"0\" />"+Str_MN_Info;
-	out+="<ul>"
-		//-----------------------
-		out+="<li><a href=\"\" onclick=\"MapPos("+GlobView+");return false;\">";
-		out+="<img src=\"../img/BolaDelMundo.png\" width=\"18\" height=\"18\" border=\"0\" />\n"+Str_Map;
-		out+="</a></li>\n";
-		//-----------------------
-		out+="<li><a href=\"\" onclick=\"GetUrlB('./getitems.jsp?sql=SELECT * FROM variables order by id',rcvList);return false;\">\n";
-		out+="<img src=\"../img/io.jpg\" width=\"18\" height=\"18\" border=\"0\" />\n"+Str_ListVariables;
-		out+="</a></li>\n";		
-		//-----------------------
-		out+="<li><a href=\"\" onclick=\"alert("+Str_About_Msg+");return false;\">\n";
-		out+="<img src=\"../img/file.png\" width=\"18\" height=\"18\" border=\"0\" />\n"+Str_About;
-		out+="</a></li>\n";		
-		//-----------------------
-	out+="</ul></li>";
-	//=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=
-	out+="</ul>\n";
-	//-------------------------------------------------------------- */
-	document.getElementById("divMenu").innerHTML=out;
+	winCtrl.maxzIndex						=	0;
+	winCtrl.resizeCornerSize				=  18;
+	winCtrl.minimizedTextWidth				= 100;
+	
+	winCtrl.inactiveFrameBackgroundColor	 = winactFrameBackgroundColor
+	winCtrl.inactiveFrameBorderColor		 = winactFrameBorderColor
+	winCtrl.inactiveTitleBarColor			 = winactTitleBarColor
+	winCtrl.inactiveTitleTextColor			 = winactTitleTextColor;
+	winCtrl.inactiveClientAreaBorderColor	 = winactClientAreaBorderColor;
+	winCtrl.inactiveClientAreaScrollbarColor = winactClientAreaScrollbarColor;
+	winCtrl.inactiveButtonsImage			 = winactButtonsImage;
+	
+	winCtrl.activeFrameBackgroundColor		 = wactFrameBackgroundColor
+	winCtrl.activeFrameBorderColor			 = wactFrameBorderColor; 
+	winCtrl.activeTitleBarColor				 = wactTitleBarColor;
+	winCtrl.activeTitleTextColor			 = wactTitleTextColor;
+	winCtrl.activeClientAreaBorderColor		 = wactClientAreaBorderColor;
+	winCtrl.activeClientAreaScrollbarColor	 = wactClientAreaScrollbarColor;
+	
+	winCtrl.inMoveDrag					 = false;
+	winCtrl.inResizeDrag				 = false;
+	//----------------------------------------------------------------
 }
 
-function MenuSts(MnuX,MnuY,MnuOri)
+function winUdate()
 {
-	var DivMenu1 = document.getElementById('DivMenu');
-	if (MnuX!=null)
-	 DivMenu1.style.left =MnuX;
-	if (MnuY!=null)
-	 DivMenu1.style.top =MnuY;
-	if (MnuOri=='v')
-	 ChangeOrientation();
-	DivMenu1.style.visibility='visible';
-}
-
-function UL2Menu_ConvertMenu()
-{
-	var menu=document.getElementById('menu');
-	if (!menu) return;
-	var menuIsHorizontal=HasClass(menu,'horizontal');
-	var lis = menu.getElementsByTagName('li');
-	for (var i=0,len=lis.length;i<len;i++)
+	winAutoPos();
+	var elList = document.getElementsByTagName("div");
+	for (var i = 0; i < elList.length; i++)
 	{
-		var li=lis[i];
-		var uls = li.getElementsByTagName('ul');
-		if (!uls || uls.length==0) continue;
-		var ul=uls[0];
-		li.sub=ul;
-		li.onmouseover=UL2Menu_ShowHead;
-		li.onmouseout=UL2Menu_HideHead;
-		li.isTop = li.parentNode==menu;
-		li.isHorizontal = (menuIsHorizontal && li.isTop);
-		if (li.addedArrow || li.isTop) continue;
-		//var arrow=document.createElement('span');
-		//arrow.innerHTML='&nbsp;&rArr;';
-		//var a = li.getElementsByTagName('a');
-		//if (a && a.length>0 && a[0].parentNode==li) a[0].innerHTML+='&nbsp;&rArr;';
-		//else li.insertBefore(arrow,li.childNodes[1]);
-		//li.addedArrow=true;
+		if (elList[i].className == "window")
+		{
+			winList[elList[i].id] = new Window(elList[i]);
+		}
 	}
 }
 
-function UL2Menu_ShowHead()
+function winAutoPosX()
 {
-	var li=this;
-	var x1;
-	var y1;
-	AddClass(li,'active');
-	var xy=FindXYWH(li);
-	if (li.isTop)
-	{
-		x1=(xy.x+(!li.isHorizontal?xy.w:0))+'px';
-		li.sub.style.left=x1;
-		y1=(xy.y+(li.isHorizontal?xy.h:0)-(li.isTop?0:1))+'px';
-		li.sub.style.top=y1;
-	}
-	else 
-	{
-		li.sub.style.left=(li.offsetWidth-5)+'px';
-		li.sub.style.top=li.offsetTop+'px';
-	}
-	li.sub.style.zIndex=winCtrl.maxzIndex+1
-	li.sub.style.visibility='visible';
-	LOG(x1 + " "+ y1+" " +li.sub.style.zIndex);	
 }
 
-function UL2Menu_HideHead()
+function winAutoPos()
 {
-	var li=this;
-	li.sub.style.visibility='hidden';
-	KillClass(li,'active');
-	LOG("kil head" + this );
-}
-
-function FindXY(obj)
-{
-	var x=0,y=0;
-	while (obj)
+	if(EnWinAutoPos==0)
+		return;
+	var elList = document.getElementsByTagName("div");
+	LstTop[0]=0;
+	LstTop[1]=0;
+	for (var i = 0; i < elList.length; i++)
 	{
-		x+=obj.offsetLeft - (obj.scrollLeft || 0);
-		y+=obj.offsetTop - (obj.scrollTop || 0);
-		obj=null;
+		if (elList[i].className == "window")
+		{
+			//if(winList[elList[i].id].isOpen==true)
+			{
+				if(LstTop[0]<=LstTop[1])
+				{
+					winList[elList[i].id].SetX(0);
+					winList[elList[i].id].SetY(LstTop[0]);
+				}
+				else
+				{
+					winList[elList[i].id].SetX((Row2Left+18));
+					winList[elList[i].id].SetY(LstTop[1]);
+				}
+				if(0==parseInt(winList[elList[i].id].frame.style.left))
+				{
+					LstTop[0]+=parseInt(winList[elList[i].id].clientArea.style.height)+48;
+				}
+				else
+				{
+					LstTop[1]+=parseInt(winList[elList[i].id].clientArea.style.height)+48;
+				}
+			}
+		}
 	}
-	return {x:x,y:y};
 }
-
-function FindXYWH(obj)
+// Determine browser and version.
+function Browser() 
 {
-	if (!obj) return { x:0, y:0, w:0, h:0 };
-	var objXY = FindXY(obj);
-	return { x:objXY.x, y:objXY.y, w:obj.offsetWidth||0, h:obj.offsetHeight||0 };
-}
-
-function AttachEvent(obj,evt,fnc,useCapture)
-{
-	if (obj.addEventListener)
+	var ua, s, i;
+	this.isIE = false;	// Internet Explorer
+	this.isNS = false;	// Netscape
+	this.version = null;
+	ua = navigator.userAgent;
+	s = "MSIE";
+	if ((i = ua.indexOf(s)) >= 0) 
 	{
-		obj.addEventListener(evt,fnc,useCapture);
-		return true;
+		this.isIE = true;
+		this.version = parseFloat(ua.substr(i + s.length));
+		return;
 	}
+	s = "Netscape6/";
+	if ((i = ua.indexOf(s)) >= 0) 
+	{
+		this.isNS = true;
+		this.version = parseFloat(ua.substr(i + s.length));
+		return;
+	}
+	// Treat any other "Gecko" browser as NS 6.1.
+	s = "Gecko";
+	if ((i = ua.indexOf(s)) >= 0) 
+	{
+		this.isNS = true;
+		this.version = 6.1;
+		return;
+	}
+}
+
+//=============================================================================
+// Window Object
+//=============================================================================
+function winAdd(Name)
+{
+	var parent = document.getElementById("AllWindows");
+	if(document.getElementById(Name))
+		return 0;
+	if(winList[Name])
+		return 0;
+	var out="\n\
+<div id=\""+Name+"\" class=\"window\" FixedSize=\"0\" style=\"z-index: 1; left:0px; top:"+MaxTop+"px; width: 640px;\">\n\
+	<div class=\"titleBar\">\n\
+		<span id=\""+Name+"Title\" class=\"titleBarText\">...</span>\n\
+		<span id=\""+Name+"Hora\" class=\"titleBarHora\">::</span>\n\
+	</div>\n\
+	<div class=\"clientArea\" id=\""+Name+"Body\" style=\"height: 80px;\">\n\
+	</div>\n\
+</div>\n";
+	parent.innerHTML+=out;
+	var elList = document.getElementById(Name);
+	winList[elList.id] = new Window(elList);
+	return 1;
+}
+
+function GetWinByName(Name)
+{
+	for (var i = 0; i < winList.length; i++)
+	{
+		if(winList[i].frame.id==Name)
+			return winList[i];
+	}
+}
+
+function winRemove(Name)
+{
+	winList[Name].close();
+	var parent = document.getElementById("AllWindows");
+	delete winList[Name];
+	var child = document.getElementById(Name);
+	parent.removeChild(child);
+}
+
+function Window(el) 
+{
+	var initLt, initWd, w, dw;
+	var i, mapList, mapName;
+
+	// Get window components.
+	this.frame		 = el;
+	this.titleBar		 = winFindByClassName(el, "titleBar");
+	this.titleBarText		= winFindByClassName(el, "titleBarText");
+	this.titleBarButtons = winFindByClassName(el, "titleBarButtons");
+	this.clientArea	 = winFindByClassName(el, "clientArea");
+
+	// Find matching button image map.
+	if(this.titleBarButtons)
+	{
+		mapName = this.titleBarButtons.useMap.substr(1);
+		mapList = document.getElementsByTagName("map");
+		for (i = 0; i < mapList.length; i++)
+			if (mapList[i].name == mapName)
+	 		this.titleBarMap = mapList[i];
+	}
+	// Save colors.
+	/*this.activeFrameBackgroundColor	= this.frame.style.backgroundColor;
+	this.activeFrameBorderColor	 = this.frame.style.borderColor;
+	this.activeTitleBarColor			= this.titleBar.style.backgroundColor;
+	this.activeTitleTextColor	 	= this.titleBar.style.color;
+	this.activeClientAreaBorderColor = this.clientArea.style.borderColor;
+	if (browser.isIE)
+		this.activeClientAreaScrollbarColor = this.clientArea.style.scrollbarBaseColor;
+	*/
+	// Save images.
+	if(this.titleBarButtons)
+	{
+		this.activeButtonsImage	 = this.titleBarButtons.src;
+		this.inactiveButtonsImage = this.titleBarButtons.longDesc;
+	}
+
+	// Set flags.
+	this.isOpen	 	 = false;
+	this.isMinimized = false;
+	this.FixedPos	 = false;
+	this.FixedSize	 = 3;
+
+	// Set methods.
+	this.open		= winOpen;
+	this.close	 	= winClose;
+	this.minimize	= winMinimize;
+	this.restore	= winRestore;
+	this.makeActive = winMakeActive;
+	this.SetX		= winSetX;
+	this.SetY		= winSetY;
+	this.SetH		= winSetH;
+	this.SetW		= winSetW;
+	this.FixSize	= winFixSize;
+	this.FixPos		= winFixPos;
+
+	// Set up event handling.
+	this.frame.parentWindow = this;
+
+	this.frame.onmousemove	= winResizeCursorSet;
+	this.frame.onmouseout	 = winResizeCursorRestore;
+	this.frame.onmousedown	= winResizeDragStart;
+	
+	this.titleBar.parentWindow = this;
+	this.titleBar.onmousedown = winMoveDragStart;
+	this.clientArea.parentWindow = this;
+	this.clientArea.onclick	 = winClientAreaClick;
+	if(this.titleBarButtons)
+	{
+		for (i = 0; i < this.titleBarMap.childNodes.length; i++)
+			if (this.titleBarMap.childNodes[i].tagName == "area")
+	 		this.titleBarMap.childNodes[i].parentWindow = this;
+	}
+	// Save the inital frame width and position, then reposition
+	// the window.
+	initLt = this.frame.style.left;
+	initWd = parseInt(this.frame.style.width);
+	this.frame.style.left = -this.titleBarText.offsetWidth + "px";
+
+	// For IE, start calculating the value to use when setting
+	// the client area width based on the frame width.
+	if (browser.isIE) 
+	{
+		this.titleBarText.style.display = "none";
+		w = this.clientArea.offsetWidth;
+		this.widthDiff = this.frame.offsetWidth - w;
+		this.clientArea.style.width = w + "px";
+		dw = this.clientArea.offsetWidth - w;
+		w -= dw;	
+		this.widthDiff += dw;
+		this.titleBarText.style.display = "";
+	}
+
+	// Find the difference between the frame's style and offset widths. For IE, adjust the client area/frame width difference accordingly.
+	w = this.frame.offsetWidth;
+	this.frame.style.width = w + "px";
+	dw = this.frame.offsetWidth - w;
+	w -= dw;	
+	this.frame.style.width = w + "px";
+	if (browser.isIE)
+		this.widthDiff -= dw;
+
+	// Find the minimum width for resize.
+	this.isOpen = true;	// Flag as open so minimize call will work.
+	this.minimize();
+	// Get the minimum width.
+	if (browser.isNS && browser.version >= 1.2)
+		// For later versions of Gecko.
+		this.minimumWidth = this.frame.offsetWidth;
 	else
-	{
-		if (obj.attachEvent)
-		{
-			return obj.attachEvent("on"+evt,fnc);
-		}
-		else
-		{
-			obj['on'+evt]=fnc;
-		}
-	}
-	return true;
+		// For all others.
+		this.minimumWidth = this.frame.offsetWidth - dw;
+
+	// Find the frame width at which or below the title bar text will
+	// need to be clipped.
+	this.titleBarText.style.width = "";
+	this.clipTextMinimumWidth = this.frame.offsetWidth - dw;
+
+	// Set the minimum height.
+	this.minimumHeight = 1;
+
+	// Restore window. For IE, set client area width.
+	this.restore();
+	this.isOpen = false;	// Reset flag.
+	initWd = Math.max(initWd, this.minimumWidth);
+	this.frame.style.width = initWd + "px";
+	if (browser.isIE)
+		this.clientArea.style.width = (initWd - this.widthDiff) + "px";
+
+	// Clip the title bar text if needed.
+	if (this.clipTextMinimumWidth >= this.minimumWidth)
+		this.titleBarText.style.width = (winCtrl.minimizedTextWidth + initWd - this.minimumWidth) + "px";
+
+	// Restore the window to its original position.
+	this.frame.style.left = initLt;
 }
 
-function HasClass(obj,cName)
-{ 
-	return (!obj || !obj.className)?false:(new RegExp("\\b"+cName+"\\b")).test(obj.className) 
-}
-
-function AddClass(obj,cName)
+//=============================================================================
+// Window Methods
+//=============================================================================
+function winOpen() 
 {
+	if (this.isOpen)
+		return;
+	this.makeActive();
+	this.isOpen = true;
+	if (this.isMinimized)
+		this.restore();
+	this.frame.style.visibility = "visible";
+}
 
-	if (!obj) return;
-	if (obj.className==null) obj.className='';
-	obj.className+=(obj.className.length>0?' ':'')+cName;
-	obj.style.zIndex= winCtrl.maxzIndex;
-//	LOG("ZI:"+obj.style.zIndex);//= winCtrl.maxzIndex+1;
+function winClose() 
+{
+	this.frame.style.visibility = "hidden";
+	this.isOpen = false;
+}
+
+function winMinimize() 
+{
+	if (!this.isOpen || this.isMinimized)
+		return;
+	this.makeActive();
+	this.restoreFrameWidth = this.frame.style.width;
+	this.restoreTextWidth = this.titleBarText.style.width;
+	this.clientArea.style.display = "none";
+	if (this.minimumWidth)
+		this.frame.style.width = this.minimumWidth + "px";
+	else
+		this.frame.style.width = "";
+	this.titleBarText.style.width = winCtrl.minimizedTextWidth + "px";
+	this.isMinimized = true;
+}
+
+function winRestore() 
+{
+	if (!this.isOpen || !this.isMinimized)
+		return;
+	this.makeActive();
+	this.clientArea.style.display = "";
+	this.frame.style.width = this.restoreFrameWidth;
+	this.titleBarText.style.width = this.restoreTextWidth;
+	this.isMinimized = false;
+}
+
+function winMakeActive() 
+{
+	if (winCtrl.active == this)
+		return;
+	// Inactivate the currently active window.
+	if (winCtrl.active) 
+	{
+		//document.getElementById('dgv').innerHTML+="in de if [" + winCtrl.active.inactiveButtonsImage+"]<br />";
+		winCtrl.active.frame.style.backgroundColor		= winCtrl.inactiveFrameBackgroundColor;
+		winCtrl.active.frame.style.borderColor		 = winCtrl.inactiveFrameBorderColor;
+		winCtrl.active.titleBar.style.backgroundColor = winCtrl.inactiveTitleBarColor;
+		winCtrl.active.titleBar.style.color		 = winCtrl.inactiveTitleTextColor;
+		winCtrl.active.clientArea.style.borderColor	 = winCtrl.inactiveClientAreaBorderColor;
+		if (browser.isIE)
+			winCtrl.active.clientArea.style.scrollbarBaseColor = winCtrl.inactiveClientAreaScrollbarColor;
+		if (browser.isNS && browser.version < 6.1)
+			winCtrl.active.clientArea.style.overflow = "hidden";
+		if (winCtrl.active.inactiveButtonsImage)
+			winCtrl.active.titleBarButtons.src = winCtrl.active.inactiveButtonsImage;
+	}
+	//else // Activate this window.
+	{
+	this.frame.style.backgroundColor	 = winCtrl.activeFrameBackgroundColor;
+	this.frame.style.borderColor		 = winCtrl.activeFrameBorderColor;
+	this.titleBar.style.backgroundColor	 = winCtrl.activeTitleBarColor;
+	this.titleBar.style.color			 = winCtrl.activeTitleTextColor;
+	this.clientArea.style.borderColor	 = winCtrl.activeClientAreaBorderColor;
+	if (browser.isIE)
+		this.clientArea.style.scrollbarBaseColor = winCtrl.activeClientAreaScrollbarColor;
+	if (browser.isNS && browser.version < 6.1)
+		this.clientArea.style.overflow = "auto";
+	if (this.inactiveButtonsImage)
+		this.titleBarButtons.src = winCtrl.activeButtonsImage;
+	this.frame.style.zIndex = ++winCtrl.maxzIndex;
+	//------------------------------------------------ Menu Alwais on top
+	var mvar=document.getElementById("menu");
+	if(mvar)
+	{
+		mvar.style.zIndex= winCtrl.maxzIndex+1;
+		LOG("winCtrl.maxzIndex:" + winCtrl.maxzIndex);
+		LOG("menu.Index:" + mvar.style.zIndex);
+	}
+	winCtrl.active = this;
+	}
+}
+
+//=============================================================================
+// Event handlers.
+//=============================================================================
+function winClientAreaClick(event) 
+{
+	this.parentWindow.makeActive();
+}
+
+//-----------------------------------------------------------------------------
+// Window dragging.
+//-----------------------------------------------------------------------------
+function winSetX(X)
+{
+	X=parseInt("0"+X);
+	this.frame.style.left=X+"px";
+}
+
+function winSetY(Y)
+{
+	Y=parseInt("0"+Y);
+	if(Y<MaxTop)
+		Y=MaxTop;
+	this.frame.style.top=Y+"px";
+}
+
+function winFixSize(s)
+{
+	this.FixedSize=s;
+}
+
+function winFixPos(s)
+{
+	this.FixedPos=s;
+}
+
+function winMoveDragStart(event) 
+{
+	var target;
+	var x, y;
+	if (browser.isIE)
+		target = window.event.srcElement.tagName;
+	if (browser.isNS)
+		target = event.target.tagName;
+	if (target == "area" || this.parentWindow.FixedPos)
+		return;
+	this.parentWindow.makeActive();
+	if (browser.isIE) 
+	{
+		x = window.event.x;
+		y = window.event.y;
+	}
+	if (browser.isNS) 
+	{
+		x = event.pageX;
+		y = event.pageY;
+	}
+	winCtrl.xOffset = winCtrl.active.frame.offsetLeft - x;
+	winCtrl.yOffset = winCtrl.active.frame.offsetTop	- y;
+	if (browser.isIE) 
+	{
+		document.onmousemove = winMoveDragGo;
+		document.onmouseup	 = winMoveDragStop;
+	}
+	if (browser.isNS) 
+	{
+		document.addEventListener("mousemove",	winMoveDragGo,	true);
+		document.addEventListener("mouseup",	winMoveDragStop,true);
+		event.preventDefault();
+	}
+	winCtrl.inMoveDrag = true;
+}
+
+function winMoveDragGo(event) 
+{
+	var x, y;
+	if (!winCtrl.inMoveDrag)
+		return;
+	if (browser.isIE) 
+	{
+		x = window.event.x;
+		y = window.event.y;
+		window.event.cancelBubble = true;
+		window.event.returnValue = false;
+	}
+	if (browser.isNS) 
+	{
+		x = event.pageX;
+		y = event.pageY;
+		event.preventDefault();
+	}
+	if((x + winCtrl.xOffset)>0)
+		winCtrl.active.frame.style.left = (x + winCtrl.xOffset) + "px";
+	else
+		winCtrl.active.frame.style.left ="0px"
+	if((y + winCtrl.yOffset)>MaxTop)
+		winCtrl.active.frame.style.top	= (y + winCtrl.yOffset) + "px";
+	else
+		winCtrl.active.frame.style.top	=MaxTop+"px"
+}
+
+function winMoveDragStop(event) 
+{
+	winCtrl.inMoveDrag = false;
+	if (browser.isIE) 
+	{
+		document.onmousemove = null;
+		document.onmouseup	 = null;
+	}
+	if (browser.isNS) 
+	{
+		document.removeEventListener("mousemove", winMoveDragGo,	 true);
+		document.removeEventListener("mouseup",	 winMoveDragStop, true);
+	}
+	//winCtrl.active.titleBarText.innerHTML="["+winCtrl.active.frame.style.left+" "+winCtrl.active.frame.style.top+"]["+winCtrl.active.frame.style.width+" "+winCtrl.active.clientArea.style.height+"]";
+}
+
+//-----------------------------------------------------------------------------
+// Window resizing.
+//-----------------------------------------------------------------------------
+function winSetH(H)
+{
+	H=parseInt("0"+H);
+	this.clientArea.style.height=H+"px";
+}
+
+function winSetW(W)
+{
+	W=parseInt("0"+W);
+	this.frame.style.width=W+"px";
+	if(this.frame.style.left=="0px" && Row2Left<parseInt("0"+this.frame.style.width))
+		Row2Left=parseInt("0"+this.frame.style.width);
+}
+
+function winResizeCursorSet(event) 
+{
+	var target;
+	var xOff, yOff;
+
+	if (this.parentWindow.isMinimized || winCtrl.inResizeDrag)
+		return;
+	if (browser.isIE)
+		target = window.event.srcElement;
+	if (browser.isNS)
+		target = event.target;
+	if (target != this.parentWindow.frame)
+		return;
+	if (browser.isIE) 
+	{
+		xOff = window.event.offsetX;
+		yOff = window.event.offsetY;
+	}
+	if (browser.isNS) 
+	{
+		xOff = event.layerX;
+		yOff = event.layerY;
+	}
+	winCtrl.resizeDirection = ""
+	if (yOff <= winCtrl.resizeCornerSize)
+		winCtrl.resizeDirection += "n";
+	else if (yOff >= this.parentWindow.frame.offsetHeight - winCtrl.resizeCornerSize)
+		winCtrl.resizeDirection += "s";
+	if (xOff <= winCtrl.resizeCornerSize)
+		winCtrl.resizeDirection += "w";
+	else if (xOff >= this.parentWindow.frame.offsetWidth - winCtrl.resizeCornerSize)
+		winCtrl.resizeDirection += "e";
+	if (winCtrl.resizeDirection == "") 
+	{
+		this.onmouseout(event);
+		return;
+	}
+	if (browser.isIE)
+		document.body.style.cursor = winCtrl.resizeDirection + "-resize";
+	if (browser.isNS)
+		this.parentWindow.frame.style.cursor = winCtrl.resizeDirection + "-resize";
+}
+
+function winResizeCursorRestore(event) 
+{
+	if (winCtrl.inResizeDrag)
+		return;
+	if (browser.isIE)
+		document.body.style.cursor = "";
+	if (browser.isNS)
+		this.parentWindow.frame.style.cursor = "";
+}
+
+function winResizeDragStart(event) 
+{
+	var target;
+	if (browser.isIE)
+		target = window.event.srcElement;
+	if (browser.isNS)
+		target = event.target;
+	if((target != this.parentWindow.frame) || this.parentWindow.FixedSize==0)
+		return;
+	this.parentWindow.makeActive();
+	if (this.parentWindow.isMinimized)
+		return;
+	if (browser.isIE) 
+	{
+		winCtrl.xPosition = window.event.x;
+		winCtrl.yPosition = window.event.y;
+	}
+	if (browser.isNS) 
+	{
+		winCtrl.xPosition = event.pageX;
+		winCtrl.yPosition = event.pageY;
+	}
+	winCtrl.oldLeft	 = parseInt(this.parentWindow.frame.style.left,	10);
+	winCtrl.oldTop		= parseInt(this.parentWindow.frame.style.top,	 10);
+	winCtrl.oldWidth	= parseInt(this.parentWindow.frame.style.width, 10);
+	winCtrl.oldHeight = parseInt(this.parentWindow.clientArea.style.height, 10);
+	if (browser.isIE) 
+	{
+		document.onmousemove = winResizeDragGo;
+		document.onmouseup	 = winResizeDragStop;
+	}
+	if (browser.isNS) 
+	{
+		document.addEventListener("mousemove", winResizeDragGo,	 true);
+		document.addEventListener("mouseup"	, winResizeDragStop, true);
+		event.preventDefault();
+	}
+	winCtrl.inResizeDrag = true;
+}
+
+function winResizeDragGo(event) 
+{
+ var north, south, east, west;
+ var dx, dy;
+ var w, h;
+ if (!winCtrl.inResizeDrag)
 	return;
-}
-
-function KillClass(obj,cName)
-{
-	if (!obj) return;
-	return obj.className=obj.className.replace(RegExp("^"+cName+"\\b\\s*|\\s*\\b"+cName+"\\b",'g'),'');
-}
-
-function KillCSS()
-{
-	var css=document.styleSheets[0];
-	css.disabled=!css.disabled;
-}
-
-function ChangeOrientation()
-{
-	var menu = document.getElementById('menu');
-	//menu.className=(menu.className=='vertical')?'horizontal':'vertical';
-	if (menu.className=='vertical')
+	north = false;
+	south = false;
+	east	= false;
+	west	= false;
+	if (winCtrl.resizeDirection.charAt(0) == "n")
+		north = true;
+	if (winCtrl.resizeDirection.charAt(0) == "s")
+		south = true;
+	if (winCtrl.resizeDirection.charAt(0) == "e" || winCtrl.resizeDirection.charAt(1) == "e")
+		east = true;
+	if (winCtrl.resizeDirection.charAt(0) == "w" || winCtrl.resizeDirection.charAt(1) == "w")
+		west = true;
+	if (browser.isIE) 
 	{
-		menu.className='horizontal'
-		WCookie('MnuOri','h');
+		dx = window.event.x - winCtrl.xPosition;
+		dy = window.event.y - winCtrl.yPosition;
+	}
+	if (browser.isNS) 
+	{
+		dx = event.pageX - winCtrl.xPosition;
+		dy = event.pageY - winCtrl.yPosition;
+	}
+	if (west)
+		dx = -dx;
+	if (north)
+		dy = -dy;
+	if((winCtrl.active.FixedSize&4)!=0 && winCtrl.resizeDirection.length==2)
+	{
+		dy=dx;
+		w = winCtrl.oldWidth  + dx;
+		h = winCtrl.oldHeight + dy;
 	}
 	else
 	{
-		menu.className='vertical';
-		WCookie('MnuOri','v');
+		if((winCtrl.active.FixedSize&1)!=0)
+			w = winCtrl.oldWidth  + dx;
+		else
+			w = winCtrl.oldWidth;
+		if((winCtrl.active.FixedSize&2)!=0)
+			h = winCtrl.oldHeight + dy;
+		else
+			h = winCtrl.oldHeight;
 	}
-	UL2Menu_ConvertMenu(); //fix cached calculations
-}
-
-function checkS(event)
-{
-	// capture the mouse position
-	if (event.button==4)
+	if (w <= winCtrl.active.minimumWidth) 
 	{
-		var posx = 0;
-		var posy = 0;
-		var e = window.event;
-		if (e.pageX || e.pageY)
-		{
-			posx = e.pageX;
-			posy = e.pageY;
-		}
-		else if (e.clientX || e.clientY)
-		{
-			posx = e.clientX;
-			posy = e.clientY;
-		}
-		//document.getElementById('DivMenu').innerHTML = 'Mouse position is: X='+posx+' Y='+posy;
-		document.getElementById('DivMenu').style.left = posx;
-		WCookie("MnuX",posx);
-		document.getElementById('DivMenu').style.top = posy;
-		WCookie("MnuY",posy);
-		//document.oncontextmenu=new Function("return false") 
-	}	
+		w = winCtrl.active.minimumWidth;
+		dx = w - winCtrl.oldWidth;
+	}
+	if (h <= winCtrl.active.minimumHeight) 
+	{
+		h = winCtrl.active.minimumHeight;
+		dy = h - winCtrl.oldHeight;
+	}
+	if (east || west) 
+	{
+		winCtrl.active.frame.style.width = w + "px";
+		if (browser.isIE)
+			winCtrl.active.clientArea.style.width = (w - winCtrl.active.widthDiff) + "px";
+	}
+	if (north || south)
+		winCtrl.active.clientArea.style.height = h + "px";
+	if (east || west) 
+	{
+		if (w < winCtrl.active.clipTextMinimumWidth)
+			winCtrl.active.titleBarText.style.width = (winCtrl.minimizedTextWidth + w - winCtrl.active.minimumWidth) + "px";
+		else
+			winCtrl.active.titleBarText.style.width = "";
+	}
+	if (west)
+		if((winCtrl.oldLeft - dx)>0)
+			winCtrl.active.frame.style.left = (winCtrl.oldLeft - dx) + "px";
+		else
+			winCtrl.active.frame.style.left ="0px"
+	if (north)
+		if((winCtrl.oldTop	- dy)>MaxTop)
+			winCtrl.active.frame.style.top	= (winCtrl.oldTop	- dy) + "px";
+		else
+			winCtrl.active.frame.style.top	=MaxTop+"px"	
+	if (browser.isIE) 
+	{
+		window.event.cancelBubble = true;
+		window.event.returnValue = false;
+	}
+	if (browser.isNS)
+		event.preventDefault();
+	//winCtrl.active.titleBarText.innerHTML="["+winCtrl.active.frame.style.left+" "+winCtrl.active.frame.style.top+"]["+winCtrl.active.frame.style.width+" "+winCtrl.active.clientArea.style.height+"]";
 }
 
-document.onmousedown=checkS;
+function winResizeDragStop(event) 
+{
+	winCtrl.inResizeDrag = false;
+	if (browser.isIE) 
+	{
+		document.onmousemove = null;
+		document.onmouseup	 = null;
+	}
+	if (browser.isNS) 
+	{
+		document.removeEventListener("mousemove", winResizeDragGo,	 true);
+		document.removeEventListener("mouseup"	, winResizeDragStop, true);
+	}
+	if(winCtrl.active.ResizeFnc)
+		winCtrl.active.ResizeFnc();
+}
+
+//=============================================================================
+// Utility functions.
+//=============================================================================
+
+function winFindByClassName(el, className) 
+{
+	var i, tmp;
+	if (el.className == className)
+		return el;
+	// Search for a descendant element assigned the given class.
+	for (i = 0; i < el.childNodes.length; i++) 
+	{
+		tmp = winFindByClassName(el.childNodes[i], className);
+		if (tmp != null)
+	 return tmp;
+	}
+	return null;
+}
