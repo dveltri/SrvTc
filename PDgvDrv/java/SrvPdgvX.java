@@ -325,8 +325,8 @@ public class SrvPdgvX
 							sendData[CmpDat+4]=CalChs(sendData);
 							sendPacketP=null;
 							sendPacketP = new DatagramPacket(sendData,7+sendData[CmpLen], IPAddress, port);
-							serverSocket.send(sendPacketP);
 							System.out.print("TxPk-RTC("+id+")->"+IPAddress+":"+port+"\n");	/*+(javax.xml.bind.DatatypeConverter.printHexBinary(Arrays.copyOf(sendData,7+sendData[CmpLen])))*/
+							serverSocket.send(sendPacketP);
 						}
 						//-------------------------------------
 						if(sts.indexOf("ok")!=-1) //check if timeout then add alert and update variables
